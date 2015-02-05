@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="2374" y="-320"/>
         </scene>
-        <!--Table View Controller-->
+        <!--My Account-->
         <scene sceneID="sOO-TU-Hlh">
             <objects>
-                <tableViewController id="Jk7-5Z-zdn" sceneMemberID="viewController">
+                <tableViewController title="My Account" id="Jk7-5Z-zdn" customClass="MyAccountviewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rtE-br-0nh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,7 +174,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="114" id="ruN-Nf-2QX">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Cell" rowHeight="114" id="ruN-Nf-2QX">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="ruN-Nf-2QX" id="ECm-ru-rgV">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -192,7 +192,7 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sIc-ZZ-fiz">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sIc-ZZ-fiz">
                                             <rect key="frame" x="182" y="14" width="400" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -237,7 +237,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="114" id="81B-o8-A3B">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="MyListingCell" rowHeight="114" id="81B-o8-A3B">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="81B-o8-A3B" id="yDO-rO-0DR">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -255,7 +255,7 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-bh-7cx">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-bh-7cx">
                                             <rect key="frame" x="182" y="14" width="400" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -295,7 +295,7 @@
         <scene sceneID="pgL-RY-n8E">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sYK-DD-5KA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Hostest" image="first" id="g4C-UY-Ild"/>
+                    <tabBarItem key="tabBarItem" title="Hostest" image="first" badgeValue="8" id="g4C-UY-Ild"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1HM-PK-XLP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -314,7 +314,7 @@
         <scene sceneID="Cga-FG-P6e">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i1y-iM-8ia" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Listing" image="first" id="8gQ-pm-CiC"/>
+                    <tabBarItem key="tabBarItem" title="My Listing" image="first" badgeValue="4" id="8gQ-pm-CiC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J0Y-u7-5vU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -333,7 +333,7 @@
         <scene sceneID="v1c-zd-KU8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KeG-mp-aJq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Acount" image="first" selectedImage="second" id="MFf-x2-pAb"/>
+                    <tabBarItem key="tabBarItem" title="My Acount" image="first" id="MFf-x2-pAb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="B89-t2-v3e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -351,6 +351,5 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>

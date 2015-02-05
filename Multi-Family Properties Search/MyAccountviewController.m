@@ -1,20 +1,18 @@
 //
-//  MyListingViewController.m
+//  MyAccountviewController.m
 //  Multi-Family Properties Search
 //
 //  Created by Kevin Chen on 2/5/15.
 //  Copyright (c) 2015 Kevin Chen. All rights reserved.
 //
 
-#import "MyListingViewController.h"
+#import "MyAccountviewController.h"
 
-@interface MyListingViewController ()
+@interface MyAccountviewController ()
 
 @end
 
-@implementation MyListingViewController
-
-NSMutableArray * addresss;
+@implementation MyAccountviewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,16 +22,7 @@ NSMutableArray * addresss;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    [self setTitle:@"My Listings"];
-    
-    addresss = [[NSMutableArray alloc] initWithCapacity:5];
-    
-    [addresss addObject:@"Gateway LA - 12424 Wilshire Blvd"];
-    [addresss addObject:@"21800 Oxnard Street, Woodland Hills, CA 91367"];
-    [addresss addObject:@"G11990 San Vicente Blvd, Los Angeles, CA 90049"];
-    [addresss addObject:@"1901 Avenue of the Stars, Los Angeles, CA 90067"];
-
+    [self setTitle:@"My Account"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,29 +33,26 @@ NSMutableArray * addresss;
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [addresss count];
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 3;
 }
 
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyListingCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    long i = indexPath.row + 1;
-    UILabel * label = (UILabel *)[cell viewWithTag:2];
-    label.text = [addresss objectAtIndex: i-1];
-    
-    
-    UIImageView * imageView = (UIImageView *) [cell viewWithTag:4];
-    NSString * imageName = [NSString stringWithFormat: @"im%ld.jpg", i];
-    
-    [imageView setImage: [UIImage imageNamed:imageName]];
+    // Configure the cell...
     
     return cell;
 }
-
+*/
 
 /*
 // Override to support conditional editing of the table view.

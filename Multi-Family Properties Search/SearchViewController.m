@@ -26,6 +26,7 @@
     [_map setRegion:mapRegion animated: YES];
     
     _map.delegate = self;
+    [self setTitle:@"Map Search"];
     
 }
 
