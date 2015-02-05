@@ -15,6 +15,8 @@
 		364D82EF1A83D17400DDCCC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364D82EE1A83D17400DDCCC5 /* Images.xcassets */; };
 		364D82F21A83D17400DDCCC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364D82F01A83D17400DDCCC5 /* LaunchScreen.xib */; };
 		364D82FE1A83D17400DDCCC5 /* Multi_Family_Properties_SearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82FD1A83D17400DDCCC5 /* Multi_Family_Properties_SearchTests.m */; };
+		364D83081A83DF4900DDCCC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 364D83071A83DF4900DDCCC5 /* MapKit.framework */; };
+		364D830B1A83E89300DDCCC5 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D830A1A83E89300DDCCC5 /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,9 @@
 		364D82F71A83D17400DDCCC5 /* Multi-Family Properties SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multi-Family Properties SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		364D82FC1A83D17400DDCCC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364D82FD1A83D17400DDCCC5 /* Multi_Family_Properties_SearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Multi_Family_Properties_SearchTests.m; sourceTree = "<group>"; };
+		364D83071A83DF4900DDCCC5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		364D83091A83E89300DDCCC5 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		364D830A1A83E89300DDCCC5 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				364D83081A83DF4900DDCCC5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +72,7 @@
 		364D82D21A83D17400DDCCC5 = {
 			isa = PBXGroup;
 			children = (
+				364D83071A83DF4900DDCCC5 /* MapKit.framework */,
 				364D82DD1A83D17400DDCCC5 /* Multi-Family Properties Search */,
 				364D82FA1A83D17400DDCCC5 /* Multi-Family Properties SearchTests */,
 				364D82DC1A83D17400DDCCC5 /* Products */,
@@ -94,6 +101,8 @@
 				364D82EE1A83D17400DDCCC5 /* Images.xcassets */,
 				364D82F01A83D17400DDCCC5 /* LaunchScreen.xib */,
 				364D82DE1A83D17400DDCCC5 /* Supporting Files */,
+				364D83091A83E89300DDCCC5 /* SearchViewController.h */,
+				364D830A1A83E89300DDCCC5 /* SearchViewController.m */,
 			);
 			path = "Multi-Family Properties Search";
 			sourceTree = "<group>";
@@ -173,6 +182,11 @@
 				TargetAttributes = {
 					364D82DA1A83D17400DDCCC5 = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					364D82F61A83D17400DDCCC5 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -226,6 +240,7 @@
 			files = (
 				364D82EA1A83D17400DDCCC5 /* SecondViewController.m in Sources */,
 				364D82E41A83D17400DDCCC5 /* AppDelegate.m in Sources */,
+				364D830B1A83E89300DDCCC5 /* SearchViewController.m in Sources */,
 				364D82E71A83D17400DDCCC5 /* FirstViewController.m in Sources */,
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
 			);
