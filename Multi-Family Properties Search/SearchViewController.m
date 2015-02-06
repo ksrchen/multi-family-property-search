@@ -11,7 +11,7 @@
 #import "PropertyDetailViewController.h"
 
 @interface SearchViewController ()
-<MKMapViewDelegate>
+<MKMapViewDelegate, UISearchBarDelegate>
 @end
 
 @implementation SearchViewController
@@ -60,6 +60,8 @@ NSMutableArray * properties;
 //    [_map addAnnotation:point];
     
     _map.delegate = self;
+    _searchBar.delegate = self;
+    
     [self setTitle:@"Map Search"];
     
 }
@@ -177,5 +179,28 @@ NSMutableArray * properties;
         return pinView;
     }
     return nil;
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)theSearchBar
+{
+    [theSearchBar resignFirstResponder];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:theSearchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        //Error checking
+        
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        MKCoordinateRegion region;
+        region.center.latitude = placemark.region.center.latitude;
+        region.center.longitude = placemark.region.center.longitude;
+        MKCoordinateSpan span;
+        double radius = placemark.region.radius / 1000; // convert to km
+        
+        NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
+        span.latitudeDelta = radius / 112.0;
+        
+        region.span = span;
+        
+        [_map setRegion:region animated:YES];
+    }];
 }
 @end

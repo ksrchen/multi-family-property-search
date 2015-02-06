@@ -12,5 +12,6 @@
 @interface SearchViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView * map;
 - (IBAction)onFilter:(id)sender;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
