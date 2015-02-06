@@ -114,5 +114,14 @@ NSMutableArray * addresss;
     // Pass the selected object to the new view controller.
 }
 */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 @end
