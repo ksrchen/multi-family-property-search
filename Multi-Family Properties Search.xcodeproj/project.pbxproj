@@ -34,6 +34,7 @@
 		367659861A8529B600D3D929 /* pic..png in Resources */ = {isa = PBXBuildFile; fileRef = 367659831A8529B600D3D929 /* pic..png */; };
 		367659871A8529B600D3D929 /* expense.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659841A8529B600D3D929 /* expense.png */; };
 		367659881A8529B600D3D929 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659851A8529B600D3D929 /* graph.png */; };
+		3676598A1A853D6700D3D929 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659891A853D6700D3D929 /* appicon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		367659831A8529B600D3D929 /* pic..png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic..png; sourceTree = "<group>"; };
 		367659841A8529B600D3D929 /* expense.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expense.png; sourceTree = "<group>"; };
 		367659851A8529B600D3D929 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = "<group>"; };
+		367659891A853D6700D3D929 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		364D82DE1A83D17400DDCCC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				367659891A853D6700D3D929 /* appicon.png */,
 				367659831A8529B600D3D929 /* pic..png */,
 				367659841A8529B600D3D929 /* expense.png */,
 				367659851A8529B600D3D929 /* graph.png */,
@@ -243,6 +246,7 @@
 				TargetAttributes = {
 					364D82DA1A83D17400DDCCC5 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 4N7YX63622;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -287,6 +291,7 @@
 				367659861A8529B600D3D929 /* pic..png in Resources */,
 				364D831E1A83F76100DDCCC5 /* im8.jpg in Resources */,
 				364D83261A841F5300DDCCC5 /* small-red-pin.png in Resources */,
+				3676598A1A853D6700D3D929 /* appicon.png in Resources */,
 				364D82F21A83D17400DDCCC5 /* LaunchScreen.xib in Resources */,
 				367659881A8529B600D3D929 /* graph.png in Resources */,
 				364D83191A83F76100DDCCC5 /* im3.jpg in Resources */,
