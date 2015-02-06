@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "Property.h"
+#import "PropertyDetailViewController.h"
 
 @interface SearchViewController ()
 <MKMapViewDelegate>
@@ -123,10 +124,16 @@ NSMutableArray * properties;
     id <MKAnnotation> annotation = [view annotation];
     if ([annotation isKindOfClass:[MKPointAnnotation class]])
     {
-        NSLog(@"Clicked Pizza Shop");
+        
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+        
     }
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    [alertView show];
+    //UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    //[alertView show];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation

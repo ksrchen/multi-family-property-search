@@ -30,6 +30,7 @@
 		364D83241A83FF9C00DDCCC5 /* MyAccountviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D83231A83FF9C00DDCCC5 /* MyAccountviewController.m */; };
 		364D83261A841F5300DDCCC5 /* small-red-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 364D83251A841F5300DDCCC5 /* small-red-pin.png */; };
 		364D832B1A8428EE00DDCCC5 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D832A1A8428EE00DDCCC5 /* Property.m */; };
+		364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		364D83251A841F5300DDCCC5 /* small-red-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-red-pin.png"; sourceTree = "<group>"; };
 		364D83291A8428EE00DDCCC5 /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
 		364D832A1A8428EE00DDCCC5 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
+		364D832F1A843F0E00DDCCC5 /* PropertyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetailViewController.h; sourceTree = "<group>"; };
+		364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				364D83231A83FF9C00DDCCC5 /* MyAccountviewController.m */,
 				364D83291A8428EE00DDCCC5 /* Property.h */,
 				364D832A1A8428EE00DDCCC5 /* Property.m */,
+				364D832F1A843F0E00DDCCC5 /* PropertyDetailViewController.h */,
+				364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */,
 			);
 			path = "Multi-Family Properties Search";
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				364D830E1A83F6DD00DDCCC5 /* HottestTableViewController.m in Sources */,
 				364D82E71A83D17400DDCCC5 /* FirstViewController.m in Sources */,
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
+				364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */,
 				364D83241A83FF9C00DDCCC5 /* MyAccountviewController.m in Sources */,
 				364D83211A83F95C00DDCCC5 /* MyListingViewController.m in Sources */,
 				364D832B1A8428EE00DDCCC5 /* Property.m in Sources */,
