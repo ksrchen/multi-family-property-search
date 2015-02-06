@@ -7,6 +7,7 @@
 //
 
 #import "SearchViewController.h"
+#import "Property.h"
 
 @interface SearchViewController ()
 <MKMapViewDelegate>
@@ -14,16 +15,48 @@
 
 @implementation SearchViewController
 
+NSMutableArray * properties;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_map setShowsUserLocation:YES];
     
     MKCoordinateRegion mapRegion;
     mapRegion.center = CLLocationCoordinate2DMake(34.05, -118.24);
-    mapRegion.span.latitudeDelta = 0.5;
-    mapRegion.span.longitudeDelta = 0.5;
+    mapRegion.span.latitudeDelta = 1;
+    mapRegion.span.longitudeDelta = 1;
     
     [_map setRegion:mapRegion animated: YES];
+    
+    properties = [[NSMutableArray alloc] init];
+    
+    [properties addObject:[[Property alloc] initWithAddress:@"2000 Riverside Dr Los Angeles 90039" andLocation:CLLocationCoordinate2DMake(34.05, -118.24)]];
+    [properties addObject:[[Property alloc] initWithAddress:@"Westside Towers, West - 11845 W. Olympic Blvd" andLocation:CLLocationCoordinate2DMake(34.08, -118.20)]];
+    [properties addObject:[[Property alloc] initWithAddress:@"12400 Wilshire Los Angeles, CA" andLocation:CLLocationCoordinate2DMake(34.15, -118.14)]];
+    [properties addObject:[[Property alloc] initWithAddress:@"1766 Wilshire Blvd - Landmark II" andLocation:CLLocationCoordinate2DMake(34.0, -118.14)]];
+    [properties addObject:[[Property alloc] initWithAddress:@"Gateway LA - 12424 Wilshire Blvd" andLocation:CLLocationCoordinate2DMake(34.05, -118.24)]];
+    [properties addObject:[[Property alloc] initWithAddress:@"21800 Oxnard Street, Woodland Hills, CA 91367" andLocation:CLLocationCoordinate2DMake(34.19, -118.04)]];
+    [properties addObject:[[Property alloc] initWithAddress:@"G11990 San Vicente Blvd, Los Angeles, CA 90049" andLocation:CLLocationCoordinate2DMake(34.15, -118.0)]];
+    
+    for (int i=0; i<properties.count; i++) {
+        Property* item = [properties objectAtIndex:i];
+        
+         MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        
+        point.coordinate = item.location;
+        point.title = item.address;
+        
+        [_map addAnnotation:point];
+    }
+    
+
+    
+//    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+//    point.coordinate = CLLocationCoordinate2DMake(34.05, -118.24);
+//    point.title = @"Where am I?";
+//    point.subtitle = @"I'm here!!!";
+//    
+//    [_map addAnnotation:point];
     
     _map.delegate = self;
     [self setTitle:@"Map Search"];
@@ -47,18 +80,18 @@
 
 - (IBAction)onFilter:(id)sender {
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Map Search"
-                                                                              message:@"Select your options"
+                                                                              message:@"Map search filter is under construction!"
                                                                        preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
-     {
-         textField.placeholder = NSLocalizedString(@"Option 1", @"Login");
-     }];
-    
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
-     {
-         textField.placeholder = NSLocalizedString(@"Option 2", @"Password");
-     }];
+//    
+//    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+//     {
+//         textField.placeholder = NSLocalizedString(@"Option 1", @"Login");
+//     }];
+//    
+//    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+//     {
+//         textField.placeholder = NSLocalizedString(@"Option 2", @"Password");
+//     }];
     
     
     UIAlertAction *okAction = [UIAlertAction
@@ -84,8 +117,58 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+#pragma mark Delegate Methods
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    id <MKAnnotation> annotation = [view annotation];
+    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    {
+        NSLog(@"Clicked Pizza Shop");
+    }
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    [alertView show];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-   
+    // If it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // Handle any custom annotations.
+    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    {
+        // Try to dequeue an existing pin view first.
+        MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        if (!pinView)
+        {
+            // If an existing pin view was not available, create one.
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView.canShowCallout = YES;
+            pinView.image = [UIImage imageNamed:@"small-red-pin.png"];
+            pinView.calloutOffset = CGPointMake(0, 32);
+            
+            // Add a detail disclosure button to the callout.
+            UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            pinView.rightCalloutAccessoryView = rightButton;
+            
+            // Add an image to the left callout.
+            NSString * imageName = [NSString stringWithFormat: @"im%ld.jpg", 1];
+            
+            UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+            CGRect frame = iconView.frame;
+            frame.size.width = 80;
+            frame.size.height = 60;
+            iconView.frame = frame;
+            
+            iconView.contentMode = UIViewContentModeScaleAspectFit;
+            
+            pinView.leftCalloutAccessoryView = iconView;
+        } else {
+            pinView.annotation = annotation;
+        }
+        return pinView;
+    }
+    return nil;
 }
 @end
