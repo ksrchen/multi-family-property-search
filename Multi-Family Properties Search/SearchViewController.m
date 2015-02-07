@@ -20,6 +20,10 @@ NSMutableArray * properties;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    CLLocationManager * locationManager = [[CLLocationManager alloc] init];
+    [locationManager startUpdatingLocation];
+    [locationManager requestAlwaysAuthorization];
+    
     [_map setShowsUserLocation:YES];
     
     MKCoordinateRegion mapRegion;
@@ -63,6 +67,8 @@ NSMutableArray * properties;
     _searchBar.delegate = self;
     
     [self setTitle:@"Map Search"];
+    
+    [self showLogin];
     
 }
 
@@ -162,7 +168,7 @@ NSMutableArray * properties;
             pinView.rightCalloutAccessoryView = rightButton;
             
             // Add an image to the left callout.
-            NSString * imageName = [NSString stringWithFormat: @"im%ld.jpg", 1];
+            NSString * imageName = [NSString stringWithFormat: @"im%ld.jpg", 1l];
             
             UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
             CGRect frame = iconView.frame;
@@ -187,7 +193,7 @@ NSMutableArray * properties;
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:theSearchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
         //Error checking
-        
+        if (placemarks.count > 0){
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
         MKCoordinateRegion region;
         region.center.latitude = placemark.region.center.latitude;
@@ -195,12 +201,72 @@ NSMutableArray * properties;
         MKCoordinateSpan span;
         double radius = placemark.region.radius / 1000; // convert to km
         
-        NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
+       // NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
         span.latitudeDelta = radius / 112.0;
         
         region.span = span;
         
         [_map setRegion:region animated:YES];
+        }
     }];
 }
+
+- (void) showLogin {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Multi-Family Listing Search"
+                                                                              message:@"Please Sign In"
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+     {
+         textField.placeholder = NSLocalizedString(@"Login", @"Login");
+     }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+     {
+         textField.placeholder = NSLocalizedString(@"Password", @"Password");
+         textField.secureTextEntry = YES;
+     }];
+    
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                               style:UIAlertActionStyleDestructive
+                               handler:^(UIAlertAction *action)
+                               {
+                                   UITextField *login = alertController.textFields.firstObject;
+                                   UITextField *password = alertController.textFields.lastObject;
+                                   NSString * pwd = password.text;
+                                   NSString * user = login.text;
+                                   if ([pwd length] > 1 && [user length] > 1 && [pwd compare:@"42"] == NSOrderedSame){
+                                       [defaults setObject:user forKey:@"loggedin"];
+                                       [defaults synchronize];
+                                   }
+                                   else{
+                                       [defaults removeObjectForKey:@"loggedin"];
+                                       [defaults synchronize];
+                                       [alertController setMessage:@"Login failed. Please try again."];
+                                       [self presentViewController:alertController animated:YES completion:nil];
+                                   }
+                                   
+                               }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       
+                                       
+                                   }];
+    
+    [alertController addAction:okAction];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+}
+
 @end

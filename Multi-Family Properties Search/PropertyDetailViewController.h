@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PropertyDetailViewController : UIViewController
+- (IBAction)contactMe:(id)sender;
 
 @end
