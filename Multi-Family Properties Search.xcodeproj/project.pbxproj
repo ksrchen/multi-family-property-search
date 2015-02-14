@@ -35,6 +35,8 @@
 		367659871A8529B600D3D929 /* expense.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659841A8529B600D3D929 /* expense.png */; };
 		367659881A8529B600D3D929 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659851A8529B600D3D929 /* graph.png */; };
 		3676598A1A853D6700D3D929 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659891A853D6700D3D929 /* appicon.png */; };
+		367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */; };
+		99E683A8BAA1A84882DFD6F6 /* libPods-Multi-Family Properties Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Multi-Family Properties Search.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		364D82DB1A83D17400DDCCC5 /* Multi-Family Properties Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi-Family Properties Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		364D82DF1A83D17400DDCCC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364D82E01A83D17400DDCCC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,10 @@
 		367659841A8529B600D3D929 /* expense.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expense.png; sourceTree = "<group>"; };
 		367659851A8529B600D3D929 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = "<group>"; };
 		367659891A853D6700D3D929 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
+		367E26F01A8FA8D8005B2879 /* PropertyDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDataStore.h; sourceTree = "<group>"; };
+		367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDataStore.m; sourceTree = "<group>"; };
+		A5F1691BA81DA620C97A616B /* Pods-Multi-Family Properties Search.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multi-Family Properties Search.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search.release.xcconfig"; sourceTree = "<group>"; };
+		A8960ED62ADEBB5396452F9C /* Pods-Multi-Family Properties Search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multi-Family Properties Search.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				364D83081A83DF4900DDCCC5 /* MapKit.framework in Frameworks */,
+				99E683A8BAA1A84882DFD6F6 /* libPods-Multi-Family Properties Search.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +125,8 @@
 				364D82DD1A83D17400DDCCC5 /* Multi-Family Properties Search */,
 				364D82FA1A83D17400DDCCC5 /* Multi-Family Properties SearchTests */,
 				364D82DC1A83D17400DDCCC5 /* Products */,
+				7D5709FD972DEC1F1DA8B867 /* Pods */,
+				698CCE5BCBE59C3E927BFA32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +164,8 @@
 				364D832A1A8428EE00DDCCC5 /* Property.m */,
 				364D832F1A843F0E00DDCCC5 /* PropertyDetailViewController.h */,
 				364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */,
+				367E26F01A8FA8D8005B2879 /* PropertyDataStore.h */,
+				367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */,
 			);
 			path = "Multi-Family Properties Search";
 			sourceTree = "<group>";
@@ -197,6 +209,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		698CCE5BCBE59C3E927BFA32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D5709FD972DEC1F1DA8B867 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8960ED62ADEBB5396452F9C /* Pods-Multi-Family Properties Search.debug.xcconfig */,
+				A5F1691BA81DA620C97A616B /* Pods-Multi-Family Properties Search.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 364D83011A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "Multi-Family Properties Search" */;
 			buildPhases = (
+				7420C8D5E0B9CDCB467F6C14 /* Check Pods Manifest.lock */,
 				364D82D71A83D17400DDCCC5 /* Sources */,
 				364D82D81A83D17400DDCCC5 /* Frameworks */,
 				364D82D91A83D17400DDCCC5 /* Resources */,
+				4AF8B19A0DE41A0E43B3F45E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,12 +342,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AF8B19A0DE41A0E43B3F45E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7420C8D5E0B9CDCB467F6C14 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		364D82D71A83D17400DDCCC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				364D82EA1A83D17400DDCCC5 /* SecondViewController.m in Sources */,
+				367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */,
 				364D82E41A83D17400DDCCC5 /* AppDelegate.m in Sources */,
 				364D830B1A83E89300DDCCC5 /* SearchViewController.m in Sources */,
 				364D830E1A83F6DD00DDCCC5 /* HottestTableViewController.m in Sources */,
@@ -447,6 +512,7 @@
 		};
 		364D83021A83D17400DDCCC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8960ED62ADEBB5396452F9C /* Pods-Multi-Family Properties Search.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Multi-Family Properties Search/Info.plist";
@@ -457,6 +523,7 @@
 		};
 		364D83031A83D17400DDCCC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5F1691BA81DA620C97A616B /* Pods-Multi-Family Properties Search.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Multi-Family Properties Search/Info.plist";

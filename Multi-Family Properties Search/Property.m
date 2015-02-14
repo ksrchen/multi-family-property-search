@@ -10,11 +10,16 @@
 
 @implementation Property
 
+@synthesize title;
+@synthesize coordinate;
 
--(id)initWithAddress:(NSString*) address andLocation:(CLLocationCoordinate2D) location
+-(id)initWithAddress:(NSString*) address
+         andLocation:(CLLocationCoordinate2D) location
+         andMLNumber:(NSString *) mlNumber;
 {
-    self.address = address;
-    self.location = location;
+    title  = address;
+    coordinate = location;
+    _MLNumber = mlNumber;
     return self;
 }
 

@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface Property : NSObject
-@property (weak, nonatomic) NSString * address;
-@property (nonatomic) CLLocationCoordinate2D location;
+@interface Property : NSObject <MKAnnotation>
 
--(id)initWithAddress:(NSString*) address andLocation:(CLLocationCoordinate2D) location;
+//@property (weak, nonatomic) NSString * title;
+//@property (nonatomic) CLLocationCoordinate2D coordinate;
+
+@property (weak, nonatomic) NSString * MLNumber;
+
+-(id)initWithAddress:(NSString*) address
+andLocation:(CLLocationCoordinate2D) location
+         andMLNumber:(NSString *) mlNumber;
 @end

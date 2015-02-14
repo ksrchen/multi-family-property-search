@@ -9,6 +9,7 @@
 #import "SearchViewController.h"
 #import "Property.h"
 #import "PropertyDetailViewController.h"
+#import "PropertyDataStore.h"
 
 @interface SearchViewController ()
 <MKMapViewDelegate, UISearchBarDelegate>
@@ -16,7 +17,7 @@
 
 @implementation SearchViewController
 
-NSMutableArray * properties;
+NSMutableArray * _properties;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,35 +34,6 @@ NSMutableArray * properties;
     
     [_map setRegion:mapRegion animated: YES];
     
-    properties = [[NSMutableArray alloc] init];
-    
-    [properties addObject:[[Property alloc] initWithAddress:@"2000 Riverside Dr Los Angeles 90039" andLocation:CLLocationCoordinate2DMake(34.05, -118.24)]];
-    [properties addObject:[[Property alloc] initWithAddress:@"Westside Towers, West - 11845 W. Olympic Blvd" andLocation:CLLocationCoordinate2DMake(34.08, -118.20)]];
-    [properties addObject:[[Property alloc] initWithAddress:@"12400 Wilshire Los Angeles, CA" andLocation:CLLocationCoordinate2DMake(34.15, -118.14)]];
-    [properties addObject:[[Property alloc] initWithAddress:@"1766 Wilshire Blvd - Landmark II" andLocation:CLLocationCoordinate2DMake(34.0, -118.14)]];
-    [properties addObject:[[Property alloc] initWithAddress:@"Gateway LA - 12424 Wilshire Blvd" andLocation:CLLocationCoordinate2DMake(34.05, -118.24)]];
-    [properties addObject:[[Property alloc] initWithAddress:@"21800 Oxnard Street, Woodland Hills, CA 91367" andLocation:CLLocationCoordinate2DMake(34.19, -118.04)]];
-    [properties addObject:[[Property alloc] initWithAddress:@"G11990 San Vicente Blvd, Los Angeles, CA 90049" andLocation:CLLocationCoordinate2DMake(34.15, -118.0)]];
-    
-    for (int i=0; i<properties.count; i++) {
-        Property* item = [properties objectAtIndex:i];
-        
-         MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-        
-        point.coordinate = item.location;
-        point.title = item.address;
-        
-        [_map addAnnotation:point];
-    }
-    
-
-    
-//    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-//    point.coordinate = CLLocationCoordinate2DMake(34.05, -118.24);
-//    point.title = @"Where am I?";
-//    point.subtitle = @"I'm here!!!";
-//    
-//    [_map addAnnotation:point];
     
     _map.delegate = self;
     _searchBar.delegate = self;
@@ -78,29 +50,29 @@ NSMutableArray * properties;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)onFilter:(id)sender {
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Map Search"
                                                                               message:@"Map search filter is under construction!"
                                                                        preferredStyle:UIAlertControllerStyleAlert];
-//    
-//    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
-//     {
-//         textField.placeholder = NSLocalizedString(@"Option 1", @"Login");
-//     }];
-//    
-//    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
-//     {
-//         textField.placeholder = NSLocalizedString(@"Option 2", @"Password");
-//     }];
+    //
+    //    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+    //     {
+    //         textField.placeholder = NSLocalizedString(@"Option 1", @"Login");
+    //     }];
+    //
+    //    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+    //     {
+    //         textField.placeholder = NSLocalizedString(@"Option 2", @"Password");
+    //     }];
     
     
     UIAlertAction *okAction = [UIAlertAction
@@ -130,7 +102,7 @@ NSMutableArray * properties;
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     id <MKAnnotation> annotation = [view annotation];
-    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    if ([annotation isKindOfClass:[Property class]])
     {
         
         NSString * storyboardName = @"Main";
@@ -144,6 +116,24 @@ NSMutableArray * properties;
     //[alertView show];
 }
 
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    [[PropertyDataStore getInstance] getPropertiesForRegion:nil withFilters:nil
+                                                    success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
+                                                        if (_properties)
+                                                        {
+                                                            [_map removeAnnotations:_properties];
+                                                        }
+                                                        
+                                                        _properties = properties;
+                                                        [_map addAnnotations:_properties];
+                                                        
+                                                    }
+                                                    failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                                        
+                                                    }
+     ];
+    
+}
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     // If it's the user location, just return nil.
@@ -151,7 +141,7 @@ NSMutableArray * properties;
         return nil;
     
     // Handle any custom annotations.
-    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    if ([annotation isKindOfClass:[Property class]])
     {
         // Try to dequeue an existing pin view first.
         MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
@@ -194,19 +184,19 @@ NSMutableArray * properties;
     [geocoder geocodeAddressString:theSearchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
         //Error checking
         if (placemarks.count > 0){
-        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-        MKCoordinateRegion region;
-        region.center.latitude = placemark.region.center.latitude;
-        region.center.longitude = placemark.region.center.longitude;
-        MKCoordinateSpan span;
-        double radius = placemark.region.radius / 1000; // convert to km
-        
-       // NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
-        span.latitudeDelta = radius / 112.0;
-        
-        region.span = span;
-        
-        [_map setRegion:region animated:YES];
+            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            MKCoordinateRegion region;
+            region.center.latitude = placemark.region.center.latitude;
+            region.center.longitude = placemark.region.center.longitude;
+            MKCoordinateSpan span;
+            double radius = placemark.region.radius / 1000; // convert to km
+            
+            // NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
+            span.latitudeDelta = radius / 112.0;
+            
+            region.span = span;
+            
+            [_map setRegion:region animated:YES];
         }
     }];
 }
