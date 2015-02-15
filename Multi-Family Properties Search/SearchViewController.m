@@ -117,7 +117,33 @@ NSMutableArray * _properties;
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
-    [[PropertyDataStore getInstance] getPropertiesForRegion:nil withFilters:nil
+    
+    double yc = _map.region.center.latitude;
+    double xc = _map.region.center.longitude;
+    
+    double y = _map.region.span.latitudeDelta/2;
+    double x = _map.region.span.longitudeDelta/2;
+    
+    CLLocationCoordinate2D topLeft = CLLocationCoordinate2DMake(yc-y, xc-x);
+    CLLocationCoordinate2D topRight = CLLocationCoordinate2DMake(yc-y, xc+x);
+    CLLocationCoordinate2D bottomRight = CLLocationCoordinate2DMake(yc+y, xc+x);
+    CLLocationCoordinate2D bottomLeft = CLLocationCoordinate2DMake(yc+y, xc-x);
+
+    CLLocationCoordinate2D points[5];
+    points[0] = topLeft;
+    points[1] = topRight;
+    points[2] = bottomRight;
+    points[3] = bottomLeft;
+    points[4] = topLeft;
+    NSMutableString * polygon = [NSMutableString stringWithString:@"POLYGON(("];
+    for (int i=0; i<5; i++) {
+        [polygon appendFormat:@"%f %f, ", points[i].longitude, points[i].latitude];
+    }
+    long len = [polygon length];
+    [polygon deleteCharactersInRange:NSMakeRange(len-2, 2)];
+    [polygon appendString:@"))"];
+    
+    [[PropertyDataStore getInstance] getPropertiesForRegion:polygon withFilters:nil
                                                     success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
                                                         if (_properties)
                                                         {
