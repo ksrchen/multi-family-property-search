@@ -10,6 +10,8 @@
 
 @interface PropertyDetailViewController : UIViewController
 - (IBAction)contactMe:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *propertyDescription;
 
+@property (weak, nonatomic) IBOutlet UILabel *address;
 @property (nonatomic, copy) NSString * MLNumber;
 @end

@@ -17,6 +17,16 @@
     if ([self.MLNumber length] > 0){
         [[PropertyDataStore getInstance] getProperty:self.MLNumber success:^(NSURLSessionDataTask *task, id property) {
             
+            NSDictionary * attributes = (NSDictionary*) property;
+            self.propertyDescription.text = attributes[@"PropertyDescription"];
+            self.address.text = [NSString stringWithFormat:@"%@ %@ %@, %@ %@",
+                                 attributes[@"StreetNumber"],
+                                 attributes[@"StreetName"],
+                                 attributes[@"City"],
+                                 attributes[@"State"],
+                                 attributes[@"PostalCode"]
+                                 ];
+            
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }
