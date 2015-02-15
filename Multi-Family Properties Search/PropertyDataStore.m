@@ -81,9 +81,23 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
             failure(task, error);
         }
     }];
-
-    
 }
 
-
+- (void)getProperty:(NSString *)MLNumber
+            success:(void(^)(NSURLSessionDataTask *task, id property))success
+            failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
+{
+    NSString* path = [NSString stringWithFormat: @"resincome/%@", MLNumber];
+    
+    [self GET:path parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (success) {
+            NSLog(@"Success -- %@", responseObject);
+            success(task, responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(task, error);
+        }
+    }];
+}
 @end

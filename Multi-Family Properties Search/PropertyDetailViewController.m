@@ -7,8 +7,22 @@
 //
 
 #import "PropertyDetailViewController.h"
+#import "PropertyDataStore.h"
 
 @implementation PropertyDetailViewController
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    if ([self.MLNumber length] > 0){
+        [[PropertyDataStore getInstance] getProperty:self.MLNumber success:^(NSURLSessionDataTask *task, id property) {
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        }
+        ];
+    }
+}
 
 - (IBAction)contactMe:(id)sender {
     

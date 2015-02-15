@@ -12,6 +12,7 @@
 
 @synthesize title;
 @synthesize coordinate;
+@synthesize MLNumber;
 
 -(id)initWithAddress:(NSString*) address
          andLocation:(CLLocationCoordinate2D) location
@@ -19,7 +20,7 @@
 {
     title  = address;
     coordinate = location;
-    _MLNumber = mlNumber;
+    self.MLNumber = mlNumber;
     return self;
 }
 

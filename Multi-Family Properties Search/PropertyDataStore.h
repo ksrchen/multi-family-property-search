@@ -17,4 +17,9 @@
                      success:(void(^)(NSURLSessionDataTask *task, NSMutableArray * properties))success
                      failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
 
+- (void)getProperty:(NSString *)MLNumber
+                       success:(void(^)(NSURLSessionDataTask *task, id property))success
+                       failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+
 @end

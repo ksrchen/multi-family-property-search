@@ -14,7 +14,7 @@
 //@property (weak, nonatomic) NSString * title;
 //@property (nonatomic) CLLocationCoordinate2D coordinate;
 
-@property (weak, nonatomic) NSString * MLNumber;
+@property (nonatomic, copy  ) NSString * MLNumber;
 
 -(id)initWithAddress:(NSString*) address
 andLocation:(CLLocationCoordinate2D) location

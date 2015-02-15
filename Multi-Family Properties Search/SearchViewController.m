@@ -107,7 +107,15 @@ NSMutableArray * _properties;
         
         NSString * storyboardName = @"Main";
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+        PropertyDetailViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+        
+        Property * p = (Property*)annotation;
+        vc.MLNumber = [p MLNumber];
+        
+        for (id anno in [_map selectedAnnotations]) {
+            [_map deselectAnnotation:anno animated:NO];
+        }
+        
         [self.navigationController pushViewController:vc animated:YES];
         
         

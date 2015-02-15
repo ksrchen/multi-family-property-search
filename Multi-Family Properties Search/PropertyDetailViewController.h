@@ -11,4 +11,5 @@
 @interface PropertyDetailViewController : UIViewController
 - (IBAction)contactMe:(id)sender;
 
+@property (nonatomic, copy) NSString * MLNumber;
 @end
