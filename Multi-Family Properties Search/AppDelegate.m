@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import "UserDataStore.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    //    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    
+    if ([[UserDataStore getInstance] isAuthenticated])
+    {
+        [AppDelegate showRootController];
+    }
+    else
+    {
+//        UIViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//        UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:rootController];
+//        self.window.rootViewController = navigation;
+        [AppDelegate showLogin];
+    }
+    
     return YES;
 }
 
@@ -43,5 +57,22 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
++(void) showLogin
+{
+    AppDelegate *appDelegateTemp = [[UIApplication sharedApplication]delegate];
+    
+    UIViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:rootController];
+    appDelegateTemp.window.rootViewController = navigation;
+
+}
++(void) showRootController
+{
+    AppDelegate *appDelegateTemp = [[UIApplication sharedApplication]delegate];
+    appDelegateTemp.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+
+}
+
 
 @end

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Multi-Family Properties Search-CorePlot.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Multi-Family Properties Search.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3EDA3AB95A4CE3202B0DAAE6</key>
+		<key>A11BEF27FAA653750D37A9D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3EF1BD82AAE45DEF2B65CDDF</key>
+		<key>BBC5E433FB08347959A120B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C219A8FA29783556E2DA1982</key>
 		<dict>
 			<key>primary</key>
 			<true/>

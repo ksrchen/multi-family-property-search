@@ -7,6 +7,8 @@
 //
 
 #import "MyAccountviewController.h"
+#import "UserDataStore.h"
+#import "AppDelegate.h"
 
 @interface MyAccountviewController ()
 
@@ -98,4 +100,9 @@
 }
 */
 
+- (IBAction)signOut:(id)sender {
+    [[UserDataStore getInstance  ] logOut];
+    [AppDelegate showLogin];
+    
+}
 @end

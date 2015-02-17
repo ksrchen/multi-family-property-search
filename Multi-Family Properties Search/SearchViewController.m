@@ -40,7 +40,7 @@ NSMutableArray * _properties;
     
     [self setTitle:@"Map Search"];
     
-    [self showLogin];
+//    [self showLogin];
     
 }
 

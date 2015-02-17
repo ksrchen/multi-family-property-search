@@ -3,5 +3,6 @@
 
 target 'Multi-Family Properties Search' do
 pod 'AFNetworking', '2.2.1'
+pod 'CorePlot', '1.5.1'
 end
 

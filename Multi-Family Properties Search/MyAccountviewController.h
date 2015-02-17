@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyAccountviewController : UITableViewController
+- (IBAction)signOut:(id)sender;
 
 @end

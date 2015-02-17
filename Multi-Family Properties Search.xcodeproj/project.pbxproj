@@ -31,6 +31,10 @@
 		364D83261A841F5300DDCCC5 /* small-red-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 364D83251A841F5300DDCCC5 /* small-red-pin.png */; };
 		364D832B1A8428EE00DDCCC5 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D832A1A8428EE00DDCCC5 /* Property.m */; };
 		364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */; };
+		36573E361A9244C00023680D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E351A9244C00023680D /* LoginViewController.m */; };
+		36573E391A9244DB0023680D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E381A9244DB0023680D /* RegisterViewController.m */; };
+		365CDBB91A92A66100C41FB5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 365CDBB81A92A66100C41FB5 /* User.m */; };
+		365CDBBC1A92A72600C41FB5 /* UserDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 365CDBBB1A92A72600C41FB5 /* UserDataStore.m */; };
 		367659861A8529B600D3D929 /* pic..png in Resources */ = {isa = PBXBuildFile; fileRef = 367659831A8529B600D3D929 /* pic..png */; };
 		367659871A8529B600D3D929 /* expense.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659841A8529B600D3D929 /* expense.png */; };
 		367659881A8529B600D3D929 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659851A8529B600D3D929 /* graph.png */; };
@@ -88,6 +92,14 @@
 		364D832A1A8428EE00DDCCC5 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
 		364D832F1A843F0E00DDCCC5 /* PropertyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetailViewController.h; sourceTree = "<group>"; };
 		364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
+		36573E341A9244C00023680D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		36573E351A9244C00023680D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		36573E371A9244DB0023680D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		36573E381A9244DB0023680D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		365CDBB71A92A66100C41FB5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		365CDBB81A92A66100C41FB5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		365CDBBA1A92A72600C41FB5 /* UserDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataStore.h; sourceTree = "<group>"; };
+		365CDBBB1A92A72600C41FB5 /* UserDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataStore.m; sourceTree = "<group>"; };
 		367659831A8529B600D3D929 /* pic..png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic..png; sourceTree = "<group>"; };
 		367659841A8529B600D3D929 /* expense.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expense.png; sourceTree = "<group>"; };
 		367659851A8529B600D3D929 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = "<group>"; };
@@ -166,6 +178,14 @@
 				364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */,
 				367E26F01A8FA8D8005B2879 /* PropertyDataStore.h */,
 				367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */,
+				36573E341A9244C00023680D /* LoginViewController.h */,
+				36573E351A9244C00023680D /* LoginViewController.m */,
+				36573E371A9244DB0023680D /* RegisterViewController.h */,
+				36573E381A9244DB0023680D /* RegisterViewController.m */,
+				365CDBB71A92A66100C41FB5 /* User.h */,
+				365CDBB81A92A66100C41FB5 /* User.m */,
+				365CDBBA1A92A72600C41FB5 /* UserDataStore.h */,
+				365CDBBB1A92A72600C41FB5 /* UserDataStore.m */,
 			);
 			path = "Multi-Family Properties Search";
 			sourceTree = "<group>";
@@ -381,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				364D82EA1A83D17400DDCCC5 /* SecondViewController.m in Sources */,
+				365CDBBC1A92A72600C41FB5 /* UserDataStore.m in Sources */,
 				367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */,
 				364D82E41A83D17400DDCCC5 /* AppDelegate.m in Sources */,
 				364D830B1A83E89300DDCCC5 /* SearchViewController.m in Sources */,
@@ -388,6 +409,9 @@
 				364D82E71A83D17400DDCCC5 /* FirstViewController.m in Sources */,
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
 				364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */,
+				365CDBB91A92A66100C41FB5 /* User.m in Sources */,
+				36573E361A9244C00023680D /* LoginViewController.m in Sources */,
+				36573E391A9244DB0023680D /* RegisterViewController.m in Sources */,
 				364D83241A83FF9C00DDCCC5 /* MyAccountviewController.m in Sources */,
 				364D83211A83F95C00DDCCC5 /* MyListingViewController.m in Sources */,
 				364D832B1A8428EE00DDCCC5 /* Property.m in Sources */,
