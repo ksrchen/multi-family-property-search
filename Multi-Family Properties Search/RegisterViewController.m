@@ -88,10 +88,12 @@
     user.password = password;
     user.FirstName = firstName;
     user.LastName = lastName;
-    
+    [self.ActivityIndicatorView startAnimating];
     [[UserDataStore getInstance] registerUser:user success:^(NSURLSessionDataTask *task) {
+        [self.ActivityIndicatorView stopAnimating];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [self.ActivityIndicatorView stopAnimating];
         [messageController setMessage:@"Registration failed. Please try again."];
         [self presentViewController:messageController animated:YES completion:nil];
     }

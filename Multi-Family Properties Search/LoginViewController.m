@@ -57,10 +57,14 @@
         return;
     }
     
+    [self.ActivityIndicatorView startAnimating];
+    
     [[UserDataStore getInstance]loginWithUserID:userID andPassword:password success:^(NSURLSessionDataTask *task) {
+        [self.ActivityIndicatorView stopAnimating];
         [AppDelegate showRootController];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [self.ActivityIndicatorView stopAnimating];
         [messageController setMessage:@"Log in failed. Please try again."];
         [self presentViewController:messageController animated:YES completion:nil];
 

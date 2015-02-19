@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -20,16 +20,18 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4v-dC-T2P">
                                 <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                             </mapView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="prominent" text="Los Angele, CA" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-yV-IZE">
-                                <rect key="frame" x="5" y="72" width="300" height="44"/>
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" searchBarStyle="prominent" text="Los Angele, CA" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-yV-IZE">
+                                <rect key="frame" x="0.0" y="64" width="300" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="b4v-dC-T2P" secondAttribute="height" id="7iD-RO-eQk"/>
+                            <constraint firstItem="F3G-yV-IZE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Bbx-J0-dDJ"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="CLT-bh-OWc"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="FTg-cv-xom"/>
+                            <constraint firstItem="F3G-yV-IZE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="5" id="ab1-ix-mAe"/>
                             <constraint firstAttribute="width" secondItem="b4v-dC-T2P" secondAttribute="width" id="sSz-yy-iOt"/>
                         </constraints>
                     </view>
@@ -661,6 +663,9 @@
                                     <constraint firstAttribute="height" constant="37" id="wfo-Ft-c8U"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jKg-7D-kaa">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -668,8 +673,10 @@
                             <constraint firstItem="oDs-9h-y8S" firstAttribute="top" secondItem="3NG-Yu-21K" secondAttribute="bottom" constant="30" id="86l-bI-8cs"/>
                             <constraint firstItem="oDs-9h-y8S" firstAttribute="width" secondItem="WfG-20-27c" secondAttribute="width" constant="400" id="MbT-jm-e6v"/>
                             <constraint firstAttribute="centerX" secondItem="luz-Jw-h7g" secondAttribute="centerX" id="Ru0-vQ-2ax"/>
+                            <constraint firstAttribute="centerY" secondItem="jKg-7D-kaa" secondAttribute="centerY" id="W65-TP-hk1"/>
                             <constraint firstAttribute="width" secondItem="luz-Jw-h7g" secondAttribute="width" id="Ww7-NO-Xwl"/>
                             <constraint firstAttribute="centerX" secondItem="luz-Jw-h7g" secondAttribute="centerX" constant="-6.5" id="YS0-Fm-6rc"/>
+                            <constraint firstAttribute="centerX" secondItem="jKg-7D-kaa" secondAttribute="centerX" id="cvN-BS-b8d"/>
                             <constraint firstAttribute="centerX" secondItem="ffl-Kl-WGb" secondAttribute="centerX" constant="-0.5" id="e7x-3m-nZa"/>
                             <constraint firstItem="hAu-Ml-3dg" firstAttribute="width" secondItem="WfG-20-27c" secondAttribute="width" constant="400" id="gml-RS-Umi"/>
                             <constraint firstItem="ffl-Kl-WGb" firstAttribute="top" secondItem="hAu-Ml-3dg" secondAttribute="bottom" constant="22" id="isF-vk-oR4"/>
@@ -688,6 +695,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8ep-fx-SP5"/>
                     <connections>
+                        <outlet property="ActivityIndicatorView" destination="jKg-7D-kaa" id="8Eq-zT-jWk"/>
                         <outlet property="account" destination="oDs-9h-y8S" id="qcl-ST-Weg"/>
                         <outlet property="password" destination="hAu-Ml-3dg" id="z0q-A2-BnU"/>
                     </connections>
@@ -757,13 +765,18 @@
                                     <action selector="register:" destination="ZmD-kE-ho1" eventType="touchUpInside" id="WXS-sW-O6d"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lhZ-86-TzK">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="lhZ-86-TzK" secondAttribute="centerX" id="1lQ-u5-na7"/>
                             <constraint firstAttribute="centerX" secondItem="Ury-hR-h5m" secondAttribute="centerX" id="Bw0-5Z-CSi"/>
                             <constraint firstItem="5Eo-lK-OzH" firstAttribute="top" secondItem="3NX-Zk-23j" secondAttribute="bottom" constant="30" id="FoV-cK-zGa"/>
                             <constraint firstAttribute="centerX" secondItem="mzv-67-Zad" secondAttribute="centerX" id="Gky-zD-c5i"/>
                             <constraint firstAttribute="centerX" secondItem="5Eo-lK-OzH" secondAttribute="centerX" id="Hmo-Tj-XLI"/>
+                            <constraint firstAttribute="centerY" secondItem="lhZ-86-TzK" secondAttribute="centerY" id="Jg0-EA-eQz"/>
                             <constraint firstItem="dNR-cp-ezM" firstAttribute="top" secondItem="5Eo-lK-OzH" secondAttribute="bottom" constant="30" id="KeR-na-ML2"/>
                             <constraint firstItem="Ury-hR-h5m" firstAttribute="top" secondItem="3NX-Zk-23j" secondAttribute="bottom" constant="198" id="N6e-9z-wt7"/>
                             <constraint firstItem="mzv-67-Zad" firstAttribute="top" secondItem="Ury-hR-h5m" secondAttribute="bottom" constant="20" id="Zkb-yB-pS1"/>
@@ -785,6 +798,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="ActivityIndicatorView" destination="lhZ-86-TzK" id="M6L-05-8NS"/>
                         <outlet property="firstName" destination="mzv-67-Zad" id="KFb-r4-2kR"/>
                         <outlet property="lastName" destination="ZGd-7F-Trj" id="GtJ-dk-O1Q"/>
                         <outlet property="password" destination="dNR-cp-ezM" id="Tci-AV-dte"/>
