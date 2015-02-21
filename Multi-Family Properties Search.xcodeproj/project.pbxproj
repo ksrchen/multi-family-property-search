@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		364D82E11A83D17400DDCCC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E01A83D17400DDCCC5 /* main.m */; };
 		364D82E41A83D17400DDCCC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E31A83D17400DDCCC5 /* AppDelegate.m */; };
-		364D82E71A83D17400DDCCC5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E61A83D17400DDCCC5 /* FirstViewController.m */; };
-		364D82EA1A83D17400DDCCC5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E91A83D17400DDCCC5 /* SecondViewController.m */; };
 		364D82ED1A83D17400DDCCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364D82EB1A83D17400DDCCC5 /* Main.storyboard */; };
 		364D82EF1A83D17400DDCCC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364D82EE1A83D17400DDCCC5 /* Images.xcassets */; };
 		364D82F21A83D17400DDCCC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364D82F01A83D17400DDCCC5 /* LaunchScreen.xib */; };
@@ -31,6 +29,7 @@
 		364D83261A841F5300DDCCC5 /* small-red-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 364D83251A841F5300DDCCC5 /* small-red-pin.png */; };
 		364D832B1A8428EE00DDCCC5 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D832A1A8428EE00DDCCC5 /* Property.m */; };
 		364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */; };
+		365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */; };
 		36573E361A9244C00023680D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E351A9244C00023680D /* LoginViewController.m */; };
 		36573E391A9244DB0023680D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E381A9244DB0023680D /* RegisterViewController.m */; };
 		365CDBB91A92A66100C41FB5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 365CDBB81A92A66100C41FB5 /* User.m */; };
@@ -60,10 +59,6 @@
 		364D82E01A83D17400DDCCC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		364D82E21A83D17400DDCCC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		364D82E31A83D17400DDCCC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		364D82E51A83D17400DDCCC5 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		364D82E61A83D17400DDCCC5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		364D82E81A83D17400DDCCC5 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		364D82E91A83D17400DDCCC5 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		364D82EC1A83D17400DDCCC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		364D82EE1A83D17400DDCCC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		364D82F11A83D17400DDCCC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -92,6 +87,8 @@
 		364D832A1A8428EE00DDCCC5 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
 		364D832F1A843F0E00DDCCC5 /* PropertyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetailViewController.h; sourceTree = "<group>"; };
 		364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
+		365333EC1A98E1CD00511302 /* NSUserDefaultsCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultsCategory.h; sourceTree = "<group>"; };
+		365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsCategory.m; sourceTree = "<group>"; };
 		36573E341A9244C00023680D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		36573E351A9244C00023680D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		36573E371A9244DB0023680D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -156,10 +153,6 @@
 			children = (
 				364D82E21A83D17400DDCCC5 /* AppDelegate.h */,
 				364D82E31A83D17400DDCCC5 /* AppDelegate.m */,
-				364D82E51A83D17400DDCCC5 /* FirstViewController.h */,
-				364D82E61A83D17400DDCCC5 /* FirstViewController.m */,
-				364D82E81A83D17400DDCCC5 /* SecondViewController.h */,
-				364D82E91A83D17400DDCCC5 /* SecondViewController.m */,
 				364D82EB1A83D17400DDCCC5 /* Main.storyboard */,
 				364D82EE1A83D17400DDCCC5 /* Images.xcassets */,
 				364D82F01A83D17400DDCCC5 /* LaunchScreen.xib */,
@@ -186,6 +179,8 @@
 				365CDBB81A92A66100C41FB5 /* User.m */,
 				365CDBBA1A92A72600C41FB5 /* UserDataStore.h */,
 				365CDBBB1A92A72600C41FB5 /* UserDataStore.m */,
+				365333EC1A98E1CD00511302 /* NSUserDefaultsCategory.h */,
+				365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */,
 			);
 			path = "Multi-Family Properties Search";
 			sourceTree = "<group>";
@@ -400,15 +395,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				364D82EA1A83D17400DDCCC5 /* SecondViewController.m in Sources */,
 				365CDBBC1A92A72600C41FB5 /* UserDataStore.m in Sources */,
 				367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */,
 				364D82E41A83D17400DDCCC5 /* AppDelegate.m in Sources */,
 				364D830B1A83E89300DDCCC5 /* SearchViewController.m in Sources */,
 				364D830E1A83F6DD00DDCCC5 /* HottestTableViewController.m in Sources */,
-				364D82E71A83D17400DDCCC5 /* FirstViewController.m in Sources */,
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
 				364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */,
+				365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */,
 				365CDBB91A92A66100C41FB5 /* User.m in Sources */,
 				36573E361A9244C00023680D /* LoginViewController.m in Sources */,
 				36573E391A9244DB0023680D /* RegisterViewController.m in Sources */,

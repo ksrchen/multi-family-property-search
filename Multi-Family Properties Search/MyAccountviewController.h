@@ -10,5 +10,8 @@
 
 @interface MyAccountviewController : UITableViewController
 - (IBAction)signOut:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *UserID;
+@property (weak, nonatomic) IBOutlet UITextField *FirstName;
+@property (weak, nonatomic) IBOutlet UITextField *Lastname;
 
 @end

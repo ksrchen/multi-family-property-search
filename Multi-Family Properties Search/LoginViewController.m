@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "UserDataStore.h"
+#import "NSUserDefaultsCategory.h"
 
 @implementation LoginViewController
 
@@ -29,8 +30,9 @@
 -(void)viewDidAppear:(BOOL)animated{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     
-    [[self account] setText:[defaults stringForKey:USERID]];
-    [[self password] setText:[defaults stringForKey:PASSWORD]];
+    User * user =(User*)[defaults loadCustomObjectWithKey:USER];
+    [[self account] setText:user.UserID];
+    [[self password] setText:user.Password];
     
 }
 

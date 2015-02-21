@@ -9,6 +9,8 @@
 #import "MyAccountviewController.h"
 #import "UserDataStore.h"
 #import "AppDelegate.h"
+#import "NSUserDefaultsCategory.h"
+#import "User.h"
 
 @interface MyAccountviewController ()
 
@@ -24,6 +26,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
+    User * user = (User*)[defaults loadCustomObjectWithKey:USER];
+    if (user){
+        [self.UserID setText:user.UserID];
+        [self.FirstName setText:user.FirstName];
+        [self.Lastname setText:user.LastName];
+    }
     [self setTitle:@"My Account"];
 }
 
@@ -33,7 +43,7 @@
 }
 
 #pragma mark - Table view data source
-
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
@@ -45,7 +55,7 @@
     // Return the number of rows in the section.
     return 3;
 }
-
+*/
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];

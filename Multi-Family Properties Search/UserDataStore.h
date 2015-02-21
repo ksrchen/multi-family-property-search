@@ -10,8 +10,7 @@
 #import <AFNetworking.h>
 #import "User.h"
 
-extern NSString * const USERID;
-extern NSString * const PASSWORD;
+extern NSString * const USER;
 
 @interface UserDataStore :  AFHTTPSessionManager
 

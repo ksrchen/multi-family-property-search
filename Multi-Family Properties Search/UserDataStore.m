@@ -7,12 +7,11 @@
 //
 
 #import "UserDataStore.h"
+#import "NSUserDefaultsCategory.h"
 
 extern NSString* const baseURLString;
 
-NSString * const USERID =@"UserID";
-NSString * const PASSWORD =@"Password";
-
+NSString * const USER=@"User";
 
 @implementation UserDataStore
 
@@ -49,9 +48,18 @@ NSString * const PASSWORD =@"Password";
     
     [self GET:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         if (success) {
+            
+            NSDictionary * data = (NSDictionary*) responseObject;
+            User * user = [[User alloc] init];
+            
+            user.FirstName = [data objectForKey:@"FirstName"];
+            user.LastName = [data objectForKey:@"LastName"];
+            user.UserID = [data objectForKey:@"UserID"];
+            user.Password = [data objectForKey:@"Password"];
+            
             NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:userID forKey:USERID];
-            [defaults setObject:password forKey:PASSWORD];
+            [defaults saveCustomObject:user key:USER];
+           
             success(task);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -79,9 +87,7 @@ NSString * const PASSWORD =@"Password";
     [self POST:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         if (success) {
             NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:user.UserID forKey:USERID];
-            [defaults setObject:user.Password forKey:PASSWORD];
-            
+            [defaults saveCustomObject:user key:USER];
             success(task);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -94,13 +100,13 @@ NSString * const PASSWORD =@"Password";
 - (BOOL) isAuthenticated
 {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    NSString * userID = [defaults stringForKey:USERID];
-    return [userID length] > 0;
+    User * user = (User*) [defaults loadCustomObjectWithKey:USER];
+    return (user != nil);
 }
 - (void) logOut
 {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    [defaults removeObjectForKey:USERID];
+    [defaults removeObjectForKey:USER];
     
 }
 
