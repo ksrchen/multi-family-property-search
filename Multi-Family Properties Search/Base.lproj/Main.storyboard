@@ -18,10 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4v-dC-T2P">
-                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </mapView>
-                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" searchBarStyle="prominent" text="Los Angele, CA" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-yV-IZE">
-                                <rect key="frame" x="0.0" y="64" width="300" height="44"/>
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" text="Los Angele, CA" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-yV-IZE">
+                                <rect key="frame" x="5" y="64" width="300" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="BmV-4t-fwW"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -32,8 +35,18 @@
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="CLT-bh-OWc"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="FTg-cv-xom"/>
                             <constraint firstItem="F3G-yV-IZE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="5" id="ab1-ix-mAe"/>
+                            <constraint firstItem="b4v-dC-T2P" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="bAQ-kr-Z1u"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="b4v-dC-T2P" secondAttribute="bottom" id="doE-KZ-nBC"/>
+                            <constraint firstItem="b4v-dC-T2P" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="mnG-jl-Tmr"/>
                             <constraint firstAttribute="width" secondItem="b4v-dC-T2P" secondAttribute="width" id="sSz-yy-iOt"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7iD-RO-eQk"/>
+                                <exclude reference="FTg-cv-xom"/>
+                                <exclude reference="sSz-yy-iOt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="51D-H9-HDj">
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="rNO-ka-dvL">
