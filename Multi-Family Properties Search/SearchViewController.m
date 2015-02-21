@@ -184,11 +184,13 @@ NSMutableArray * _properties;
             // If an existing pin view was not available, create one.
             pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
             pinView.canShowCallout = YES;
-            pinView.image = [UIImage imageNamed:@"small-red-pin.png"];
-            pinView.calloutOffset = CGPointMake(0, 32);
+            pinView.image = [UIImage imageNamed:@"map_pin.png"];
+            pinView.calloutOffset = CGPointMake(0, 0);
             
             // Add a detail disclosure button to the callout.
             UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            [rightButton setFrame:CGRectMake(0, 0, CGRectGetWidth(rightButton.frame)+10, CGRectGetHeight(rightButton.frame))];
+            [rightButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin];
             pinView.rightCalloutAccessoryView = rightButton;
             
             // Add an image to the left callout.
@@ -202,7 +204,7 @@ NSMutableArray * _properties;
             
             iconView.contentMode = UIViewContentModeScaleAspectFit;
             
-            pinView.leftCalloutAccessoryView = iconView;
+            //pinView.leftCalloutAccessoryView = iconView;
         } else {
             pinView.annotation = annotation;
         }

@@ -30,6 +30,7 @@
 		364D832B1A8428EE00DDCCC5 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D832A1A8428EE00DDCCC5 /* Property.m */; };
 		364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */; };
 		365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */; };
+		365333F01A98F05D00511302 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 365333EF1A98F05D00511302 /* map_pin.png */; };
 		36573E361A9244C00023680D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E351A9244C00023680D /* LoginViewController.m */; };
 		36573E391A9244DB0023680D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E381A9244DB0023680D /* RegisterViewController.m */; };
 		365CDBB91A92A66100C41FB5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 365CDBB81A92A66100C41FB5 /* User.m */; };
@@ -89,6 +90,7 @@
 		364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
 		365333EC1A98E1CD00511302 /* NSUserDefaultsCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultsCategory.h; sourceTree = "<group>"; };
 		365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsCategory.m; sourceTree = "<group>"; };
+		365333EF1A98F05D00511302 /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
 		36573E341A9244C00023680D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		36573E351A9244C00023680D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		36573E371A9244DB0023680D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				367659891A853D6700D3D929 /* appicon.png */,
+				365333EF1A98F05D00511302 /* map_pin.png */,
 				367659831A8529B600D3D929 /* pic..png */,
 				367659841A8529B600D3D929 /* expense.png */,
 				367659851A8529B600D3D929 /* graph.png */,
@@ -341,6 +344,7 @@
 				364D82F21A83D17400DDCCC5 /* LaunchScreen.xib in Resources */,
 				367659881A8529B600D3D929 /* graph.png in Resources */,
 				364D83191A83F76100DDCCC5 /* im3.jpg in Resources */,
+				365333F01A98F05D00511302 /* map_pin.png in Resources */,
 				364D83181A83F76100DDCCC5 /* im2.jpg in Resources */,
 				364D831C1A83F76100DDCCC5 /* im6.jpg in Resources */,
 				364D82EF1A83D17400DDCCC5 /* Images.xcassets in Resources */,
