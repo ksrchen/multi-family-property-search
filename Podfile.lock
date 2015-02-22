@@ -19,13 +19,19 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - CorePlot (1.5.1)
+  - gtm-http-fetcher (1.0.141)
+  - gtm-oauth2 (1.0.125):
+    - gtm-http-fetcher (~> 1.0.141)
 
 DEPENDENCIES:
   - AFNetworking (= 2.2.1)
   - CorePlot (= 1.5.1)
+  - gtm-oauth2 (~> 1.0.125)
 
 SPEC CHECKSUMS:
   AFNetworking: 8dde8c8a6597ad95dac332a593c27e541bc87371
   CorePlot: b15cb1a9a687b9576545104248d6e22033e678bb
+  gtm-http-fetcher: 6d4617e7d343b6e4c082b777541c334eb6f5d81e
+  gtm-oauth2: 3f97d22a6066a80df0b1f878c1ce41176472daad
 
 COCOAPODS: 0.35.0

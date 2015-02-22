@@ -4,5 +4,6 @@
 target 'Multi-Family Properties Search' do
 pod 'AFNetworking', '2.2.1'
 pod 'CorePlot', '1.5.1'
+pod 'gtm-oauth2', '~> 1.0.125'
 end
 

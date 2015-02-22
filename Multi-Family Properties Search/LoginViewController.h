@@ -14,4 +14,7 @@
 - (IBAction)signIn:(id)sender;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *ActivityIndicatorView;
 
+- (IBAction)signInWithGoogle:(id)sender;
+- (IBAction)signInWithFacebook:(id)sender;
+
 @end

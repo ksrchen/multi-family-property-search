@@ -54,3 +54,15 @@
 #define COCOAPODS_VERSION_MINOR_CorePlot 5
 #define COCOAPODS_VERSION_PATCH_CorePlot 1
 
+// gtm-http-fetcher
+#define COCOAPODS_POD_AVAILABLE_gtm_http_fetcher
+#define COCOAPODS_VERSION_MAJOR_gtm_http_fetcher 1
+#define COCOAPODS_VERSION_MINOR_gtm_http_fetcher 0
+#define COCOAPODS_VERSION_PATCH_gtm_http_fetcher 141
+
+// gtm-oauth2
+#define COCOAPODS_POD_AVAILABLE_gtm_oauth2
+#define COCOAPODS_VERSION_MAJOR_gtm_oauth2 1
+#define COCOAPODS_VERSION_MINOR_gtm_oauth2 0
+#define COCOAPODS_VERSION_PATCH_gtm_oauth2 125
+
