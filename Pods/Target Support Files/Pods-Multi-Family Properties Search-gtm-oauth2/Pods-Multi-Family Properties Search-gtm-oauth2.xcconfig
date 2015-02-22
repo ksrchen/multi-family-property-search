@@ -1,0 +1,1 @@
+PODS_MULTI_FAMILY_PROPERTIES_SEARCH_GTM_OAUTH__OTHER_LDFLAGS = -framework "Security" -framework "SystemConfiguration"
