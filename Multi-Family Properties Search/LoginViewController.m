@@ -15,10 +15,8 @@
 
 @implementation LoginViewController
 
-NSString *kMyClientID = @"147536039573-mc2mlerjtqa17nstdjksk74q73b1upt3.apps.googleusercontent.com";
-NSString *kMyClientSecret = @"cRHoOrvmj5vNOsvFvQY82iFa";
 
-NSString *scope = @"profile";
+NSString * const  FACEBOOK_PROVIDER = @"Facebook";
 
 
 - (void)viewDidLoad {
@@ -83,6 +81,12 @@ NSString *scope = @"profile";
 }
 
 - (IBAction)signInWithGoogle:(id)sender {
+    
+    NSString *kMyClientID = @"147536039573-mc2mlerjtqa17nstdjksk74q73b1upt3.apps.googleusercontent.com";
+    NSString *kMyClientSecret = @"cRHoOrvmj5vNOsvFvQY82iFa";
+    
+    NSString *scope = @"profile";
+    
     GTMOAuth2ViewControllerTouch *viewController;
     viewController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:scope
                                                                 clientID:kMyClientID
@@ -113,8 +117,13 @@ NSString *scope = @"profile";
         }
     } else {
         
-        //NSString * path = [NSString stringWithFormat:@"https://www.googleapis.com/plus/v1/people/me?access_token=%@", [auth accessToken]];
-        NSString * path = @"https://www.googleapis.com/plus/v1/people/me";
+        NSString * path;
+        if ([[auth serviceProvider] compare:FACEBOOK_PROVIDER] == 0) {
+            path = @"https://graph.facebook.com/v2.2/me";
+        }
+        else {
+            path = @"https://www.googleapis.com/plus/v1/people/me";
+        }
         
         NSURL * url = [NSURL URLWithString:path];
         GTMHTTPFetcher * fetcher = [GTMHTTPFetcher fetcherWithURL:url];
@@ -136,18 +145,21 @@ NSString *scope = @"profile";
                     [self presentViewController:errorMessageController animated:YES completion:nil];
                 }
                 else {
-                    NSArray * emails = json[@"emails"];
-                    NSDictionary * firstEmail =  [emails objectAtIndex:0];
-                    
                     User * user = [[User alloc] init];
-                    user.userID = firstEmail[@"value"];
-                    
-                    user.password = @"";
-                    
-                    NSDictionary * name = json[@"name"];
-                    
-                    user.FirstName = name[@"givenName"];
-                    user.LastName =  name[@"familyName"];
+                    if ([[auth serviceProvider] compare:FACEBOOK_PROVIDER] == 0) {
+                        user.UserID = json[@"email"];
+                        user.Password =@"";
+                        user.FirstName = json[@"first_name"];
+                        user.LastName = json[@"last_name"];
+                    }else {
+                        NSArray * emails = json[@"emails"];
+                        NSDictionary * firstEmail =  [emails objectAtIndex:0];
+                        user.userID = firstEmail[@"value"];
+                        user.password = @"";
+                        NSDictionary * name = json[@"name"];
+                        user.FirstName = name[@"givenName"];
+                        user.LastName =  name[@"familyName"];
+                    }
                     [self.ActivityIndicatorView startAnimating];
                     [[UserDataStore getInstance] registerUser:user
                                                       success:^(NSURLSessionDataTask *task) {
@@ -172,10 +184,50 @@ NSString *scope = @"profile";
 }
 
 - (IBAction)signInWithFacebook:(id)sender {
-    UIAlertController * messageController = [UIAlertController alertControllerWithTitle:@"Info" message:@"Sign in with Facebook is TBD." preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction * action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [messageController addAction:action];
+//    UIAlertController * messageController = [UIAlertController alertControllerWithTitle:@"Info" message:@"Sign in with Facebook is TBD." preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction * action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+//    [messageController addAction:action];
+//
+//    [self presentViewController:messageController animated:YES completion:nil];
+    
+    
+    GTMOAuth2Authentication *auth = [self authForFacebook];
+    
+    // Specify the appropriate scope string, if any, according to the service's API documentation
+    auth.scope = @"email";
+    
+    NSURL *authURL = [NSURL URLWithString:@"https://www.facebook.com/dialog/oauth"];
+    
+    // Display the authentication view
+    GTMOAuth2ViewControllerTouch *viewController;
+    viewController = [[GTMOAuth2ViewControllerTouch alloc] initWithAuthentication:auth
+                                                                  authorizationURL:authURL
+                                                                  keychainItemName:nil
+                                                                          delegate:self
+                                                                  finishedSelector:@selector(viewController:finishedWithAuth:error:)];
+    
+    // Now push our sign-in view
+    [[self navigationController] pushViewController:viewController animated:YES];
+}
 
-    [self presentViewController:messageController animated:YES completion:nil];
+- (GTMOAuth2Authentication *)authForFacebook {
+    
+    NSString *kClientID = @"788979951157117";     // pre-assigned by service
+    NSString *kClientSecret = @"f931226287fd004311ae3658e0b71af3"; // pre-assigned by ser
+    
+    NSURL *tokenURL = [NSURL URLWithString:@"https://graph.facebook.com/oauth/access_token"];
+    
+    // We'll make up an arbitrary redirectURI.  The controller will watch for
+    // the server to redirect the web view to this URI, but this URI will not be
+    // loaded, so it need not be for any actual web page.
+    NSString *redirectURI = @"http://www.google.com/OAuthCallback";
+    
+    GTMOAuth2Authentication *auth;
+    auth = [GTMOAuth2Authentication authenticationWithServiceProvider:FACEBOOK_PROVIDER
+                                                             tokenURL:tokenURL
+                                                          redirectURI:redirectURI
+                                                             clientID:kClientID
+                                                         clientSecret:kClientSecret];
+    return auth;
 }
 @end
