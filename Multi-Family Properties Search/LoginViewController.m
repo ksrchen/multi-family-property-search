@@ -164,14 +164,23 @@ NSString * const  FACEBOOK_PROVIDER = @"Facebook";
                     [[UserDataStore getInstance] registerUser:user
                                                       success:^(NSURLSessionDataTask *task) {
                                                           [self.ActivityIndicatorView stopAnimating];
+                                                          NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+                                                          [defaults saveCustomObject:user key:USER];
                                                           [AppDelegate showRootController];
+                                                          
                                                           
                                                       }
                                                       failure:^(NSURLSessionDataTask *task, NSError *error) {
                                                           [self.ActivityIndicatorView stopAnimating];
-                                                          [errorMessageController setMessage:[error localizedDescription]];
-                                                          [self presentViewController:errorMessageController animated:YES completion:nil];
-                                                          
+                                                          NSHTTPURLResponse * response =  (NSHTTPURLResponse*)[task response];
+                                                          if ([response statusCode] != 400){
+                                                              [errorMessageController setMessage:[error localizedDescription]];
+                                                              [self presentViewController:errorMessageController animated:YES completion:nil];
+                                                          }else {
+                                                              NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+                                                              [defaults saveCustomObject:user key:USER];
+                                                              [AppDelegate showRootController];
+                                                          }
                                                       }
                      ];
                 }
