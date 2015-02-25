@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -383,203 +383,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uYY-7j-dfj">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYY-7j-dfj">
                                 <rect key="frame" x="0.0" y="64" width="600" height="736"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ork-Z3-Ykw">
-                                        <rect key="frame" x="0.0" y="0.0" width="413" height="800"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ork-Z3-Ykw">
+                                        <rect key="frame" x="0.0" y="0.0" width="413" height="1200"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prop Management" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-UR-Rc6">
-                                                <rect key="frame" x="25" y="298" width="120" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prop Taxes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ju4-yu-m4i">
-                                                <rect key="frame" x="25" y="242" width="69" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEW-d7-Kpf">
-                                                <rect key="frame" x="158" y="261" width="34" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$3,500" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uz-lm-mYg">
-                                                <rect key="frame" x="158" y="223" width="62" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mortage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKq-Tc-6E1">
-                                                <rect key="frame" x="25" y="223" width="52" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Income" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPM-CD-Rvw">
-                                                <rect key="frame" x="23" y="467" width="57" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="BIk-GL-9ic">
-                                                <rect key="frame" x="23" y="592" width="233" height="120"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Property Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgJ-DK-XHA">
-                                                <rect key="frame" x="11" y="0.0" width="158" height="21"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$2,000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfH-2J-AFt">
-                                                <rect key="frame" x="172" y="507" width="53" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Annual Cash Flow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYM-2r-aWi">
-                                                <rect key="frame" x="39" y="563" width="120" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW4-B2-3aI">
-                                                <rect key="frame" x="172" y="467" width="34" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzF-R1-fTO">
-                                                <rect key="frame" x="204" y="8" width="98" height="30"/>
-                                                <state key="normal" title="Place an Offer">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$342,050" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmh-4R-rlA">
-                                                <rect key="frame" x="172" y="563" width="72" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7S-iq-nHH">
-                                                <rect key="frame" x="158" y="202" width="34" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUK-1p-UKU">
-                                                <rect key="frame" x="172" y="526" width="20" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Storage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ug5-oE-Agy">
-                                                <rect key="frame" x="39" y="526" width="61" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Great duplex by the ocen.  Near metro, long term tenants." lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMQ-0I-AIg">
-                                                <rect key="frame" x="11" y="128" width="345" height="66"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expense" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX6-0o-Vem">
-                                                <rect key="frame" x="9" y="202" width="66" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sik-lR-Aq7">
-                                                <rect key="frame" x="158" y="298" width="72" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3z-tP-L6G">
-                                                <rect key="frame" x="39" y="488" width="36" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laundry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apc-xS-ZCd">
-                                                <rect key="frame" x="39" y="507" width="63" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Insurance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVF-tS-m0K">
-                                                <rect key="frame" x="25" y="261" width="61" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$300" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qx-dE-hih">
-                                                <rect key="frame" x="158" y="280" width="34" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="expense.png" translatesAutoresizingMaskIntoConstraints="NO" id="ReK-Kw-gea">
-                                                <rect key="frame" x="29" y="327" width="205" height="110"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODP-ja-pEI">
-                                                <rect key="frame" x="158" y="242" width="53" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$34,000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvq-sU-wF5">
-                                                <rect key="frame" x="172" y="488" width="62" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utilities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kck-h5-61p">
-                                                <rect key="frame" x="25" y="280" width="59" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Parking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7D-hM-7jW">
-                                                <rect key="frame" x="39" y="545" width="59" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8r-c9-uvj">
-                                                <rect key="frame" x="172" y="545" width="29" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7x-vg-kXg">
-                                                <rect key="frame" x="204" y="52" width="139" height="30"/>
-                                                <state key="normal" title="Save to My  Listings">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pic..png" translatesAutoresizingMaskIntoConstraints="NO" id="SHy-cF-MMm">
-                                                <rect key="frame" x="0.0" y="21" width="196" height="100"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p98-qs-vKw">
-                                                <rect key="frame" x="204" y="84" width="152" height="42"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYN-AP-fMH">
-                                                <rect key="frame" x="204" y="28" width="83" height="30"/>
-                                                <state key="normal" title="Shareholder">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-ge-6PV" userLabel="pie grap view">
+                                                <rect key="frame" x="8" y="364" width="321" height="263"/>
+                                                <color key="backgroundColor" red="0.50780175266833738" green="0.9901902592105758" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="HkE-Ku-oRt"/>
+                                                    <constraint firstAttribute="height" constant="263" id="g2i-p7-5gx"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tby-vB-5jj" userLabel="line graph view">
+                                                <rect key="frame" x="18" y="374" width="321" height="263"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="7Cm-fD-DBU"/>
+                                                    <constraint firstAttribute="height" constant="263" id="Ua9-XD-7Rc"/>
+                                                </constraints>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgO-3J-A1f" userLabel="profile view">
+                                                <rect key="frame" x="0.0" y="135" width="384" height="215"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Property Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgJ-DK-XHA">
+                                                        <rect key="frame" x="8" y="8" width="158" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="3rC-AB-FPv"/>
+                                                            <constraint firstAttribute="height" constant="20" id="NAi-Nw-DeZ"/>
+                                                            <constraint firstAttribute="width" constant="158" id="bgD-NV-FL3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="pic..png" translatesAutoresizingMaskIntoConstraints="NO" id="SHy-cF-MMm">
+                                                        <rect key="frame" x="0.0" y="37" width="196" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="gd8-9I-ZUO"/>
+                                                            <constraint firstAttribute="width" constant="196" id="xR1-Z3-ANi"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="address" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p98-qs-vKw">
+                                                        <rect key="frame" x="204" y="37" width="129" height="56"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="zIf-As-UH5"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Great duplex by the ocen.  Near metro, long term tenants." lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lMQ-0I-AIg">
+                                                        <rect key="frame" x="8" y="145" width="345" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="B8f-6t-I4b"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="TgJ-DK-XHA" firstAttribute="top" secondItem="tgO-3J-A1f" secondAttribute="top" constant="8" id="0oh-Pm-yhz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lMQ-0I-AIg" secondAttribute="trailing" constant="8" id="7uf-YO-nej"/>
+                                                    <constraint firstItem="lMQ-0I-AIg" firstAttribute="leading" secondItem="tgO-3J-A1f" secondAttribute="leading" constant="8" id="9J2-78-40c"/>
+                                                    <constraint firstItem="SHy-cF-MMm" firstAttribute="top" secondItem="TgJ-DK-XHA" secondAttribute="bottom" constant="8" id="CZd-2f-8Ry"/>
+                                                    <constraint firstItem="lMQ-0I-AIg" firstAttribute="top" secondItem="tgO-3J-A1f" secondAttribute="top" constant="131" id="E4F-Y8-VKc"/>
+                                                    <constraint firstItem="lMQ-0I-AIg" firstAttribute="top" secondItem="SHy-cF-MMm" secondAttribute="bottom" constant="8" id="GRE-rH-FS2"/>
+                                                    <constraint firstItem="p98-qs-vKw" firstAttribute="top" secondItem="tgO-3J-A1f" secondAttribute="top" constant="37" id="Gcd-6I-m0b"/>
+                                                    <constraint firstAttribute="height" constant="220" id="Gew-EY-699"/>
+                                                    <constraint firstItem="lMQ-0I-AIg" firstAttribute="trailing" secondItem="tgO-3J-A1f" secondAttribute="trailingMargin" constant="8" id="HF8-dt-76f"/>
+                                                    <constraint firstItem="lMQ-0I-AIg" firstAttribute="top" secondItem="tgO-3J-A1f" secondAttribute="top" constant="131" id="STB-1D-kd0"/>
+                                                    <constraint firstItem="SHy-cF-MMm" firstAttribute="leading" secondItem="tgO-3J-A1f" secondAttribute="leading" id="ZI6-TY-TGk"/>
+                                                    <constraint firstItem="p98-qs-vKw" firstAttribute="leading" secondItem="SHy-cF-MMm" secondAttribute="trailing" constant="8" id="a1M-yG-Mrb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="p98-qs-vKw" secondAttribute="trailing" constant="8" id="cWE-gq-Ynr"/>
+                                                    <constraint firstItem="lMQ-0I-AIg" firstAttribute="leading" secondItem="tgO-3J-A1f" secondAttribute="leading" constant="8" id="ccC-Pa-GJ9"/>
+                                                    <constraint firstItem="TgJ-DK-XHA" firstAttribute="leading" secondItem="tgO-3J-A1f" secondAttribute="leading" constant="8" id="jLO-Ug-UBL"/>
+                                                    <constraint firstItem="SHy-cF-MMm" firstAttribute="top" secondItem="TgJ-DK-XHA" secondAttribute="bottom" constant="8" symbolic="YES" id="py7-cK-OBE"/>
+                                                    <constraint firstItem="p98-qs-vKw" firstAttribute="trailing" secondItem="tgO-3J-A1f" secondAttribute="trailingMargin" constant="8" id="uDI-f5-swg"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="7uf-YO-nej"/>
+                                                        <exclude reference="E4F-Y8-VKc"/>
+                                                        <exclude reference="STB-1D-kd0"/>
+                                                        <exclude reference="ccC-Pa-GJ9"/>
+                                                        <exclude reference="cWE-gq-Ynr"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="820" id="Une-Z0-Prc"/>
+                                            <constraint firstItem="tgO-3J-A1f" firstAttribute="trailing" secondItem="ork-Z3-Ykw" secondAttribute="trailing" id="Vzk-0g-Vgo"/>
+                                            <constraint firstItem="tby-vB-5jj" firstAttribute="top" secondItem="yvJ-ge-6PV" secondAttribute="bottom" constant="8" id="Wmf-tZ-8iu"/>
+                                            <constraint firstItem="yvJ-ge-6PV" firstAttribute="leading" secondItem="ork-Z3-Ykw" secondAttribute="leading" constant="8" id="bnP-bt-wBg"/>
+                                            <constraint firstItem="tgO-3J-A1f" firstAttribute="leading" secondItem="ork-Z3-Ykw" secondAttribute="leading" id="kEu-cm-SXn"/>
+                                            <constraint firstItem="tby-vB-5jj" firstAttribute="leading" secondItem="ork-Z3-Ykw" secondAttribute="leading" constant="8" id="n8k-WQ-c81"/>
+                                            <constraint firstItem="yvJ-ge-6PV" firstAttribute="top" secondItem="tgO-3J-A1f" secondAttribute="bottom" constant="8" id="rrc-jh-Bho"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -594,9 +500,9 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uYY-7j-dfj" secondAttribute="trailing" id="552-jw-vRe"/>
                             <constraint firstItem="ork-Z3-Ykw" firstAttribute="width" secondItem="voe-jQ-8dl" secondAttribute="width" id="7Hs-9S-UzU"/>
-                            <constraint firstItem="uYY-7j-dfj" firstAttribute="top" secondItem="NxQ-6n-5Oc" secondAttribute="bottom" id="99M-hP-twy"/>
+                            <constraint firstItem="uYY-7j-dfj" firstAttribute="top" secondItem="NxQ-6n-5Oc" secondAttribute="top" id="99M-hP-twy"/>
                             <constraint firstItem="uYY-7j-dfj" firstAttribute="leading" secondItem="voe-jQ-8dl" secondAttribute="leading" id="P2p-03-9yM"/>
-                            <constraint firstItem="dXK-JJ-oOB" firstAttribute="top" secondItem="uYY-7j-dfj" secondAttribute="bottom" id="kIO-9J-4im"/>
+                            <constraint firstItem="uYY-7j-dfj" firstAttribute="bottom" secondItem="dXK-JJ-oOB" secondAttribute="top" id="kIO-9J-4im"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IPb-yb-fsG">
@@ -771,11 +677,11 @@
                                 <exclude reference="YS0-Fm-6rc"/>
                                 <exclude reference="tS4-ef-xTm"/>
                                 <exclude reference="3gP-nP-bQx"/>
+                                <exclude reference="1aT-Nf-o2w"/>
                                 <exclude reference="5Jz-GZ-2N0"/>
                                 <exclude reference="5Ol-gZ-X2i"/>
                                 <exclude reference="IZy-zM-dSN"/>
                                 <exclude reference="eqK-8D-iQ3"/>
-                                <exclude reference="1aT-Nf-o2w"/>
                             </mask>
                         </variation>
                     </view>
@@ -953,11 +859,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="expense.png" width="281" height="206"/>
         <image name="facebook_signin.png" width="162" height="29"/>
         <image name="first" width="30" height="30"/>
         <image name="google_signin.png" width="164" height="30"/>
-        <image name="graph.png" width="310" height="228"/>
         <image name="pic..png" width="314" height="176"/>
     </resources>
 </document>
