@@ -44,6 +44,7 @@
 		3676598A1A853D6700D3D929 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659891A853D6700D3D929 /* appicon.png */; };
 		367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */; };
 		99E683A8BAA1A84882DFD6F6 /* libPods-Multi-Family Properties Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */; };
+		9D9CC76C1A9FA221000D127E /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CC76B1A9FA221000D127E /* Expense.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		367659891A853D6700D3D929 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		367E26F01A8FA8D8005B2879 /* PropertyDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDataStore.h; sourceTree = "<group>"; };
 		367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDataStore.m; sourceTree = "<group>"; };
+		9D9CC76A1A9FA221000D127E /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
+		9D9CC76B1A9FA221000D127E /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
 		A5F1691BA81DA620C97A616B /* Pods-Multi-Family Properties Search.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multi-Family Properties Search.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search.release.xcconfig"; sourceTree = "<group>"; };
 		A8960ED62ADEBB5396452F9C /* Pods-Multi-Family Properties Search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multi-Family Properties Search.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +192,8 @@
 				365CDBBB1A92A72600C41FB5 /* UserDataStore.m */,
 				365333EC1A98E1CD00511302 /* NSUserDefaultsCategory.h */,
 				365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */,
+				9D9CC76A1A9FA221000D127E /* Expense.h */,
+				9D9CC76B1A9FA221000D127E /* Expense.m */,
 			);
 			path = "Multi-Family Properties Search";
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
 				364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */,
 				365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */,
+				9D9CC76C1A9FA221000D127E /* Expense.m in Sources */,
 				365CDBB91A92A66100C41FB5 /* User.m in Sources */,
 				36573E361A9244C00023680D /* LoginViewController.m in Sources */,
 				36573E391A9244DB0023680D /* RegisterViewController.m in Sources */,

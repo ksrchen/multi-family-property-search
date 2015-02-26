@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CorePlot-CocoaTouch.h"
 
-@interface PropertyDetailViewController : UIViewController
+@interface PropertyDetailViewController : UIViewController<CPTPlotDataSource, UIScrollViewDelegate>
 - (IBAction)contactMe:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *propertyDescription;
+@property (weak, nonatomic) IBOutlet CPTGraphHostingView *pieGraphView;
+
+@property (weak, nonatomic) IBOutlet CPTGraphHostingView *lineGraphView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (nonatomic, copy) NSString * MLNumber;

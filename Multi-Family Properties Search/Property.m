@@ -18,6 +18,11 @@
          andLocation:(CLLocationCoordinate2D) location
          andMLNumber:(NSString *) mlNumber;
 {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
     title  = address;
     coordinate = location;
     self.MLNumber = mlNumber;

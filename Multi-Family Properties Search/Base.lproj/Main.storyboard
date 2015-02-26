@@ -389,7 +389,7 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ork-Z3-Ykw">
                                         <rect key="frame" x="0.0" y="0.0" width="413" height="1200"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-ge-6PV" userLabel="pie grap view">
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-ge-6PV" userLabel="pie grap view" customClass="CPTGraphHostingView">
                                                 <rect key="frame" x="8" y="364" width="321" height="263"/>
                                                 <color key="backgroundColor" red="0.50780175266833738" green="0.9901902592105758" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -397,7 +397,7 @@
                                                     <constraint firstAttribute="height" constant="263" id="g2i-p7-5gx"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tby-vB-5jj" userLabel="line graph view">
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tby-vB-5jj" userLabel="line graph view" customClass="CPTGraphHostingView">
                                                 <rect key="frame" x="18" y="374" width="321" height="263"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -516,7 +516,11 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="address" destination="p98-qs-vKw" id="29W-AO-Uhz"/>
+                        <outlet property="contentView" destination="ork-Z3-Ykw" id="bEC-cL-XIU"/>
+                        <outlet property="lineGraphView" destination="tby-vB-5jj" id="UdV-oo-S6u"/>
+                        <outlet property="pieGraphView" destination="yvJ-ge-6PV" id="fNE-np-f8g"/>
                         <outlet property="propertyDescription" destination="lMQ-0I-AIg" id="aQb-sN-lpg"/>
+                        <outlet property="scrollView" destination="uYY-7j-dfj" id="z1K-dW-st8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11P-N2-J8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
