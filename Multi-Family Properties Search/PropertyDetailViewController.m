@@ -14,6 +14,8 @@
 @implementation PropertyDetailViewController
 
 NSArray * _expenses;
+NSArray * _expenseData;
+NSArray * _incomeData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +27,23 @@ NSArray * _expenses;
                  [[Expense alloc] initWithExpenseType:@"Pro Mgmt" andAmount:[NSNumber numberWithDouble:150]],
                  [[Expense alloc] initWithExpenseType:@"Utilities" andAmount:[NSNumber numberWithDouble:75]],
                  nil];
+    
+    _expenseData = [[NSArray alloc] initWithObjects:
+                    [NSValue valueWithCGPoint:CGPointMake(0, 0)],
+                    [NSValue valueWithCGPoint:CGPointMake(2,  3)],
+                    [NSValue valueWithCGPoint:CGPointMake(5, 4)],
+                    [NSValue valueWithCGPoint:CGPointMake(10, 6)],
+                    [NSValue valueWithCGPoint:CGPointMake(30, 8)],
+                    nil];
+    
+    _incomeData = [[NSArray alloc] initWithObjects:
+                    [NSValue valueWithCGPoint:CGPointMake(0, 0)],
+                    [NSValue valueWithCGPoint:CGPointMake(2,  5)],
+                    [NSValue valueWithCGPoint:CGPointMake(5, 8)],
+                    [NSValue valueWithCGPoint:CGPointMake(10, 10)],
+                    [NSValue valueWithCGPoint:CGPointMake(30, 15)],
+                    nil];
+
     
     self.scrollView.minimumZoomScale = 1.0;
     self.scrollView.maximumZoomScale = 6.0;
@@ -43,7 +62,9 @@ NSArray * _expenses;
                                  attributes[@"PostalCode"]
                                  ];
             
-            [self createPieChart];
+            [self createExpenseChart];
+            [self createIncomeVsExpenseChart];
+            
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }
@@ -51,10 +72,10 @@ NSArray * _expenses;
     }
 }
 
--(void) createPieChart{
+-(void) createExpenseChart{
     
     
-    self.pieGraphView.allowPinchScaling = YES;
+    //self.pieGraphView.allowPinchScaling = YES;
     
     
         // Create a CPTGraph object and add to hostView
@@ -91,6 +112,120 @@ NSArray * _expenses;
     [graph addPlot:pieChart];
     
 }
+
+-(void) createIncomeVsExpenseChart{
+    
+    
+    self.lineGraphView.allowPinchScaling = YES;
+    
+    
+    // Create a CPTGraph object and add to hostView
+    CPTGraph* graph = [[CPTXYGraph alloc] initWithFrame:self.lineGraphView.bounds];
+ //    [graph applyTheme:[CPTTheme themeNamed:kCPTPlainWhiteTheme]];
+    self.lineGraphView.hostedGraph = graph;
+   
+    // 2 - Set up text style
+    CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
+    textStyle.color = [CPTColor grayColor];
+    textStyle.fontName = @"Helvetica-Bold";
+    textStyle.fontSize = 16.0f;
+    // 3 - Configure title
+    NSString *title = @"Income VS Expense";
+    graph.title = title;
+    graph.titleTextStyle = textStyle;
+    graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
+    graph.titleDisplacement = CGPointMake(0.0f, 27.0f);
+    
+    [graph.plotAreaFrame setPaddingLeft:30.0f];
+    [graph.plotAreaFrame setPaddingBottom:20.0f];
+    // 5 - Enable user interactions for plot space
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
+    plotSpace.allowsUserInteraction = YES;
+    //[plotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(5.0f)]];
+    //[plotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(10.0f)]];
+    NSNumberFormatter *axisFormatter = [[NSNumberFormatter alloc] init];
+    [axisFormatter setMinimumIntegerDigits:1];
+    [axisFormatter setMaximumFractionDigits:0];
+    
+    CPTMutableTextStyle *textStyleAxis = [CPTMutableTextStyle textStyle];
+    [textStyle setFontSize:12.0f];
+    
+    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)[graph axisSet];
+    
+    CPTXYAxis *xAxis = [axisSet xAxis];
+   // [xAxis setMajorTickLength: 8.0f];
+   // [xAxis setMinorTickLineStyle:nil];
+    [xAxis setLabelingPolicy:CPTAxisLabelingPolicyAutomatic];
+    [xAxis setLabelTextStyle:textStyleAxis];
+    [xAxis setLabelFormatter:axisFormatter];
+    [xAxis setTickDirection:CPTSignNegative];
+    //[xAxis setAxisConstraints:[CPTConstraints constraintWithLowerOffset:5.0f]];
+//    CGFloat dateCount = [_expenseData count];
+//    NSMutableSet *xLabels = [NSMutableSet setWithCapacity:dateCount];
+//    NSMutableSet *xLocations = [NSMutableSet setWithCapacity:dateCount];
+//    NSInteger i = 0;
+//    for (NSValue * val in _expenseData) {
+//        CGPoint point = [val CGPointValue];
+//        
+//        CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:[NSString stringWithFormat:@"%.f", point.x]  textStyle:xAxis.labelTextStyle];
+//        CGFloat location = i++;
+//        label.tickLocation = CPTDecimalFromCGFloat(location);
+//        label.offset = xAxis.majorTickLength;
+//        if (label) {
+//            [xLabels addObject:label];
+//            [xLocations addObject:[NSNumber numberWithFloat:location]];
+//        }
+//    }
+//    xAxis.axisLabels = xLabels;
+//    xAxis.majorTickLocations = xLocations;
+//    
+    CPTXYAxis *yAxis = [axisSet yAxis];
+   // [yAxis setMajorTickLength: 8.0f];;
+   // [yAxis setMinorTickLineStyle:nil];
+    [yAxis setLabelingPolicy:CPTAxisLabelingPolicyAutomatic];
+    [yAxis setLabelTextStyle:textStyleAxis];
+    [yAxis setLabelFormatter:axisFormatter];
+    [yAxis setTickDirection:CPTSignNegative];
+    
+    CPTMutableLineStyle *axisLineStyle = [CPTMutableLineStyle lineStyle];
+    [axisLineStyle setLineWidth:1];
+    [axisLineStyle setLineColor:[CPTColor colorWithCGColor:[[UIColor grayColor] CGColor]]];
+    
+    [xAxis setAxisLineStyle:axisLineStyle];
+    [xAxis setMajorTickLineStyle:axisLineStyle];
+    [yAxis setAxisLineStyle:axisLineStyle];
+    [yAxis setMajorTickLineStyle:axisLineStyle];
+    
+    
+    CPTScatterPlot *expensePlot = [[CPTScatterPlot alloc] initWithFrame:[graph bounds]];
+    [expensePlot setIdentifier:@"expensePlot"];
+    [expensePlot setDelegate:self];
+    [expensePlot setDataSource:self];
+    
+    CPTMutableLineStyle *mainPlotLineStyle = [[expensePlot dataLineStyle] mutableCopy];
+    [mainPlotLineStyle setLineWidth:2.0f];
+    [mainPlotLineStyle setLineColor:[CPTColor colorWithCGColor:[[UIColor blueColor] CGColor]]];
+    
+    [expensePlot setDataLineStyle:mainPlotLineStyle];
+    
+    [graph addPlot:expensePlot];
+    
+    CPTScatterPlot *incomePlot = [[CPTScatterPlot alloc] initWithFrame:[graph bounds]];
+    [incomePlot setIdentifier:@"incomePlot"];
+    [incomePlot setDelegate:self];
+    [incomePlot setDataSource:self];
+    
+    CPTMutableLineStyle *incomePlotLineStyle = [[incomePlot dataLineStyle] mutableCopy];
+    [incomePlotLineStyle setLineWidth:2.0f];
+    [incomePlotLineStyle setLineColor:[CPTColor colorWithCGColor:[[UIColor greenColor] CGColor]]];
+    
+    [incomePlot setDataLineStyle:incomePlotLineStyle];
+    
+    [graph addPlot:incomePlot];
+    
+    [plotSpace scaleToFitPlots:[NSArray arrayWithObjects:expensePlot, incomePlot, nil]];
+    
+}
 // This method is here because this class also functions as datasource for our graph
 // Therefore this class implements the CPTPlotDataSource protocol
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plotnumberOfRecords {
@@ -98,8 +233,13 @@ NSArray * _expenses;
         return _expenses.count;
     }
     else {
-        return (NSUInteger) 0;
+        if ([plotnumberOfRecords.identifier isEqual:@"expensePlot"] ){
+            return _expenseData.count;
+        }else if  ([plotnumberOfRecords.identifier isEqual:@"incomePlot"] ){
+            return _incomeData.count;
+        }
     }
+    return 0;
 }
 
 // This method is here because this class also functions as datasource for our graph
@@ -111,8 +251,27 @@ NSArray * _expenses;
         return expense.ExpenseAmount;
     }
     else {
-        return (NSUInteger) 0;
+        if ([plot.identifier isEqual:@"expensePlot"] ){
+            NSValue * value = [_expenseData objectAtIndex:index];
+            CGPoint point = [value CGPointValue];
+            if (fieldEnum == CPTScatterPlotFieldX){
+                return [NSNumber numberWithFloat: point.x];
+            }else{
+                return [NSNumber numberWithFloat: point.y];
+            }
+        }
+        else if ([plot.identifier isEqual:@"incomePlot"] ) {
+            NSValue * value = [_incomeData objectAtIndex:index];
+            CGPoint point = [value CGPointValue];
+            if (fieldEnum == CPTScatterPlotFieldX){
+                return [NSNumber numberWithFloat: point.x];
+            }else{
+                return [NSNumber numberWithFloat: point.y];
+            }
+
+        }
     }
+    return 0;
 }
 
 -(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)idx
