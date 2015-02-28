@@ -116,7 +116,7 @@ NSArray * _incomeData;
 -(void) createIncomeVsExpenseChart{
     
     
-    self.lineGraphView.allowPinchScaling = YES;
+    //self.lineGraphView.allowPinchScaling = YES;
     
     
     // Create a CPTGraph object and add to hostView
@@ -140,7 +140,7 @@ NSArray * _incomeData;
     [graph.plotAreaFrame setPaddingBottom:20.0f];
     // 5 - Enable user interactions for plot space
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
-    plotSpace.allowsUserInteraction = YES;
+    plotSpace.allowsUserInteraction = NO;
     //[plotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(5.0f)]];
     //[plotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(10.0f)]];
     NSNumberFormatter *axisFormatter = [[NSNumberFormatter alloc] init];
@@ -152,7 +152,9 @@ NSArray * _incomeData;
     
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)[graph axisSet];
     
+    
     CPTXYAxis *xAxis = [axisSet xAxis];
+    
    // [xAxis setMajorTickLength: 8.0f];
    // [xAxis setMinorTickLineStyle:nil];
     [xAxis setLabelingPolicy:CPTAxisLabelingPolicyAutomatic];
@@ -188,7 +190,7 @@ NSArray * _incomeData;
     [yAxis setTickDirection:CPTSignNegative];
     
     CPTMutableLineStyle *axisLineStyle = [CPTMutableLineStyle lineStyle];
-    [axisLineStyle setLineWidth:1];
+    [axisLineStyle setLineWidth:2];
     [axisLineStyle setLineColor:[CPTColor colorWithCGColor:[[UIColor grayColor] CGColor]]];
     
     [xAxis setAxisLineStyle:axisLineStyle];
@@ -293,24 +295,19 @@ NSArray * _incomeData;
 
 - (IBAction)contactMe:(id)sender {
     
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Property Detail"
-                                                                              message:@"Enter your comment and tap Send"
-                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Property Details"
+                                                                              message:@"What do you want to do?"
+                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
     
-       [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
-        {
-            
-                     textField.placeholder = NSLocalizedString(@"comment", @"Login");
-         }];
     
     
     
     UIAlertAction *okAction = [UIAlertAction
-                               actionWithTitle:NSLocalizedString(@"Send", @"OK action")
-                               style:UIAlertActionStyleDestructive
+                               actionWithTitle:NSLocalizedString(@"Send Comment", @"OK action")
+                               style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action)
                                {
-                                   UIAlertController * confirmController = [UIAlertController alertControllerWithTitle:@"Property Detail"
+                                   UIAlertController * confirmController = [UIAlertController alertControllerWithTitle:@"Property Details"
                                                                                                              message:@"Comment sent!"
                                                                                                       preferredStyle:UIAlertControllerStyleAlert];
                                    
@@ -329,16 +326,38 @@ NSArray * _incomeData;
                                }];
     
     UIAlertAction *cancelAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
-                                   style:UIAlertActionStyleCancel
+                                   actionWithTitle:NSLocalizedString(@"Place an Offer", @"Cancel action")
+                                   style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction *action)
                                    {
                                        
                                        
                                    }];
     
+    UIAlertAction *addToMylistAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"Add to MyListing", @"Cancel action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       
+                                       
+                                   }];
+    
+    UIAlertAction *addContactSalesAction = [UIAlertAction
+                                        actionWithTitle:NSLocalizedString(@"Contact Sales Agent", @"Cancel action")
+                                        style:UIAlertActionStyleDefault
+                                        handler:^(UIAlertAction *action)
+                                        {
+                                            
+                                            
+                                        }];
+
+    
     [alertController addAction:okAction];
     [alertController addAction:cancelAction];
+    [alertController addAction:addToMylistAction];
+    [alertController addAction:addContactSalesAction];
+
     
     [self presentViewController:alertController animated:YES completion:nil];
 
