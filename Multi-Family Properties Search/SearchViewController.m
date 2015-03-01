@@ -144,35 +144,27 @@ NSMutableArray * _properties;
     //UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     //[alertView show];
 }
-
--(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+-(void)searchMapIn:(MKPolygon*)searchPolygon
+{
+    NSUInteger points = [searchPolygon pointCount];
+    CLLocationCoordinate2D *coords = malloc(sizeof(CLLocationCoordinate2D) * points);
+    [searchPolygon getCoordinates:coords range:NSMakeRange(0, points)];
     
-    double yc = _map.region.center.latitude;
-    double xc = _map.region.center.longitude;
-    
-    double y = _map.region.span.latitudeDelta/2;
-    double x = _map.region.span.longitudeDelta/2;
-    
-    CLLocationCoordinate2D topLeft = CLLocationCoordinate2DMake(yc-y, xc-x);
-    CLLocationCoordinate2D topRight = CLLocationCoordinate2DMake(yc-y, xc+x);
-    CLLocationCoordinate2D bottomRight = CLLocationCoordinate2DMake(yc+y, xc+x);
-    CLLocationCoordinate2D bottomLeft = CLLocationCoordinate2DMake(yc+y, xc-x);
-
-    CLLocationCoordinate2D points[5];
-    points[0] = topLeft;
-    points[1] = topRight;
-    points[2] = bottomRight;
-    points[3] = bottomLeft;
-    points[4] = topLeft;
-    NSMutableString * polygon = [NSMutableString stringWithString:@"POLYGON(("];
-    for (int i=0; i<5; i++) {
-        [polygon appendFormat:@"%f %f, ", points[i].longitude, points[i].latitude];
+    NSMutableString * polygonWellKnow = [NSMutableString stringWithString:@"POLYGON(("];
+    for (int i=0; i<points; i++) {
+        [polygonWellKnow appendFormat:@"%f %f, ", coords[i].longitude, coords[i].latitude];
     }
-    long len = [polygon length];
-    [polygon deleteCharactersInRange:NSMakeRange(len-2, 2)];
-    [polygon appendString:@"))"];
     
-    [[PropertyDataStore getInstance] getPropertiesForRegion:polygon withFilters:nil
+    //repeat the first point to close the polygon:
+    [polygonWellKnow appendFormat:@"%f %f, ", coords[0].longitude, coords[0].latitude];
+    
+    long len = [polygonWellKnow length];
+    [polygonWellKnow deleteCharactersInRange:NSMakeRange(len-2, 2)];
+    [polygonWellKnow appendString:@"))"];
+    
+    free(coords);
+    
+    [[PropertyDataStore getInstance] getPropertiesForRegion:polygonWellKnow withFilters:nil
                                                     success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
                                                         if (_properties)
                                                         {
@@ -184,9 +176,64 @@ NSMutableArray * _properties;
                                                         
                                                     }
                                                     failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                                        
+                                                        NSLog(@"%@", error);
                                                     }
      ];
+
+
+}
+
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    
+    if (polygon)
+    {
+        [self searchMapIn:polygon];
+    }
+    else{
+        double yc = _map.region.center.latitude;
+        double xc = _map.region.center.longitude;
+        
+        double y = _map.region.span.latitudeDelta/2;
+        double x = _map.region.span.longitudeDelta/2;
+        
+        CLLocationCoordinate2D topLeft = CLLocationCoordinate2DMake(yc-y, xc-x);
+        CLLocationCoordinate2D topRight = CLLocationCoordinate2DMake(yc-y, xc+x);
+        CLLocationCoordinate2D bottomRight = CLLocationCoordinate2DMake(yc+y, xc+x);
+        CLLocationCoordinate2D bottomLeft = CLLocationCoordinate2DMake(yc+y, xc-x);
+        
+        CLLocationCoordinate2D points[4];
+        points[0] = topLeft;
+        points[1] = topRight;
+        points[2] = bottomRight;
+        points[3] = bottomLeft;
+        
+        MKPolygon  *region = [MKPolygon polygonWithCoordinates:points count:4];
+        [self searchMapIn:region];
+    }
+//    points[4] = topLeft;
+//    NSMutableString * polygonWellKnow = [NSMutableString stringWithString:@"POLYGON(("];
+//    for (int i=0; i<5; i++) {
+//        [polygonWellKnow appendFormat:@"%f %f, ", points[i].longitude, points[i].latitude];
+//    }
+//    long len = [polygonWellKnow length];
+//    [polygonWellKnow deleteCharactersInRange:NSMakeRange(len-2, 2)];
+//    [polygonWellKnow appendString:@"))"];
+//    
+//    [[PropertyDataStore getInstance] getPropertiesForRegion:polygonWellKnow withFilters:nil
+//                                                    success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
+//                                                        if (_properties)
+//                                                        {
+//                                                            [_map removeAnnotations:_properties];
+//                                                        }
+//                                                        
+//                                                        _properties = properties;
+//                                                        [_map addAnnotations:_properties];
+//                                                        
+//                                                    }
+//                                                    failure:^(NSURLSessionDataTask *task, NSError *error) {
+//                                                        
+//                                                    }
+//     ];
     
 }
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -442,6 +489,7 @@ NSMutableArray * _properties;
         [self.map addOverlay:polygon];
         [latLang removeAllObjects];
         [self.map setVisibleMapRect:[polygon boundingMapRect] edgePadding:UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0) animated:YES];
+        [self searchMapIn:polygon];
     }
     
     polygonDrawMode = NO;
