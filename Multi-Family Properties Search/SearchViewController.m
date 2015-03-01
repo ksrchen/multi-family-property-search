@@ -16,11 +16,12 @@
 {
     UIImageView *drawImage;
     
-    CGPoint location;
+   // CGPoint location;
     
-    NSDate *lastClick;
+   // NSDate *lastClick;
     
     BOOL mouseSwiped;
+    BOOL polygonDrawMode;
     
     CGPoint lastPoint;
     
@@ -52,6 +53,8 @@ NSMutableArray * _properties;
     [_map setRegion:mapRegion animated: YES];
     
     latLang = [[NSMutableArray alloc]init];
+    polygonDrawMode = NO;
+    mouseSwiped = NO;
     
     _map.delegate = self;
     _searchBar.delegate = self;
@@ -323,13 +326,22 @@ NSMutableArray * _properties;
     
     drawImage.backgroundColor = [UIColor clearColor];
     [latLang removeAllObjects];
+    polygonDrawMode = YES;
+    mouseSwiped = NO;
 }
 - (IBAction)clearPolygon:(id)sender {
-    [self.map removeOverlay:polygon];
+    if (polygon){
+        [self.map removeOverlay:polygon];
+    }
+    polygon = nil;
+    
     [self.map setUserInteractionEnabled:YES];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (!polygonDrawMode) {
+        return;
+    }
     
     UITouch *touch = [[event allTouches] anyObject];
     
@@ -339,13 +351,13 @@ NSMutableArray * _properties;
         
     }
     
-    location = [touch locationInView:self.map];
+    //location = [touch locationInView:self.map];
     
-    lastClick = [NSDate date];
+    //lastClick = [NSDate date];
     
     lastPoint = [touch locationInView:self.map];
     
-    lastPoint.y -= 0;
+    //lastPoint.y -= 0;
     
     mouseSwiped = YES;
     
@@ -354,38 +366,41 @@ NSMutableArray * _properties;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [touches anyObject];
-    
-    currentPoint = [touch locationInView:self.view];
-    
-    UIGraphicsBeginImageContext(CGSizeMake(self.map.frame.size.width, self.map.frame.size.height));
-    
-    [drawImage.image drawInRect:CGRectMake(0, 0, self.map.frame.size.width, self.map.frame.size.height)];
-    
-    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-    
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 3.0);
-    
-    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 1, 0, 1);
-    
-    CGContextBeginPath(UIGraphicsGetCurrentContext());
-    
-    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-    
-    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
-    
-    CGContextStrokePath(UIGraphicsGetCurrentContext());
-    
-    [drawImage setFrame:CGRectMake(0, 0, self.map.frame.size.width, self.map.frame.size.height)];
-    
-    drawImage.image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    //converting points to latitude and longitude
-    
+    if (!polygonDrawMode) {
+        return;
+    }
     if (mouseSwiped) {
+        UITouch *touch = [touches anyObject];
+        
+        currentPoint = [touch locationInView:self.view];
+        
+        UIGraphicsBeginImageContext(CGSizeMake(self.map.frame.size.width, self.map.frame.size.height));
+        
+        [drawImage.image drawInRect:CGRectMake(0, 0, self.map.frame.size.width, self.map.frame.size.height)];
+        
+        CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+        
+        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 3.0);
+        
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 1, 0, 1);
+        
+        CGContextBeginPath(UIGraphicsGetCurrentContext());
+        
+        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+        
+        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
+        
+        CGContextStrokePath(UIGraphicsGetCurrentContext());
+        
+        [drawImage setFrame:CGRectMake(0, 0, self.map.frame.size.width, self.map.frame.size.height)];
+        
+        drawImage.image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        //converting points to latitude and longitude
+        
+        
         
         NSLog(@"CurrentPoint:%@", NSStringFromCGPoint(currentPoint));
         
@@ -402,24 +417,33 @@ NSMutableArray * _properties;
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    [drawImage removeFromSuperview];
-    
-    CLLocationCoordinate2D *coords = malloc(sizeof(CLLocationCoordinate2D) * [latLang count]);
-    
-    for(int idx = 0; idx < [latLang count]; idx++) {
-        
-        CLLocation* locationCL = [latLang objectAtIndex:idx];
-        
-        coords[idx] = CLLocationCoordinate2DMake(locationCL.coordinate.latitude,locationCL.coordinate.longitude);
-        
+    if (!polygonDrawMode) {
+        return;
     }
     
-    polygon = [MKPolygon polygonWithCoordinates:coords count:[latLang count]];
+    [drawImage removeFromSuperview];
+    if ([latLang count] > 0){
+        
+        
+        CLLocationCoordinate2D *coords = malloc(sizeof(CLLocationCoordinate2D) * [latLang count]);
+        
+        for(int idx = 0; idx < [latLang count]; idx++) {
+            
+            CLLocation* locationCL = [latLang objectAtIndex:idx];
+            
+            coords[idx] = CLLocationCoordinate2DMake(locationCL.coordinate.latitude,locationCL.coordinate.longitude);
+            
+        }
+        
+        polygon = [MKPolygon polygonWithCoordinates:coords count:[latLang count]];
+        
+        free(coords);
+        
+        [self.map addOverlay:polygon];
+        [latLang removeAllObjects];
+    }
     
-    free(coords);
-    
-    [self.map addOverlay:polygon];
+    polygonDrawMode = NO;
     
 }
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
