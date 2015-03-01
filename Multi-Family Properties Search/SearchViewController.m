@@ -441,6 +441,7 @@ NSMutableArray * _properties;
         
         [self.map addOverlay:polygon];
         [latLang removeAllObjects];
+        [self.map setVisibleMapRect:[polygon boundingMapRect] edgePadding:UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0) animated:YES];
     }
     
     polygonDrawMode = NO;
