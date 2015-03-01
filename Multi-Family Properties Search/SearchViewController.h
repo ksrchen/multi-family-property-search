@@ -13,5 +13,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView * map;
 - (IBAction)onFilter:(id)sender;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+- (IBAction)drawPolygon:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *clearPolygon;
+- (IBAction)clearPolygon:(id)sender;
 
 @end

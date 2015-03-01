@@ -13,6 +13,23 @@
 
 @interface SearchViewController ()
 <MKMapViewDelegate, UISearchBarDelegate>
+{
+    UIImageView *drawImage;
+    
+    CGPoint location;
+    
+    NSDate *lastClick;
+    
+    BOOL mouseSwiped;
+    
+    CGPoint lastPoint;
+    
+    CGPoint currentPoint;
+    
+    NSMutableArray *latLang;
+    
+    MKPolygon *polygon;
+}
 @end
 
 @implementation SearchViewController
@@ -34,6 +51,7 @@ NSMutableArray * _properties;
     
     [_map setRegion:mapRegion animated: YES];
     
+    latLang = [[NSMutableArray alloc]init];
     
     _map.delegate = self;
     _searchBar.delegate = self;
@@ -294,5 +312,133 @@ NSMutableArray * _properties;
     
     
 }
+
+- (IBAction)drawPolygon:(id)sender {
+    [self.map setUserInteractionEnabled:NO];
+    drawImage = [[UIImageView alloc] initWithImage:nil];
+    
+    drawImage.frame = CGRectMake(0, 0, self.map.frame.size.width, self.map.frame.size.height);
+    
+    [self.map addSubview:drawImage];
+    
+    drawImage.backgroundColor = [UIColor clearColor];
+    [latLang removeAllObjects];
+}
+- (IBAction)clearPolygon:(id)sender {
+    [self.map removeOverlay:polygon];
+    [self.map setUserInteractionEnabled:YES];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if ([touch tapCount] == 2) {
+        
+        drawImage.image = nil;
+        
+    }
+    
+    location = [touch locationInView:self.map];
+    
+    lastClick = [NSDate date];
+    
+    lastPoint = [touch locationInView:self.map];
+    
+    lastPoint.y -= 0;
+    
+    mouseSwiped = YES;
+    
+    [super touchesBegan: touches withEvent: event];
+    
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    
+    currentPoint = [touch locationInView:self.view];
+    
+    UIGraphicsBeginImageContext(CGSizeMake(self.map.frame.size.width, self.map.frame.size.height));
+    
+    [drawImage.image drawInRect:CGRectMake(0, 0, self.map.frame.size.width, self.map.frame.size.height)];
+    
+    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+    
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 3.0);
+    
+    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 1, 0, 1);
+    
+    CGContextBeginPath(UIGraphicsGetCurrentContext());
+    
+    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+    
+    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
+    
+    CGContextStrokePath(UIGraphicsGetCurrentContext());
+    
+    [drawImage setFrame:CGRectMake(0, 0, self.map.frame.size.width, self.map.frame.size.height)];
+    
+    drawImage.image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    //converting points to latitude and longitude
+    
+    if (mouseSwiped) {
+        
+        NSLog(@"CurrentPoint:%@", NSStringFromCGPoint(currentPoint));
+        
+        CLLocationCoordinate2D centerOfMapCoord = [self.map convertPoint:currentPoint toCoordinateFromView:self.map]; //Step 2
+        
+        CLLocation *towerLocation = [[CLLocation alloc] initWithLatitude:centerOfMapCoord.latitude longitude:centerOfMapCoord.longitude];
+        
+        [latLang addObject:towerLocation];
+        
+    }
+    
+    lastPoint = currentPoint;
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [drawImage removeFromSuperview];
+    
+    CLLocationCoordinate2D *coords = malloc(sizeof(CLLocationCoordinate2D) * [latLang count]);
+    
+    for(int idx = 0; idx < [latLang count]; idx++) {
+        
+        CLLocation* locationCL = [latLang objectAtIndex:idx];
+        
+        coords[idx] = CLLocationCoordinate2DMake(locationCL.coordinate.latitude,locationCL.coordinate.longitude);
+        
+    }
+    
+    polygon = [MKPolygon polygonWithCoordinates:coords count:[latLang count]];
+    
+    free(coords);
+    
+    [self.map addOverlay:polygon];
+    
+}
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
+
+{
+    
+    MKPolygonView *polygonView = [[MKPolygonView alloc] initWithPolygon:overlay];
+    
+    polygonView.lineWidth = 5;
+    
+    polygonView.strokeColor = [UIColor redColor];
+    
+    polygonView.fillColor = [UIColor colorWithRed:0 green:191 blue:255 alpha:0.5];
+    
+    mapView.userInteractionEnabled = YES;
+    
+    return polygonView;
+    
+}
+
 
 @end

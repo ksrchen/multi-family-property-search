@@ -21,12 +21,30 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </mapView>
                             <searchBar contentMode="redraw" searchBarStyle="prominent" text="Los Angele, CA" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-yV-IZE">
-                                <rect key="frame" x="5" y="64" width="300" height="44"/>
+                                <rect key="frame" x="5" y="64" width="200" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="BmV-4t-fwW"/>
+                                    <constraint firstAttribute="width" constant="200" id="BmV-4t-fwW"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.89999999999999991" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUb-2C-rpk">
+                                <rect key="frame" x="472" y="72" width="80" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="HKC-nb-CPQ"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="hand25.png" style="plain" id="vU8-WX-glh">
+                                        <connections>
+                                            <action selector="drawPolygon:" destination="9pv-A4-QxB" id="Kzc-CP-KZ9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="delete25.png" id="20h-mk-Foa">
+                                        <connections>
+                                            <action selector="clearPolygon:" destination="9pv-A4-QxB" id="8e0-uT-5oa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -34,8 +52,10 @@
                             <constraint firstItem="F3G-yV-IZE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Bbx-J0-dDJ"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="CLT-bh-OWc"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="FTg-cv-xom"/>
+                            <constraint firstItem="BUb-2C-rpk" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" constant="8" id="LoB-ds-wno"/>
                             <constraint firstItem="F3G-yV-IZE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="5" id="ab1-ix-mAe"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="bAQ-kr-Z1u"/>
+                            <constraint firstItem="BUb-2C-rpk" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="bbQ-qj-qKz"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="b4v-dC-T2P" secondAttribute="bottom" id="doE-KZ-nBC"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="mnG-jl-Tmr"/>
                             <constraint firstAttribute="width" secondItem="b4v-dC-T2P" secondAttribute="width" id="sSz-yy-iOt"/>
@@ -863,9 +883,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="delete25.png" width="25" height="25"/>
         <image name="facebook_signin.png" width="162" height="29"/>
         <image name="first" width="30" height="30"/>
         <image name="google_signin.png" width="164" height="30"/>
+        <image name="hand25.png" width="25" height="25"/>
         <image name="pic..png" width="314" height="176"/>
     </resources>
 </document>
