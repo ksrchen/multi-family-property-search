@@ -184,6 +184,9 @@ NSMutableArray * _properties;
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    [self refreshMap];
+}
+-(void)refreshMap{
     
     if (polygon)
     {
@@ -210,31 +213,6 @@ NSMutableArray * _properties;
         MKPolygon  *region = [MKPolygon polygonWithCoordinates:points count:4];
         [self searchMapIn:region];
     }
-//    points[4] = topLeft;
-//    NSMutableString * polygonWellKnow = [NSMutableString stringWithString:@"POLYGON(("];
-//    for (int i=0; i<5; i++) {
-//        [polygonWellKnow appendFormat:@"%f %f, ", points[i].longitude, points[i].latitude];
-//    }
-//    long len = [polygonWellKnow length];
-//    [polygonWellKnow deleteCharactersInRange:NSMakeRange(len-2, 2)];
-//    [polygonWellKnow appendString:@"))"];
-//    
-//    [[PropertyDataStore getInstance] getPropertiesForRegion:polygonWellKnow withFilters:nil
-//                                                    success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
-//                                                        if (_properties)
-//                                                        {
-//                                                            [_map removeAnnotations:_properties];
-//                                                        }
-//                                                        
-//                                                        _properties = properties;
-//                                                        [_map addAnnotations:_properties];
-//                                                        
-//                                                    }
-//                                                    failure:^(NSURLSessionDataTask *task, NSError *error) {
-//                                                        
-//                                                    }
-//     ];
-    
 }
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -381,7 +359,8 @@ NSMutableArray * _properties;
         [self.map removeOverlay:polygon];
     }
     polygon = nil;
-    
+    [self refreshMap];
+
     [self.map setUserInteractionEnabled:YES];
 }
 

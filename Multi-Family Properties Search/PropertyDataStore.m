@@ -55,7 +55,7 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
     
     NSString* path = @"resincome";
     
-    [self GET:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self PUT:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         if (success) {
             NSLog(@"Success -- %@", responseObject);
             NSArray * responses = responseObject;
