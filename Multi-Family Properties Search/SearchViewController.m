@@ -164,7 +164,9 @@ NSMutableArray * _properties;
     
     free(coords);
     
-    [[PropertyDataStore getInstance] getPropertiesForRegion:polygonWellKnow withFilters:nil
+    NSMutableString * filters = [NSMutableString stringWithFormat: @"LotSquareFootage > 1000"];
+    
+    [[PropertyDataStore getInstance] getPropertiesForRegion:polygonWellKnow withFilters:filters
                                                     success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
                                                         if (_properties)
                                                         {

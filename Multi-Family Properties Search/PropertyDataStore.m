@@ -51,7 +51,7 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
     
 //    polygon = @"POLYGON((-118.12738095737302 33.881694872069836, -118.23870336032712 33.881694872069836,-118.23870336032712 33.84798421519106,-118.12738095737302 33.84798421519106,-118.12738095737302 33.881694872069836))";
     
-    NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:polygon, @"polygon", nil];
+    NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:polygon, @"Polygon", filters, @"Filters", nil];
     
     NSString* path = @"resincome";
     
