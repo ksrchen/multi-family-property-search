@@ -10,6 +10,7 @@
 #import "Property.h"
 #import "PropertyDetailViewController.h"
 #import "PropertyDataStore.h"
+#import "FilterViewController.h"
 
 @interface SearchViewController ()
 <MKMapViewDelegate, UISearchBarDelegate>
@@ -30,6 +31,8 @@
     NSMutableArray *latLang;
     
     MKPolygon *polygon;
+    
+    NSString * filterOptions;
 }
 @end
 
@@ -80,44 +83,6 @@ NSMutableArray * _properties;
  }
  */
 
-- (IBAction)onFilter:(id)sender {
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Map Search"
-                                                                              message:@"Map search filter is under construction!"
-                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    //
-    //    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
-    //     {
-    //         textField.placeholder = NSLocalizedString(@"Option 1", @"Login");
-    //     }];
-    //
-    //    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
-    //     {
-    //         textField.placeholder = NSLocalizedString(@"Option 2", @"Password");
-    //     }];
-    
-    
-    UIAlertAction *okAction = [UIAlertAction
-                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
-                               style:UIAlertActionStyleDestructive
-                               handler:^(UIAlertAction *action)
-                               {
-                                   
-                               }];
-    
-    UIAlertAction *cancelAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
-                                   style:UIAlertActionStyleCancel
-                                   handler:^(UIAlertAction *action)
-                                   {
-                                       
-                                       
-                                   }];
-    
-    [alertController addAction:okAction];
-    [alertController addAction:cancelAction];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-}
 
 #pragma mark Delegate Methods
 
@@ -164,9 +129,8 @@ NSMutableArray * _properties;
     
     free(coords);
     
-    NSMutableString * filters = [NSMutableString stringWithFormat: @"LotSquareFootage > 1000"];
     
-    [[PropertyDataStore getInstance] getPropertiesForRegion:polygonWellKnow withFilters:filters
+    [[PropertyDataStore getInstance] getPropertiesForRegion:polygonWellKnow withFilters:filterOptions
                                                     success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
                                                         if (_properties)
                                                         {
@@ -285,63 +249,7 @@ NSMutableArray * _properties;
     }];
 }
 
-- (void) showLogin {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Multi-Family Listing Search"
-                                                                              message:@"Please Sign In"
-                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
-     {
-         textField.placeholder = NSLocalizedString(@"Login", @"Login");
-     }];
-    
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
-     {
-         textField.placeholder = NSLocalizedString(@"Password", @"Password");
-         textField.secureTextEntry = YES;
-     }];
-    
-    
-    UIAlertAction *okAction = [UIAlertAction
-                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
-                               style:UIAlertActionStyleDestructive
-                               handler:^(UIAlertAction *action)
-                               {
-                                   UITextField *login = alertController.textFields.firstObject;
-                                   UITextField *password = alertController.textFields.lastObject;
-                                   NSString * pwd = password.text;
-                                   NSString * user = login.text;
-                                   if ([pwd length] > 1 && [user length] > 1 && [pwd compare:@"42"] == NSOrderedSame){
-                                       [defaults setObject:user forKey:@"loggedin"];
-                                       [defaults synchronize];
-                                   }
-                                   else{
-                                       [defaults removeObjectForKey:@"loggedin"];
-                                       [defaults synchronize];
-                                       [alertController setMessage:@"Login failed. Please try again."];
-                                       [self presentViewController:alertController animated:YES completion:nil];
-                                   }
-                                   
-                               }];
-    
-    UIAlertAction *cancelAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
-                                   style:UIAlertActionStyleCancel
-                                   handler:^(UIAlertAction *action)
-                                   {
-                                       
-                                       
-                                   }];
-    
-    [alertController addAction:okAction];
-    [alertController addAction:cancelAction];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-    
-    
-}
+
 
 - (IBAction)drawPolygon:(id)sender {
     [self.map setUserInteractionEnabled:NO];
@@ -492,6 +400,26 @@ NSMutableArray * _properties;
     
     return polygonView;
     
+}
+// This will get called too before the view appears
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"FilterViewSeque"]) {
+        
+        // Get destination view
+        FilterViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
+    }
+}
+
+- (void) ApplyFilter: (NSString *) filters
+{
+    filterOptions = filters;
+    [self refreshMap];
+}
+- (void) ClearFilter {
+    filterOptions = nil;
+    [self refreshMap];
 }
 
 

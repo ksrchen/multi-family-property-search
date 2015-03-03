@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "FilterDelegate.h"
 
-@interface SearchViewController : UIViewController
+@interface SearchViewController : UIViewController <FilterDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView * map;
 - (IBAction)onFilter:(id)sender;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
