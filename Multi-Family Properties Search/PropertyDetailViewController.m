@@ -358,6 +358,7 @@ NSArray * _incomeData;
     [alertController addAction:addToMylistAction];
     [alertController addAction:addContactSalesAction];
 
+    [[alertController popoverPresentationController] setBarButtonItem:sender];
     
     [self presentViewController:alertController animated:YES completion:nil];
 

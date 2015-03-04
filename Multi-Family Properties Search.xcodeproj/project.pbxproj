@@ -49,6 +49,7 @@
 		9D00108C1AA63022005C3375 /* Filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D00108B1AA63022005C3375 /* Filter.png */; };
 		9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00108E1AA63348005C3375 /* FilterViewController.m */; };
 		9D9CC76C1A9FA221000D127E /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CC76B1A9FA221000D127E /* Expense.m */; };
+		9DD37AAB1AA784E90092983A /* Filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DD37AAA1AA784E90092983A /* Filter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		9D0010901AA6689F005C3375 /* FilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDelegate.h; sourceTree = "<group>"; };
 		9D9CC76A1A9FA221000D127E /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
 		9D9CC76B1A9FA221000D127E /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
+		9DD37AAA1AA784E90092983A /* Filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Filter.png; sourceTree = "<group>"; };
 		A5F1691BA81DA620C97A616B /* Pods-Multi-Family Properties Search.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multi-Family Properties Search.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search.release.xcconfig"; sourceTree = "<group>"; };
 		A8960ED62ADEBB5396452F9C /* Pods-Multi-Family Properties Search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multi-Family Properties Search.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +218,7 @@
 			children = (
 				9D00108B1AA63022005C3375 /* Filter.png */,
 				365B70601AA3867300BC7E91 /* hand25.png */,
+				9DD37AAA1AA784E90092983A /* Filter.png */,
 				365B70611AA3867300BC7E91 /* delete25.png */,
 				3611C71C1A9A2A000058FDC5 /* facebook_signin.png */,
 				3611C71D1A9A2A000058FDC5 /* google_signin.png */,
@@ -381,6 +384,7 @@
 				365333F01A98F05D00511302 /* map_pin.png in Resources */,
 				3611C7211A9A2A000058FDC5 /* twitter_signin.png in Resources */,
 				364D83181A83F76100DDCCC5 /* im2.jpg in Resources */,
+				9DD37AAB1AA784E90092983A /* Filter.png in Resources */,
 				364D831C1A83F76100DDCCC5 /* im6.jpg in Resources */,
 				364D82EF1A83D17400DDCCC5 /* Images.xcassets in Resources */,
 				364D831A1A83F76100DDCCC5 /* im4.jpg in Resources */,
