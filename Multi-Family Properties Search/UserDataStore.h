@@ -26,5 +26,6 @@ extern NSString * const USER;
 
 - (BOOL) isAuthenticated;
 - (void) logOut;
+- (User*) getUser;
 
 @end

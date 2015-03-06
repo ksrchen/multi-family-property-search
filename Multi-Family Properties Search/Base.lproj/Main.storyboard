@@ -505,7 +505,7 @@
         <scene sceneID="Cga-FG-P6e">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i1y-iM-8ia" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Listing" image="first" badgeValue="4" id="8gQ-pm-CiC"/>
+                    <tabBarItem key="tabBarItem" title="My Listing" image="first" id="8gQ-pm-CiC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J0Y-u7-5vU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

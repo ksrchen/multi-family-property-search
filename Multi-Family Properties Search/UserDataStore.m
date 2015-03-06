@@ -98,10 +98,15 @@ NSString * const USER=@"User";
 
 }
 - (BOOL) isAuthenticated
+{    
+    User * user = [self getUser];
+    return (user != nil);
+}
+- (User*) getUser
 {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     User * user = (User*) [defaults loadCustomObjectWithKey:USER];
-    return (user != nil);
+    return user;
 }
 - (void) logOut
 {

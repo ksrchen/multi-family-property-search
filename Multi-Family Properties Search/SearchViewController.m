@@ -132,21 +132,24 @@ NSMutableArray * _properties;
     
     [[PropertyDataStore getInstance] getPropertiesForRegion:polygonWellKnow withFilters:filterOptions
                                                     success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
-                                                        if (_properties)
-                                                        {
-                                                            [_map removeAnnotations:_properties];
-                                                        }
-                                                        
-                                                        _properties = properties;
-                                                        [_map addAnnotations:_properties];
+                                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                                            
+                                                            if (_properties)
+                                                            {
+                                                                [_map removeAnnotations:_properties];
+                                                            }
+                                                            
+                                                            _properties = properties;
+                                                            [_map addAnnotations:_properties];
+                                                        });
                                                         
                                                     }
                                                     failure:^(NSURLSessionDataTask *task, NSError *error) {
                                                         NSLog(@"%@", error);
                                                     }
      ];
-
-
+    
+    
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{

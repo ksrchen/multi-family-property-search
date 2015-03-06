@@ -100,4 +100,83 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
         }
     }];
 }
+
+- (void)getMyListingForUser:(NSString *)userId
+                    success:(void(^)(NSURLSessionDataTask *task, NSMutableArray * properties))success
+                    failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
+{
+    NSMutableArray *  properties = [[NSMutableArray alloc] init];
+    
+    NSString* path = @"favorite";
+    NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:userId, @"userId", nil];
+    
+    [self GET:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (success) {
+            NSLog(@"Success -- %@", responseObject);
+            NSArray * responses = responseObject;
+            for (NSDictionary *prop in responses) {
+                NSString * address = [NSString stringWithFormat:@"%@ %@, %@",
+                                      prop[@"StreetNumber"],
+                                      prop[@"StreetName"],
+                                      prop[@"City"]
+                                      ];
+                
+                [properties addObject:[[Property alloc] initWithAddress:address
+                                                            andLocation:CLLocationCoordinate2DMake([prop[@"Latitude"] doubleValue],
+                                                                                                   [prop[@"longitude"] doubleValue])
+                                                            andMLNumber:prop[@"MLnumber"]
+                                       ]];
+                
+            }
+            success(task, properties);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(task, error);
+        }
+    }];
+
+}
+
+- (void)addMyListingForUser:(NSString *)userId
+               withMLNumber:(NSString *) MLNumber
+                    success:(void(^)(NSURLSessionDataTask *task, id property))success
+                    failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
+{
+    NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:userId, @"UserID", MLNumber, @"MLNumber", nil];
+    NSString* path = @"favorite";
+
+    [self POST:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (success) {
+            success(task, responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(task, error);
+        }
+    }];
+
+    
+}
+
+- (void)removeMyListingForUser:(NSString *)userId
+                  withMLNumber:(NSString *) MLNumber
+                       success:(void(^)(NSURLSessionDataTask *task, id property))success
+                       failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
+{
+    NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:userId, @"userId", MLNumber, @"MLNumber", nil];
+    NSString* path = @"favorite";
+    
+    [self DELETE:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (success) {
+            success(task, responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(task, error);
+        }
+    }];
+
+    
+}
 @end

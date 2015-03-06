@@ -21,5 +21,18 @@
                        success:(void(^)(NSURLSessionDataTask *task, id property))success
                        failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
 
+- (void)getMyListingForUser:(NSString *)userId
+                       success:(void(^)(NSURLSessionDataTask *task, NSMutableArray * properties))success
+                       failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+- (void)addMyListingForUser:(NSString *)userId
+               withMLNumber:(NSString *) MLNumber
+                    success:(void(^)(NSURLSessionDataTask *task, id property))success
+                    failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+- (void)removeMyListingForUser:(NSString *)userId
+               withMLNumber:(NSString *) MLNumber
+                    success:(void(^)(NSURLSessionDataTask *task, id property))success
+                    failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 @end

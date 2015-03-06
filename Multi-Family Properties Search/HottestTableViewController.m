@@ -9,12 +9,15 @@
 #import "HottestTableViewController.h"
 
 @interface HottestTableViewController ()
+{
+    NSMutableArray * addresss;
+}
 
 @end
 
 @implementation HottestTableViewController
 
-NSMutableArray * addresss;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +41,11 @@ NSMutableArray * addresss;
     [addresss addObject:@"G11990 San Vicente Blvd, Los Angeles, CA 90049"];
     [addresss addObject:@"1901 Avenue of the Stars, Los Angeles, CA 90067"];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

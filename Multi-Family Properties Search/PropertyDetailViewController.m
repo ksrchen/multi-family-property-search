@@ -9,7 +9,9 @@
 #import "PropertyDetailViewController.h"
 #import "PropertyDataStore.h"
 #import "Expense.h"
-
+#import "User.h"
+#import "UserDataStore.h"
+#import "PropertyDataStore.h"
 
 @implementation PropertyDetailViewController
 
@@ -338,10 +340,19 @@ NSArray * _incomeData;
                                    actionWithTitle:NSLocalizedString(@"Add to MyListing", @"Cancel action")
                                    style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction *action)
-                                   {
-                                       
-                                       
-                                   }];
+                                        {
+                                            User* user = [[UserDataStore getInstance] getUser];
+                                            PropertyDataStore * propertyDataStore = [PropertyDataStore getInstance];
+                                            [propertyDataStore addMyListingForUser:user.UserID
+                                                                      withMLNumber:[self MLNumber]
+                                                                           success:^(NSURLSessionDataTask *task, id property) {
+                                                                               
+                                                                           }
+                                                                           failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                                                               
+                                                                           }];
+                                            
+                                        }];
     
     UIAlertAction *addContactSalesAction = [UIAlertAction
                                         actionWithTitle:NSLocalizedString(@"Contact Sales Agent", @"Cancel action")

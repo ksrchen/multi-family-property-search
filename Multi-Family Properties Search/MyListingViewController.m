@@ -7,14 +7,20 @@
 //
 
 #import "MyListingViewController.h"
+#import "Property.h"
+#import "PropertyDetailViewController.h"
+#import "PropertyDataStore.h"
+#import "User.h"
+#import "UserDataStore.h"
 
 @interface MyListingViewController ()
+{
+    NSMutableArray * _properties;
+}
 
 @end
 
 @implementation MyListingViewController
-
-NSMutableArray * addresss;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,13 +33,26 @@ NSMutableArray * addresss;
     
     [self setTitle:@"My Listings"];
     
-    addresss = [[NSMutableArray alloc] initWithCapacity:5];
     
-    [addresss addObject:@"Gateway LA - 12424 Wilshire Blvd"];
-    [addresss addObject:@"21800 Oxnard Street, Woodland Hills, CA 91367"];
-    [addresss addObject:@"G11990 San Vicente Blvd, Los Angeles, CA 90049"];
-    [addresss addObject:@"1901 Avenue of the Stars, Los Angeles, CA 90067"];
 
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    User * user = [[UserDataStore getInstance] getUser];
+    
+    [[PropertyDataStore getInstance] getMyListingForUser:  user.UserID
+                                                 success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
+                                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                                         _properties = properties;
+                                                         [self.tableView reloadData];
+                                                     });
+        
+    }
+                                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +67,7 @@ NSMutableArray * addresss;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [addresss count];
+    return [_properties count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,7 +75,10 @@ NSMutableArray * addresss;
     
     long i = indexPath.row + 1;
     UILabel * label = (UILabel *)[cell viewWithTag:2];
-    label.text = [addresss objectAtIndex: i-1];
+    
+    Property * p = [_properties objectAtIndex:indexPath.row];
+    
+    label.text = [p title];
     
     
     UIImageView * imageView = (UIImageView *) [cell viewWithTag:4];
@@ -68,25 +90,32 @@ NSMutableArray * addresss;
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        User* user = [[UserDataStore getInstance] getUser];
+        
+        Property * p = [_properties objectAtIndex:indexPath.row];
+        PropertyDataStore * propertyDataStore = [PropertyDataStore getInstance];
+        
+        [propertyDataStore removeMyListingForUser:user.UserID withMLNumber:p.MLNumber success:nil failure:nil];
+        
+        [_properties removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -113,10 +142,12 @@ NSMutableArray * addresss;
 */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Property * p = [_properties objectAtIndex:indexPath.row];
     
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+    PropertyDetailViewController  * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+    vc.MLNumber = p.MLNumber;
     [self.navigationController pushViewController:vc animated:YES];
 
 }
