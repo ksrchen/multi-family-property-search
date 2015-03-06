@@ -295,14 +295,14 @@ NSArray * _incomeData;
 
 - (IBAction)contactMe:(id)sender {
     
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Property Details"
-                                                                              message:@"What do you want to do?"
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                              message:nil
                                                                        preferredStyle:UIAlertControllerStyleActionSheet];
     
     
     
     
-    UIAlertAction *okAction = [UIAlertAction
+    UIAlertAction *sendCommentAction = [UIAlertAction
                                actionWithTitle:NSLocalizedString(@"Send Comment", @"OK action")
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action)
@@ -325,7 +325,7 @@ NSArray * _incomeData;
                                    
                                }];
     
-    UIAlertAction *cancelAction = [UIAlertAction
+    UIAlertAction *placeOfferAction = [UIAlertAction
                                    actionWithTitle:NSLocalizedString(@"Place an Offer", @"Cancel action")
                                    style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction *action)
@@ -353,10 +353,21 @@ NSArray * _incomeData;
                                         }];
 
     
-    [alertController addAction:okAction];
-    [alertController addAction:cancelAction];
+    UIAlertAction *cancelAction = [UIAlertAction
+                                            actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                            style:UIAlertActionStyleCancel
+                                            handler:^(UIAlertAction *action)
+                                            {
+                                                
+                                                
+                                            }];
+
+    
+    [alertController addAction:sendCommentAction];
+    [alertController addAction:placeOfferAction];
     [alertController addAction:addToMylistAction];
     [alertController addAction:addContactSalesAction];
+    [alertController addAction:cancelAction];
 
     [[alertController popoverPresentationController] setBarButtonItem:sender];
     

@@ -528,7 +528,7 @@
                         <viewControllerLayoutGuide type="top" id="NxQ-6n-5Oc"/>
                         <viewControllerLayoutGuide type="bottom" id="dXK-JJ-oOB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="voe-jQ-8dl" customClass="PropertyDetail">
+                    <view key="view" contentMode="scaleToFill" id="voe-jQ-8dl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -544,14 +544,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="HkE-Ku-oRt"/>
                                                     <constraint firstAttribute="height" constant="263" id="g2i-p7-5gx"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tby-vB-5jj" userLabel="line graph view" customClass="CPTGraphHostingView">
-                                                <rect key="frame" x="18" y="374" width="321" height="263"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="7Cm-fD-DBU"/>
-                                                    <constraint firstAttribute="height" constant="263" id="Ua9-XD-7Rc"/>
                                                 </constraints>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgO-3J-A1f" userLabel="profile view">
@@ -624,16 +616,24 @@
                                                     </mask>
                                                 </variation>
                                             </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tby-vB-5jj" userLabel="line graph view" customClass="CPTGraphHostingView">
+                                                <rect key="frame" x="46" y="468" width="321" height="263"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="7Cm-fD-DBU"/>
+                                                    <constraint firstAttribute="height" constant="263" id="Ua9-XD-7Rc"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="tby-vB-5jj" firstAttribute="leading" secondItem="ork-Z3-Ykw" secondAttribute="leading" constant="8" id="LB9-7g-kpH"/>
                                             <constraint firstAttribute="height" constant="820" id="Une-Z0-Prc"/>
                                             <constraint firstItem="tgO-3J-A1f" firstAttribute="trailing" secondItem="ork-Z3-Ykw" secondAttribute="trailing" id="Vzk-0g-Vgo"/>
-                                            <constraint firstItem="tby-vB-5jj" firstAttribute="top" secondItem="yvJ-ge-6PV" secondAttribute="bottom" constant="8" id="Wmf-tZ-8iu"/>
                                             <constraint firstItem="yvJ-ge-6PV" firstAttribute="leading" secondItem="ork-Z3-Ykw" secondAttribute="leading" constant="8" id="bnP-bt-wBg"/>
                                             <constraint firstItem="tgO-3J-A1f" firstAttribute="leading" secondItem="ork-Z3-Ykw" secondAttribute="leading" id="kEu-cm-SXn"/>
-                                            <constraint firstItem="tby-vB-5jj" firstAttribute="leading" secondItem="ork-Z3-Ykw" secondAttribute="leading" constant="8" id="n8k-WQ-c81"/>
                                             <constraint firstItem="yvJ-ge-6PV" firstAttribute="top" secondItem="tgO-3J-A1f" secondAttribute="bottom" constant="8" id="rrc-jh-Bho"/>
+                                            <constraint firstItem="tby-vB-5jj" firstAttribute="top" secondItem="yvJ-ge-6PV" secondAttribute="bottom" constant="8" id="xoV-D8-6XH"/>
                                         </constraints>
                                     </view>
                                 </subviews>
