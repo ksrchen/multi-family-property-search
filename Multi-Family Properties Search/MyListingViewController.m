@@ -33,12 +33,13 @@
     
     [self setTitle:@"My Listings"];
     
+    [self reloadMyListing];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadMyListing) name:@"MyListingUpdated" object:nil];
 
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+-(void)reloadMyListing{
     User * user = [[UserDataStore getInstance] getUser];
     
     [[PropertyDataStore getInstance] getMyListingForUser:  user.UserID
@@ -46,13 +47,20 @@
                                                      dispatch_async(dispatch_get_main_queue(), ^{
                                                          _properties = properties;
                                                          [self.tableView reloadData];
+                                                         NSUInteger count = [_properties count];
+                                                         if (count>0){
+                                                             [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)count];
+                                                         }else{
+                                                             [[self navigationController] tabBarItem].badgeValue = nil;
+                                                         }
                                                      });
-        
-    }
+                                                     
+                                                 }
                                                  failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-    }];
-   
+                                                     
+                                                 }];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,7 +115,13 @@
         Property * p = [_properties objectAtIndex:indexPath.row];
         PropertyDataStore * propertyDataStore = [PropertyDataStore getInstance];
         
-        [propertyDataStore removeMyListingForUser:user.UserID withMLNumber:p.MLNumber success:nil failure:nil];
+        [propertyDataStore removeMyListingForUser:user.UserID withMLNumber:p.MLNumber success:^(NSURLSessionDataTask *task, id property) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self reloadMyListing];
+            });
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        }];
         
         [_properties removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];

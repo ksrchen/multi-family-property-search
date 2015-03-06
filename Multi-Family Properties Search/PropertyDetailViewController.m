@@ -346,6 +346,9 @@ NSArray * _incomeData;
                                             [propertyDataStore addMyListingForUser:user.UserID
                                                                       withMLNumber:[self MLNumber]
                                                                            success:^(NSURLSessionDataTask *task, id property) {
+                                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                   [[NSNotificationCenter defaultCenter] postNotificationName:@"MyListingUpdated" object:self];
+                                                                               });
                                                                                
                                                                            }
                                                                            failure:^(NSURLSessionDataTask *task, NSError *error) {
