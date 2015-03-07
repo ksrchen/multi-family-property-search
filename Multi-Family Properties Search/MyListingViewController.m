@@ -47,12 +47,12 @@
                                                      dispatch_async(dispatch_get_main_queue(), ^{
                                                          _properties = properties;
                                                          [self.tableView reloadData];
-                                                         NSUInteger count = [_properties count];
-                                                         if (count>0){
-                                                             [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)count];
-                                                         }else{
-                                                             [[self navigationController] tabBarItem].badgeValue = nil;
-                                                         }
+//                                                         NSUInteger count = [_properties count];
+//                                                         if (count>0){
+//                                                             [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)count];
+//                                                         }else{
+//                                                             [[self navigationController] tabBarItem].badgeValue = nil;
+//                                                         }
                                                      });
                                                      
                                                  }
@@ -118,6 +118,7 @@
         
         [propertyDataStore removeMyListingForUser:user.UserID withMLNumber:p.MLNumber success:^(NSURLSessionDataTask *task, id property) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"MyListingUpdated" object:self];
                 [self reloadMyListing];
             });
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
