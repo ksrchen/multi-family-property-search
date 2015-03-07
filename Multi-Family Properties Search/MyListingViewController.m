@@ -90,7 +90,8 @@
     
     
     UIImageView * imageView = (UIImageView *) [cell viewWithTag:4];
-    NSString * imageName = [NSString stringWithFormat: @"im%ld.jpg", i];
+    //NSString * imageName = [NSString stringWithFormat: @"im%ld.jpg", i];
+    NSString * imageName = @"pic..png";
     
     [imageView setImage: [UIImage imageNamed:imageName]];
     

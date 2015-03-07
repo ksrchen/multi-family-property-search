@@ -134,6 +134,10 @@ NSMutableArray * _properties;
                                                     success:^(NSURLSessionDataTask *task, NSMutableArray *properties) {
                                                         dispatch_async(dispatch_get_main_queue(), ^{
                                                             
+                                                            for (id anno in [_map selectedAnnotations]) {
+                                                                [_map deselectAnnotation:anno animated:NO];
+                                                            }
+                                                            
                                                             if (_properties)
                                                             {
                                                                 [_map removeAnnotations:_properties];
@@ -153,6 +157,10 @@ NSMutableArray * _properties;
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    if ([[_map selectedAnnotations] count] > 0)
+    {
+        return;
+    }
     [self refreshMap];
 }
 -(void)refreshMap{

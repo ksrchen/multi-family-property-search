@@ -46,7 +46,6 @@
 		3676598A1A853D6700D3D929 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659891A853D6700D3D929 /* appicon.png */; };
 		367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */; };
 		99E683A8BAA1A84882DFD6F6 /* libPods-Multi-Family Properties Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */; };
-		9D00108C1AA63022005C3375 /* Filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D00108B1AA63022005C3375 /* Filter.png */; };
 		9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00108E1AA63348005C3375 /* FilterViewController.m */; };
 		9D9CC76C1A9FA221000D127E /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CC76B1A9FA221000D127E /* Expense.m */; };
 		9DD37AAB1AA784E90092983A /* Filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DD37AAA1AA784E90092983A /* Filter.png */; };
@@ -119,7 +118,6 @@
 		367659891A853D6700D3D929 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		367E26F01A8FA8D8005B2879 /* PropertyDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDataStore.h; sourceTree = "<group>"; };
 		367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDataStore.m; sourceTree = "<group>"; };
-		9D00108B1AA63022005C3375 /* Filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Filter.png; path = ../../../Desktop/Filter.png; sourceTree = "<group>"; };
 		9D00108D1AA63348005C3375 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		9D00108E1AA63348005C3375 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		9D0010901AA6689F005C3375 /* FilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDelegate.h; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 		364D82DE1A83D17400DDCCC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9D00108B1AA63022005C3375 /* Filter.png */,
 				365B70601AA3867300BC7E91 /* hand25.png */,
 				9DD37AAA1AA784E90092983A /* Filter.png */,
 				365B70611AA3867300BC7E91 /* delete25.png */,
@@ -367,7 +364,6 @@
 			files = (
 				364D82ED1A83D17400DDCCC5 /* Main.storyboard in Resources */,
 				3611C71F1A9A2A000058FDC5 /* facebook_signin.png in Resources */,
-				9D00108C1AA63022005C3375 /* Filter.png in Resources */,
 				364D831B1A83F76100DDCCC5 /* im5.jpg in Resources */,
 				364D83171A83F76100DDCCC5 /* im1.jpg in Resources */,
 				364D831D1A83F76100DDCCC5 /* im7.jpg in Resources */,

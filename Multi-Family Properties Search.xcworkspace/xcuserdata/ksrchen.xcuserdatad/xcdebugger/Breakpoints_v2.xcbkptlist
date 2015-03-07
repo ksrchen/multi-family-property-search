@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Multi-Family Properties Search/SearchViewController.m"
-            timestampString = "446938710.561753"
+            timestampString = "447432554.108117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "-mapView:annotationView:calloutAccessoryControlTapped:"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-searchMapIn:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

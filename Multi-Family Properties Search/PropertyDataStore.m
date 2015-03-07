@@ -60,13 +60,13 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
             NSLog(@"Success -- %@", responseObject);
             NSArray * responses = responseObject;
             for (NSDictionary *prop in responses) {
-                NSLog(@"City %@", prop[@"City"]);
+                //NSLog(@"City %@", prop[@"City"]);
                 NSString * address = [NSString stringWithFormat:@"%@ %@, %@",
                                       prop[@"StreetNumber"],
                                       prop[@"StreetName"],
                                       prop[@"City"]
                                       ];
-
+                
                 [properties addObject:[[Property alloc] initWithAddress:address
                                        andLocation:CLLocationCoordinate2DMake([prop[@"Latitude"] doubleValue],
                                                                               [prop[@"longitude"] doubleValue])
@@ -115,10 +115,12 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
             NSLog(@"Success -- %@", responseObject);
             NSArray * responses = responseObject;
             for (NSDictionary *prop in responses) {
-                NSString * address = [NSString stringWithFormat:@"%@ %@, %@",
+                NSString * address = [NSString stringWithFormat:@"%@ %@ %@ %@, %@",
                                       prop[@"StreetNumber"],
                                       prop[@"StreetName"],
-                                      prop[@"City"]
+                                      prop[@"City"],
+                                      prop[@"State"],
+                                      prop[@"PostalCode"]
                                       ];
                 
                 [properties addObject:[[Property alloc] initWithAddress:address
