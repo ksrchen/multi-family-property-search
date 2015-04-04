@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "526F9BA473FD9EBAC9CE8F80"
+               BlueprintIdentifier = "E262099BC9D472DEEBAE1DE7"
                BuildableName = "libPods-Multi-Family Properties Search-CorePlot.a"
                BlueprintName = "Pods-Multi-Family Properties Search-CorePlot"
                ReferencedContainer = "container:Pods.xcodeproj">

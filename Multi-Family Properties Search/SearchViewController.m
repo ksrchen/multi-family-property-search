@@ -11,6 +11,8 @@
 #import "PropertyDetailViewController.h"
 #import "PropertyDataStore.h"
 #import "FilterViewController.h"
+#import "MMDrawerBarButtonItem.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface SearchViewController ()
 <MKMapViewDelegate, UISearchBarDelegate>
@@ -63,9 +65,18 @@ NSMutableArray * _properties;
     _searchBar.delegate = self;
     
     [self setTitle:@"Map Search"];
+    [self setupLeftMenuButton];
     
 //    [self showLogin];
     
+}
+- (void)setupLeftMenuButton {
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton];
+}
+
+- (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

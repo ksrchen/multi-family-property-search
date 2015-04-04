@@ -7,6 +7,8 @@
 //
 
 #import "HottestTableViewController.h"
+#import "MMDrawerBarButtonItem.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface HottestTableViewController ()
 {
@@ -27,6 +29,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [super viewDidLoad];
     
     [self setTitle:@"Hottest Properties"];
     
@@ -40,8 +43,20 @@
     [addresss addObject:@"21800 Oxnard Street, Woodland Hills, CA 91367"];
     [addresss addObject:@"G11990 San Vicente Blvd, Los Angeles, CA 90049"];
     [addresss addObject:@"1901 Avenue of the Stars, Los Angeles, CA 90067"];
+    [self setupLeftMenuButton];
+    
     
 }
+
+- (void)setupLeftMenuButton {
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton];
+}
+
+- (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

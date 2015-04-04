@@ -40,6 +40,8 @@
 		365B70631AA3867300BC7E91 /* delete25.png in Resources */ = {isa = PBXBuildFile; fileRef = 365B70611AA3867300BC7E91 /* delete25.png */; };
 		365CDBB91A92A66100C41FB5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 365CDBB81A92A66100C41FB5 /* User.m */; };
 		365CDBBC1A92A72600C41FB5 /* UserDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 365CDBBB1A92A72600C41FB5 /* UserDataStore.m */; };
+		36615B8A1AD0421700E48A8F /* PGSideDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36615B871AD0421700E48A8F /* PGSideDrawerController.m */; };
+		36615B8B1AD0421700E48A8F /* PGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36615B891AD0421700E48A8F /* PGViewController.m */; };
 		367659861A8529B600D3D929 /* pic..png in Resources */ = {isa = PBXBuildFile; fileRef = 367659831A8529B600D3D929 /* pic..png */; };
 		367659871A8529B600D3D929 /* expense.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659841A8529B600D3D929 /* expense.png */; };
 		367659881A8529B600D3D929 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659851A8529B600D3D929 /* graph.png */; };
@@ -113,6 +115,10 @@
 		365CDBB81A92A66100C41FB5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		365CDBBA1A92A72600C41FB5 /* UserDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataStore.h; sourceTree = "<group>"; };
 		365CDBBB1A92A72600C41FB5 /* UserDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataStore.m; sourceTree = "<group>"; };
+		36615B861AD0421700E48A8F /* PGSideDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSideDrawerController.h; sourceTree = "<group>"; };
+		36615B871AD0421700E48A8F /* PGSideDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSideDrawerController.m; sourceTree = "<group>"; };
+		36615B881AD0421700E48A8F /* PGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGViewController.h; sourceTree = "<group>"; };
+		36615B891AD0421700E48A8F /* PGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGViewController.m; sourceTree = "<group>"; };
 		367659831A8529B600D3D929 /* pic..png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic..png; sourceTree = "<group>"; };
 		367659841A8529B600D3D929 /* expense.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expense.png; sourceTree = "<group>"; };
 		367659851A8529B600D3D929 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = "<group>"; };
@@ -176,6 +182,10 @@
 			isa = PBXGroup;
 			children = (
 				364D82E21A83D17400DDCCC5 /* AppDelegate.h */,
+				36615B861AD0421700E48A8F /* PGSideDrawerController.h */,
+				36615B871AD0421700E48A8F /* PGSideDrawerController.m */,
+				36615B881AD0421700E48A8F /* PGViewController.h */,
+				36615B891AD0421700E48A8F /* PGViewController.m */,
 				364D82E31A83D17400DDCCC5 /* AppDelegate.m */,
 				364D82EB1A83D17400DDCCC5 /* Main.storyboard */,
 				364D82EE1A83D17400DDCCC5 /* Images.xcassets */,
@@ -448,12 +458,14 @@
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
 				9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */,
 				364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */,
+				36615B8A1AD0421700E48A8F /* PGSideDrawerController.m in Sources */,
 				365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */,
 				9D9CC76C1A9FA221000D127E /* Expense.m in Sources */,
 				365CDBB91A92A66100C41FB5 /* User.m in Sources */,
 				36573E361A9244C00023680D /* LoginViewController.m in Sources */,
 				369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */,
 				36573E391A9244DB0023680D /* RegisterViewController.m in Sources */,
+				36615B8B1AD0421700E48A8F /* PGViewController.m in Sources */,
 				364D83241A83FF9C00DDCCC5 /* MyAccountviewController.m in Sources */,
 				364D83211A83F95C00DDCCC5 /* MyListingViewController.m in Sources */,
 				364D832B1A8428EE00DDCCC5 /* Property.m in Sources */,

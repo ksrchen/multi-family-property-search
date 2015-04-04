@@ -12,6 +12,8 @@
 #import "PropertyDataStore.h"
 #import "User.h"
 #import "UserDataStore.h"
+#import "MMDrawerBarButtonItem.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface MyListingViewController ()
 {
@@ -36,7 +38,16 @@
     [self reloadMyListing];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadMyListing) name:@"MyListingUpdated" object:nil];
+    [self setupLeftMenuButton];
 
+}
+- (void)setupLeftMenuButton {
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton];
+}
+
+- (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 -(void)reloadMyListing{
