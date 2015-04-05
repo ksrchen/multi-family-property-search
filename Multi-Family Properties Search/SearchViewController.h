@@ -16,5 +16,8 @@
 - (IBAction)drawPolygon:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *clearPolygon;
 - (IBAction)clearPolygon:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *labelButton;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @end

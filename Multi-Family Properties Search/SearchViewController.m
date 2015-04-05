@@ -68,7 +68,28 @@ NSMutableArray * _properties;
     [self setTitle:@"Map Search"];
     [self setupLeftMenuButton];
     
-//    [self showLogin];
+    [self hideToolbarButtons];
+    
+}
+-(void)hideToolbarButtons {
+    [self.toolbar setBackgroundImage:[UIImage new]
+                  forToolbarPosition:UIToolbarPositionAny
+                          barMetrics:UIBarMetricsDefault];
+    
+    [self.toolbar setBackgroundColor:[UIColor clearColor]];
+    NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
+    [toolbarItems removeObject:self.clearButton];
+    [toolbarItems removeObject:self.labelButton];
+    [self.toolbar setItems:toolbarItems animated:YES];
+}
+
+-(void)showToolbarButtons {
+    [self.toolbar setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:128 alpha:10]];
+    
+    NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
+    [toolbarItems insertObject:self.clearButton atIndex:0];
+    [toolbarItems insertObject:self.labelButton atIndex:0];
+    [self.toolbar setItems:toolbarItems animated:YES];
     
 }
 - (void)setupLeftMenuButton {
@@ -275,6 +296,9 @@ NSMutableArray * _properties;
 
 
 - (IBAction)drawPolygon:(id)sender {
+    [self.searchBar setHidden:YES];
+    [self showToolbarButtons];
+    
     [self.map setUserInteractionEnabled:NO];
     drawImage = [[UIImageView alloc] initWithImage:nil];
     
@@ -288,6 +312,8 @@ NSMutableArray * _properties;
     mouseSwiped = NO;
 }
 - (IBAction)clearPolygon:(id)sender {
+    [self.searchBar setHidden:NO];
+    [self hideToolbarButtons];
     if (polygon){
         [self.map removeOverlay:polygon];
     }
