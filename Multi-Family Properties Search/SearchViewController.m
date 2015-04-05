@@ -35,6 +35,7 @@
     MKPolygon *polygon;
     
     NSString * filterOptions;
+    CLLocationManager *locationManager;
 }
 @end
 
@@ -44,7 +45,7 @@ NSMutableArray * _properties;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CLLocationManager * locationManager = [[CLLocationManager alloc] init];
+    locationManager = [[CLLocationManager alloc] init];
     [locationManager startUpdatingLocation];
     [locationManager requestAlwaysAuthorization];
     

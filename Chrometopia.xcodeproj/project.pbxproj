@@ -15,7 +15,6 @@
 		364D82ED1A83D17400DDCCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364D82EB1A83D17400DDCCC5 /* Main.storyboard */; };
 		364D82EF1A83D17400DDCCC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364D82EE1A83D17400DDCCC5 /* Images.xcassets */; };
 		364D82F21A83D17400DDCCC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364D82F01A83D17400DDCCC5 /* LaunchScreen.xib */; };
-		364D82FE1A83D17400DDCCC5 /* Multi_Family_Properties_SearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82FD1A83D17400DDCCC5 /* Multi_Family_Properties_SearchTests.m */; };
 		364D83081A83DF4900DDCCC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 364D83071A83DF4900DDCCC5 /* MapKit.framework */; };
 		364D830B1A83E89300DDCCC5 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D830A1A83E89300DDCCC5 /* SearchViewController.m */; };
 		364D830E1A83F6DD00DDCCC5 /* HottestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D830D1A83F6DD00DDCCC5 /* HottestTableViewController.m */; };
@@ -48,24 +47,17 @@
 		3676598A1A853D6700D3D929 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659891A853D6700D3D929 /* appicon.png */; };
 		367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */; };
 		369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369B60A51AAB4BC200C69C17 /* RootViewController.m */; };
+		39544DD094DE3344D9EA0565 /* libPods-Chrometopia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */; };
 		99E683A8BAA1A84882DFD6F6 /* libPods-Multi-Family Properties Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */; };
 		9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00108E1AA63348005C3375 /* FilterViewController.m */; };
 		9D9CC76C1A9FA221000D127E /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CC76B1A9FA221000D127E /* Expense.m */; };
 		9DD37AAB1AA784E90092983A /* Filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DD37AAA1AA784E90092983A /* Filter.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		364D82F81A83D17400DDCCC5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 364D82D31A83D17400DDCCC5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 364D82DA1A83D17400DDCCC5;
-			remoteInfo = "Multi-Family Properties Search";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Multi-Family Properties Search.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DF5098118B2ED258E6E1F23 /* Pods-Chrometopia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chrometopia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chrometopia/Pods-Chrometopia.debug.xcconfig"; sourceTree = "<group>"; };
+		0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chrometopia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3611C71C1A9A2A000058FDC5 /* facebook_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_signin.png; sourceTree = "<group>"; };
 		3611C71D1A9A2A000058FDC5 /* google_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_signin.png; sourceTree = "<group>"; };
 		3611C71E1A9A2A000058FDC5 /* twitter_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_signin.png; sourceTree = "<group>"; };
@@ -77,7 +69,6 @@
 		364D82EC1A83D17400DDCCC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		364D82EE1A83D17400DDCCC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		364D82F11A83D17400DDCCC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		364D82F71A83D17400DDCCC5 /* ChrometopiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChrometopiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		364D82FC1A83D17400DDCCC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364D82FD1A83D17400DDCCC5 /* Multi_Family_Properties_SearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Multi_Family_Properties_SearchTests.m; sourceTree = "<group>"; };
 		364D83071A83DF4900DDCCC5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -127,6 +118,7 @@
 		367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDataStore.m; sourceTree = "<group>"; };
 		369B60A41AAB4BC200C69C17 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		369B60A51AAB4BC200C69C17 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		9CEF9275FE27C8F8593F2CF0 /* Pods-Chrometopia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chrometopia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chrometopia/Pods-Chrometopia.release.xcconfig"; sourceTree = "<group>"; };
 		9D00108D1AA63348005C3375 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		9D00108E1AA63348005C3375 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		9D0010901AA6689F005C3375 /* FilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDelegate.h; sourceTree = "<group>"; };
@@ -144,13 +136,7 @@
 			files = (
 				364D83081A83DF4900DDCCC5 /* MapKit.framework in Frameworks */,
 				99E683A8BAA1A84882DFD6F6 /* libPods-Multi-Family Properties Search.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		364D82F41A83D17400DDCCC5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				39544DD094DE3344D9EA0565 /* libPods-Chrometopia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				364D82DB1A83D17400DDCCC5 /* Chrometopia.app */,
-				364D82F71A83D17400DDCCC5 /* ChrometopiaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */,
+				0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,6 +273,8 @@
 			children = (
 				A8960ED62ADEBB5396452F9C /* Pods-Multi-Family Properties Search.debug.xcconfig */,
 				A5F1691BA81DA620C97A616B /* Pods-Multi-Family Properties Search.release.xcconfig */,
+				0DF5098118B2ED258E6E1F23 /* Pods-Chrometopia.debug.xcconfig */,
+				9CEF9275FE27C8F8593F2CF0 /* Pods-Chrometopia.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -313,24 +301,6 @@
 			productReference = 364D82DB1A83D17400DDCCC5 /* Chrometopia.app */;
 			productType = "com.apple.product-type.application";
 		};
-		364D82F61A83D17400DDCCC5 /* ChrometopiaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 364D83041A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "ChrometopiaTests" */;
-			buildPhases = (
-				364D82F31A83D17400DDCCC5 /* Sources */,
-				364D82F41A83D17400DDCCC5 /* Frameworks */,
-				364D82F51A83D17400DDCCC5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				364D82F91A83D17400DDCCC5 /* PBXTargetDependency */,
-			);
-			name = ChrometopiaTests;
-			productName = "Multi-Family Properties SearchTests";
-			productReference = 364D82F71A83D17400DDCCC5 /* ChrometopiaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -349,10 +319,6 @@
 							};
 						};
 					};
-					364D82F61A83D17400DDCCC5 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 364D82DA1A83D17400DDCCC5;
-					};
 				};
 			};
 			buildConfigurationList = 364D82D61A83D17400DDCCC5 /* Build configuration list for PBXProject "Chrometopia" */;
@@ -369,7 +335,6 @@
 			projectRoot = "";
 			targets = (
 				364D82DA1A83D17400DDCCC5 /* Chrometopia */,
-				364D82F61A83D17400DDCCC5 /* ChrometopiaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -405,13 +370,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		364D82F51A83D17400DDCCC5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -427,7 +385,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chrometopia/Pods-Chrometopia-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7420C8D5E0B9CDCB467F6C14 /* Check Pods Manifest.lock */ = {
@@ -474,23 +432,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		364D82F31A83D17400DDCCC5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				364D82FE1A83D17400DDCCC5 /* Multi_Family_Properties_SearchTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		364D82F91A83D17400DDCCC5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 364D82DA1A83D17400DDCCC5 /* Chrometopia */;
-			targetProxy = 364D82F81A83D17400DDCCC5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		364D82EB1A83D17400DDCCC5 /* Main.storyboard */ = {
@@ -592,7 +534,7 @@
 		};
 		364D83021A83D17400DDCCC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8960ED62ADEBB5396452F9C /* Pods-Multi-Family Properties Search.debug.xcconfig */;
+			baseConfigurationReference = 0DF5098118B2ED258E6E1F23 /* Pods-Chrometopia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Multi-Family Properties Search/Info.plist";
@@ -603,46 +545,12 @@
 		};
 		364D83031A83D17400DDCCC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5F1691BA81DA620C97A616B /* Pods-Multi-Family Properties Search.release.xcconfig */;
+			baseConfigurationReference = 9CEF9275FE27C8F8593F2CF0 /* Pods-Chrometopia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Multi-Family Properties Search/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Chrometopia;
-			};
-			name = Release;
-		};
-		364D83051A83D17400DDCCC5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Multi-Family Properties SearchTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = ChrometopiaTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multi-Family Properties Search.app/Multi-Family Properties Search";
-			};
-			name = Debug;
-		};
-		364D83061A83D17400DDCCC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Multi-Family Properties SearchTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = ChrometopiaTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multi-Family Properties Search.app/Multi-Family Properties Search";
 			};
 			name = Release;
 		};
@@ -663,15 +571,6 @@
 			buildConfigurations = (
 				364D83021A83D17400DDCCC5 /* Debug */,
 				364D83031A83D17400DDCCC5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		364D83041A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "ChrometopiaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				364D83051A83D17400DDCCC5 /* Debug */,
-				364D83061A83D17400DDCCC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

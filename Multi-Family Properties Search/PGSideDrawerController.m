@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.currentIndex = 0;
+    self.currentIndex = 2;
 }
 
 #pragma mark - Table View Delegate
@@ -33,7 +33,7 @@
     UIViewController *centerViewController;
     switch (indexPath.row) {
         case 0:
-            
+            centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
             break;
         case 1:
             centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyAccountViewController"];
@@ -45,11 +45,8 @@
             centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyListingViewController"];
             break;
         case 4:
-            centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
             break;
         case 5:
-            break;
-        case 6:
         {
             NSString* url = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=123"];
             [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
