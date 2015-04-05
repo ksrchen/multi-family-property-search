@@ -35,27 +35,6 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VUu-9p-f2U"/>
-                                    <barButtonItem style="plain" id="B5C-v2-v0I">
-                                        <view key="customView" contentMode="scaleToFill" id="O5T-7V-XRW">
-                                            <rect key="frame" x="16" y="6" width="130" height="33"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Draw to search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKY-Jm-aIw">
-                                                    <rect key="frame" x="8" y="6" width="135" height="21"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </barButtonItem>
-                                    <barButtonItem title="Clear" id="20h-mk-Foa">
-                                        <connections>
-                                            <action selector="clearPolygon:" destination="9pv-A4-QxB" id="8e0-uT-5oa"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem image="hand25.png" style="plain" id="vU8-WX-glh">
                                         <connections>
                                             <action selector="drawPolygon:" destination="9pv-A4-QxB" id="Kzc-CP-KZ9"/>
@@ -99,6 +78,27 @@
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Clear" id="20h-mk-Foa">
+                            <connections>
+                                <action selector="clearPolygon:" destination="9pv-A4-QxB" id="8e0-uT-5oa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="B5C-v2-v0I">
+                            <view key="customView" contentMode="scaleToFill" id="O5T-7V-XRW">
+                                <rect key="frame" x="16" y="6" width="130" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Draw to search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKY-Jm-aIw">
+                                        <rect key="frame" x="8" y="6" width="135" height="21"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="51D-H9-HDj"/>
@@ -1120,7 +1120,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Hotest Properites" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LqZ-VE-JGT">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Hottest Properites" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LqZ-VE-JGT">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
