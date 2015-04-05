@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "364D82DA1A83D17400DDCCC5"
-               BuildableName = "Multi-Family Properties Search.app"
-               BlueprintName = "Multi-Family Properties Search"
-               ReferencedContainer = "container:Multi-Family Properties Search.xcodeproj">
+               BuildableName = "Chrometopia.app"
+               BlueprintName = "Chrometopia"
+               ReferencedContainer = "container:Chrometopia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "364D82F61A83D17400DDCCC5"
-               BuildableName = "Multi-Family Properties SearchTests.xctest"
-               BlueprintName = "Multi-Family Properties SearchTests"
-               ReferencedContainer = "container:Multi-Family Properties Search.xcodeproj">
+               BuildableName = "ChrometopiaTests.xctest"
+               BlueprintName = "ChrometopiaTests"
+               ReferencedContainer = "container:Chrometopia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "364D82F61A83D17400DDCCC5"
-               BuildableName = "Multi-Family Properties SearchTests.xctest"
-               BlueprintName = "Multi-Family Properties SearchTests"
-               ReferencedContainer = "container:Multi-Family Properties Search.xcodeproj">
+               BuildableName = "ChrometopiaTests.xctest"
+               BlueprintName = "ChrometopiaTests"
+               ReferencedContainer = "container:Chrometopia.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "364D82DA1A83D17400DDCCC5"
-            BuildableName = "Multi-Family Properties Search.app"
-            BlueprintName = "Multi-Family Properties Search"
-            ReferencedContainer = "container:Multi-Family Properties Search.xcodeproj">
+            BuildableName = "Chrometopia.app"
+            BlueprintName = "Chrometopia"
+            ReferencedContainer = "container:Chrometopia.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -72,13 +72,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "364D82DA1A83D17400DDCCC5"
-            BuildableName = "Multi-Family Properties Search.app"
-            BlueprintName = "Multi-Family Properties Search"
-            ReferencedContainer = "container:Multi-Family Properties Search.xcodeproj">
+            BuildableName = "Chrometopia.app"
+            BlueprintName = "Chrometopia"
+            ReferencedContainer = "container:Chrometopia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -90,13 +91,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "364D82DA1A83D17400DDCCC5"
-            BuildableName = "Multi-Family Properties Search.app"
-            BlueprintName = "Multi-Family Properties Search"
-            ReferencedContainer = "container:Multi-Family Properties Search.xcodeproj">
+            BuildableName = "Chrometopia.app"
+            BlueprintName = "Chrometopia"
+            ReferencedContainer = "container:Chrometopia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -105,6 +107,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Chrometopia"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

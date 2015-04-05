@@ -69,7 +69,7 @@
 		3611C71C1A9A2A000058FDC5 /* facebook_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_signin.png; sourceTree = "<group>"; };
 		3611C71D1A9A2A000058FDC5 /* google_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_signin.png; sourceTree = "<group>"; };
 		3611C71E1A9A2A000058FDC5 /* twitter_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_signin.png; sourceTree = "<group>"; };
-		364D82DB1A83D17400DDCCC5 /* Multi-Family Properties Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi-Family Properties Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		364D82DB1A83D17400DDCCC5 /* Chrometopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chrometopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		364D82DF1A83D17400DDCCC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364D82E01A83D17400DDCCC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		364D82E21A83D17400DDCCC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		364D82EC1A83D17400DDCCC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		364D82EE1A83D17400DDCCC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		364D82F11A83D17400DDCCC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		364D82F71A83D17400DDCCC5 /* Multi-Family Properties SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multi-Family Properties SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		364D82F71A83D17400DDCCC5 /* ChrometopiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChrometopiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		364D82FC1A83D17400DDCCC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364D82FD1A83D17400DDCCC5 /* Multi_Family_Properties_SearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Multi_Family_Properties_SearchTests.m; sourceTree = "<group>"; };
 		364D83071A83DF4900DDCCC5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -161,8 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				364D83071A83DF4900DDCCC5 /* MapKit.framework */,
-				364D82DD1A83D17400DDCCC5 /* Multi-Family Properties Search */,
-				364D82FA1A83D17400DDCCC5 /* Multi-Family Properties SearchTests */,
+				364D82DD1A83D17400DDCCC5 /* Chrometopia */,
+				364D82FA1A83D17400DDCCC5 /* Chrometopia Tests */,
 				364D82DC1A83D17400DDCCC5 /* Products */,
 				7D5709FD972DEC1F1DA8B867 /* Pods */,
 				698CCE5BCBE59C3E927BFA32 /* Frameworks */,
@@ -172,13 +172,13 @@
 		364D82DC1A83D17400DDCCC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				364D82DB1A83D17400DDCCC5 /* Multi-Family Properties Search.app */,
-				364D82F71A83D17400DDCCC5 /* Multi-Family Properties SearchTests.xctest */,
+				364D82DB1A83D17400DDCCC5 /* Chrometopia.app */,
+				364D82F71A83D17400DDCCC5 /* ChrometopiaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		364D82DD1A83D17400DDCCC5 /* Multi-Family Properties Search */ = {
+		364D82DD1A83D17400DDCCC5 /* Chrometopia */ = {
 			isa = PBXGroup;
 			children = (
 				364D82E21A83D17400DDCCC5 /* AppDelegate.h */,
@@ -223,6 +223,7 @@
 				369B60A41AAB4BC200C69C17 /* RootViewController.h */,
 				369B60A51AAB4BC200C69C17 /* RootViewController.m */,
 			);
+			name = Chrometopia;
 			path = "Multi-Family Properties Search";
 			sourceTree = "<group>";
 		};
@@ -255,12 +256,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		364D82FA1A83D17400DDCCC5 /* Multi-Family Properties SearchTests */ = {
+		364D82FA1A83D17400DDCCC5 /* Chrometopia Tests */ = {
 			isa = PBXGroup;
 			children = (
 				364D82FD1A83D17400DDCCC5 /* Multi_Family_Properties_SearchTests.m */,
 				364D82FB1A83D17400DDCCC5 /* Supporting Files */,
 			);
+			name = "Chrometopia Tests";
 			path = "Multi-Family Properties SearchTests";
 			sourceTree = "<group>";
 		};
@@ -292,9 +294,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		364D82DA1A83D17400DDCCC5 /* Multi-Family Properties Search */ = {
+		364D82DA1A83D17400DDCCC5 /* Chrometopia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 364D83011A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "Multi-Family Properties Search" */;
+			buildConfigurationList = 364D83011A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "Chrometopia" */;
 			buildPhases = (
 				7420C8D5E0B9CDCB467F6C14 /* Check Pods Manifest.lock */,
 				364D82D71A83D17400DDCCC5 /* Sources */,
@@ -306,14 +308,14 @@
 			);
 			dependencies = (
 			);
-			name = "Multi-Family Properties Search";
+			name = Chrometopia;
 			productName = "Multi-Family Properties Search";
-			productReference = 364D82DB1A83D17400DDCCC5 /* Multi-Family Properties Search.app */;
+			productReference = 364D82DB1A83D17400DDCCC5 /* Chrometopia.app */;
 			productType = "com.apple.product-type.application";
 		};
-		364D82F61A83D17400DDCCC5 /* Multi-Family Properties SearchTests */ = {
+		364D82F61A83D17400DDCCC5 /* ChrometopiaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 364D83041A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "Multi-Family Properties SearchTests" */;
+			buildConfigurationList = 364D83041A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "ChrometopiaTests" */;
 			buildPhases = (
 				364D82F31A83D17400DDCCC5 /* Sources */,
 				364D82F41A83D17400DDCCC5 /* Frameworks */,
@@ -324,9 +326,9 @@
 			dependencies = (
 				364D82F91A83D17400DDCCC5 /* PBXTargetDependency */,
 			);
-			name = "Multi-Family Properties SearchTests";
+			name = ChrometopiaTests;
 			productName = "Multi-Family Properties SearchTests";
-			productReference = 364D82F71A83D17400DDCCC5 /* Multi-Family Properties SearchTests.xctest */;
+			productReference = 364D82F71A83D17400DDCCC5 /* ChrometopiaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -353,7 +355,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 364D82D61A83D17400DDCCC5 /* Build configuration list for PBXProject "Multi-Family Properties Search" */;
+			buildConfigurationList = 364D82D61A83D17400DDCCC5 /* Build configuration list for PBXProject "Chrometopia" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -366,8 +368,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				364D82DA1A83D17400DDCCC5 /* Multi-Family Properties Search */,
-				364D82F61A83D17400DDCCC5 /* Multi-Family Properties SearchTests */,
+				364D82DA1A83D17400DDCCC5 /* Chrometopia */,
+				364D82F61A83D17400DDCCC5 /* ChrometopiaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -485,7 +487,7 @@
 /* Begin PBXTargetDependency section */
 		364D82F91A83D17400DDCCC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 364D82DA1A83D17400DDCCC5 /* Multi-Family Properties Search */;
+			target = 364D82DA1A83D17400DDCCC5 /* Chrometopia */;
 			targetProxy = 364D82F81A83D17400DDCCC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -595,7 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Multi-Family Properties Search/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Chrometopia;
 			};
 			name = Debug;
 		};
@@ -606,7 +608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Multi-Family Properties Search/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Chrometopia;
 			};
 			name = Release;
 		};
@@ -624,7 +626,7 @@
 				);
 				INFOPLIST_FILE = "Multi-Family Properties SearchTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ChrometopiaTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multi-Family Properties Search.app/Multi-Family Properties Search";
 			};
 			name = Debug;
@@ -639,7 +641,7 @@
 				);
 				INFOPLIST_FILE = "Multi-Family Properties SearchTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ChrometopiaTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multi-Family Properties Search.app/Multi-Family Properties Search";
 			};
 			name = Release;
@@ -647,7 +649,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		364D82D61A83D17400DDCCC5 /* Build configuration list for PBXProject "Multi-Family Properties Search" */ = {
+		364D82D61A83D17400DDCCC5 /* Build configuration list for PBXProject "Chrometopia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				364D82FF1A83D17400DDCCC5 /* Debug */,
@@ -656,7 +658,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		364D83011A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "Multi-Family Properties Search" */ = {
+		364D83011A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "Chrometopia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				364D83021A83D17400DDCCC5 /* Debug */,
@@ -665,7 +667,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		364D83041A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "Multi-Family Properties SearchTests" */ = {
+		364D83041A83D17400DDCCC5 /* Build configuration list for PBXNativeTarget "ChrometopiaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				364D83051A83D17400DDCCC5 /* Debug */,
