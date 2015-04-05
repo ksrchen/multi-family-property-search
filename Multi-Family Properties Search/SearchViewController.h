@@ -19,5 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *labelButton;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *filterBarItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *listViewBarItem;
 
 @end

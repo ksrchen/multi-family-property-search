@@ -70,6 +70,8 @@ NSMutableArray * _properties;
     
     [self hideToolbarButtons];
     
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:self.filterBarItem, self.listViewBarItem, nil] animated:YES];
+    
 }
 -(void)hideToolbarButtons {
     [self.toolbar setBackgroundImage:[UIImage new]
