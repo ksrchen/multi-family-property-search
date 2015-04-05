@@ -48,14 +48,12 @@
 		367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */; };
 		369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369B60A51AAB4BC200C69C17 /* RootViewController.m */; };
 		39544DD094DE3344D9EA0565 /* libPods-Chrometopia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */; };
-		99E683A8BAA1A84882DFD6F6 /* libPods-Multi-Family Properties Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */; };
 		9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00108E1AA63348005C3375 /* FilterViewController.m */; };
 		9D9CC76C1A9FA221000D127E /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CC76B1A9FA221000D127E /* Expense.m */; };
 		9DD37AAB1AA784E90092983A /* Filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DD37AAA1AA784E90092983A /* Filter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Multi-Family Properties Search.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF5098118B2ED258E6E1F23 /* Pods-Chrometopia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chrometopia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chrometopia/Pods-Chrometopia.debug.xcconfig"; sourceTree = "<group>"; };
 		0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chrometopia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3611C71C1A9A2A000058FDC5 /* facebook_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_signin.png; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				364D83081A83DF4900DDCCC5 /* MapKit.framework in Frameworks */,
-				99E683A8BAA1A84882DFD6F6 /* libPods-Multi-Family Properties Search.a in Frameworks */,
 				39544DD094DE3344D9EA0565 /* libPods-Chrometopia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +259,6 @@
 		698CCE5BCBE59C3E927BFA32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				055228DBA20F06F9031038E1 /* libPods-Multi-Family Properties Search.a */,
 				0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */,
 			);
 			name = Frameworks;
