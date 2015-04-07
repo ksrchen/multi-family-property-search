@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gkR-8m-vwt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gkR-8m-vwt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -20,15 +20,8 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4v-dC-T2P">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </mapView>
-                            <searchBar contentMode="redraw" searchBarStyle="prominent" text="Los Angele, CA" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-yV-IZE">
-                                <rect key="frame" x="5" y="64" width="200" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="BmV-4t-fwW"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUb-2C-rpk">
-                                <rect key="frame" x="354" y="64" width="240" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="HKC-nb-CPQ"/>
@@ -41,19 +34,23 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HKC-nb-CPQ"/>
+                                    </mask>
+                                </variation>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="b4v-dC-T2P" secondAttribute="height" id="7iD-RO-eQk"/>
-                            <constraint firstItem="F3G-yV-IZE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Bbx-J0-dDJ"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="CLT-bh-OWc"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="FTg-cv-xom"/>
-                            <constraint firstItem="BUb-2C-rpk" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" constant="10" id="LoB-ds-wno"/>
-                            <constraint firstItem="F3G-yV-IZE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="5" id="ab1-ix-mAe"/>
+                            <constraint firstItem="BUb-2C-rpk" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="LoB-ds-wno"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="bAQ-kr-Z1u"/>
                             <constraint firstItem="BUb-2C-rpk" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="bbQ-qj-qKz"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="b4v-dC-T2P" secondAttribute="bottom" id="doE-KZ-nBC"/>
+                            <constraint firstItem="BUb-2C-rpk" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="lrm-tR-rLF"/>
                             <constraint firstItem="b4v-dC-T2P" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="mnG-jl-Tmr"/>
                             <constraint firstAttribute="width" secondItem="b4v-dC-T2P" secondAttribute="width" id="sSz-yy-iOt"/>
                         </constraints>
@@ -66,12 +63,12 @@
                         </variation>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="List View" id="92x-kr-KN1">
+                        <barButtonItem title="List" id="92x-kr-KN1">
                             <connections>
                                 <segue destination="3jV-uB-ZMU" kind="show" id="Uky-CG-1a6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Filters" id="rNO-ka-dvL">
+                        <barButtonItem title="Filter" id="rNO-ka-dvL">
                             <connections>
                                 <action selector="onFilter:" destination="9pv-A4-QxB" id="U1K-sU-mzD"/>
                                 <segue destination="6sr-vh-eat" kind="popoverPresentation" identifier="FilterViewSeque" popoverAnchorBarButtonItem="rNO-ka-dvL" id="43F-Ro-Hx8">
@@ -80,16 +77,18 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem title="Clear" id="20h-mk-Foa">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="clearPolygon:" destination="9pv-A4-QxB" id="8e0-uT-5oa"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem image="location_services.png" id="XGJ-Qc-d5u"/>
                         <barButtonItem style="plain" id="B5C-v2-v0I">
                             <view key="customView" contentMode="scaleToFill" id="O5T-7V-XRW">
                                 <rect key="frame" x="16" y="6" width="130" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Draw to search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKY-Jm-aIw">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Draw to search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKY-Jm-aIw">
                                         <rect key="frame" x="8" y="6" width="135" height="21"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -105,15 +104,38 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="clearButton" destination="20h-mk-Foa" id="rNd-ED-Z3B"/>
+                        <outlet property="currentLocationBarItem" destination="XGJ-Qc-d5u" id="Brp-ic-Raq"/>
                         <outlet property="filterBarItem" destination="rNO-ka-dvL" id="Dtl-Lp-G8N"/>
                         <outlet property="labelButton" destination="B5C-v2-v0I" id="caC-qn-4yh"/>
                         <outlet property="listViewBarItem" destination="92x-kr-KN1" id="RLA-dG-Kly"/>
                         <outlet property="map" destination="b4v-dC-T2P" id="XvW-eT-Maq"/>
-                        <outlet property="searchBar" destination="F3G-yV-IZE" id="vdv-el-gZP"/>
+                        <outlet property="searchBar" destination="LdR-Tn-nne" id="qN3-gK-90o"/>
+                        <outlet property="searchDisplayController" destination="tbJ-Mv-cYI" id="Mnf-hV-K46"/>
                         <outlet property="toolbar" destination="BUb-2C-rpk" id="GPh-34-SOD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="yCt-H7-oso">
+                    <connections>
+                        <outlet property="delegate" destination="9pv-A4-QxB" id="Jid-aM-VLx"/>
+                        <outlet property="searchContentsController" destination="9pv-A4-QxB" id="rIA-RK-weT"/>
+                        <outlet property="searchResultsDataSource" destination="9pv-A4-QxB" id="3T3-cx-elL"/>
+                        <outlet property="searchResultsDelegate" destination="9pv-A4-QxB" id="Bbp-0c-Hbr"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="tbJ-Mv-cYI">
+                    <connections>
+                        <outlet property="delegate" destination="9pv-A4-QxB" id="kF2-JG-aB0"/>
+                        <outlet property="searchContentsController" destination="9pv-A4-QxB" id="fUL-1e-yLZ"/>
+                        <outlet property="searchResultsDataSource" destination="9pv-A4-QxB" id="Y7c-an-BiU"/>
+                        <outlet property="searchResultsDelegate" destination="9pv-A4-QxB" id="iY9-KE-UKE"/>
+                    </connections>
+                </searchDisplayController>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Current location" id="LdR-Tn-nne">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </objects>
             <point key="canvasLocation" x="2218" y="-365"/>
         </scene>
@@ -1219,6 +1241,7 @@
         <image name="first" width="30" height="30"/>
         <image name="google_signin.png" width="164" height="30"/>
         <image name="hand25.png" width="25" height="25"/>
+        <image name="location_services.png" width="26" height="26"/>
         <image name="pic..png" width="314" height="176"/>
     </resources>
 </document>

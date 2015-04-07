@@ -36,6 +36,7 @@
     
     NSString * filterOptions;
     CLLocationManager *locationManager;
+    BOOL zoomedToCurrentLocation;
 }
 @end
 
@@ -70,7 +71,9 @@ NSMutableArray * _properties;
     
     [self hideToolbarButtons];
     
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:self.filterBarItem, self.listViewBarItem, nil] animated:YES];
+    
+    [self.navigationItem setTitleView:self.searchBar];
+    [self.navigationItem setRightBarButtonItems:@[ self.filterBarItem, self.currentLocationBarItem]];
     
 }
 -(void)hideToolbarButtons {
@@ -86,17 +89,17 @@ NSMutableArray * _properties;
 }
 
 -(void)showToolbarButtons {
-    [self.toolbar setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:128 alpha:10]];
+    [self.toolbar setBackgroundColor:[UIColor colorWithRed:128 green:0 blue:128 alpha:10]];
     
     NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
-    [toolbarItems insertObject:self.clearButton atIndex:0];
+    [toolbarItems insertObject:self.clearButton atIndex:1];
     [toolbarItems insertObject:self.labelButton atIndex:0];
     [self.toolbar setItems:toolbarItems animated:YES];
     
 }
 - (void)setupLeftMenuButton {
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-    [self.navigationItem setLeftBarButtonItem:leftDrawerButton];
+    [self.navigationItem setLeftBarButtonItems:@[leftDrawerButton, self.listViewBarItem]];
 }
 
 - (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
@@ -104,12 +107,15 @@ NSMutableArray * _properties;
 }
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    MKCoordinateRegion mapRegion;
-    mapRegion.center = mapView.userLocation.coordinate;
-    mapRegion.span.latitudeDelta = 0.5;
-    mapRegion.span.longitudeDelta = 0.5;
-    
-    [mapView setRegion:mapRegion animated: YES];
+    if (!zoomedToCurrentLocation){
+        MKCoordinateRegion mapRegion;
+        mapRegion.center = mapView.userLocation.coordinate;
+        mapRegion.span.latitudeDelta = 0.5;
+        mapRegion.span.longitudeDelta = 0.5;
+        
+        [mapView setRegion:mapRegion animated: YES];
+        zoomedToCurrentLocation = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

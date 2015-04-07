@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterBarItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *listViewBarItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *currentLocationBarItem;
 
 @end
