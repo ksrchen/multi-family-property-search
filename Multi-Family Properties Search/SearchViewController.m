@@ -89,7 +89,7 @@ NSMutableArray * _properties;
 }
 
 -(void)showToolbarButtons {
-    [self.toolbar setBackgroundColor:[UIColor colorWithRed:128 green:0 blue:128 alpha:10]];
+    [self.toolbar setBackgroundColor:[UIColor colorWithRed:1 green:0 blue:1 alpha:0.8]];
     
     NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
     [toolbarItems insertObject:self.clearButton atIndex:1];
@@ -108,15 +108,11 @@ NSMutableArray * _properties;
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     if (!zoomedToCurrentLocation){
-        MKCoordinateRegion mapRegion;
-        mapRegion.center = mapView.userLocation.coordinate;
-        mapRegion.span.latitudeDelta = 0.5;
-        mapRegion.span.longitudeDelta = 0.5;
-        
-        [mapView setRegion:mapRegion animated: YES];
+        [self zoomToCurrentLocation:nil];
         zoomedToCurrentLocation = YES;
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -458,7 +454,7 @@ NSMutableArray * _properties;
     
     polygonView.lineWidth = 5;
     
-    polygonView.strokeColor = [UIColor redColor];
+    polygonView.strokeColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
     
     polygonView.fillColor = [UIColor colorWithRed:0 green:191 blue:255 alpha:0.5];
     
@@ -489,4 +485,15 @@ NSMutableArray * _properties;
 }
 
 
+- (IBAction)zoomToCurrentLocation:(id)sender {
+    [self.searchBar resignFirstResponder];
+    self.searchBar.text = nil;
+    
+    MKCoordinateRegion mapRegion;
+    mapRegion.center = self.map.userLocation.coordinate;
+    mapRegion.span.latitudeDelta = 0.5;
+    mapRegion.span.longitudeDelta = 0.5;
+    
+    [self.map setRegion:mapRegion animated: YES];
+}
 @end

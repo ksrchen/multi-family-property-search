@@ -82,7 +82,11 @@
                                 <action selector="clearPolygon:" destination="9pv-A4-QxB" id="8e0-uT-5oa"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem image="location_services.png" id="XGJ-Qc-d5u"/>
+                        <barButtonItem image="location_services.png" id="XGJ-Qc-d5u">
+                            <connections>
+                                <action selector="zoomToCurrentLocation:" destination="9pv-A4-QxB" id="EzT-13-lBJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" id="B5C-v2-v0I">
                             <view key="customView" contentMode="scaleToFill" id="O5T-7V-XRW">
                                 <rect key="frame" x="16" y="6" width="130" height="33"/>
@@ -1241,7 +1245,7 @@
         <image name="first" width="30" height="30"/>
         <image name="google_signin.png" width="164" height="30"/>
         <image name="hand25.png" width="25" height="25"/>
-        <image name="location_services.png" width="26" height="26"/>
+        <image name="location_services.png" width="24" height="24"/>
         <image name="pic..png" width="314" height="176"/>
     </resources>
 </document>

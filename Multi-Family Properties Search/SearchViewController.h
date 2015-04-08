@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterBarItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *listViewBarItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *currentLocationBarItem;
+- (IBAction)zoomToCurrentLocation:(id)sender;
 
 @end
