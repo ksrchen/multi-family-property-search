@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AddPropertyViewController : UITableViewController
+@property (weak, nonatomic) NSString *MLSNumber;
 
 - (IBAction)saveButtonTap:(id)sender;
 @end

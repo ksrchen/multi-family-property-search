@@ -502,17 +502,17 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KyB-sa-zRI">
-                                                    <rect key="frame" x="76" y="9" width="128" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIz-Kc-p4w">
                                                     <rect key="frame" x="235" y="9" width="48" height="30"/>
                                                     <state key="normal" title="Search">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KyB-sa-zRI">
+                                                    <rect key="frame" x="76" y="9" width="128" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -562,7 +562,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nze-2e-j31">
-                                                    <rect key="frame" x="263" y="9" width="80" height="30"/>
+                                                    <rect key="frame" x="260" y="8" width="80" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -723,7 +723,7 @@
                     <navigationItem key="navigationItem" id="VXY-ro-HLs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Lgu-kr-73z">
                             <connections>
-                                <segue destination="zrK-FF-7CH" kind="show" id="8Dy-ja-bTi"/>
+                                <segue destination="zrK-FF-7CH" kind="show" identifier="AddPropertyDetail" id="QSU-aE-dmC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -14,7 +14,7 @@
 #import "UserDataStore.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
-
+#import "AddPropertyViewController.h"
 @interface MyListingViewController ()
 {
     NSMutableArray * _properties;
@@ -158,25 +158,35 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"AddPropertyDetail"]){
+        if ([sender isKindOfClass:[NSIndexPath class]]){
+            NSIndexPath *path = sender;
+            AddPropertyViewController * controller = (AddPropertyViewController*)segue.destinationViewController;
+            Property * p = [_properties objectAtIndex:path.row];
+            
+            controller.MLSNumber = p.MLNumber;
+        }
+    }
 }
-*/
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Property * p = [_properties objectAtIndex:indexPath.row];
-    
-    NSString * storyboardName = @"Main";
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    PropertyDetailViewController  * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
-    vc.MLNumber = p.MLNumber;
-    [self.navigationController pushViewController:vc animated:YES];
+//    Property * p = [_properties objectAtIndex:indexPath.row];
+//    
+//    NSString * storyboardName = @"Main";
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+//    PropertyDetailViewController  * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+//    vc.MLNumber = p.MLNumber;
+//    [self.navigationController pushViewController:vc animated:YES];
 
+    [self performSegueWithIdentifier:@"AddPropertyDetail" sender:indexPath];
 }
 
 @end

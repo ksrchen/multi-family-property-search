@@ -17,7 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Add Property";
+    if (self.MLSNumber.length > 0){
+        self.title = self.MLSNumber;
+    }else {
+        self.title = @"Add Property";
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
