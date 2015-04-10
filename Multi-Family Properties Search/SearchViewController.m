@@ -15,7 +15,7 @@
 #import "UIViewController+MMDrawerController.h"
 
 @interface SearchViewController ()
-<MKMapViewDelegate, UISearchBarDelegate>
+<MKMapViewDelegate>
 {
     UIImageView *drawImage;
     
@@ -35,7 +35,7 @@
     MKPolygon *polygon;
     
     NSString * filterOptions;
-    CLLocationManager *locationManager;
+    
     BOOL zoomedToCurrentLocation;
 }
 @end
@@ -46,10 +46,7 @@ NSMutableArray * _properties;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    locationManager = [[CLLocationManager alloc] init];
-    [locationManager startUpdatingLocation];
-    [locationManager requestAlwaysAuthorization];
-    
+        
     [_map setShowsUserLocation:YES];
     
     MKCoordinateRegion mapRegion;
@@ -64,16 +61,15 @@ NSMutableArray * _properties;
     mouseSwiped = NO;
     
     _map.delegate = self;
-    _searchBar.delegate = self;
+    //_searchBar.delegate = self;
     
     [self setTitle:@"Map Search"];
-    [self setupLeftMenuButton];
     
     [self hideToolbarButtons];
     
     
-    [self.navigationItem setTitleView:self.searchBar];
-    [self.navigationItem setRightBarButtonItems:@[ self.filterBarItem, self.currentLocationBarItem]];
+    //[self.navigationItem setTitleView:self.searchBar];
+    //[self.navigationItem setRightBarButtonItems:@[ self.filterBarItem, self.currentLocationBarItem]];
     
 }
 -(void)hideToolbarButtons {
@@ -97,14 +93,8 @@ NSMutableArray * _properties;
     [self.toolbar setItems:toolbarItems animated:YES];
     
 }
-- (void)setupLeftMenuButton {
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-    [self.navigationItem setLeftBarButtonItems:@[leftDrawerButton, self.listViewBarItem]];
-}
 
-- (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
+
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     if (!zoomedToCurrentLocation){
@@ -309,7 +299,6 @@ NSMutableArray * _properties;
 
 
 - (IBAction)drawPolygon:(id)sender {
-    [self.searchBar setHidden:YES];
     [self showToolbarButtons];
     
     [self.map setUserInteractionEnabled:NO];
@@ -325,7 +314,6 @@ NSMutableArray * _properties;
     mouseSwiped = NO;
 }
 - (IBAction)clearPolygon:(id)sender {
-    [self.searchBar setHidden:NO];
     [self hideToolbarButtons];
     if (polygon){
         [self.map removeOverlay:polygon];
@@ -486,9 +474,7 @@ NSMutableArray * _properties;
 
 
 - (IBAction)zoomToCurrentLocation:(id)sender {
-    [self.searchBar resignFirstResponder];
-    self.searchBar.text = nil;
-    
+        
     MKCoordinateRegion mapRegion;
     mapRegion.center = self.map.userLocation.coordinate;
     mapRegion.span.latitudeDelta = 0.5;

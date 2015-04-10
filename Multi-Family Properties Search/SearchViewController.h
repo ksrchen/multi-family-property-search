@@ -10,18 +10,16 @@
 #import <MapKit/MapKit.h>
 #import "FilterDelegate.h"
 
-@interface SearchViewController : UIViewController <FilterDelegate>
+@interface SearchViewController : UIViewController <FilterDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView * map;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 - (IBAction)drawPolygon:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *clearPolygon;
 - (IBAction)clearPolygon:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *clearButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *labelButton;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *filterBarItem;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *listViewBarItem;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *currentLocationBarItem;
-- (IBAction)zoomToCurrentLocation:(id)sender;
 
+- (IBAction)zoomToCurrentLocation:(id)sender;
+- (void) ApplyFilter: (NSString *) filters;
+- (void) ClearFilter;
 @end

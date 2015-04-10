@@ -1,10 +1,4 @@
-//
-//  PGSideDrawerController.m
-// SideDrawerExample
-//
-//  Created by Pulkit Goyal on 18/09/14.
-//  Copyright (c) 2014 Pulkit Goyal. All rights reserved.
-//
+
 
 #import "PGSideDrawerController.h"
 #import "UIViewController+MMDrawerController.h"

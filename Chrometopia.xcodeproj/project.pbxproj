@@ -49,9 +49,13 @@
 		369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369B60A51AAB4BC200C69C17 /* RootViewController.m */; };
 		39544DD094DE3344D9EA0565 /* libPods-Chrometopia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */; };
 		9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00108E1AA63348005C3375 /* FilterViewController.m */; };
+		9D0D8E7A1AD86B0F002A6177 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D8E791AD86B0F002A6177 /* EmptySegue.m */; };
 		9D178D1F1AD7019A00523BE7 /* AddPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D178D1E1AD7019A00523BE7 /* AddPropertyViewController.m */; };
 		9D1A70B81AD486A80029E9D4 /* location_services.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A70B71AD486A80029E9D4 /* location_services.png */; };
 		9D9CC76C1A9FA221000D127E /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9CC76B1A9FA221000D127E /* Expense.m */; };
+		9D9EB5AA1AD84C9C00118AA2 /* PropertySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EB5A91AD84C9C00118AA2 /* PropertySearchController.m */; };
+		9D9EB5AD1AD864C300118AA2 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EB5AC1AD864C300118AA2 /* ContainerViewController.m */; };
+		9D9EB5B01AD8660D00118AA2 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EB5AF1AD8660D00118AA2 /* ListViewController.m */; };
 		9DD37AAB1AA784E90092983A /* Filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DD37AAA1AA784E90092983A /* Filter.png */; };
 /* End PBXBuildFile section */
 
@@ -122,11 +126,19 @@
 		9D00108D1AA63348005C3375 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		9D00108E1AA63348005C3375 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		9D0010901AA6689F005C3375 /* FilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDelegate.h; sourceTree = "<group>"; };
+		9D0D8E781AD86B0F002A6177 /* EmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
+		9D0D8E791AD86B0F002A6177 /* EmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySegue.m; sourceTree = "<group>"; };
 		9D178D1D1AD7019A00523BE7 /* AddPropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPropertyViewController.h; sourceTree = "<group>"; };
 		9D178D1E1AD7019A00523BE7 /* AddPropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPropertyViewController.m; sourceTree = "<group>"; };
 		9D1A70B71AD486A80029E9D4 /* location_services.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_services.png; sourceTree = "<group>"; };
 		9D9CC76A1A9FA221000D127E /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
 		9D9CC76B1A9FA221000D127E /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
+		9D9EB5A81AD84C9C00118AA2 /* PropertySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertySearchController.h; sourceTree = "<group>"; };
+		9D9EB5A91AD84C9C00118AA2 /* PropertySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertySearchController.m; sourceTree = "<group>"; };
+		9D9EB5AB1AD864C300118AA2 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		9D9EB5AC1AD864C300118AA2 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		9D9EB5AE1AD8660D00118AA2 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		9D9EB5AF1AD8660D00118AA2 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		9DD37AAA1AA784E90092983A /* Filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Filter.png; sourceTree = "<group>"; };
 		A5F1691BA81DA620C97A616B /* Pods-Multi-Family Properties Search.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multi-Family Properties Search.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search.release.xcconfig"; sourceTree = "<group>"; };
 		A8960ED62ADEBB5396452F9C /* Pods-Multi-Family Properties Search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multi-Family Properties Search.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multi-Family Properties Search/Pods-Multi-Family Properties Search.debug.xcconfig"; sourceTree = "<group>"; };
@@ -255,7 +267,11 @@
 		9D178D1A1AD6FC9500523BE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9D0D8E781AD86B0F002A6177 /* EmptySegue.h */,
+				9D0D8E791AD86B0F002A6177 /* EmptySegue.m */,
 				9D00108D1AA63348005C3375 /* FilterViewController.h */,
+				9D9EB5AB1AD864C300118AA2 /* ContainerViewController.h */,
+				9D9EB5AC1AD864C300118AA2 /* ContainerViewController.m */,
 				369B60A41AAB4BC200C69C17 /* RootViewController.h */,
 				369B60A51AAB4BC200C69C17 /* RootViewController.m */,
 				9D00108E1AA63348005C3375 /* FilterViewController.m */,
@@ -265,8 +281,8 @@
 				36573E371A9244DB0023680D /* RegisterViewController.h */,
 				36573E381A9244DB0023680D /* RegisterViewController.m */,
 				364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */,
-				364D83091A83E89300DDCCC5 /* SearchViewController.h */,
 				364D830A1A83E89300DDCCC5 /* SearchViewController.m */,
+				364D83091A83E89300DDCCC5 /* SearchViewController.h */,
 				364D830C1A83F6DD00DDCCC5 /* HottestTableViewController.h */,
 				364D830D1A83F6DD00DDCCC5 /* HottestTableViewController.m */,
 				364D831F1A83F95C00DDCCC5 /* MyListingViewController.h */,
@@ -279,6 +295,10 @@
 				36615B891AD0421700E48A8F /* PGViewController.m */,
 				9D178D1D1AD7019A00523BE7 /* AddPropertyViewController.h */,
 				9D178D1E1AD7019A00523BE7 /* AddPropertyViewController.m */,
+				9D9EB5A81AD84C9C00118AA2 /* PropertySearchController.h */,
+				9D9EB5A91AD84C9C00118AA2 /* PropertySearchController.m */,
+				9D9EB5AE1AD8660D00118AA2 /* ListViewController.h */,
+				9D9EB5AF1AD8660D00118AA2 /* ListViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -446,16 +466,20 @@
 				364D830E1A83F6DD00DDCCC5 /* HottestTableViewController.m in Sources */,
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
 				9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */,
+				9D9EB5AA1AD84C9C00118AA2 /* PropertySearchController.m in Sources */,
 				9D178D1F1AD7019A00523BE7 /* AddPropertyViewController.m in Sources */,
+				9D9EB5B01AD8660D00118AA2 /* ListViewController.m in Sources */,
 				364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */,
 				36615B8A1AD0421700E48A8F /* PGSideDrawerController.m in Sources */,
 				365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */,
 				9D9CC76C1A9FA221000D127E /* Expense.m in Sources */,
 				365CDBB91A92A66100C41FB5 /* User.m in Sources */,
+				9D0D8E7A1AD86B0F002A6177 /* EmptySegue.m in Sources */,
 				36573E361A9244C00023680D /* LoginViewController.m in Sources */,
 				369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */,
 				36573E391A9244DB0023680D /* RegisterViewController.m in Sources */,
 				36615B8B1AD0421700E48A8F /* PGViewController.m in Sources */,
+				9D9EB5AD1AD864C300118AA2 /* ContainerViewController.m in Sources */,
 				364D83241A83FF9C00DDCCC5 /* MyAccountviewController.m in Sources */,
 				364D83211A83F95C00DDCCC5 /* MyListingViewController.m in Sources */,
 				364D832B1A8428EE00DDCCC5 /* Property.m in Sources */,
@@ -568,6 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Multi-Family Properties Search/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Chrometopia;
 			};
@@ -579,6 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Multi-Family Properties Search/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Chrometopia;
 			};
