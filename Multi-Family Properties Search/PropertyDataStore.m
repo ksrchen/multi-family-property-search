@@ -39,7 +39,7 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                      success:(void(^)(NSURLSessionDataTask *task, NSMutableArray * properties))success
                      failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
 {
-    NSMutableArray *  properties = [[NSMutableArray alloc] init];
+      self.properties = [[NSMutableArray alloc] init];
     
 //    [properties addObject:[[Property alloc] initWithAddress:@"2000 Riverside Dr Los Angeles 90039" andLocation:CLLocationCoordinate2DMake(34.05, -118.24)]];
 //    [properties addObject:[[Property alloc] initWithAddress:@"Westside Towers, West - 11845 W. Olympic Blvd" andLocation:CLLocationCoordinate2DMake(34.08, -118.20)]];
@@ -67,14 +67,17 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                                       prop[@"City"]
                                       ];
                 
-                [properties addObject:[[Property alloc] initWithAddress:address
+                [self.properties addObject:[[Property alloc] initWithAddress:address
                                        andLocation:CLLocationCoordinate2DMake([prop[@"Latitude"] doubleValue],
                                                                               [prop[@"longitude"] doubleValue])
                                                             andMLNumber:prop[@"MLnumber"]
                                        ]];
                 
             }
-            success(task, properties);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"PropertyListingUpdated" object:self.properties];
+            });
+            success(task, self.properties);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (failure) {

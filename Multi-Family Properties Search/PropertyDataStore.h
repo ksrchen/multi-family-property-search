@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 
 @interface PropertyDataStore : AFHTTPSessionManager
+@property (nonatomic, strong) NSMutableArray *properties;
 
 + (PropertyDataStore *)getInstance;
 - (void)getPropertiesForRegion:(NSString *)polygon

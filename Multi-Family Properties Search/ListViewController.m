@@ -7,6 +7,8 @@
 //
 
 #import "ListViewController.h"
+#import "PropertyDataStore.h"
+#import "Property.h"
 
 @interface ListViewController ()
 
@@ -32,26 +34,37 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if ([PropertyDataStore getInstance].properties){
+        return [[PropertyDataStore getInstance].properties count];
+    }else{
+        return 0;
+    }
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PropertyListingCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    UILabel * label = (UILabel *)[cell viewWithTag:2];
+    
+    Property *p = [[ PropertyDataStore getInstance].properties objectAtIndex:indexPath.row];
+    
+    label.text = [p title];
+    
+    
+    UIImageView * imageView = (UIImageView *) [cell viewWithTag:4];
+    NSString * imageName = @"pic..png";
+    
+    [imageView setImage: [UIImage imageNamed:imageName]];
     
     return cell;
+
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
