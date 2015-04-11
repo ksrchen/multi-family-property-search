@@ -92,7 +92,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyListingCell" forIndexPath:indexPath];
     
-    long i = indexPath.row + 1;
+   // long i = indexPath.row + 1;
     UILabel * label = (UILabel *)[cell viewWithTag:2];
     
     Property * p = [_properties objectAtIndex:indexPath.row];

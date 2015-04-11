@@ -84,8 +84,8 @@
     }
     
     User * user = [[User alloc] init];
-    user.userID = userID;
-    user.password = password;
+    user.UserID = userID;
+    user.Password = password;
     user.FirstName = firstName;
     user.LastName = lastName;
     [self.ActivityIndicatorView startAnimating];

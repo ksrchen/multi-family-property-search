@@ -9,6 +9,7 @@
 #import "ListViewController.h"
 #import "PropertyDataStore.h"
 #import "Property.h"
+#import "PropertyDetailViewController.h"
 
 @interface ListViewController ()
 
@@ -24,11 +25,17 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadPropertyListing) name:@"PropertyListingUpdated" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)reloadPropertyListing {
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -99,6 +106,18 @@
     return YES;
 }
 */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    PropertyDetailViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+    
+    Property *p = [[ PropertyDataStore getInstance].properties objectAtIndex:indexPath.row];
+    vc.MLNumber = [p MLNumber];
+   
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 /*
 #pragma mark - Navigation

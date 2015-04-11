@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gkR-8m-vwt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gkR-8m-vwt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PropertyListingCell" rowHeight="112" id="2QM-Sx-sFn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PropertyListingCell" rowHeight="112" id="2QM-Sx-sFn">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2QM-Sx-sFn" id="47m-ZP-oRW">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -33,7 +33,7 @@
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zTM-AQ-gka">
-                                            <rect key="frame" x="181" y="45" width="340" height="21"/>
+                                            <rect key="frame" x="181" y="31" width="340" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="TFN-yf-NqM"/>
                                             </constraints>
@@ -45,8 +45,8 @@
                                     <constraints>
                                         <constraint firstItem="5Or-4Q-TCl" firstAttribute="top" secondItem="47m-ZP-oRW" secondAttribute="topMargin" id="1fr-mR-DQ9"/>
                                         <constraint firstItem="5Or-4Q-TCl" firstAttribute="leading" secondItem="47m-ZP-oRW" secondAttribute="leadingMargin" id="4hy-Jw-jir"/>
-                                        <constraint firstItem="zTM-AQ-gka" firstAttribute="leading" secondItem="5Or-4Q-TCl" secondAttribute="trailing" constant="46" id="Fog-zZ-FRp"/>
-                                        <constraint firstItem="zTM-AQ-gka" firstAttribute="top" secondItem="47m-ZP-oRW" secondAttribute="topMargin" constant="37" id="l2a-oO-Rrh"/>
+                                        <constraint firstItem="zTM-AQ-gka" firstAttribute="leading" secondItem="5Or-4Q-TCl" secondAttribute="trailing" constant="10" id="Fog-zZ-FRp"/>
+                                        <constraint firstItem="zTM-AQ-gka" firstAttribute="top" secondItem="47m-ZP-oRW" secondAttribute="topMargin" constant="20" id="l2a-oO-Rrh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -59,7 +59,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pIb-Eh-h9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2456" y="230"/>
+            <point key="canvasLocation" x="2257" y="321"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="hNz-n2-bh7">

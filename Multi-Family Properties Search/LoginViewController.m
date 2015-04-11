@@ -154,8 +154,8 @@ NSString * const  FACEBOOK_PROVIDER = @"Facebook";
                     }else {
                         NSArray * emails = json[@"emails"];
                         NSDictionary * firstEmail =  [emails objectAtIndex:0];
-                        user.userID = firstEmail[@"value"];
-                        user.password = @"";
+                        user.UserID = firstEmail[@"value"];
+                        user.Password = @"";
                         NSDictionary * name = json[@"name"];
                         user.FirstName = name[@"givenName"];
                         user.LastName =  name[@"familyName"];
