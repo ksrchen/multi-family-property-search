@@ -51,9 +51,13 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "KIImagePager/KIImagePager/KIImagePager/KICamera.png"
+  install_resource "KIImagePager/KIImagePager/KIImagePager/KICamera@2x.png"
   install_resource "gtm-oauth2/Source/Touch/GTMOAuth2ViewTouch.xib"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "KIImagePager/KIImagePager/KIImagePager/KICamera.png"
+  install_resource "KIImagePager/KIImagePager/KIImagePager/KICamera@2x.png"
   install_resource "gtm-oauth2/Source/Touch/GTMOAuth2ViewTouch.xib"
 fi
 

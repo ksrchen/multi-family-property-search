@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Chrometopia-KIImagePager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Chrometopia-MMDrawerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1A0E6D57AB5F43CF36A80A42</key>
+		<key>3973F44D923D41932BF7242C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1FAFE552081CEE69519FC19B</key>
+		<key>57FBBE6D3EF2BF628D410B23</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58380E492F14B45BFFB54AE8</key>
+		<key>9E0BFCDD59DD3A4DFD4F53A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99AFA3D6E4D1CF6126DC9D11</key>
+		<key>A48A6B130FB2A3D232EE7531</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F3D0981877086E7D940D6D3F</key>
+		<key>AF6310AD4416D453F01E4FB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F6FD27193BA0D9BCEF3CC7A1</key>
+		<key>CCE28547E4553D1E89A36F8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E56E9FEE72721BE507E61B1E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

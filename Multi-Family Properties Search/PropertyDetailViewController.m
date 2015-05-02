@@ -13,11 +13,13 @@
 #import "UserDataStore.h"
 #import "PropertyDataStore.h"
 
-@implementation PropertyDetailViewController
-
-NSArray * _expenses;
-NSArray * _expenseData;
-NSArray * _incomeData;
+@implementation PropertyDetailViewController  {
+    
+    NSArray * _expenses;
+    NSArray * _expenseData;
+    NSArray * _incomeData;
+    NSArray *_images;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,13 +41,14 @@ NSArray * _incomeData;
                     nil];
     
     _incomeData = [[NSArray alloc] initWithObjects:
-                    [NSValue valueWithCGPoint:CGPointMake(0, 0)],
-                    [NSValue valueWithCGPoint:CGPointMake(2,  5)],
-                    [NSValue valueWithCGPoint:CGPointMake(5, 8)],
-                    [NSValue valueWithCGPoint:CGPointMake(10, 10)],
-                    [NSValue valueWithCGPoint:CGPointMake(30, 15)],
-                    nil];
-
+                   [NSValue valueWithCGPoint:CGPointMake(0, 0)],
+                   [NSValue valueWithCGPoint:CGPointMake(2,  5)],
+                   [NSValue valueWithCGPoint:CGPointMake(5, 8)],
+                   [NSValue valueWithCGPoint:CGPointMake(10, 10)],
+                   [NSValue valueWithCGPoint:CGPointMake(30, 15)],
+                   nil];
+    
+    [self setTitle:@"Property Profile"];
     
     self.scrollView.minimumZoomScale = 1.0;
     self.scrollView.maximumZoomScale = 6.0;
@@ -64,13 +67,28 @@ NSArray * _incomeData;
                                  attributes[@"PostalCode"]
                                  ];
             
+            _images = (NSArray*)attributes[@"MediaURLs"];
+            
             [self createExpenseChart];
             [self createIncomeVsExpenseChart];
+            
+            self.ImagePager.dataSource = self;
+            [self.ImagePager reloadData];
+            
+            NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
+            [currencyFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+            
+            NSNumber *price = [NSNumber numberWithDouble:350000.0];
+            
+            self.profileHeader.text = [NSString stringWithFormat:@"MLS#: %@ ", self.MLNumber];
+            
+            self.priceDisplay.text = [NSString stringWithFormat:@"Price: %@  ROI: %.2f%%",  [currencyFormatter stringFromNumber:price], 25.0];
+            
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }
-        ];
+         ];
     }
 }
 
@@ -80,9 +98,9 @@ NSArray * _incomeData;
     //self.pieGraphView.allowPinchScaling = YES;
     
     
-        // Create a CPTGraph object and add to hostView
-        CPTGraph* graph = [[CPTXYGraph alloc] initWithFrame:self.pieGraphView.bounds];
-        self.pieGraphView.hostedGraph = graph;
+    // Create a CPTGraph object and add to hostView
+    CPTGraph* graph = [[CPTXYGraph alloc] initWithFrame:self.pieGraphView.bounds];
+    self.pieGraphView.hostedGraph = graph;
     
     // 2 - Set up text style
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
@@ -96,7 +114,7 @@ NSArray * _incomeData;
     graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
     graph.titleDisplacement = CGPointMake(0.0f, 17.0f);
     graph.axisSet = nil;
-        
+    
     CPTPieChart *pieChart = [[CPTPieChart alloc] init];
     pieChart.dataSource = self;
     pieChart.delegate = self;
@@ -105,11 +123,11 @@ NSArray * _incomeData;
     pieChart.startAngle = M_PI_4;
     pieChart.sliceDirection = CPTPieDirectionClockwise;
     // 3 - Create gradient
-//    CPTGradient *overlayGradient = [[CPTGradient alloc] init];
-//    overlayGradient.gradientType = CPTGradientTypeRadial;
-//    overlayGradient = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:0.0] atPosition:0.9];
-//    overlayGradient = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:0.4] atPosition:1.0];
-//    //pieChart.overlayFill = [CPTFill fillWithGradient:overlayGradient];
+    //    CPTGradient *overlayGradient = [[CPTGradient alloc] init];
+    //    overlayGradient.gradientType = CPTGradientTypeRadial;
+    //    overlayGradient = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:0.0] atPosition:0.9];
+    //    overlayGradient = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:0.4] atPosition:1.0];
+    //    //pieChart.overlayFill = [CPTFill fillWithGradient:overlayGradient];
     
     [graph addPlot:pieChart];
     
@@ -123,9 +141,9 @@ NSArray * _incomeData;
     
     // Create a CPTGraph object and add to hostView
     CPTGraph* graph = [[CPTXYGraph alloc] initWithFrame:self.lineGraphView.bounds];
- //    [graph applyTheme:[CPTTheme themeNamed:kCPTPlainWhiteTheme]];
+    //    [graph applyTheme:[CPTTheme themeNamed:kCPTPlainWhiteTheme]];
     self.lineGraphView.hostedGraph = graph;
-   
+    
     // 2 - Set up text style
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
     textStyle.color = [CPTColor grayColor];
@@ -157,35 +175,35 @@ NSArray * _incomeData;
     
     CPTXYAxis *xAxis = [axisSet xAxis];
     
-   // [xAxis setMajorTickLength: 8.0f];
-   // [xAxis setMinorTickLineStyle:nil];
+    // [xAxis setMajorTickLength: 8.0f];
+    // [xAxis setMinorTickLineStyle:nil];
     [xAxis setLabelingPolicy:CPTAxisLabelingPolicyAutomatic];
     [xAxis setLabelTextStyle:textStyleAxis];
     [xAxis setLabelFormatter:axisFormatter];
     [xAxis setTickDirection:CPTSignNegative];
     //[xAxis setAxisConstraints:[CPTConstraints constraintWithLowerOffset:5.0f]];
-//    CGFloat dateCount = [_expenseData count];
-//    NSMutableSet *xLabels = [NSMutableSet setWithCapacity:dateCount];
-//    NSMutableSet *xLocations = [NSMutableSet setWithCapacity:dateCount];
-//    NSInteger i = 0;
-//    for (NSValue * val in _expenseData) {
-//        CGPoint point = [val CGPointValue];
-//        
-//        CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:[NSString stringWithFormat:@"%.f", point.x]  textStyle:xAxis.labelTextStyle];
-//        CGFloat location = i++;
-//        label.tickLocation = CPTDecimalFromCGFloat(location);
-//        label.offset = xAxis.majorTickLength;
-//        if (label) {
-//            [xLabels addObject:label];
-//            [xLocations addObject:[NSNumber numberWithFloat:location]];
-//        }
-//    }
-//    xAxis.axisLabels = xLabels;
-//    xAxis.majorTickLocations = xLocations;
-//    
+    //    CGFloat dateCount = [_expenseData count];
+    //    NSMutableSet *xLabels = [NSMutableSet setWithCapacity:dateCount];
+    //    NSMutableSet *xLocations = [NSMutableSet setWithCapacity:dateCount];
+    //    NSInteger i = 0;
+    //    for (NSValue * val in _expenseData) {
+    //        CGPoint point = [val CGPointValue];
+    //
+    //        CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:[NSString stringWithFormat:@"%.f", point.x]  textStyle:xAxis.labelTextStyle];
+    //        CGFloat location = i++;
+    //        label.tickLocation = CPTDecimalFromCGFloat(location);
+    //        label.offset = xAxis.majorTickLength;
+    //        if (label) {
+    //            [xLabels addObject:label];
+    //            [xLocations addObject:[NSNumber numberWithFloat:location]];
+    //        }
+    //    }
+    //    xAxis.axisLabels = xLabels;
+    //    xAxis.majorTickLocations = xLocations;
+    //
     CPTXYAxis *yAxis = [axisSet yAxis];
-   // [yAxis setMajorTickLength: 8.0f];;
-   // [yAxis setMinorTickLineStyle:nil];
+    // [yAxis setMajorTickLength: 8.0f];;
+    // [yAxis setMinorTickLineStyle:nil];
     [yAxis setLabelingPolicy:CPTAxisLabelingPolicyAutomatic];
     [yAxis setLabelTextStyle:textStyleAxis];
     [yAxis setLabelFormatter:axisFormatter];
@@ -272,7 +290,7 @@ NSArray * _incomeData;
             }else{
                 return [NSNumber numberWithFloat: point.y];
             }
-
+            
         }
     }
     return 0;
@@ -305,41 +323,41 @@ NSArray * _incomeData;
     
     
     UIAlertAction *sendCommentAction = [UIAlertAction
-                               actionWithTitle:NSLocalizedString(@"Send Comment", @"OK action")
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction *action)
-                               {
-                                   UIAlertController * confirmController = [UIAlertController alertControllerWithTitle:@"Property Details"
-                                                                                                             message:@"Comment sent!"
-                                                                                                      preferredStyle:UIAlertControllerStyleAlert];
-                                   
-                                   UIAlertAction *closeAction = [UIAlertAction
-                                                                 actionWithTitle:NSLocalizedString(@"OK", @"Cancel action")
-                                                                 style:UIAlertActionStyleCancel
-                                                                 handler:^(UIAlertAction *action)
-                                                                 {
-                                                                     
-                                                                     
-                                                                 }];
-                                   [confirmController addAction:closeAction];
-
-                                   [self presentViewController:confirmController animated:YES completion:nil];
-                                   
-                               }];
+                                        actionWithTitle:NSLocalizedString(@"Send Comment", @"OK action")
+                                        style:UIAlertActionStyleDefault
+                                        handler:^(UIAlertAction *action)
+                                        {
+                                            UIAlertController * confirmController = [UIAlertController alertControllerWithTitle:@"Property Details"
+                                                                                                                        message:@"Comment sent!"
+                                                                                                                 preferredStyle:UIAlertControllerStyleAlert];
+                                            
+                                            UIAlertAction *closeAction = [UIAlertAction
+                                                                          actionWithTitle:NSLocalizedString(@"OK", @"Cancel action")
+                                                                          style:UIAlertActionStyleCancel
+                                                                          handler:^(UIAlertAction *action)
+                                                                          {
+                                                                              
+                                                                              
+                                                                          }];
+                                            [confirmController addAction:closeAction];
+                                            
+                                            [self presentViewController:confirmController animated:YES completion:nil];
+                                            
+                                        }];
     
     UIAlertAction *placeOfferAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"Place an Offer", @"Cancel action")
-                                   style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction *action)
-                                   {
-                                       
-                                       
-                                   }];
+                                       actionWithTitle:NSLocalizedString(@"Place an Offer", @"Cancel action")
+                                       style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction *action)
+                                       {
+                                           
+                                           
+                                       }];
     
     UIAlertAction *addToMylistAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"Add to MyListing", @"Cancel action")
-                                   style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction *action)
+                                        actionWithTitle:NSLocalizedString(@"Add to MyListing", @"Cancel action")
+                                        style:UIAlertActionStyleDefault
+                                        handler:^(UIAlertAction *action)
                                         {
                                             User* user = [[UserDataStore getInstance] getUser];
                                             PropertyDataStore * propertyDataStore = [PropertyDataStore getInstance];
@@ -358,38 +376,45 @@ NSArray * _incomeData;
                                         }];
     
     UIAlertAction *addContactSalesAction = [UIAlertAction
-                                        actionWithTitle:NSLocalizedString(@"Contact Sales Agent", @"Cancel action")
-                                        style:UIAlertActionStyleDefault
-                                        handler:^(UIAlertAction *action)
-                                        {
-                                            
-                                            
-                                        }];
-
-    
-    UIAlertAction *cancelAction = [UIAlertAction
-                                            actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
-                                            style:UIAlertActionStyleCancel
+                                            actionWithTitle:NSLocalizedString(@"Contact Sales Agent", @"Cancel action")
+                                            style:UIAlertActionStyleDefault
                                             handler:^(UIAlertAction *action)
                                             {
                                                 
                                                 
                                             }];
-
+    
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       
+                                       
+                                   }];
+    
     
     [alertController addAction:sendCommentAction];
     [alertController addAction:placeOfferAction];
     [alertController addAction:addToMylistAction];
     [alertController addAction:addContactSalesAction];
     [alertController addAction:cancelAction];
-
+    
     [[alertController popoverPresentationController] setBarButtonItem:sender];
     
     [self presentViewController:alertController animated:YES completion:nil];
-
+    
 }
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return self.contentView;
+}
+
+- (NSArray *) arrayWithImages {
+    return _images;
+}
+- (UIViewContentMode) contentModeForImage:(NSUInteger)image {
+    return UIViewContentModeScaleToFill;
 }
 
 @end

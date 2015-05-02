@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CorePlot-CocoaTouch.h"
+#import "KIImagePager.h"
 
-@interface PropertyDetailViewController : UIViewController<CPTPlotDataSource, UIScrollViewDelegate>
+@interface PropertyDetailViewController : UIViewController<CPTPlotDataSource, UIScrollViewDelegate, KIImagePagerDataSource>
 - (IBAction)contactMe:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *propertyDescription;
 @property (weak, nonatomic) IBOutlet CPTGraphHostingView *pieGraphView;
@@ -17,7 +18,10 @@
 @property (weak, nonatomic) IBOutlet CPTGraphHostingView *lineGraphView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UILabel *profileHeader;
+@property (weak, nonatomic) IBOutlet UILabel *priceDisplay;
 
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (nonatomic, copy) NSString * MLNumber;
+@property (weak, nonatomic) IBOutlet KIImagePager *ImagePager;
 @end
