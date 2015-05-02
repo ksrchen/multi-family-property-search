@@ -16,7 +16,9 @@
 
 -(id)initWithAddress:(NSString*) address
          andLocation:(CLLocationCoordinate2D) location
-         andMLNumber:(NSString *) mlNumber;
+         andMLNumber:(NSString *) mlNumber
+            mediaURL: (NSString *) mediaURL;
+
 {
     self = [super init];
     if (!self) {
@@ -26,6 +28,8 @@
     title  = address;
     coordinate = location;
     self.MLNumber = mlNumber;
+    self.MediaURL =mediaURL;
+    
     return self;
 }
 

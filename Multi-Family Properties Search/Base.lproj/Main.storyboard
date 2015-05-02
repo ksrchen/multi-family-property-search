@@ -40,13 +40,36 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="TFN-yf-NqM"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="u5H-iT-cID">
+                                            <rect key="frame" x="181" y="53" width="340" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="hva-FA-0BX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="hva-FA-0BX"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="5Or-4Q-TCl" firstAttribute="top" secondItem="47m-ZP-oRW" secondAttribute="topMargin" id="1fr-mR-DQ9"/>
                                         <constraint firstItem="5Or-4Q-TCl" firstAttribute="leading" secondItem="47m-ZP-oRW" secondAttribute="leadingMargin" id="4hy-Jw-jir"/>
-                                        <constraint firstItem="zTM-AQ-gka" firstAttribute="leading" secondItem="5Or-4Q-TCl" secondAttribute="trailing" constant="10" id="Fog-zZ-FRp"/>
-                                        <constraint firstItem="zTM-AQ-gka" firstAttribute="top" secondItem="47m-ZP-oRW" secondAttribute="topMargin" constant="20" id="l2a-oO-Rrh"/>
+                                        <constraint firstItem="u5H-iT-cID" firstAttribute="top" secondItem="zTM-AQ-gka" secondAttribute="bottom" constant="5" id="Bix-zx-UYH"/>
+                                        <constraint firstItem="zTM-AQ-gka" firstAttribute="leading" secondItem="5Or-4Q-TCl" secondAttribute="trailing" constant="5" id="Fog-zZ-FRp"/>
+                                        <constraint firstItem="zTM-AQ-gka" firstAttribute="trailing" secondItem="47m-ZP-oRW" secondAttribute="trailingMargin" id="HwS-ec-WgV"/>
+                                        <constraint firstItem="u5H-iT-cID" firstAttribute="trailing" secondItem="47m-ZP-oRW" secondAttribute="trailingMargin" id="M4a-Gs-d32"/>
+                                        <constraint firstItem="u5H-iT-cID" firstAttribute="leading" secondItem="5Or-4Q-TCl" secondAttribute="trailing" constant="5" id="hwE-L6-Bma"/>
+                                        <constraint firstItem="zTM-AQ-gka" firstAttribute="top" secondItem="47m-ZP-oRW" secondAttribute="topMargin" constant="8" id="l2a-oO-Rrh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>

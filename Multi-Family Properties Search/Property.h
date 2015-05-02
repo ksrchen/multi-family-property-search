@@ -14,9 +14,11 @@
 //@property (weak, nonatomic) NSString * title;
 //@property (nonatomic) CLLocationCoordinate2D coordinate;
 
-@property (nonatomic, copy  ) NSString * MLNumber;
+@property (nonatomic, copy  ) NSString *MLNumber;
+@property (nonatomic, copy) NSString *MediaURL;
 
 -(id)initWithAddress:(NSString*) address
 andLocation:(CLLocationCoordinate2D) location
-         andMLNumber:(NSString *) mlNumber;
+         andMLNumber:(NSString *) mlNumber
+            mediaURL: (NSString *) mediaURL;
 @end

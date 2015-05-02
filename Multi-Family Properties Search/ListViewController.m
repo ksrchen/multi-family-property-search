@@ -10,6 +10,7 @@
 #import "PropertyDataStore.h"
 #import "Property.h"
 #import "PropertyDetailViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ListViewController ()
 
@@ -56,17 +57,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PropertyListingCell" forIndexPath:indexPath];
     
-    UILabel * label = (UILabel *)[cell viewWithTag:2];
     
     Property *p = [[ PropertyDataStore getInstance].properties objectAtIndex:indexPath.row];
     
-    label.text = [p title];
+    UILabel * addressLabel = (UILabel *)[cell viewWithTag:2];
+    addressLabel.text = [p title];
     
+    
+    UILabel * priceLabel = (UILabel *)[cell viewWithTag:3];
+    addressLabel.text = [p title];
+    
+    
+    NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
+    [currencyFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+    
+    NSNumber *price = [NSNumber numberWithDouble:350000.0];
+    priceLabel.text = [NSString stringWithFormat:@"Price: %@  ROI: %.2f%%",  [currencyFormatter stringFromNumber:price], 25.0];
     
     UIImageView * imageView = (UIImageView *) [cell viewWithTag:4];
-    NSString * imageName = @"pic..png";
+    [imageView setImageWithURL:[NSURL URLWithString:p.MediaURL]];
     
-    [imageView setImage: [UIImage imageNamed:imageName]];
+    //[imageView setImage: [UIImage imageNamed:imageName]];
     
     return cell;
 
