@@ -65,8 +65,6 @@
     
     
     UILabel * priceLabel = (UILabel *)[cell viewWithTag:3];
-    addressLabel.text = [p title];
-    
     
     NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
     [currencyFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
@@ -74,8 +72,13 @@
     NSNumber *price = [NSNumber numberWithDouble:350000.0];
     priceLabel.text = [NSString stringWithFormat:@"Price: %@  ROI: %.2f%%",  [currencyFormatter stringFromNumber:price], 25.0];
     
-    UIImageView * imageView = (UIImageView *) [cell viewWithTag:4];
-    [imageView setImageWithURL:[NSURL URLWithString:p.MediaURL]];
+    if (![p.MediaURL isKindOfClass:[NSNull class]])
+    {
+        UIImageView * imageView = (UIImageView *) [cell viewWithTag:4];
+        [imageView setImageWithURL:[NSURL URLWithString:p.MediaURL]];
+    }
+    
+
     
     //[imageView setImage: [UIImage imageNamed:imageName]];
     

@@ -101,8 +101,6 @@
     
     
     UILabel * priceLabel = (UILabel *)[cell viewWithTag:3];
-    addressLabel.text = [p title];
-    
     
     NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
     [currencyFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
