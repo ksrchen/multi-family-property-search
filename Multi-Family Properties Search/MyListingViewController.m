@@ -15,6 +15,7 @@
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
 #import "AddPropertyViewController.h"
+#import "UIImageView+AFNetworking.h"
 @interface MyListingViewController ()
 {
     NSMutableArray * _properties;
@@ -39,7 +40,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadMyListing) name:@"MyListingUpdated" object:nil];
     [self setupLeftMenuButton];
-
+    
 }
 - (void)setupLeftMenuButton {
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
@@ -58,12 +59,12 @@
                                                      dispatch_async(dispatch_get_main_queue(), ^{
                                                          _properties = properties;
                                                          [self.tableView reloadData];
-//                                                         NSUInteger count = [_properties count];
-//                                                         if (count>0){
-//                                                             [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)count];
-//                                                         }else{
-//                                                             [[self navigationController] tabBarItem].badgeValue = nil;
-//                                                         }
+                                                         //                                                         NSUInteger count = [_properties count];
+                                                         //                                                         if (count>0){
+                                                         //                                                             [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)count];
+                                                         //                                                         }else{
+                                                         //                                                             [[self navigationController] tabBarItem].badgeValue = nil;
+                                                         //                                                         }
                                                      });
                                                      
                                                  }
@@ -71,7 +72,7 @@
                                                      
                                                  }];
     
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,19 +93,28 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyListingCell" forIndexPath:indexPath];
     
-   // long i = indexPath.row + 1;
-    UILabel * label = (UILabel *)[cell viewWithTag:2];
     
     Property * p = [_properties objectAtIndex:indexPath.row];
     
-    label.text = [p title];
+    UILabel * addressLabel = (UILabel *)[cell viewWithTag:2];
+    addressLabel.text = [p title];
     
     
-    UIImageView * imageView = (UIImageView *) [cell viewWithTag:4];
-    //NSString * imageName = [NSString stringWithFormat: @"im%ld.jpg", i];
-    NSString * imageName = @"pic..png";
+    UILabel * priceLabel = (UILabel *)[cell viewWithTag:3];
+    addressLabel.text = [p title];
     
-    [imageView setImage: [UIImage imageNamed:imageName]];
+    
+    NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
+    [currencyFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+    
+    NSNumber *price = [NSNumber numberWithDouble:350000.0];
+    priceLabel.text = [NSString stringWithFormat:@"Price: %@  ROI: %.2f%%",  [currencyFormatter stringFromNumber:price], 25.0];
+    
+    if (![p.MediaURL isKindOfClass:[NSNull class]])
+    {
+        UIImageView * imageView = (UIImageView *) [cell viewWithTag:4];
+        [imageView setImageWithURL:[NSURL URLWithString:p.MediaURL]];
+    }
     
     return cell;
 }
@@ -140,23 +150,23 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 
 #pragma mark - Navigation
@@ -178,14 +188,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    Property * p = [_properties objectAtIndex:indexPath.row];
-//    
-//    NSString * storyboardName = @"Main";
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-//    PropertyDetailViewController  * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
-//    vc.MLNumber = p.MLNumber;
-//    [self.navigationController pushViewController:vc animated:YES];
-
+    //    Property * p = [_properties objectAtIndex:indexPath.row];
+    //
+    //    NSString * storyboardName = @"Main";
+    //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    //    PropertyDetailViewController  * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+    //    vc.MLNumber = p.MLNumber;
+    //    [self.navigationController pushViewController:vc animated:YES];
+    
     [self performSegueWithIdentifier:@"AddPropertyDetail" sender:indexPath];
 }
 
