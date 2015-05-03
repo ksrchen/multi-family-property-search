@@ -11,7 +11,9 @@
 
 NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
 
-@implementation PropertyDataStore
+@implementation PropertyDataStore {
+    BOOL _searching;
+}
 
 + (PropertyDataStore *)getInstance {
     static PropertyDataStore *_sharedClient = nil;
@@ -28,7 +30,7 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
     if (!self) {
         return nil;
     }
-    
+    _searching = NO;
     self.responseSerializer = [AFJSONResponseSerializer serializer];
     self.requestSerializer = [AFJSONRequestSerializer serializer];
     return self;
@@ -73,7 +75,7 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
             failure(task, error);
         }
     }];
-
+    
     
 }
 
@@ -82,16 +84,24 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                        success:(void(^)(NSURLSessionDataTask *task, NSMutableArray * properties))success
                        failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
 {
+    if (_searching) {
+        return;
+    }
+    _searching = YES;
+    
     self.properties = [[NSMutableArray alloc] init];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PropertyListingUpdated" object:nil];
     
     NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:polygon, @"Polygon", filters, @"Filters", nil];
     
     NSString* path = @"resincome";
     
     [self PUT:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        _searching = NO;
         if (success) {
             NSLog(@"Success -- %@", responseObject);
             NSArray * responses = responseObject;
+            NSMutableArray *properties = [[NSMutableArray alloc] init];
             for (NSDictionary *prop in responses) {
                 //NSLog(@"City %@", prop[@"City"]);
                 NSString * address = [NSString stringWithFormat:@"%@ %@ %@, %@ %@",
@@ -102,20 +112,21 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                                       prop[@"PostalCode"]
                                       ];
                 
-                [self.properties addObject:[[Property alloc] initWithAddress:address
-                                                                 andLocation:CLLocationCoordinate2DMake([prop[@"Latitude"] doubleValue],
-                                                                                                        [prop[@"longitude"] doubleValue])
-                                                                 andMLNumber:prop[@"MLnumber"]
-                                                                    mediaURL: prop[@"MediaURL"]
-                                            ]];
+                [properties addObject:[[Property alloc] initWithAddress:address
+                                                            andLocation:CLLocationCoordinate2DMake([prop[@"Latitude"] doubleValue],
+                                                                                                   [prop[@"longitude"] doubleValue])
+                                                            andMLNumber:prop[@"MLnumber"]
+                                                               mediaURL: prop[@"MediaURL"]
+                                       ]];
                 
             }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"PropertyListingUpdated" object:self.properties];
-            });
-            success(task, self.properties);
+            self.properties = properties;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"PropertyListingUpdated" object:nil];
+            success(task, properties);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        _searching = NO;
         if (failure) {
             failure(task, error);
         }
