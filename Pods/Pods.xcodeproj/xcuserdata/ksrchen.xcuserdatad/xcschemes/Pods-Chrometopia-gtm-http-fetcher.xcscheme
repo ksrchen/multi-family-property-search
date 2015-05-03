@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E56E9FEE72721BE507E61B1E"
+               BlueprintIdentifier = "74B60AE5AB69B22559D34E42"
                BuildableName = "libPods-Chrometopia-gtm-http-fetcher.a"
                BlueprintName = "Pods-Chrometopia-gtm-http-fetcher"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "57FBBE6D3EF2BF628D410B23"
+               BlueprintIdentifier = "95D4FF94413C4252972285EC"
                BuildableName = "libPods-Chrometopia-KIImagePager.a"
                BlueprintName = "Pods-Chrometopia-KIImagePager"
                ReferencedContainer = "container:Pods.xcodeproj">

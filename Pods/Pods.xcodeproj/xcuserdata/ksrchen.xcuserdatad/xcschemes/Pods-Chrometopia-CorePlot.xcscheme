@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9E0BFCDD59DD3A4DFD4F53A7"
+               BlueprintIdentifier = "F5858D78E161A8A464489832"
                BuildableName = "libPods-Chrometopia-CorePlot.a"
                BlueprintName = "Pods-Chrometopia-CorePlot"
                ReferencedContainer = "container:Pods.xcodeproj">
