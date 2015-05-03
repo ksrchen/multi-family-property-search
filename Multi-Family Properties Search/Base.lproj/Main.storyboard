@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gkR-8m-vwt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -871,11 +872,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYY-7j-dfj">
                                 <rect key="frame" x="0.0" y="64" width="600" height="736"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ork-Z3-Ykw">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="853"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ork-Z3-Ykw">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="653"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgO-3J-A1f" userLabel="profile view">
-                                                <rect key="frame" x="0.0" y="5" width="600" height="310"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgO-3J-A1f" userLabel="profile view">
+                                                <rect key="frame" x="0.0" y="5" width="600" height="110"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Property Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgJ-DK-XHA">
                                                         <rect key="frame" x="8" y="8" width="584" height="21"/>
@@ -883,28 +884,34 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gz5-l2-GFe" customClass="KIImagePager">
-                                                        <rect key="frame" x="160" y="37" width="280" height="200"/>
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gz5-l2-GFe" customClass="KIImagePager">
+                                                        <rect key="frame" x="8" y="37" width="400" height="300"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="280" id="Ena-M5-Uwf"/>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="Ena-M5-Uwf"/>
                                                             <constraint firstAttribute="height" constant="200" id="Ht1-Hn-Ksm"/>
+                                                            <constraint firstAttribute="width" secondItem="Gz5-l2-GFe" secondAttribute="height" multiplier="4:3" id="zHV-wU-nVI"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="Ht1-Hn-Ksm"/>
+                                                            </mask>
+                                                        </variation>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dp9-7E-Ig5">
-                                                        <rect key="frame" x="8" y="245" width="584" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dp9-7E-Ig5">
+                                                        <rect key="frame" x="8" y="45" width="584" height="21"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p98-qs-vKw">
-                                                        <rect key="frame" x="8" y="274" width="55" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="address" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p98-qs-vKw">
+                                                        <rect key="frame" x="8" y="74" width="55" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great duplex by the ocen.  Near metro, long term tenants." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lMQ-0I-AIg">
-                                                        <rect key="frame" x="8" y="297" width="592" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Great duplex by the ocen.  Near metro, long term tenants." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lMQ-0I-AIg">
+                                                        <rect key="frame" x="8" y="97" width="592" height="18"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -916,6 +923,7 @@
                                                     <constraint firstItem="TgJ-DK-XHA" firstAttribute="top" secondItem="tgO-3J-A1f" secondAttribute="top" constant="8" id="0oh-Pm-yhz"/>
                                                     <constraint firstItem="dp9-7E-Ig5" firstAttribute="top" secondItem="Gz5-l2-GFe" secondAttribute="bottom" constant="8" id="7hB-BE-xAB"/>
                                                     <constraint firstItem="lMQ-0I-AIg" firstAttribute="leading" secondItem="tgO-3J-A1f" secondAttribute="leading" constant="8" id="9J2-78-40c"/>
+                                                    <constraint firstItem="Gz5-l2-GFe" firstAttribute="leading" secondItem="tgO-3J-A1f" secondAttribute="leading" priority="999" constant="8" id="Atp-kC-jjh"/>
                                                     <constraint firstItem="lMQ-0I-AIg" firstAttribute="trailing" secondItem="tgO-3J-A1f" secondAttribute="trailingMargin" constant="8" id="HF8-dt-76f"/>
                                                     <constraint firstAttribute="trailing" secondItem="dp9-7E-Ig5" secondAttribute="trailing" constant="8" id="Iy7-gv-IJV"/>
                                                     <constraint firstItem="lMQ-0I-AIg" firstAttribute="top" secondItem="p98-qs-vKw" secondAttribute="bottom" constant="5" id="JV2-k5-rRx"/>
@@ -926,18 +934,19 @@
                                                     <constraint firstItem="p98-qs-vKw" firstAttribute="leading" secondItem="tgO-3J-A1f" secondAttribute="leading" constant="8" id="rAb-cs-S9T"/>
                                                     <constraint firstAttribute="centerX" secondItem="Gz5-l2-GFe" secondAttribute="centerX" id="v6G-R3-cBa"/>
                                                     <constraint firstItem="p98-qs-vKw" firstAttribute="top" secondItem="dp9-7E-Ig5" secondAttribute="bottom" constant="8" id="y0c-4A-4LY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Gz5-l2-GFe" secondAttribute="trailing" priority="999" constant="8" id="zc6-Dp-Ys5"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-ge-6PV" userLabel="pie grap view" customClass="CPTGraphHostingView">
-                                                <rect key="frame" x="8" y="327" width="320" height="263"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-ge-6PV" userLabel="pie grap view" customClass="CPTGraphHostingView">
+                                                <rect key="frame" x="8" y="127" width="320" height="263"/>
                                                 <color key="backgroundColor" red="0.50780175266833738" green="0.9901902592105758" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="320" id="HkE-Ku-oRt"/>
                                                     <constraint firstAttribute="height" constant="263" id="g2i-p7-5gx"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tby-vB-5jj" userLabel="line graph view" customClass="CPTGraphHostingView">
-                                                <rect key="frame" x="8" y="598" width="300" height="263"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tby-vB-5jj" userLabel="line graph view" customClass="CPTGraphHostingView">
+                                                <rect key="frame" x="8" y="398" width="300" height="263"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="7Cm-fD-DBU"/>
