@@ -17,7 +17,9 @@
 -(id)initWithAddress:(NSString*) address
          andLocation:(CLLocationCoordinate2D) location
          andMLNumber:(NSString *) mlNumber
-            mediaURL: (NSString *) mediaURL;
+            mediaURL: (NSString *) mediaURL
+                 roi:(NSNumber*) roi
+               price:(NSNumber*) price;
 
 {
     self = [super init];
@@ -29,6 +31,8 @@
     coordinate = location;
     self.MLNumber = mlNumber;
     self.MediaURL =mediaURL;
+    self.ROI = roi;
+    self.Price = price;
     
     return self;
 }

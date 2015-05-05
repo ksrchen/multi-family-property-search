@@ -16,9 +16,13 @@
 
 @property (nonatomic, copy  ) NSString *MLNumber;
 @property (nonatomic, copy) NSString *MediaURL;
+@property (nonatomic, strong) NSNumber *ROI;
+@property (nonatomic, strong) NSNumber *Price;
 
 -(id)initWithAddress:(NSString*) address
-andLocation:(CLLocationCoordinate2D) location
+         andLocation:(CLLocationCoordinate2D) location
          andMLNumber:(NSString *) mlNumber
-            mediaURL: (NSString *) mediaURL;
+            mediaURL: (NSString *) mediaURL
+                 roi:(NSNumber*) roi
+               price:(NSNumber*) price;
 @end

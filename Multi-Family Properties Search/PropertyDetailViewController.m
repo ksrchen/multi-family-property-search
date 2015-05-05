@@ -69,6 +69,9 @@
             
             _images = (NSArray*)attributes[@"MediaURLs"];
             
+            NSNumber *price = attributes[@"ListPrice"];
+            NSNumber *roi = attributes[@"ROI"];
+            
             [self createExpenseChart];
             [self createIncomeVsExpenseChart];
             
@@ -78,11 +81,16 @@
             NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
             [currencyFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
             
-            NSNumber *price = [NSNumber numberWithDouble:350000.0];
+            
+            NSNumberFormatter *percentFormatter = [[NSNumberFormatter alloc]init];
+            [percentFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+            [percentFormatter setMaximumFractionDigits:2];
+            
             
             self.profileHeader.text = [NSString stringWithFormat:@"MLS#: %@ ", self.MLNumber];
             
-            self.priceDisplay.text = [NSString stringWithFormat:@"Price: %@  ROI: %.2f%%",  [currencyFormatter stringFromNumber:price], 25.0];
+            self.priceDisplay.text = [NSString stringWithFormat:@"Price: %@  ROI: %@",  [currencyFormatter stringFromNumber:price],
+                                      [roi doubleValue]>0.0?[percentFormatter stringFromNumber:roi] : @"n/a"];
             
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {

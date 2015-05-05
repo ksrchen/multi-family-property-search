@@ -71,8 +71,12 @@
     NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
     [currencyFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
     
-    NSNumber *price = [NSNumber numberWithDouble:350000.0];
-    priceLabel.text = [NSString stringWithFormat:@"Price: %@  ROI: %.2f%%",  [currencyFormatter stringFromNumber:price], 25.0];
+    NSNumberFormatter *percentFormatter = [[NSNumberFormatter alloc]init];
+    [percentFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+    [percentFormatter setMaximumFractionDigits:2];
+    
+    priceLabel.text = [NSString stringWithFormat:@"Price: %@  ROI: %@",  [currencyFormatter stringFromNumber:p.Price],
+                       [p.ROI doubleValue]>0.0?[percentFormatter stringFromNumber:p.ROI] : @"n/a"];
     
     if (![p.MediaURL isKindOfClass:[NSNull class]])
     {

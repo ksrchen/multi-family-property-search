@@ -40,14 +40,14 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                      failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure {
     
     self.properties = [[NSMutableArray alloc] init];
-    NSString *filters = @"GrossOperatingIncome>1000";
-    NSString *polygon = @"POLYGON((-118.12738095737302 33.881694872069836, -118.23870336032712 33.881694872069836,-118.23870336032712 33.84798421519106,-118.12738095737302 33.84798421519106,-118.12738095737302 33.881694872069836))";
+   // NSString *filters = @"GrossOperatingIncome>1000";
+    //NSString *polygon = @"POLYGON((-118.12738095737302 33.881694872069836, -118.23870336032712 33.881694872069836,-118.23870336032712 33.84798421519106,-118.12738095737302 33.84798421519106,-118.12738095737302 33.881694872069836))";
     
-    NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:polygon, @"Polygon", filters, @"Filters", nil];
+   // NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:polygon, @"Polygon", filters, @"Filters", nil];
     
-    NSString* path = @"resincome";
+    NSString* path = @"hottestproperties";
     
-    [self PUT:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self GET:path parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         if (success) {
             NSLog(@"Success -- %@", responseObject);
             NSArray * responses = responseObject;
@@ -60,11 +60,17 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                                       prop[@"PostalCode"]
                                       ];
                 
+                NSNumber *roi = prop[@"ROI"];
+                NSNumber *price = prop[@"ListPrice"];
+
+                
                 [self.properties addObject:[[Property alloc] initWithAddress:address
                                                                  andLocation:CLLocationCoordinate2DMake([prop[@"Latitude"] doubleValue],
                                                                                                         [prop[@"longitude"] doubleValue])
                                                                  andMLNumber:prop[@"MLnumber"]
                                                                     mediaURL: prop[@"MediaURL"]
+                                                                         roi:roi
+                                                                       price:price
                                             ]];
                 
             }
@@ -111,12 +117,16 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                                       prop[@"State"],
                                       prop[@"PostalCode"]
                                       ];
+                NSNumber *roi = prop[@"ROI"];
+                NSNumber *price = prop[@"ListPrice"];
                 
                 [properties addObject:[[Property alloc] initWithAddress:address
                                                             andLocation:CLLocationCoordinate2DMake([prop[@"Latitude"] doubleValue],
                                                                                                    [prop[@"longitude"] doubleValue])
                                                             andMLNumber:prop[@"MLnumber"]
                                                                mediaURL: prop[@"MediaURL"]
+                                                                    roi:roi
+                                                                  price:price
                                        ]];
                 
             }
@@ -173,11 +183,16 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                                       prop[@"PostalCode"]
                                       ];
                 
+                NSNumber *roi = prop[@"ROI"];
+                NSNumber *price = prop[@"ListPrice"];
+
                 [properties addObject:[[Property alloc] initWithAddress:address
                                                             andLocation:CLLocationCoordinate2DMake([prop[@"Latitude"] doubleValue],
                                                                                                    [prop[@"longitude"] doubleValue])
                                                             andMLNumber:prop[@"MLnumber"]
                                                                mediaURL: prop[@"MediaURL"]
+                                                                    roi:roi
+                                                                  price:price
                                        ]];
                 
             }
