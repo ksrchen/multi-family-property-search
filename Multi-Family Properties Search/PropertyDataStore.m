@@ -23,6 +23,7 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
     dispatch_once(&oncePredicate, ^{
         _sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:baseURLString]];
     });
+    [_sharedClient.requestSerializer setValue:[[UserDataStore getInstance] getUser].UserID forHTTPHeaderField:@"From"];
     return _sharedClient;
 }
 
@@ -41,8 +42,6 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
 
 - (void)getHottestProperties:(void(^)(NSURLSessionDataTask *task, NSMutableArray * properties))success
                      failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure {
-    
-    [self.requestSerializer setValue:[[UserDataStore getInstance] getUser].UserID forHTTPHeaderField:@"From"];
     
     self.properties = [[NSMutableArray alloc] init];
    // NSString *filters = @"GrossOperatingIncome>1000";
@@ -99,7 +98,6 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
         return;
     }
     _searching = YES;
-    [self.requestSerializer setValue:[[UserDataStore getInstance] getUser].UserID forHTTPHeaderField:@"From"];
     
     self.properties = [[NSMutableArray alloc] init];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PropertyListingUpdated" object:nil];
@@ -153,7 +151,6 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
             success:(void(^)(NSURLSessionDataTask *task, id property))success
             failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
 {
-    [self.requestSerializer setValue:[[UserDataStore getInstance] getUser].UserID forHTTPHeaderField:@"From"];
     NSString* path = [NSString stringWithFormat: @"resincome/%@", MLNumber];
     
     [self GET:path parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -173,7 +170,6 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                     failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
 {
     NSMutableArray *  properties = [[NSMutableArray alloc] init];
-    [self.requestSerializer setValue:[[UserDataStore getInstance] getUser].UserID forHTTPHeaderField:@"From"];
     
     NSString* path = @"favorite";
     NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:userId, @"userId", nil];
@@ -219,7 +215,6 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                     success:(void(^)(NSURLSessionDataTask *task, id property))success
                     failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
 {
-    [self.requestSerializer setValue:[[UserDataStore getInstance] getUser].UserID forHTTPHeaderField:@"From"];
     NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:userId, @"UserID", MLNumber, @"MLNumber", nil];
     NSString* path = @"favorite";
     
@@ -241,8 +236,6 @@ NSString* const baseURLString = @"http://kmlservice.azurewebsites.net/api/";
                        success:(void(^)(NSURLSessionDataTask *task, id property))success
                        failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
 {
-    [self.requestSerializer setValue:[[UserDataStore getInstance] getUser].UserID forHTTPHeaderField:@"From"];
-    
     NSDictionary * params = [ [NSDictionary alloc] initWithObjectsAndKeys:userId, @"userId", MLNumber, @"MLNumber", nil];
     NSString* path = @"favorite";
     

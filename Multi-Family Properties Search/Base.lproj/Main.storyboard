@@ -959,9 +959,9 @@
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
+                                                        <exclude reference="y0c-4A-4LY"/>
                                                         <exclude reference="VUu-AY-iCU"/>
                                                         <exclude reference="aWr-s3-fXU"/>
-                                                        <exclude reference="y0c-4A-4LY"/>
                                                         <exclude reference="Eh2-0P-s1I"/>
                                                         <exclude reference="JV2-k5-rRx"/>
                                                     </mask>
