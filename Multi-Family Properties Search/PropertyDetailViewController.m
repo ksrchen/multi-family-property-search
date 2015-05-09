@@ -206,7 +206,7 @@
     [yAxis setLabelingPolicy:CPTAxisLabelingPolicyFixedInterval];
     
     _incomePlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor greenColor] horizontalBars:NO];
-    [_incomePlot setIdentifier:@"incomePlot"];
+    [_incomePlot setIdentifier:@"Income"];
     [_incomePlot setBarWidth:CPTDecimalFromCGFloat(CPDBarWidth)];
     [_incomePlot setBarOffset:CPTDecimalFromCGFloat(CPDBarWidth)];
     [_incomePlot setDelegate:self];
@@ -214,11 +214,26 @@
     [graph addPlot:_incomePlot];
 
     _expensePlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor redColor] horizontalBars:NO];
-    [_expensePlot setIdentifier:@"expensePlot"];
+    [_expensePlot setIdentifier:@"Expense"];
     [_expensePlot setBarWidth:CPTDecimalFromCGFloat(CPDBarWidth)];
     [_expensePlot setDelegate:self];
     [_expensePlot setDataSource:self];
     [graph addPlot:_expensePlot];
+    
+    graph.legend = [CPTLegend legendWithGraph:graph];
+    CPTMutableTextStyle *legendtextStyle = [CPTMutableTextStyle textStyle];
+    legendtextStyle.color = [CPTColor grayColor];
+    legendtextStyle.fontName = @"Helvetica-Bold";
+    legendtextStyle.fontSize = 10.0f;
+    graph.legend.textStyle = legendtextStyle;
+    
+    //graph.legend.fill = [CPTFill fillWithColor:[CPTColor darkGrayColor]];
+   // graph.legend.borderLineStyle = axisSet.axisLineStyle;
+    graph.legend.cornerRadius = 5.0;
+    graph.legend.swatchSize = CGSizeMake(15.0, 15.0);
+    graph.legendAnchor = CPTRectAnchorTopRight;
+    graph.legendDisplacement = CGPointMake(30.0, -20.0);
+    graph.legend.numberOfRows = 2;
     
 }
 // This method is here because this class also functions as datasource for our graph
@@ -228,9 +243,9 @@
         return _expenses.count;
     }
     else {
-        if ([plotnumberOfRecords.identifier isEqual:@"expensePlot"] ){
+        if ([plotnumberOfRecords.identifier isEqual:@"Expense"] ){
             return 1;
-        }else if  ([plotnumberOfRecords.identifier isEqual:@"incomePlot"] ){
+        }else if  ([plotnumberOfRecords.identifier isEqual:@"Income"] ){
             return 1;
         }
     }
@@ -246,14 +261,14 @@
         return expense.ExpenseAmount;
     }
     else {
-        if ([plot.identifier isEqual:@"expensePlot"] ){
+        if ([plot.identifier isEqual:@"Expense"] ){
             if (fieldEnum == CPTScatterPlotFieldX){
                 return [NSNumber numberWithFloat: 1];
             }else{
                 return [NSNumber numberWithFloat: [_expense floatValue]];
             }
         }
-        else if ([plot.identifier isEqual:@"incomePlot"] ) {
+        else if ([plot.identifier isEqual:@"Income"] ) {
             if (fieldEnum == CPTScatterPlotFieldX){
                 return [NSNumber numberWithFloat: 1];
             }else{
