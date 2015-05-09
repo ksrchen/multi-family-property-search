@@ -24,4 +24,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (nonatomic, copy) NSString * MLNumber;
 @property (weak, nonatomic) IBOutlet KIImagePager *ImagePager;
+@property (weak, nonatomic) IBOutlet UILabel *listingAgentName;
+@property (weak, nonatomic) IBOutlet UILabel *listingOffice;
 @end

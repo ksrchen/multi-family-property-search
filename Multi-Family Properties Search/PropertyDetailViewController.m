@@ -19,18 +19,13 @@
     NSArray * _expenseData;
     NSArray * _incomeData;
     NSArray *_images;
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _expenses = [[NSArray alloc]
-                 initWithObjects:[[Expense alloc] initWithExpenseType:@"Mortgage" andAmount:[NSNumber numberWithDouble:2400]],
-                 [[Expense alloc] initWithExpenseType:@"Prop Tax" andAmount:[NSNumber numberWithDouble:500]],
-                 [[Expense alloc] initWithExpenseType:@"Insurance" andAmount:[NSNumber numberWithDouble:200]],
-                 [[Expense alloc] initWithExpenseType:@"Pro Mgmt" andAmount:[NSNumber numberWithDouble:150]],
-                 [[Expense alloc] initWithExpenseType:@"Utilities" andAmount:[NSNumber numberWithDouble:75]],
-                 nil];
+   
     
     _expenseData = [[NSArray alloc] initWithObjects:
                     [NSValue valueWithCGPoint:CGPointMake(0, 0)],
@@ -72,7 +67,23 @@
             NSNumber *price = attributes[@"ListPrice"];
             NSNumber *roi = attributes[@"ROI"];
             
+            NSNumber *mortage = attributes[@"Mortage"];
+            NSNumber *propertyTax = attributes[@"PropertyTax"];
+            NSNumber *propertyManagement = attributes[@"PropertyManagement"];
+            NSNumber *insurance = attributes[@"Insurance"];
+            //NSNumber *utilityWater = attributes[@"UtilityWater"];
+            
+            _expenses = [[NSArray alloc]
+                         initWithObjects:[[Expense alloc] initWithExpenseType:@"Mortgage" andAmount:mortage],
+                         [[Expense alloc] initWithExpenseType:@"Prop Tax" andAmount:propertyTax],
+                         [[Expense alloc] initWithExpenseType:@"Insurance" andAmount:insurance],
+                         [[Expense alloc] initWithExpenseType:@"Pro Mgmt" andAmount:propertyManagement],
+                         [[Expense alloc] initWithExpenseType:@"Utilities" andAmount:[NSNumber numberWithDouble:0]],
+                         nil];
+        
             [self createExpenseChart];
+            
+            NSNumber *grossIncome = attributes[@"GrossIncome"];
             [self createIncomeVsExpenseChart];
             
             self.ImagePager.dataSource = self;
@@ -91,6 +102,10 @@
             
             self.priceDisplay.text = [NSString stringWithFormat:@"Price: %@  ROI: %@",  [currencyFormatter stringFromNumber:price],
                                       [roi doubleValue]>0.0?[percentFormatter stringFromNumber:roi] : @"n/a"];
+            
+            self.listingAgentName.text = [NSString stringWithFormat:@"%@ %@", attributes[@"ListingAgentFirstName"], attributes[@"ListingAgentLastName"]];
+            self.listingOffice.text = attributes[@"ListingOffice"];
+            
             
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -127,6 +142,7 @@
     pieChart.dataSource = self;
     pieChart.delegate = self;
     pieChart.pieRadius = (self.pieGraphView.bounds.size.height * 0.6) / 2;
+    pieChart.pieInnerRadius = (self.pieGraphView.bounds.size.height * 0.6) / 5;
     pieChart.identifier = graph.title;
     pieChart.startAngle = M_PI_4;
     pieChart.sliceDirection = CPTPieDirectionClockwise;
@@ -138,6 +154,7 @@
     //    //pieChart.overlayFill = [CPTFill fillWithGradient:overlayGradient];
     
     [graph addPlot:pieChart];
+    
     
 }
 
@@ -311,9 +328,23 @@
         if (!labelText) {
             labelText= [[CPTMutableTextStyle alloc] init];
             labelText.color = [CPTColor grayColor];
+            labelText.fontSize = 10.0;
         }
+        
+        double sum = 0;
+        for (Expense *expense in _expenses) {
+            sum = sum + [[expense ExpenseAmount] doubleValue];
+        }
+        
         Expense * expense = [_expenses objectAtIndex:idx];
-        return [[CPTTextLayer alloc] initWithText:expense.ExpenseType style:labelText];
+        
+        double percent = [[expense ExpenseAmount] doubleValue] / sum;
+        NSNumberFormatter *percentFormatter = [[NSNumberFormatter alloc]init];
+        [percentFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+        
+        NSString *label = [NSString stringWithFormat:@"%@ %@", expense.ExpenseType, [percentFormatter stringFromNumber:[NSNumber numberWithDouble:  percent]]];
+        
+        return [[CPTTextLayer alloc] initWithText:label style:labelText];
         
     }
     else {
