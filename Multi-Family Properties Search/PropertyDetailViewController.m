@@ -12,6 +12,7 @@
 #import "User.h"
 #import "UserDataStore.h"
 #import "PropertyDataStore.h"
+#import <MessageUI/MessageUI.h>
 
 @implementation PropertyDetailViewController  {
     
@@ -24,7 +25,7 @@
     CPTPieChart *_pieChart;
     CPTBarPlot *_incomePlot;
     CPTBarPlot *_expensePlot;
-    CPTXYPlotSpace *plotSpace;
+    CPTXYPlotSpace *_barGraphPlotSpace;
 }
 
 - (void)viewDidLoad {
@@ -84,7 +85,7 @@
             [_expensePlot reloadData];
             
             float maxY = [_income floatValue] > [_expense floatValue]? [_income floatValue] : [_expense floatValue];
-            [plotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(maxY + 500)]];
+            [_barGraphPlotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(maxY + 500)]];
             
             self.ImagePager.dataSource = self;
             [self.ImagePager reloadData];
@@ -180,10 +181,10 @@
     graph.titleDisplacement = CGPointMake(0.0f, 27.0f);
     
         // 5 - Enable user interactions for plot space
-    plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
-    plotSpace.allowsUserInteraction = NO;
+    _barGraphPlotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
+    _barGraphPlotSpace.allowsUserInteraction = NO;
     
-    [plotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromFloat(2.5)]];
+    [_barGraphPlotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromFloat(2.5)]];
     //[plotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(3000 + 1)]];
     
     [[graph plotAreaFrame] setPaddingLeft:60.0f];
@@ -320,26 +321,20 @@
     
     
     
-    UIAlertAction *sendCommentAction = [UIAlertAction
-                                        actionWithTitle:NSLocalizedString(@"Send Comment", @"OK action")
+    UIAlertAction *sendEmailAction = [UIAlertAction
+                                        actionWithTitle:NSLocalizedString(@"Email", @"Email Action")
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction *action)
                                         {
-                                            UIAlertController * confirmController = [UIAlertController alertControllerWithTitle:@"Property Details"
-                                                                                                                        message:@"Comment sent!"
-                                                                                                                 preferredStyle:UIAlertControllerStyleAlert];
+                                            MFMailComposeViewController * picker = [[MFMailComposeViewController alloc] init];
+                                            NSString* body = [NSString stringWithFormat: @"http://kmlservice.azurewebsites.net/PropertyProfile?id=%@", self.MLNumber];
+                                           
+                                            [picker setSubject:@"Checkout this property"];
+                                            [picker setTitle:@"Email"];
+                                            [picker setMessageBody:body isHTML:YES];
                                             
-                                            UIAlertAction *closeAction = [UIAlertAction
-                                                                          actionWithTitle:NSLocalizedString(@"OK", @"Cancel action")
-                                                                          style:UIAlertActionStyleCancel
-                                                                          handler:^(UIAlertAction *action)
-                                                                          {
-                                                                              
-                                                                              
-                                                                          }];
-                                            [confirmController addAction:closeAction];
-                                            
-                                            [self presentViewController:confirmController animated:YES completion:nil];
+                                            picker.mailComposeDelegate = self;
+                                            [self presentViewController:picker animated:YES completion:NULL];
                                             
                                         }];
     
@@ -353,7 +348,7 @@
                                        }];
     
     UIAlertAction *addToMylistAction = [UIAlertAction
-                                        actionWithTitle:NSLocalizedString(@"Add to MyListing", @"Cancel action")
+                                        actionWithTitle:NSLocalizedString(@"Add to My Properties", @"Cancel action")
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction *action)
                                         {
@@ -393,10 +388,10 @@
                                    }];
     
     
-    [alertController addAction:sendCommentAction];
-    [alertController addAction:placeOfferAction];
+    [alertController addAction:sendEmailAction];
+    //[alertController addAction:placeOfferAction];
     [alertController addAction:addToMylistAction];
-    [alertController addAction:addContactSalesAction];
+    //[alertController addAction:addContactSalesAction];
     [alertController addAction:cancelAction];
     
     [[alertController popoverPresentationController] setBarButtonItem:sender];
@@ -413,6 +408,11 @@
 }
 - (UIViewContentMode) contentModeForImage:(NSUInteger)image {
     return UIViewContentModeScaleToFill;
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

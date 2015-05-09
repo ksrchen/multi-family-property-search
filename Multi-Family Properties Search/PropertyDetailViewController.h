@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CorePlot-CocoaTouch.h"
 #import "KIImagePager.h"
+#import <MessageUI/MessageUI.h>
 
-@interface PropertyDetailViewController : UIViewController<CPTPlotDataSource, UIScrollViewDelegate, KIImagePagerDataSource>
+@interface PropertyDetailViewController : UIViewController<CPTPlotDataSource, UIScrollViewDelegate, KIImagePagerDataSource, MFMailComposeViewControllerDelegate>
 - (IBAction)contactMe:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *propertyDescription;
 @property (weak, nonatomic) IBOutlet CPTGraphHostingView *pieGraphView;
