@@ -326,15 +326,22 @@
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction *action)
                                         {
-                                            MFMailComposeViewController * picker = [[MFMailComposeViewController alloc] init];
-                                            NSString* body = [NSString stringWithFormat: @"http://kmlservice.azurewebsites.net/PropertyProfile?id=%@", self.MLNumber];
-                                           
-                                            [picker setSubject:@"Checkout this property"];
-                                            [picker setTitle:@"Email"];
-                                            [picker setMessageBody:body isHTML:YES];
+//                                            MFMailComposeViewController * picker = [[MFMailComposeViewController alloc] init];
+//                                            NSString* body = [NSString stringWithFormat: @"http://kmlservice.azurewebsites.net/PropertyProfile?id=%@", self.MLNumber];
+//                                           
+//                                            [picker setSubject:@"Checkout this property"];
+//                                            [picker setTitle:@"Email"];
+//                                            [picker setMessageBody:body isHTML:YES];
+//                                            
+//                                            picker.mailComposeDelegate = self;
+//                                            [self presentViewController:picker animated:YES completion:NULL];
                                             
-                                            picker.mailComposeDelegate = self;
-                                            [self presentViewController:picker animated:YES completion:NULL];
+                                            NSString* body = [NSString stringWithFormat: @"http://kmlservice.azurewebsites.net/PropertyProfile?id=%@", self.MLNumber];
+                                            NSArray *data = @[body];
+                                            
+                                            UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:data applicationActivities:nil];
+                                            
+                                            [self presentViewController:vc animated:YES completion:nil];
                                             
                                         }];
     
