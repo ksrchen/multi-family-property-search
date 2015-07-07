@@ -47,6 +47,9 @@
 		3676598A1A853D6700D3D929 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 367659891A853D6700D3D929 /* appicon.png */; };
 		367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */; };
 		369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369B60A51AAB4BC200C69C17 /* RootViewController.m */; };
+		36EC11591B4B706A005FC935 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC11581B4B706A005FC935 /* logo.png */; };
+		36EC115B1B4B7363005FC935 /* icon50.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC115A1B4B7363005FC935 /* icon50.png */; };
+		36EC115F1B4B768F005FC935 /* chrometopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC115E1B4B768F005FC935 /* chrometopia.png */; };
 		39544DD094DE3344D9EA0565 /* libPods-Chrometopia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */; };
 		9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00108E1AA63348005C3375 /* FilterViewController.m */; };
 		9D0D8E7A1AD86B0F002A6177 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D8E791AD86B0F002A6177 /* EmptySegue.m */; };
@@ -122,6 +125,9 @@
 		367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDataStore.m; sourceTree = "<group>"; };
 		369B60A41AAB4BC200C69C17 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		369B60A51AAB4BC200C69C17 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		36EC11581B4B706A005FC935 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		36EC115A1B4B7363005FC935 /* icon50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon50.png; sourceTree = "<group>"; };
+		36EC115E1B4B768F005FC935 /* chrometopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrometopia.png; sourceTree = "<group>"; };
 		9CEF9275FE27C8F8593F2CF0 /* Pods-Chrometopia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chrometopia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chrometopia/Pods-Chrometopia.release.xcconfig"; sourceTree = "<group>"; };
 		9D00108D1AA63348005C3375 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		9D00108E1AA63348005C3375 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
@@ -200,6 +206,9 @@
 		364D82DE1A83D17400DDCCC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				36EC115E1B4B768F005FC935 /* chrometopia.png */,
+				36EC115A1B4B7363005FC935 /* icon50.png */,
+				36EC11581B4B706A005FC935 /* logo.png */,
 				9D1A70B71AD486A80029E9D4 /* location_services.png */,
 				365B70601AA3867300BC7E91 /* hand25.png */,
 				9DD37AAA1AA784E90092983A /* Filter.png */,
@@ -403,11 +412,14 @@
 				367659861A8529B600D3D929 /* pic..png in Resources */,
 				364D831E1A83F76100DDCCC5 /* im8.jpg in Resources */,
 				364D83261A841F5300DDCCC5 /* small-red-pin.png in Resources */,
+				36EC115F1B4B768F005FC935 /* chrometopia.png in Resources */,
+				36EC115B1B4B7363005FC935 /* icon50.png in Resources */,
 				3676598A1A853D6700D3D929 /* appicon.png in Resources */,
 				9D1A70B81AD486A80029E9D4 /* location_services.png in Resources */,
 				364D82F21A83D17400DDCCC5 /* LaunchScreen.xib in Resources */,
 				367659881A8529B600D3D929 /* graph.png in Resources */,
 				364D83191A83F76100DDCCC5 /* im3.jpg in Resources */,
+				36EC11591B4B706A005FC935 /* logo.png in Resources */,
 				365333F01A98F05D00511302 /* map_pin.png in Resources */,
 				3611C7211A9A2A000058FDC5 /* twitter_signin.png in Resources */,
 				364D83181A83F76100DDCCC5 /* im2.jpg in Resources */,
