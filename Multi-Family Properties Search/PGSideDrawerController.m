@@ -51,10 +51,13 @@
             default:
                 break;
         }
-    } else if (indexPath.section == 3){
+    } else if (indexPath.section == 2){
         switch (indexPath.row) {
             case 0:
-                centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+            {
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"signin" bundle:nil];
+                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"signinView"];
+            }
                 break;
             case 1:
                 centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyAccountViewController"];
