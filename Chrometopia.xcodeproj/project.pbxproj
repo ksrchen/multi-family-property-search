@@ -32,6 +32,9 @@
 		364D83261A841F5300DDCCC5 /* small-red-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 364D83251A841F5300DDCCC5 /* small-red-pin.png */; };
 		364D832B1A8428EE00DDCCC5 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D832A1A8428EE00DDCCC5 /* Property.m */; };
 		364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */; };
+		365261051B5166AE0091B448 /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 365261041B5166AE0091B448 /* disclosure.png */; };
+		365261081B5168FA0091B448 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 365261071B5168FA0091B448 /* Settings.storyboard */; };
+		3652610B1B51716E0091B448 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3652610A1B51716E0091B448 /* SettingsTableViewController.m */; };
 		365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */; };
 		36573E361A9244C00023680D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E351A9244C00023680D /* LoginViewController.m */; };
 		36573E391A9244DB0023680D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E381A9244DB0023680D /* RegisterViewController.m */; };
@@ -103,6 +106,10 @@
 		364D832A1A8428EE00DDCCC5 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
 		364D832F1A843F0E00DDCCC5 /* PropertyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetailViewController.h; sourceTree = "<group>"; };
 		364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
+		365261041B5166AE0091B448 /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
+		365261071B5168FA0091B448 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		365261091B51716E0091B448 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		3652610A1B51716E0091B448 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		365333EC1A98E1CD00511302 /* NSUserDefaultsCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultsCategory.h; sourceTree = "<group>"; };
 		365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsCategory.m; sourceTree = "<group>"; };
 		36573E341A9244C00023680D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -203,7 +210,6 @@
 				365333EC1A98E1CD00511302 /* NSUserDefaultsCategory.h */,
 				365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */,
 				9D0010901AA6689F005C3375 /* FilterDelegate.h */,
-				36899EF91B4EA99100B9805F /* signin.storyboard */,
 			);
 			name = Chrometopia;
 			path = "Multi-Family Properties Search";
@@ -212,6 +218,7 @@
 		364D82DE1A83D17400DDCCC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				365261041B5166AE0091B448 /* disclosure.png */,
 				3604BAB71B4CD309008260C0 /* map_pin.png */,
 				36EC115E1B4B768F005FC935 /* chrometopia.png */,
 				36EC115A1B4B7363005FC935 /* icon50.png */,
@@ -260,9 +267,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		365261061B5168CB0091B448 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				365261071B5168FA0091B448 /* Settings.storyboard */,
+				365261091B51716E0091B448 /* SettingsTableViewController.h */,
+				3652610A1B51716E0091B448 /* SettingsTableViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		36899EFB1B4EBBD900B9805F /* Sigin */ = {
 			isa = PBXGroup;
 			children = (
+				36899EF91B4EA99100B9805F /* signin.storyboard */,
 				36899EFC1B4EBC0D00B9805F /* SigninTableViewController.h */,
 				36899EFD1B4EBC0D00B9805F /* SigninTableViewController.m */,
 			);
@@ -291,6 +309,7 @@
 		9D178D1A1AD6FC9500523BE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				365261061B5168CB0091B448 /* Settings */,
 				36899EFB1B4EBBD900B9805F /* Sigin */,
 				9D0D8E781AD86B0F002A6177 /* EmptySegue.h */,
 				9D0D8E791AD86B0F002A6177 /* EmptySegue.m */,
@@ -426,7 +445,9 @@
 				365B70631AA3867300BC7E91 /* delete25.png in Resources */,
 				3611C7201A9A2A000058FDC5 /* google_signin.png in Resources */,
 				367659871A8529B600D3D929 /* expense.png in Resources */,
+				365261081B5168FA0091B448 /* Settings.storyboard in Resources */,
 				367659861A8529B600D3D929 /* pic..png in Resources */,
+				365261051B5166AE0091B448 /* disclosure.png in Resources */,
 				364D831E1A83F76100DDCCC5 /* im8.jpg in Resources */,
 				364D83261A841F5300DDCCC5 /* small-red-pin.png in Resources */,
 				36EC115F1B4B768F005FC935 /* chrometopia.png in Resources */,
@@ -496,6 +517,7 @@
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
 				9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */,
 				9D9EB5AA1AD84C9C00118AA2 /* PropertySearchController.m in Sources */,
+				3652610B1B51716E0091B448 /* SettingsTableViewController.m in Sources */,
 				9D178D1F1AD7019A00523BE7 /* AddPropertyViewController.m in Sources */,
 				9D9EB5B01AD8660D00118AA2 /* ListViewController.m in Sources */,
 				364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */,

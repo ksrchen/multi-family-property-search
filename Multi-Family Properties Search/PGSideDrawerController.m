@@ -60,7 +60,10 @@
             }
                 break;
             case 1:
-                centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyAccountViewController"];
+            {
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Settings" bundle:nil];
+                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"settingsView"];
+            }
                 break;
                 
             default:
