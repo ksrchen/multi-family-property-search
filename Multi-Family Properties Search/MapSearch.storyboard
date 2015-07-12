@@ -333,26 +333,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uy-5q-hYq">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="448"/>
                                 <connections>
                                     <segue destination="Hot-og-Vnq" kind="embed" identifier="embedContainer" id="RGE-Ua-CMZ"/>
                                 </connections>
                             </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXR-Nj-pEd">
+                                <rect key="frame" x="0.0" y="512" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Draw" id="aRv-jV-6hc"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="W0m-ou-qsh"/>
+                                    <barButtonItem title="Hottest Properties" id="efe-rM-MrR">
+                                        <connections>
+                                            <action selector="hottestPropertiesTapped:" destination="uIi-UA-xA4" id="4Ce-c5-6X5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SXs-zr-PIi"/>
+                                    <barButtonItem title="List" id="wDp-rd-ecM">
+                                        <connections>
+                                            <action selector="swapView:" destination="uIi-UA-xA4" id="u0E-t7-L9Z"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oXR-Nj-pEd" firstAttribute="leading" secondItem="9RZ-o7-RjD" secondAttribute="leading" id="2WI-9O-gL2"/>
+                            <constraint firstItem="oXR-Nj-pEd" firstAttribute="top" secondItem="4uy-5q-hYq" secondAttribute="bottom" id="4iJ-w5-2UN"/>
                             <constraint firstItem="4uy-5q-hYq" firstAttribute="leading" secondItem="9RZ-o7-RjD" secondAttribute="leading" id="Ed9-dc-OPh"/>
-                            <constraint firstItem="4uy-5q-hYq" firstAttribute="bottom" secondItem="9RZ-o7-RjD" secondAttribute="bottomMargin" id="J2Q-dT-A0N"/>
                             <constraint firstItem="4uy-5q-hYq" firstAttribute="trailing" secondItem="9RZ-o7-RjD" secondAttribute="trailing" id="J78-VX-WYJ"/>
+                            <constraint firstAttribute="trailing" secondItem="oXR-Nj-pEd" secondAttribute="trailing" id="fsF-a8-7rJ"/>
+                            <constraint firstItem="oXR-Nj-pEd" firstAttribute="bottom" secondItem="Jne-RM-jzI" secondAttribute="bottom" id="kEk-0x-dhf"/>
                             <constraint firstItem="4uy-5q-hYq" firstAttribute="top" secondItem="lF3-Mq-Ys7" secondAttribute="bottom" id="xCF-nX-nAL"/>
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="List" id="1rE-JD-SD8">
-                            <connections>
-                                <action selector="swapView:" destination="uIi-UA-xA4" id="O98-Sf-XpM"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem title="Filter" id="28e-g6-Vp9">
                             <connections>
                                 <action selector="onFilter:" destination="XV1-rj-h6o" id="zdX-fF-ZKW"/>
@@ -371,8 +387,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="currentLocationBarItem" destination="ZdZ-f8-L0X" id="Gil-Yl-ASF"/>
+                        <outlet property="drawBarItem" destination="aRv-jV-6hc" id="8Wa-Ki-B6b"/>
                         <outlet property="filterBarItem" destination="28e-g6-Vp9" id="lI6-gc-T1c"/>
-                        <outlet property="listViewBarItem" destination="1rE-JD-SD8" id="qG0-6g-7Vb"/>
+                        <outlet property="hottestPropertiesBarItem" destination="efe-rM-MrR" id="fiu-F1-3Ub"/>
+                        <outlet property="leftFlexBarItem" destination="W0m-ou-qsh" id="gjj-q8-kv0"/>
+                        <outlet property="listViewBarItem" destination="wDp-rd-ecM" id="NuQ-yr-eiW"/>
+                        <outlet property="rigthFlexBarItem" destination="SXs-zr-PIi" id="AYF-V1-Eli"/>
                         <outlet property="searchBar" destination="eN7-zP-aie" id="fj6-id-b8e"/>
                     </connections>
                 </viewController>

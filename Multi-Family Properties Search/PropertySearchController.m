@@ -10,7 +10,7 @@
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
 #import "FilterViewController.h"
-
+#import "PGSideDrawerController.h"
 @interface PropertySearchController ()
 {
     CLLocationManager *locationManager;
@@ -36,14 +36,14 @@
     [self setupLeftMenuButton];
     
     [self.navigationItem setTitleView:self.searchBar];
-    [self.navigationItem setRightBarButtonItems:@[ self.filterBarItem, self.currentLocationBarItem]];
+    [self.navigationItem setRightBarButtonItems:@[ self.filterBarItem]];
     self.searchBar.delegate = self.containerViewController.mapViewController;
 
 }
 
 - (void)setupLeftMenuButton {
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-    [self.navigationItem setLeftBarButtonItems:@[leftDrawerButton, self.listViewBarItem]];
+    [self.navigationItem setLeftBarButtonItems:@[leftDrawerButton, self.currentLocationBarItem]];
 }
 
 - (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
@@ -81,5 +81,9 @@
     self.searchBar.text = nil;
 
     [self.containerViewController.mapViewController zoomToCurrentLocation:nil];
+}
+
+- (IBAction)hottestPropertiesTapped:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_HOTTEST_PROPERTIES object:self];
 }
 @end

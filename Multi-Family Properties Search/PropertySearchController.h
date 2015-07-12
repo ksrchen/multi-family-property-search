@@ -11,12 +11,19 @@
 
 @interface PropertySearchController : UIViewController 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *filterBarItem;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *listViewBarItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *currentLocationBarItem;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-- (IBAction)swapView:(id)sender;
 
 @property (nonatomic, weak) ContainerViewController *containerViewController;
 - (IBAction)zoomToCurrentLocation:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *drawBarItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftFlexBarItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *hottestPropertiesBarItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *rigthFlexBarItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *listViewBarItem;
+
+- (IBAction)swapView:(id)sender;
+- (IBAction)hottestPropertiesTapped:(id)sender;
 
 @end
