@@ -43,12 +43,12 @@ NSString *const SHOW_HOTTEST_PROPERTIES = @"ShowHottestProperties";
                 centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"HottestPropertyView"];
             }
                 break;
-            case 1:
-            {
-                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MapSearch" bundle:nil];
-                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"SearchViewController"];
-            }
-                break;
+//            case 1:
+//            {
+//                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MapSearch" bundle:nil];
+//                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+//            }
+//                break;
 
             default:
                 break;
