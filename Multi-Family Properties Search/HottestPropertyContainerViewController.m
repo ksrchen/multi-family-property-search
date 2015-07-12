@@ -9,6 +9,8 @@
 #import "HottestPropertyContainerViewController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
+#import "PGSideDrawerController.h"
+
 @interface HottestPropertyContainerViewController ()
 
 @end
@@ -48,4 +50,10 @@
 }
 
 
+- (IBAction)sortTapped:(id)sender {
+}
+
+- (IBAction)mapTapped:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_MAP object:self];
+}
 @end

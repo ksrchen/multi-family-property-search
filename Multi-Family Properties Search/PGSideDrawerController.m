@@ -3,6 +3,9 @@
 #import "PGSideDrawerController.h"
 #import "UIViewController+MMDrawerController.h"
 
+NSString *const SHOW_MAP = @"ShowMap";
+NSString *const SHOW_HOTTEST_PROPERTIES = @"ShowHottestProperties";
+
 @interface PGSideDrawerController ()
 @property(nonatomic, strong) NSIndexPath *currentIndex;
 @end
@@ -12,6 +15,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.currentIndex = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ShowMapView) name:SHOW_MAP object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showHottestPropertiesView) name:SHOW_HOTTEST_PROPERTIES object:nil];
+
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Table View Delegate
@@ -32,7 +44,10 @@
             }
                 break;
             case 1:
-                centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+            {
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MapSearch" bundle:nil];
+                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+            }
                 break;
 
             default:
@@ -94,6 +109,19 @@
     } else {
         [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
     }
+}
+
+-(void)ShowMapView
+{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MapSearch" bundle:nil];
+    UIViewController *centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+    [self.mm_drawerController setCenterViewController:centerViewController withCloseAnimation:YES completion:nil];
+}
+-(void)showHottestPropertiesView
+{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"HottestProperty" bundle:nil];
+    UIViewController *centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"HottestPropertyView"];
+    [self.mm_drawerController setCenterViewController:centerViewController withCloseAnimation:YES completion:nil];
 }
 
 @end

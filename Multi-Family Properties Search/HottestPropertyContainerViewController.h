@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HottestPropertyContainerViewController : UIViewController
+- (IBAction)sortTapped:(id)sender;
+- (IBAction)mapTapped:(id)sender;
 
 @end

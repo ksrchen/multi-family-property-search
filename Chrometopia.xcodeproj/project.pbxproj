@@ -17,6 +17,7 @@
 		363EED741B52B7860047B41C /* SavedSearhResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363EED731B52B7860047B41C /* SavedSearhResultsTableViewController.m */; };
 		363EED761B52BCFB0047B41C /* MyProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED751B52BCFB0047B41C /* MyProperties.storyboard */; };
 		363EED7C1B52C1930047B41C /* PropertyDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED7B1B52C1930047B41C /* PropertyDetails.storyboard */; };
+		363EED7E1B52C56D0047B41C /* MapSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED7D1B52C56D0047B41C /* MapSearch.storyboard */; };
 		364D82E11A83D17400DDCCC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E01A83D17400DDCCC5 /* main.m */; };
 		364D82E41A83D17400DDCCC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E31A83D17400DDCCC5 /* AppDelegate.m */; };
 		364D82ED1A83D17400DDCCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364D82EB1A83D17400DDCCC5 /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 		363EED731B52B7860047B41C /* SavedSearhResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedSearhResultsTableViewController.m; sourceTree = "<group>"; };
 		363EED751B52BCFB0047B41C /* MyProperties.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyProperties.storyboard; sourceTree = "<group>"; };
 		363EED7B1B52C1930047B41C /* PropertyDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PropertyDetails.storyboard; sourceTree = "<group>"; };
+		363EED7D1B52C56D0047B41C /* MapSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapSearch.storyboard; sourceTree = "<group>"; };
 		364D82DB1A83D17400DDCCC5 /* Chrometopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chrometopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		364D82DF1A83D17400DDCCC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364D82E01A83D17400DDCCC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				9D00108E1AA63348005C3375 /* FilterViewController.m */,
 				9D9EB5AE1AD8660D00118AA2 /* ListViewController.h */,
 				9D9EB5AF1AD8660D00118AA2 /* ListViewController.m */,
+				363EED7D1B52C56D0047B41C /* MapSearch.storyboard */,
 				9D9EB5A81AD84C9C00118AA2 /* PropertySearchController.h */,
 				9D9EB5A91AD84C9C00118AA2 /* PropertySearchController.m */,
 				364D83091A83E89300DDCCC5 /* SearchViewController.h */,
@@ -561,6 +564,7 @@
 				367659881A8529B600D3D929 /* graph.png in Resources */,
 				364D83191A83F76100DDCCC5 /* im3.jpg in Resources */,
 				36EC11591B4B706A005FC935 /* logo.png in Resources */,
+				363EED7E1B52C56D0047B41C /* MapSearch.storyboard in Resources */,
 				3611C7211A9A2A000058FDC5 /* twitter_signin.png in Resources */,
 				363EED6C1B52B5C30047B41C /* SavedSearchResults.storyboard in Resources */,
 				364D83181A83F76100DDCCC5 /* im2.jpg in Resources */,
