@@ -19,7 +19,8 @@
         MMDrawerController *destinationViewController = (MMDrawerController *) segue.destinationViewController;
 
        // Instantitate and set the center view controller.
-       UIViewController *centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HotestViewController"];
+       UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"HottestProperty" bundle:nil];
+       UIViewController *centerViewController = [storyboard instantiateViewControllerWithIdentifier:@"HottestPropertyView"];
         [destinationViewController setCenterViewController:centerViewController];
 
         // Instantiate and set the left drawer controller.

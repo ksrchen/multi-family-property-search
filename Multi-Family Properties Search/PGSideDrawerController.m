@@ -11,7 +11,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.currentIndex = [NSIndexPath indexPathForRow:1 inSection:0];
+    self.currentIndex = [NSIndexPath indexPathForRow:0 inSection:0];
 }
 
 #pragma mark - Table View Delegate
@@ -26,7 +26,10 @@
     if (indexPath.section == 0){
         switch (indexPath.row) {
             case 0:
-                centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HotestViewController"];
+            {
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"HottestProperty" bundle:nil];
+                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"HottestPropertyView"];
+            }
                 break;
             case 1:
                 centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
@@ -37,15 +40,23 @@
         }
     }else if (indexPath.section == 1){
         switch (indexPath.row) {
-           
             case 0:
-                centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyListingViewController"];
+            {
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MyProperties" bundle:nil];
+                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MyListingViewController"];
+            }
                 break;
             case 1:
-                centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HotestViewController"];
+            {
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SavedSearchResults" bundle:nil];
+                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"SavedSearchResultsView"];
+            }
                 break;
             case 2:
-                centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+            {
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Alerts" bundle:nil];
+                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"AlertsView"];
+            }
                 break;
             case 3:
             {

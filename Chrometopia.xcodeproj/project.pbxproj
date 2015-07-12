@@ -11,6 +11,11 @@
 		3611C71F1A9A2A000058FDC5 /* facebook_signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3611C71C1A9A2A000058FDC5 /* facebook_signin.png */; };
 		3611C7201A9A2A000058FDC5 /* google_signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3611C71D1A9A2A000058FDC5 /* google_signin.png */; };
 		3611C7211A9A2A000058FDC5 /* twitter_signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3611C71E1A9A2A000058FDC5 /* twitter_signin.png */; };
+		363EED6C1B52B5C30047B41C /* SavedSearchResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED6B1B52B5C30047B41C /* SavedSearchResults.storyboard */; };
+		363EED6E1B52B6C50047B41C /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED6D1B52B6C50047B41C /* Alerts.storyboard */; };
+		363EED711B52B71E0047B41C /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363EED701B52B71E0047B41C /* AlertsViewController.m */; };
+		363EED741B52B7860047B41C /* SavedSearhResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363EED731B52B7860047B41C /* SavedSearhResultsTableViewController.m */; };
+		363EED761B52BCFB0047B41C /* MyProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED751B52BCFB0047B41C /* MyProperties.storyboard */; };
 		364D82E11A83D17400DDCCC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E01A83D17400DDCCC5 /* main.m */; };
 		364D82E41A83D17400DDCCC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E31A83D17400DDCCC5 /* AppDelegate.m */; };
 		364D82ED1A83D17400DDCCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364D82EB1A83D17400DDCCC5 /* Main.storyboard */; };
@@ -55,6 +60,8 @@
 		36EC11591B4B706A005FC935 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC11581B4B706A005FC935 /* logo.png */; };
 		36EC115B1B4B7363005FC935 /* icon50.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC115A1B4B7363005FC935 /* icon50.png */; };
 		36EC115F1B4B768F005FC935 /* chrometopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC115E1B4B768F005FC935 /* chrometopia.png */; };
+		36F12AA11B517DDC002E7669 /* HottestProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F12AA01B517DDC002E7669 /* HottestProperty.storyboard */; };
+		36F12AA41B51851F002E7669 /* HottestPropertyContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F12AA31B51851F002E7669 /* HottestPropertyContainerViewController.m */; };
 		39544DD094DE3344D9EA0565 /* libPods-Chrometopia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */; };
 		9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00108E1AA63348005C3375 /* FilterViewController.m */; };
 		9D0D8E7A1AD86B0F002A6177 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D8E791AD86B0F002A6177 /* EmptySegue.m */; };
@@ -74,6 +81,13 @@
 		3611C71C1A9A2A000058FDC5 /* facebook_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_signin.png; sourceTree = "<group>"; };
 		3611C71D1A9A2A000058FDC5 /* google_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_signin.png; sourceTree = "<group>"; };
 		3611C71E1A9A2A000058FDC5 /* twitter_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_signin.png; sourceTree = "<group>"; };
+		363EED6B1B52B5C30047B41C /* SavedSearchResults.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedSearchResults.storyboard; sourceTree = "<group>"; };
+		363EED6D1B52B6C50047B41C /* Alerts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
+		363EED6F1B52B71E0047B41C /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
+		363EED701B52B71E0047B41C /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
+		363EED721B52B7860047B41C /* SavedSearhResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedSearhResultsTableViewController.h; sourceTree = "<group>"; };
+		363EED731B52B7860047B41C /* SavedSearhResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedSearhResultsTableViewController.m; sourceTree = "<group>"; };
+		363EED751B52BCFB0047B41C /* MyProperties.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyProperties.storyboard; sourceTree = "<group>"; };
 		364D82DB1A83D17400DDCCC5 /* Chrometopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chrometopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		364D82DF1A83D17400DDCCC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364D82E01A83D17400DDCCC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,6 +154,9 @@
 		36EC11581B4B706A005FC935 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		36EC115A1B4B7363005FC935 /* icon50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon50.png; sourceTree = "<group>"; };
 		36EC115E1B4B768F005FC935 /* chrometopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrometopia.png; sourceTree = "<group>"; };
+		36F12AA01B517DDC002E7669 /* HottestProperty.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HottestProperty.storyboard; sourceTree = "<group>"; };
+		36F12AA21B51851F002E7669 /* HottestPropertyContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HottestPropertyContainerViewController.h; sourceTree = "<group>"; };
+		36F12AA31B51851F002E7669 /* HottestPropertyContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HottestPropertyContainerViewController.m; sourceTree = "<group>"; };
 		9CEF9275FE27C8F8593F2CF0 /* Pods-Chrometopia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chrometopia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chrometopia/Pods-Chrometopia.release.xcconfig"; sourceTree = "<group>"; };
 		9D00108D1AA63348005C3375 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		9D00108E1AA63348005C3375 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
@@ -175,6 +192,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		363EED661B52B53C0047B41C /* SavedSearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				363EED6B1B52B5C30047B41C /* SavedSearchResults.storyboard */,
+				363EED721B52B7860047B41C /* SavedSearhResultsTableViewController.h */,
+				363EED731B52B7860047B41C /* SavedSearhResultsTableViewController.m */,
+			);
+			name = SavedSearchResult;
+			sourceTree = "<group>";
+		};
+		363EED671B52B5500047B41C /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				363EED6D1B52B6C50047B41C /* Alerts.storyboard */,
+				363EED6F1B52B71E0047B41C /* AlertsViewController.h */,
+				363EED701B52B71E0047B41C /* AlertsViewController.m */,
+			);
+			name = Alert;
+			sourceTree = "<group>";
+		};
+		363EED681B52B56F0047B41C /* MapSearch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MapSearch;
+			sourceTree = "<group>";
+		};
 		364D82D21A83D17400DDCCC5 = {
 			isa = PBXGroup;
 			children = (
@@ -267,14 +311,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		365261061B5168CB0091B448 /* Settings */ = {
+		365261061B5168CB0091B448 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
 				365261071B5168FA0091B448 /* Settings.storyboard */,
 				365261091B51716E0091B448 /* SettingsTableViewController.h */,
 				3652610A1B51716E0091B448 /* SettingsTableViewController.m */,
 			);
-			name = Settings;
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		36899EFB1B4EBBD900B9805F /* Sigin */ = {
@@ -290,10 +334,25 @@
 		36F12A9E1B517845002E7669 /* MyProperty */ = {
 			isa = PBXGroup;
 			children = (
+				363EED751B52BCFB0047B41C /* MyProperties.storyboard */,
+				9D178D1D1AD7019A00523BE7 /* AddPropertyViewController.h */,
+				9D178D1E1AD7019A00523BE7 /* AddPropertyViewController.m */,
 				364D831F1A83F95C00DDCCC5 /* MyListingViewController.h */,
 				364D83201A83F95C00DDCCC5 /* MyListingViewController.m */,
 			);
 			name = MyProperty;
+			sourceTree = "<group>";
+		};
+		36F12A9F1B517DAA002E7669 /* HottestProperty */ = {
+			isa = PBXGroup;
+			children = (
+				36F12AA01B517DDC002E7669 /* HottestProperty.storyboard */,
+				364D830C1A83F6DD00DDCCC5 /* HottestTableViewController.h */,
+				364D830D1A83F6DD00DDCCC5 /* HottestTableViewController.m */,
+				36F12AA21B51851F002E7669 /* HottestPropertyContainerViewController.h */,
+				36F12AA31B51851F002E7669 /* HottestPropertyContainerViewController.m */,
+			);
+			name = HottestProperty;
 			sourceTree = "<group>";
 		};
 		698CCE5BCBE59C3E927BFA32 /* Frameworks */ = {
@@ -318,8 +377,12 @@
 		9D178D1A1AD6FC9500523BE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				363EED681B52B56F0047B41C /* MapSearch */,
+				363EED671B52B5500047B41C /* Alert */,
+				363EED661B52B53C0047B41C /* SavedSearchResult */,
+				36F12A9F1B517DAA002E7669 /* HottestProperty */,
 				36F12A9E1B517845002E7669 /* MyProperty */,
-				365261061B5168CB0091B448 /* Settings */,
+				365261061B5168CB0091B448 /* Setting */,
 				36899EFB1B4EBBD900B9805F /* Sigin */,
 				9D0D8E781AD86B0F002A6177 /* EmptySegue.h */,
 				9D0D8E791AD86B0F002A6177 /* EmptySegue.m */,
@@ -337,16 +400,12 @@
 				364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */,
 				364D830A1A83E89300DDCCC5 /* SearchViewController.m */,
 				364D83091A83E89300DDCCC5 /* SearchViewController.h */,
-				364D830C1A83F6DD00DDCCC5 /* HottestTableViewController.h */,
-				364D830D1A83F6DD00DDCCC5 /* HottestTableViewController.m */,
 				364D83221A83FF9C00DDCCC5 /* MyAccountviewController.h */,
 				364D83231A83FF9C00DDCCC5 /* MyAccountviewController.m */,
 				36615B861AD0421700E48A8F /* PGSideDrawerController.h */,
 				36615B871AD0421700E48A8F /* PGSideDrawerController.m */,
 				36615B881AD0421700E48A8F /* PGViewController.h */,
 				36615B891AD0421700E48A8F /* PGViewController.m */,
-				9D178D1D1AD7019A00523BE7 /* AddPropertyViewController.h */,
-				9D178D1E1AD7019A00523BE7 /* AddPropertyViewController.m */,
 				9D9EB5A81AD84C9C00118AA2 /* PropertySearchController.h */,
 				9D9EB5A91AD84C9C00118AA2 /* PropertySearchController.m */,
 				9D9EB5AE1AD8660D00118AA2 /* ListViewController.h */,
@@ -446,6 +505,7 @@
 			files = (
 				364D82ED1A83D17400DDCCC5 /* Main.storyboard in Resources */,
 				3611C71F1A9A2A000058FDC5 /* facebook_signin.png in Resources */,
+				36F12AA11B517DDC002E7669 /* HottestProperty.storyboard in Resources */,
 				364D831B1A83F76100DDCCC5 /* im5.jpg in Resources */,
 				364D83171A83F76100DDCCC5 /* im1.jpg in Resources */,
 				36899EFA1B4EA99100B9805F /* signin.storyboard in Resources */,
@@ -467,13 +527,16 @@
 				364D83191A83F76100DDCCC5 /* im3.jpg in Resources */,
 				36EC11591B4B706A005FC935 /* logo.png in Resources */,
 				3611C7211A9A2A000058FDC5 /* twitter_signin.png in Resources */,
+				363EED6C1B52B5C30047B41C /* SavedSearchResults.storyboard in Resources */,
 				364D83181A83F76100DDCCC5 /* im2.jpg in Resources */,
 				9DD37AAB1AA784E90092983A /* Filter.png in Resources */,
+				363EED761B52BCFB0047B41C /* MyProperties.storyboard in Resources */,
 				364D831C1A83F76100DDCCC5 /* im6.jpg in Resources */,
 				364D82EF1A83D17400DDCCC5 /* Images.xcassets in Resources */,
 				364D831A1A83F76100DDCCC5 /* im4.jpg in Resources */,
 				365B70621AA3867300BC7E91 /* hand25.png in Resources */,
 				3604BAB81B4CD309008260C0 /* map_pin.png in Resources */,
+				363EED6E1B52B6C50047B41C /* Alerts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				365CDBBC1A92A72600C41FB5 /* UserDataStore.m in Sources */,
+				363EED741B52B7860047B41C /* SavedSearhResultsTableViewController.m in Sources */,
 				367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */,
 				364D82E41A83D17400DDCCC5 /* AppDelegate.m in Sources */,
 				364D830B1A83E89300DDCCC5 /* SearchViewController.m in Sources */,
@@ -536,6 +600,8 @@
 				9D0D8E7A1AD86B0F002A6177 /* EmptySegue.m in Sources */,
 				36573E361A9244C00023680D /* LoginViewController.m in Sources */,
 				369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */,
+				363EED711B52B71E0047B41C /* AlertsViewController.m in Sources */,
+				36F12AA41B51851F002E7669 /* HottestPropertyContainerViewController.m in Sources */,
 				36573E391A9244DB0023680D /* RegisterViewController.m in Sources */,
 				36615B8B1AD0421700E48A8F /* PGViewController.m in Sources */,
 				36899EFE1B4EBC0D00B9805F /* SigninTableViewController.m in Sources */,
