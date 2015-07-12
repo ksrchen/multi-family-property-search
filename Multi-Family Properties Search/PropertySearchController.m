@@ -86,4 +86,16 @@
 - (IBAction)hottestPropertiesTapped:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_HOTTEST_PROPERTIES object:self];
 }
+
+- (IBAction)drawTapped:(id)sender {
+    
+    if (self.containerViewController.mapViewController.InPolygonMode){
+        [self.containerViewController.mapViewController clearPolygon];
+        self.drawBarItem.title = @"Draw";
+        
+    }else{
+        [self.containerViewController.mapViewController drawPolygon];
+        self.drawBarItem.title = @"Clear";
+    }    
+}
 @end

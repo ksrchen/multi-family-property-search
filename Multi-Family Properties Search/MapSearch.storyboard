@@ -99,38 +99,15 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8zD-s1-DhR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Lg-FU-awn">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="TcU-ip-D8u"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oNb-QX-IGV"/>
-                                    <barButtonItem image="hand25.png" style="plain" id="wYH-hg-ebe">
-                                        <connections>
-                                            <action selector="drawPolygon:" destination="XV1-rj-h6o" id="vif-7A-1vn"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="TcU-ip-D8u"/>
-                                    </mask>
-                                </variation>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rnF-Ij-SG8" firstAttribute="top" secondItem="8zD-s1-DhR" secondAttribute="bottom" id="3tB-wF-ZND"/>
                             <constraint firstAttribute="width" secondItem="8zD-s1-DhR" secondAttribute="width" id="KEx-Cq-bbc"/>
-                            <constraint firstItem="1Lg-FU-awn" firstAttribute="trailing" secondItem="YWo-oc-sTs" secondAttribute="trailing" id="QVG-8J-vD1"/>
                             <constraint firstAttribute="height" secondItem="8zD-s1-DhR" secondAttribute="height" id="Rt0-iY-g9X"/>
                             <constraint firstItem="8zD-s1-DhR" firstAttribute="leading" secondItem="YWo-oc-sTs" secondAttribute="leading" id="TlB-BS-VfK"/>
                             <constraint firstItem="8zD-s1-DhR" firstAttribute="top" secondItem="NAU-Za-jhq" secondAttribute="bottom" id="VKp-ER-oLW"/>
                             <constraint firstItem="8zD-s1-DhR" firstAttribute="top" secondItem="NAU-Za-jhq" secondAttribute="bottom" id="YYL-5n-eB9"/>
-                            <constraint firstItem="1Lg-FU-awn" firstAttribute="width" secondItem="YWo-oc-sTs" secondAttribute="width" id="gml-1m-hhe"/>
-                            <constraint firstItem="1Lg-FU-awn" firstAttribute="top" secondItem="NAU-Za-jhq" secondAttribute="bottom" id="kH4-2L-ncI"/>
                             <constraint firstItem="8zD-s1-DhR" firstAttribute="trailing" secondItem="YWo-oc-sTs" secondAttribute="trailing" id="xSl-Ix-v8I"/>
                         </constraints>
                         <variation key="default">
@@ -141,37 +118,11 @@
                             </mask>
                         </variation>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Clear" id="inh-8j-jrW">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="clearPolygon:" destination="XV1-rj-h6o" id="nwa-yk-MA3"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" id="lU5-sK-SxT">
-                            <view key="customView" contentMode="scaleToFill" id="ZQX-k5-pEx">
-                                <rect key="frame" x="16" y="6" width="130" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Draw to search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSj-Ef-ZO1">
-                                        <rect key="frame" x="8" y="6" width="135" height="21"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="clearButton" destination="inh-8j-jrW" id="7wY-DA-fhl"/>
-                        <outlet property="labelButton" destination="lU5-sK-SxT" id="na1-uV-LsD"/>
                         <outlet property="map" destination="8zD-s1-DhR" id="iaJ-0f-9iC"/>
                         <outlet property="searchDisplayController" destination="HMa-U5-13P" id="UxL-XT-GN3"/>
-                        <outlet property="toolbar" destination="1Lg-FU-awn" id="NTm-3b-jGR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERP-33-9cc" sceneMemberID="firstResponder"/>
@@ -341,7 +292,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXR-Nj-pEd">
                                 <rect key="frame" x="0.0" y="512" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Draw" id="aRv-jV-6hc"/>
+                                    <barButtonItem title="Draw" id="aRv-jV-6hc">
+                                        <connections>
+                                            <action selector="drawTapped:" destination="uIi-UA-xA4" id="xU6-bt-ghS"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="W0m-ou-qsh"/>
                                     <barButtonItem title="Hottest Properties" id="efe-rM-MrR">
                                         <connections>
@@ -452,7 +407,6 @@
     </scenes>
     <resources>
         <image name="delete25.png" width="25" height="25"/>
-        <image name="hand25.png" width="25" height="25"/>
-        <image name="location_services.png" width="24" height="24"/>
+        <image name="location_services.png" width="16" height="17"/>
     </resources>
 </document>

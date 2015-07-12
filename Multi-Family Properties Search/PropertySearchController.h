@@ -25,5 +25,6 @@
 
 - (IBAction)swapView:(id)sender;
 - (IBAction)hottestPropertiesTapped:(id)sender;
+- (IBAction)drawTapped:(id)sender;
 
 @end

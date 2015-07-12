@@ -11,15 +11,15 @@
 #import "FilterDelegate.h"
 
 @interface SearchViewController : UIViewController <FilterDelegate, UISearchBarDelegate>
+@property (nonatomic) BOOL InPolygonMode;
 @property (weak, nonatomic) IBOutlet MKMapView * map;
-- (IBAction)drawPolygon:(id)sender;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *clearPolygon;
-- (IBAction)clearPolygon:(id)sender;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *clearButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *labelButton;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 - (IBAction)zoomToCurrentLocation:(id)sender;
 - (void) ApplyFilter: (NSString *) filters;
 - (void) ClearFilter;
+
+
+- (void)drawPolygon;
+- (void)clearPolygon;
+
 @end

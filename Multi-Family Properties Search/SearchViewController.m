@@ -65,35 +65,11 @@ NSMutableArray * _properties;
     
     [self setTitle:@"Map Search"];
     
-    [self hideToolbarButtons];
-    
     
     //[self.navigationItem setTitleView:self.searchBar];
     //[self.navigationItem setRightBarButtonItems:@[ self.filterBarItem, self.currentLocationBarItem]];
     
 }
--(void)hideToolbarButtons {
-    [self.toolbar setBackgroundImage:[UIImage new]
-                  forToolbarPosition:UIToolbarPositionAny
-                          barMetrics:UIBarMetricsDefault];
-    
-    [self.toolbar setBackgroundColor:[UIColor clearColor]];
-    NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
-    [toolbarItems removeObject:self.clearButton];
-    [toolbarItems removeObject:self.labelButton];
-    [self.toolbar setItems:toolbarItems animated:YES];
-}
-
--(void)showToolbarButtons {
-    [self.toolbar setBackgroundColor:[UIColor colorWithRed:1 green:0 blue:1 alpha:0.8]];
-    
-    NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
-    [toolbarItems insertObject:self.clearButton atIndex:1];
-    [toolbarItems insertObject:self.labelButton atIndex:0];
-    [self.toolbar setItems:toolbarItems animated:YES];
-    
-}
-
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
@@ -294,9 +270,7 @@ NSMutableArray * _properties;
 
 
 
-- (IBAction)drawPolygon:(id)sender {
-    [self showToolbarButtons];
-    
+- (void)drawPolygon{
     [self.map setUserInteractionEnabled:NO];
     drawImage = [[UIImageView alloc] initWithImage:nil];
     
@@ -308,9 +282,9 @@ NSMutableArray * _properties;
     [latLang removeAllObjects];
     polygonDrawMode = YES;
     mouseSwiped = NO;
+    self.InPolygonMode = YES;
 }
-- (IBAction)clearPolygon:(id)sender {
-    [self hideToolbarButtons];
+- (void)clearPolygon{
     if (polygon){
         [self.map removeOverlay:polygon];
     }
@@ -318,6 +292,7 @@ NSMutableArray * _properties;
     [self refreshMap];
 
     [self.map setUserInteractionEnabled:YES];
+    self.InPolygonMode = NO;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
