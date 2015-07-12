@@ -116,6 +116,11 @@
     }
 }
 
++(instancetype)GetController
+{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"PropertyDetails" bundle:nil];
+    return [storyBoard instantiateViewControllerWithIdentifier:@"PropertyDetailView"];
+}
 -(void) createExpenseChart{
     
     
@@ -325,17 +330,7 @@
                                         actionWithTitle:NSLocalizedString(@"Email", @"Email Action")
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction *action)
-                                        {
-//                                            MFMailComposeViewController * picker = [[MFMailComposeViewController alloc] init];
-//                                            NSString* body = [NSString stringWithFormat: @"http://kmlservice.azurewebsites.net/PropertyProfile?id=%@", self.MLNumber];
-//                                           
-//                                            [picker setSubject:@"Checkout this property"];
-//                                            [picker setTitle:@"Email"];
-//                                            [picker setMessageBody:body isHTML:YES];
-//                                            
-//                                            picker.mailComposeDelegate = self;
-//                                            [self presentViewController:picker animated:YES completion:NULL];
-                                            
+                                        {                                            
                                             NSString* body = [NSString stringWithFormat: @"http://kmlservice.azurewebsites.net/PropertyProfile?id=%@", self.MLNumber];
                                             NSArray *data = @[body];
                                             
@@ -345,14 +340,6 @@
                                             
                                         }];
     
-    UIAlertAction *placeOfferAction = [UIAlertAction
-                                       actionWithTitle:NSLocalizedString(@"Place an Offer", @"Cancel action")
-                                       style:UIAlertActionStyleDefault
-                                       handler:^(UIAlertAction *action)
-                                       {
-                                           
-                                           
-                                       }];
     
     UIAlertAction *addToMylistAction = [UIAlertAction
                                         actionWithTitle:NSLocalizedString(@"Add to My Properties", @"Cancel action")
@@ -374,16 +361,6 @@
                                                                            }];
                                             
                                         }];
-    
-    UIAlertAction *addContactSalesAction = [UIAlertAction
-                                            actionWithTitle:NSLocalizedString(@"Contact Sales Agent", @"Cancel action")
-                                            style:UIAlertActionStyleDefault
-                                            handler:^(UIAlertAction *action)
-                                            {
-                                                
-                                                
-                                            }];
-    
     
     UIAlertAction *cancelAction = [UIAlertAction
                                    actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")

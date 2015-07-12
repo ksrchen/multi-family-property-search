@@ -126,11 +126,7 @@ NSMutableArray * _properties;
     id <MKAnnotation> annotation = [view annotation];
     if ([annotation isKindOfClass:[Property class]])
     {
-        
-        NSString * storyboardName = @"Main";
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-        PropertyDetailViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
-        
+        PropertyDetailViewController *vc = [PropertyDetailViewController GetController];
         Property * p = (Property*)annotation;
         vc.MLNumber = [p MLNumber];
         

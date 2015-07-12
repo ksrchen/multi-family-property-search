@@ -128,10 +128,7 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString * storyboardName = @"Main";
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    PropertyDetailViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
-    
+    PropertyDetailViewController *vc = [PropertyDetailViewController GetController];    
     Property *p = [[ PropertyDataStore getInstance].properties objectAtIndex:indexPath.row];
     vc.MLNumber = [p MLNumber];
     

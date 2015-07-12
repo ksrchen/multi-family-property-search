@@ -155,9 +155,7 @@
 {
     Property *p = [_properties objectAtIndex:indexPath.row];
     
-    NSString * storyboardName = @"Main";
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    PropertyDetailViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"PropertyDetail"];
+    PropertyDetailViewController *vc = [PropertyDetailViewController GetController];
     vc.MLNumber = p.MLNumber;
     
     [self.navigationController pushViewController:vc animated:YES];

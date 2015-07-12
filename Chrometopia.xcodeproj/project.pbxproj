@@ -16,6 +16,7 @@
 		363EED711B52B71E0047B41C /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363EED701B52B71E0047B41C /* AlertsViewController.m */; };
 		363EED741B52B7860047B41C /* SavedSearhResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363EED731B52B7860047B41C /* SavedSearhResultsTableViewController.m */; };
 		363EED761B52BCFB0047B41C /* MyProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED751B52BCFB0047B41C /* MyProperties.storyboard */; };
+		363EED7C1B52C1930047B41C /* PropertyDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED7B1B52C1930047B41C /* PropertyDetails.storyboard */; };
 		364D82E11A83D17400DDCCC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E01A83D17400DDCCC5 /* main.m */; };
 		364D82E41A83D17400DDCCC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 364D82E31A83D17400DDCCC5 /* AppDelegate.m */; };
 		364D82ED1A83D17400DDCCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364D82EB1A83D17400DDCCC5 /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		363EED721B52B7860047B41C /* SavedSearhResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedSearhResultsTableViewController.h; sourceTree = "<group>"; };
 		363EED731B52B7860047B41C /* SavedSearhResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedSearhResultsTableViewController.m; sourceTree = "<group>"; };
 		363EED751B52BCFB0047B41C /* MyProperties.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyProperties.storyboard; sourceTree = "<group>"; };
+		363EED7B1B52C1930047B41C /* PropertyDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PropertyDetails.storyboard; sourceTree = "<group>"; };
 		364D82DB1A83D17400DDCCC5 /* Chrometopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chrometopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		364D82DF1A83D17400DDCCC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364D82E01A83D17400DDCCC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -215,8 +217,67 @@
 		363EED681B52B56F0047B41C /* MapSearch */ = {
 			isa = PBXGroup;
 			children = (
+				9D9EB5AB1AD864C300118AA2 /* ContainerViewController.h */,
+				9D9EB5AC1AD864C300118AA2 /* ContainerViewController.m */,
+				9D0D8E781AD86B0F002A6177 /* EmptySegue.h */,
+				9D0D8E791AD86B0F002A6177 /* EmptySegue.m */,
+				9D0010901AA6689F005C3375 /* FilterDelegate.h */,
+				9D00108D1AA63348005C3375 /* FilterViewController.h */,
+				9D00108E1AA63348005C3375 /* FilterViewController.m */,
+				9D9EB5AE1AD8660D00118AA2 /* ListViewController.h */,
+				9D9EB5AF1AD8660D00118AA2 /* ListViewController.m */,
+				9D9EB5A81AD84C9C00118AA2 /* PropertySearchController.h */,
+				9D9EB5A91AD84C9C00118AA2 /* PropertySearchController.m */,
+				364D83091A83E89300DDCCC5 /* SearchViewController.h */,
+				364D830A1A83E89300DDCCC5 /* SearchViewController.m */,
 			);
 			name = MapSearch;
+			sourceTree = "<group>";
+		};
+		363EED771B52BFD00047B41C /* PropertyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				364D832F1A843F0E00DDCCC5 /* PropertyDetailViewController.h */,
+				364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */,
+				363EED7B1B52C1930047B41C /* PropertyDetails.storyboard */,
+			);
+			name = PropertyDetail;
+			sourceTree = "<group>";
+		};
+		363EED781B52C0510047B41C /* Junk */ = {
+			isa = PBXGroup;
+			children = (
+				36573E341A9244C00023680D /* LoginViewController.h */,
+				36573E351A9244C00023680D /* LoginViewController.m */,
+				36573E371A9244DB0023680D /* RegisterViewController.h */,
+				36573E381A9244DB0023680D /* RegisterViewController.m */,
+				364D83221A83FF9C00DDCCC5 /* MyAccountviewController.h */,
+				364D83231A83FF9C00DDCCC5 /* MyAccountviewController.m */,
+			);
+			name = Junk;
+			sourceTree = "<group>";
+		};
+		363EED791B52C0670047B41C /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				364D82EB1A83D17400DDCCC5 /* Main.storyboard */,
+				369B60A41AAB4BC200C69C17 /* RootViewController.h */,
+				369B60A51AAB4BC200C69C17 /* RootViewController.m */,
+				36615B861AD0421700E48A8F /* PGSideDrawerController.h */,
+				36615B871AD0421700E48A8F /* PGSideDrawerController.m */,
+				36615B881AD0421700E48A8F /* PGViewController.h */,
+				36615B891AD0421700E48A8F /* PGViewController.m */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		363EED7A1B52C0D90047B41C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				365333EC1A98E1CD00511302 /* NSUserDefaultsCategory.h */,
+				365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		364D82D21A83D17400DDCCC5 = {
@@ -242,18 +303,15 @@
 		364D82DD1A83D17400DDCCC5 /* Chrometopia */ = {
 			isa = PBXGroup;
 			children = (
-				9D178D1C1AD6FD0D00523BE7 /* stores */,
-				9D178D1B1AD6FCEB00523BE7 /* Models */,
-				9D178D1A1AD6FC9500523BE7 /* Controllers */,
 				364D82E21A83D17400DDCCC5 /* AppDelegate.h */,
 				364D82E31A83D17400DDCCC5 /* AppDelegate.m */,
-				364D82EB1A83D17400DDCCC5 /* Main.storyboard */,
+				9D178D1A1AD6FC9500523BE7 /* Controllers */,
+				363EED7A1B52C0D90047B41C /* Extensions */,
 				364D82EE1A83D17400DDCCC5 /* Images.xcassets */,
 				364D82F01A83D17400DDCCC5 /* LaunchScreen.xib */,
+				9D178D1B1AD6FCEB00523BE7 /* Models */,
+				9D178D1C1AD6FD0D00523BE7 /* stores */,
 				364D82DE1A83D17400DDCCC5 /* Supporting Files */,
-				365333EC1A98E1CD00511302 /* NSUserDefaultsCategory.h */,
-				365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */,
-				9D0010901AA6689F005C3375 /* FilterDelegate.h */,
 			);
 			name = Chrometopia;
 			path = "Multi-Family Properties Search";
@@ -377,39 +435,16 @@
 		9D178D1A1AD6FC9500523BE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				363EED681B52B56F0047B41C /* MapSearch */,
 				363EED671B52B5500047B41C /* Alert */,
-				363EED661B52B53C0047B41C /* SavedSearchResult */,
 				36F12A9F1B517DAA002E7669 /* HottestProperty */,
+				363EED781B52C0510047B41C /* Junk */,
+				363EED681B52B56F0047B41C /* MapSearch */,
 				36F12A9E1B517845002E7669 /* MyProperty */,
+				363EED771B52BFD00047B41C /* PropertyDetail */,
+				363EED791B52C0670047B41C /* Root */,
+				363EED661B52B53C0047B41C /* SavedSearchResult */,
 				365261061B5168CB0091B448 /* Setting */,
 				36899EFB1B4EBBD900B9805F /* Sigin */,
-				9D0D8E781AD86B0F002A6177 /* EmptySegue.h */,
-				9D0D8E791AD86B0F002A6177 /* EmptySegue.m */,
-				9D00108D1AA63348005C3375 /* FilterViewController.h */,
-				9D9EB5AB1AD864C300118AA2 /* ContainerViewController.h */,
-				9D9EB5AC1AD864C300118AA2 /* ContainerViewController.m */,
-				369B60A41AAB4BC200C69C17 /* RootViewController.h */,
-				369B60A51AAB4BC200C69C17 /* RootViewController.m */,
-				9D00108E1AA63348005C3375 /* FilterViewController.m */,
-				364D832F1A843F0E00DDCCC5 /* PropertyDetailViewController.h */,
-				36573E341A9244C00023680D /* LoginViewController.h */,
-				36573E351A9244C00023680D /* LoginViewController.m */,
-				36573E371A9244DB0023680D /* RegisterViewController.h */,
-				36573E381A9244DB0023680D /* RegisterViewController.m */,
-				364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */,
-				364D830A1A83E89300DDCCC5 /* SearchViewController.m */,
-				364D83091A83E89300DDCCC5 /* SearchViewController.h */,
-				364D83221A83FF9C00DDCCC5 /* MyAccountviewController.h */,
-				364D83231A83FF9C00DDCCC5 /* MyAccountviewController.m */,
-				36615B861AD0421700E48A8F /* PGSideDrawerController.h */,
-				36615B871AD0421700E48A8F /* PGSideDrawerController.m */,
-				36615B881AD0421700E48A8F /* PGViewController.h */,
-				36615B891AD0421700E48A8F /* PGViewController.m */,
-				9D9EB5A81AD84C9C00118AA2 /* PropertySearchController.h */,
-				9D9EB5A91AD84C9C00118AA2 /* PropertySearchController.m */,
-				9D9EB5AE1AD8660D00118AA2 /* ListViewController.h */,
-				9D9EB5AF1AD8660D00118AA2 /* ListViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -535,6 +570,7 @@
 				364D82EF1A83D17400DDCCC5 /* Images.xcassets in Resources */,
 				364D831A1A83F76100DDCCC5 /* im4.jpg in Resources */,
 				365B70621AA3867300BC7E91 /* hand25.png in Resources */,
+				363EED7C1B52C1930047B41C /* PropertyDetails.storyboard in Resources */,
 				3604BAB81B4CD309008260C0 /* map_pin.png in Resources */,
 				363EED6E1B52B6C50047B41C /* Alerts.storyboard in Resources */,
 			);

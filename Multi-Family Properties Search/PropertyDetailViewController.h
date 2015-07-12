@@ -27,4 +27,6 @@
 @property (weak, nonatomic) IBOutlet KIImagePager *ImagePager;
 @property (weak, nonatomic) IBOutlet UILabel *listingAgentName;
 @property (weak, nonatomic) IBOutlet UILabel *listingOffice;
+
++(instancetype)GetController;
 @end
