@@ -67,14 +67,17 @@
             
             self.profileHeader.text = [NSString stringWithFormat:@"MLS#: %@ ", self.MLNumber];
             
-            self.priceDisplay.text = [NSString stringWithFormat:@"Price: %@  ROI: %@",  [currencyFormatter stringFromNumber:price],
-                                      [roi doubleValue]>0.0?[percentFormatter stringFromNumber:roi] : @"n/a"];
+            self.priceDisplay.text = [NSString stringWithFormat:@"Price: %@",  [currencyFormatter stringFromNumber:price]];
+            self.roiLabel.text = [NSString stringWithFormat:@"ROI: %@",
+                 [roi doubleValue]>0.0?[percentFormatter stringFromNumber:roi] : @"n/a"];
+                 
+            NSNumber *numberOfUnits = attributes[@"NumberOfUnits"];
+                 self.numberOfUnitsLabel.text = [NSString stringWithFormat:@"%@ unit(s)", numberOfUnits];
             
-            self.listingAgentName.text = [NSString stringWithFormat:@"%@ %@", attributes[@"ListingAgentFirstName"], attributes[@"ListingAgentLastName"]];
-            self.listingOffice.text = attributes[@"ListingOffice"];
+            self.listingAgentName.text = [NSString stringWithFormat:@"%@ %@, %@", attributes[@"ListingAgentFirstName"], attributes[@"ListingAgentLastName"], attributes[@"ListingOffice"]];
             
              [_financialView LoadData:property];
-                 [_detailview loadData:property];
+             [_detailview loadData:property];
              });
             
             
@@ -135,7 +138,13 @@
 
 
 - (IBAction)moreDescriptionTapped:(id)sender {
-    [self.propertyDescription setNumberOfLines:0];
+    if ([self.propertyDescription numberOfLines]> 0) {
+        [self.descriptionMoreButton setTitle:@"Less" forState:UIControlStateNormal];
+        [self.propertyDescription setNumberOfLines:0];
+    }else{
+        [self.descriptionMoreButton setTitle:@"More" forState:UIControlStateNormal];
+        [self.propertyDescription setNumberOfLines:2];
+    }
 }
 
 +(instancetype)GetController

@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *listingAgentName;
 @property (weak, nonatomic) IBOutlet UILabel *listingOffice;
 @property (weak, nonatomic) IBOutlet UIButton *descriptionMoreButton;
+@property (weak, nonatomic) IBOutlet UILabel *roiLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfUnitsLabel;
 
 - (IBAction)moreDescriptionTapped:(id)sender;
 +(instancetype)GetController;
