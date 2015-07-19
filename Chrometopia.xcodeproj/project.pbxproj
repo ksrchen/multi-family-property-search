@@ -59,6 +59,7 @@
 		36899EFA1B4EA99100B9805F /* signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36899EF91B4EA99100B9805F /* signin.storyboard */; };
 		36899EFE1B4EBC0D00B9805F /* SigninTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36899EFD1B4EBC0D00B9805F /* SigninTableViewController.m */; };
 		369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369B60A51AAB4BC200C69C17 /* RootViewController.m */; };
+		36D42A0E1B5AA404002A9C81 /* AnnotationCalloutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D42A0D1B5AA404002A9C81 /* AnnotationCalloutViewController.m */; };
 		36EC11591B4B706A005FC935 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC11581B4B706A005FC935 /* logo.png */; };
 		36EC115B1B4B7363005FC935 /* icon50.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC115A1B4B7363005FC935 /* icon50.png */; };
 		36EC115F1B4B768F005FC935 /* chrometopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC115E1B4B768F005FC935 /* chrometopia.png */; };
@@ -155,6 +156,8 @@
 		36899EFD1B4EBC0D00B9805F /* SigninTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninTableViewController.m; sourceTree = "<group>"; };
 		369B60A41AAB4BC200C69C17 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		369B60A51AAB4BC200C69C17 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		36D42A0C1B5AA404002A9C81 /* AnnotationCalloutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationCalloutViewController.h; sourceTree = "<group>"; };
+		36D42A0D1B5AA404002A9C81 /* AnnotationCalloutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationCalloutViewController.m; sourceTree = "<group>"; };
 		36EC11581B4B706A005FC935 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		36EC115A1B4B7363005FC935 /* icon50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon50.png; sourceTree = "<group>"; };
 		36EC115E1B4B768F005FC935 /* chrometopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrometopia.png; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				9D9EB5A91AD84C9C00118AA2 /* PropertySearchController.m */,
 				364D83091A83E89300DDCCC5 /* SearchViewController.h */,
 				364D830A1A83E89300DDCCC5 /* SearchViewController.m */,
+				36D42A0C1B5AA404002A9C81 /* AnnotationCalloutViewController.h */,
+				36D42A0D1B5AA404002A9C81 /* AnnotationCalloutViewController.m */,
 			);
 			name = MapSearch;
 			sourceTree = "<group>";
@@ -628,6 +633,7 @@
 				364D830E1A83F6DD00DDCCC5 /* HottestTableViewController.m in Sources */,
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
 				9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */,
+				36D42A0E1B5AA404002A9C81 /* AnnotationCalloutViewController.m in Sources */,
 				9D9EB5AA1AD84C9C00118AA2 /* PropertySearchController.m in Sources */,
 				3652610B1B51716E0091B448 /* SettingsTableViewController.m in Sources */,
 				9D178D1F1AD7019A00523BE7 /* AddPropertyViewController.m in Sources */,

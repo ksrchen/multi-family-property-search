@@ -13,9 +13,10 @@
 #import "FilterViewController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
+#import "AnnotationCalloutViewController.h"
 
 @interface SearchViewController ()
-<MKMapViewDelegate>
+<MKMapViewDelegate, AnnotationCalloutViewDelegate>
 {
     UIImageView *drawImage;
     
@@ -37,6 +38,8 @@
     NSString * filterOptions;
     
     BOOL zoomedToCurrentLocation;
+    
+    AnnotationCalloutViewController *_annotationCalloutViewController;
 }
 @end
 
@@ -85,6 +88,8 @@ NSMutableArray * _properties;
     // Dispose of any resources that can be recreated.
 }
 
+
+
 /*
  #pragma mark - Navigation
  
@@ -98,25 +103,6 @@ NSMutableArray * _properties;
 
 #pragma mark Delegate Methods
 
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    id <MKAnnotation> annotation = [view annotation];
-    if ([annotation isKindOfClass:[Property class]])
-    {
-        PropertyDetailViewController *vc = [PropertyDetailViewController GetController];
-        Property * p = (Property*)annotation;
-        vc.MLNumber = [p MLNumber];
-        
-        for (id anno in [_map selectedAnnotations]) {
-            [_map deselectAnnotation:anno animated:NO];
-        }
-        
-        [self.navigationController pushViewController:vc animated:YES];
-        
-        
-    }
-    //UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    //[alertView show];
-}
 -(void)searchMapIn:(MKPolygon*)searchPolygon
 {
     NSUInteger points = [searchPolygon pointCount];
@@ -214,26 +200,26 @@ NSMutableArray * _properties;
         {
             // If an existing pin view was not available, create one.
             pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
-            pinView.canShowCallout = YES;
+            pinView.canShowCallout = NO;
             pinView.image = [UIImage imageNamed:@"map_pin.png"];
-            pinView.calloutOffset = CGPointMake(0, 0);
-            
-            // Add a detail disclosure button to the callout.
-            UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            [rightButton setFrame:CGRectMake(0, 0, CGRectGetWidth(rightButton.frame)+10, CGRectGetHeight(rightButton.frame))];
-            [rightButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin];
-            pinView.rightCalloutAccessoryView = rightButton;
-            
-            // Add an image to the left callout.
-            NSString * imageName = [NSString stringWithFormat: @"im%ld.jpg", 1l];
-            
-            UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
-            CGRect frame = iconView.frame;
-            frame.size.width = 80;
-            frame.size.height = 60;
-            iconView.frame = frame;
-            
-            iconView.contentMode = UIViewContentModeScaleAspectFit;
+//            pinView.calloutOffset = CGPointMake(0, 0);
+//            
+//            // Add a detail disclosure button to the callout.
+//            UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//            [rightButton setFrame:CGRectMake(0, 0, CGRectGetWidth(rightButton.frame)+10, CGRectGetHeight(rightButton.frame))];
+//            [rightButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin];
+//            pinView.rightCalloutAccessoryView = rightButton;
+//            
+//            // Add an image to the left callout.
+//            NSString * imageName = [NSString stringWithFormat: @"im%ld.jpg", 1l];
+//            
+//            UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+//            CGRect frame = iconView.frame;
+//            frame.size.width = 80;
+//            frame.size.height = 60;
+//            iconView.frame = frame;
+//            
+//            iconView.contentMode = UIViewContentModeScaleAspectFit;
             
             //pinView.leftCalloutAccessoryView = iconView;
         } else {
@@ -243,6 +229,65 @@ NSMutableArray * _properties;
     }
     return nil;
 }
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    NSLog(@"selecting");
+    
+    id <MKAnnotation> annotation = [view annotation];
+    if ([annotation isKindOfClass:[Property class]])
+    {
+        CGPoint annotationCenter=CGPointMake(view.frame.origin.x+(view.frame.size.width/2),view.frame.origin.y+(view.frame.size.height/2));
+        CLLocationCoordinate2D newCenter=[mapView convertPoint:annotationCenter toCoordinateFromView:view.superview];
+        [mapView setCenterCoordinate:newCenter animated:YES];
+        
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MapSearch" bundle:nil];
+        _annotationCalloutViewController = (AnnotationCalloutViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AnnotationCalloutView"];
+        _annotationCalloutViewController.Property = annotation;
+        _annotationCalloutViewController.delegate = self;
+        [self addChildViewController:_annotationCalloutViewController];
+        [self.view addSubview:_annotationCalloutViewController.view];
+        
+        UIView *calloutView = _annotationCalloutViewController.view;
+        [calloutView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        
+        NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(calloutView);
+        NSArray *constraintV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[calloutView(125)]"
+                                                                       options:0 metrics:nil views:viewsDictionary];
+        NSArray *constraintH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[calloutView]-0-|"
+                                                                       options:0 metrics:nil views:viewsDictionary];
+        
+        
+        [self.view addConstraints:constraintV];
+        [self.view addConstraints:constraintH];
+
+        
+       // CGRect frame = CGRectMake(mapView.bounds.origin.x, mapView.bounds.origin.y, mapView.bounds.size.width, 105.0);
+        //[_annotationCalloutViewController.view setFrame:frame];
+        [_annotationCalloutViewController didMoveToParentViewController:self];
+        
+    }
+}
+
+-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    NSLog(@"deslecting..");
+    if (_annotationCalloutViewController)
+    {
+        [_annotationCalloutViewController didMoveToParentViewController:nil];
+        [_annotationCalloutViewController.view removeFromSuperview];
+        [_annotationCalloutViewController removeFromParentViewController];
+        
+        _annotationCalloutViewController = nil;
+    }
+}
+-(void)viewDidTapped:(Property *) property
+{
+    PropertyDetailViewController *vc = [PropertyDetailViewController GetController];
+    vc.MLNumber = [property MLNumber];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)theSearchBar
 {
