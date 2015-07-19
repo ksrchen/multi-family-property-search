@@ -11,12 +11,9 @@
 #import "KIImagePager.h"
 #import <MessageUI/MessageUI.h>
 
-@interface PropertyDetailViewController : UIViewController<CPTPlotDataSource, UIScrollViewDelegate, KIImagePagerDataSource, MFMailComposeViewControllerDelegate>
+@interface PropertyDetailViewController : UIViewController<UIScrollViewDelegate, KIImagePagerDataSource, MFMailComposeViewControllerDelegate>
 - (IBAction)contactMe:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *propertyDescription;
-@property (weak, nonatomic) IBOutlet CPTGraphHostingView *pieGraphView;
-
-@property (weak, nonatomic) IBOutlet CPTGraphHostingView *lineGraphView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UILabel *profileHeader;
@@ -27,6 +24,12 @@
 @property (weak, nonatomic) IBOutlet KIImagePager *ImagePager;
 @property (weak, nonatomic) IBOutlet UILabel *listingAgentName;
 @property (weak, nonatomic) IBOutlet UILabel *listingOffice;
+@property (weak, nonatomic) IBOutlet UIButton *descriptionMoreButton;
 
+- (IBAction)moreDescriptionTapped:(id)sender;
 +(instancetype)GetController;
+
+@property (weak, nonatomic) IBOutlet UIView *finanicalSectionBody;
+@property (weak, nonatomic) IBOutlet UIView *detailSectionBody;
+
 @end

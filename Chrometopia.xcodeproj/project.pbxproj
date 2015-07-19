@@ -60,6 +60,9 @@
 		36899EFE1B4EBC0D00B9805F /* SigninTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36899EFD1B4EBC0D00B9805F /* SigninTableViewController.m */; };
 		369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369B60A51AAB4BC200C69C17 /* RootViewController.m */; };
 		36D42A0E1B5AA404002A9C81 /* AnnotationCalloutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D42A0D1B5AA404002A9C81 /* AnnotationCalloutViewController.m */; };
+		36D5F4CD1B5C05F30055D78D /* FinancialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5F4CC1B5C05F30055D78D /* FinancialViewController.m */; };
+		36D5F4D01B5C061B0055D78D /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5F4CF1B5C061B0055D78D /* DetailTableViewController.m */; };
+		36D5F4D31B5C48C30055D78D /* FinancialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5F4D21B5C48C30055D78D /* FinancialTableViewController.m */; };
 		36EC11591B4B706A005FC935 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC11581B4B706A005FC935 /* logo.png */; };
 		36EC115B1B4B7363005FC935 /* icon50.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC115A1B4B7363005FC935 /* icon50.png */; };
 		36EC115F1B4B768F005FC935 /* chrometopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC115E1B4B768F005FC935 /* chrometopia.png */; };
@@ -158,6 +161,12 @@
 		369B60A51AAB4BC200C69C17 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		36D42A0C1B5AA404002A9C81 /* AnnotationCalloutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationCalloutViewController.h; sourceTree = "<group>"; };
 		36D42A0D1B5AA404002A9C81 /* AnnotationCalloutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationCalloutViewController.m; sourceTree = "<group>"; };
+		36D5F4CB1B5C05F30055D78D /* FinancialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialViewController.h; sourceTree = "<group>"; };
+		36D5F4CC1B5C05F30055D78D /* FinancialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialViewController.m; sourceTree = "<group>"; };
+		36D5F4CE1B5C061B0055D78D /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
+		36D5F4CF1B5C061B0055D78D /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
+		36D5F4D11B5C48C30055D78D /* FinancialTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialTableViewController.h; sourceTree = "<group>"; };
+		36D5F4D21B5C48C30055D78D /* FinancialTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialTableViewController.m; sourceTree = "<group>"; };
 		36EC11581B4B706A005FC935 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		36EC115A1B4B7363005FC935 /* icon50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon50.png; sourceTree = "<group>"; };
 		36EC115E1B4B768F005FC935 /* chrometopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrometopia.png; sourceTree = "<group>"; };
@@ -248,6 +257,12 @@
 				364D832F1A843F0E00DDCCC5 /* PropertyDetailViewController.h */,
 				364D83301A843F0E00DDCCC5 /* PropertyDetailViewController.m */,
 				363EED7B1B52C1930047B41C /* PropertyDetails.storyboard */,
+				36D5F4CB1B5C05F30055D78D /* FinancialViewController.h */,
+				36D5F4CC1B5C05F30055D78D /* FinancialViewController.m */,
+				36D5F4CE1B5C061B0055D78D /* DetailTableViewController.h */,
+				36D5F4CF1B5C061B0055D78D /* DetailTableViewController.m */,
+				36D5F4D11B5C48C30055D78D /* FinancialTableViewController.h */,
+				36D5F4D21B5C48C30055D78D /* FinancialTableViewController.m */,
 			);
 			name = PropertyDetail;
 			sourceTree = "<group>";
@@ -633,6 +648,7 @@
 				364D830E1A83F6DD00DDCCC5 /* HottestTableViewController.m in Sources */,
 				364D82E11A83D17400DDCCC5 /* main.m in Sources */,
 				9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */,
+				36D5F4D31B5C48C30055D78D /* FinancialTableViewController.m in Sources */,
 				36D42A0E1B5AA404002A9C81 /* AnnotationCalloutViewController.m in Sources */,
 				9D9EB5AA1AD84C9C00118AA2 /* PropertySearchController.m in Sources */,
 				3652610B1B51716E0091B448 /* SettingsTableViewController.m in Sources */,
@@ -641,11 +657,13 @@
 				364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */,
 				36615B8A1AD0421700E48A8F /* PGSideDrawerController.m in Sources */,
 				365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */,
+				36D5F4D01B5C061B0055D78D /* DetailTableViewController.m in Sources */,
 				9D9CC76C1A9FA221000D127E /* Expense.m in Sources */,
 				365CDBB91A92A66100C41FB5 /* User.m in Sources */,
 				9D0D8E7A1AD86B0F002A6177 /* EmptySegue.m in Sources */,
 				36573E361A9244C00023680D /* LoginViewController.m in Sources */,
 				369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */,
+				36D5F4CD1B5C05F30055D78D /* FinancialViewController.m in Sources */,
 				363EED711B52B71E0047B41C /* AlertsViewController.m in Sources */,
 				36F12AA41B51851F002E7669 /* HottestPropertyContainerViewController.m in Sources */,
 				36573E391A9244DB0023680D /* RegisterViewController.m in Sources */,
