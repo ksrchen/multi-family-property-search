@@ -15,6 +15,7 @@
 #import <MessageUI/MessageUI.h>
 #import "FinancialViewController.h"
 #import "DetailTableViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation PropertyDetailViewController  {
     NSArray *_images;
@@ -78,6 +79,7 @@
             
              [_financialView LoadData:property];
              [_detailview loadData:property];
+                 [self loadMapView:property];
              });
             
             
@@ -136,6 +138,18 @@
     
 }
 
+-(void)loadMapView:(id)property
+{
+    NSDictionary * attributes = (NSDictionary*) property;
+    CGSize size = self.mapImage.bounds.size;
+    NSNumber *latitube = attributes[@"Latitude"];
+    NSNumber *longitude = attributes[@"longitude"];
+    
+    NSString *url = [NSString stringWithFormat: @"https://maps.googleapis.com/maps/api/staticmap?size=%ix%i&zoom=15&markers=%@,%@",
+                     (int)size.width, (int)size.height, latitube, longitude];
+    
+    [self.mapImage setImageWithURL:[NSURL URLWithString:url]];
+}
 
 - (IBAction)moreDescriptionTapped:(id)sender {
     if ([self.propertyDescription numberOfLines]> 0) {
