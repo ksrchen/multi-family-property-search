@@ -45,5 +45,24 @@
     self.cityLabel.text = attributes[@"City"];
     self.mlsNumber.text = attributes[@"MLnumber"];
     
+    self.countyLabel.text = attributes[@"County"];
+    NSNumber *area = attributes[@"Area"];
+    self.areaLabel.text = [NSString stringWithFormat:@"%@", area];
+
+    NSNumber *lotSize = attributes[@"LotSquareFootage"];
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.usesGroupingSeparator = YES;
+    self.lotSizeLabel.text = [numberFormatter stringFromNumber:lotSize];
+    
+    NSNumber *yearBuilt = attributes[@"YearBuilt"];
+    self.yearBuilt.text = [NSString stringWithFormat:@"%@", yearBuilt];
+
+    NSNumber *numberOfElectricMeters = attributes[@"NumberElectricMeters"];
+    self.numberOfElectricMetersLabel.text = [NSString stringWithFormat:@"%@", numberOfElectricMeters];
+    
+    NSNumber *numberOfGasMeters = attributes[@"NumberGasMeters"];
+    self.numberOfGasMetersLabel.text = [NSString stringWithFormat:@"%@", numberOfGasMeters];
+
 }
 @end

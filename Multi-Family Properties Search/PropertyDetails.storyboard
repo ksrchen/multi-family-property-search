@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="733"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ji1-BJ-0Ba">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1878"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1884"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moe-eH-EBg" userLabel="profile view">
                                                 <rect key="frame" x="0.0" y="5" width="600" height="561"/>
@@ -109,7 +109,7 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ListingAgentName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faG-85-rS2">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ListingAgentName" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faG-85-rS2">
                                                         <rect key="frame" x="8" y="537" width="141" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -181,17 +181,37 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKU-sT-aak" userLabel="FinanicalSection">
-                                                <rect key="frame" x="0.0" y="918" width="600" height="726"/>
+                                                <rect key="frame" x="0.0" y="918" width="600" height="732"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Financials" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ7-hv-64I">
-                                                        <rect key="frame" x="3" y="3" width="600" height="23"/>
-                                                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekg-f6-vAb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Financials" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ7-hv-64I">
+                                                                <rect key="frame" x="-150" y="170" width="600" height="23"/>
+                                                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZZn-WW-IfQ">
+                                                                <rect key="frame" x="477" y="0.0" width="123" height="29"/>
+                                                                <segments>
+                                                                    <segment title="Annually"/>
+                                                                    <segment title="Monthly"/>
+                                                                </segments>
+                                                            </segmentedControl>
+                                                        </subviews>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="ZZn-WW-IfQ" firstAttribute="top" secondItem="ekg-f6-vAb" secondAttribute="top" id="2G6-7i-DCK"/>
+                                                            <constraint firstItem="hZ7-hv-64I" firstAttribute="leading" secondItem="ekg-f6-vAb" secondAttribute="leading" constant="3" id="5Ai-q3-fqx"/>
+                                                            <constraint firstItem="ZZn-WW-IfQ" firstAttribute="trailing" secondItem="ekg-f6-vAb" secondAttribute="trailing" constant="-3" id="cuO-zg-gxY"/>
+                                                            <constraint firstAttribute="centerY" secondItem="hZ7-hv-64I" secondAttribute="centerY" id="dUK-g9-jJ5"/>
+                                                            <constraint firstAttribute="height" constant="32" id="uMd-kc-tHf"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDi-1m-j8a" userLabel="SectionBody">
-                                                        <rect key="frame" x="3" y="29" width="600" height="700"/>
+                                                        <rect key="frame" x="3" y="35" width="600" height="700"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="700" id="gCF-e9-BUF"/>
@@ -200,17 +220,17 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="wDi-1m-j8a" firstAttribute="top" secondItem="hZ7-hv-64I" secondAttribute="bottom" constant="3" id="7kc-pP-r2Q"/>
                                                     <constraint firstItem="wDi-1m-j8a" firstAttribute="leading" secondItem="fKU-sT-aak" secondAttribute="leading" constant="3" id="GFn-ln-Vit"/>
-                                                    <constraint firstItem="hZ7-hv-64I" firstAttribute="leading" secondItem="fKU-sT-aak" secondAttribute="leading" constant="3" id="bIG-bH-BXo"/>
+                                                    <constraint firstItem="ekg-f6-vAb" firstAttribute="top" secondItem="fKU-sT-aak" secondAttribute="top" id="Hdb-M5-PDE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ekg-f6-vAb" secondAttribute="trailing" id="MYN-AA-1G4"/>
+                                                    <constraint firstItem="wDi-1m-j8a" firstAttribute="top" secondItem="ekg-f6-vAb" secondAttribute="bottom" constant="3" id="o88-hc-ea1"/>
                                                     <constraint firstAttribute="bottom" secondItem="wDi-1m-j8a" secondAttribute="bottom" constant="-3" id="poX-a9-moB"/>
                                                     <constraint firstAttribute="trailing" secondItem="wDi-1m-j8a" secondAttribute="trailing" constant="-3" id="qkE-Xh-Jl1"/>
-                                                    <constraint firstItem="hZ7-hv-64I" firstAttribute="top" secondItem="fKU-sT-aak" secondAttribute="top" constant="3" id="vUU-dB-HKj"/>
-                                                    <constraint firstAttribute="trailing" secondItem="hZ7-hv-64I" secondAttribute="trailing" constant="-3" id="vrZ-UI-fC5"/>
+                                                    <constraint firstItem="ekg-f6-vAb" firstAttribute="leading" secondItem="fKU-sT-aak" secondAttribute="leading" id="zpI-kg-T5O"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8n-nI-0fP" userLabel="MapSection">
-                                                <rect key="frame" x="0.0" y="1646" width="600" height="232"/>
+                                                <rect key="frame" x="0.0" y="1652" width="600" height="232"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnK-gi-59G">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="23"/>
@@ -748,7 +768,7 @@
         <scene sceneID="bre-sY-AXd">
             <objects>
                 <tableViewController id="q7g-0j-nd2" userLabel="FinancialTableView" customClass="FinancialTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jcv-Vg-rer">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jcv-Vg-rer">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
