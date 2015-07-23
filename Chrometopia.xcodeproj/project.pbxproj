@@ -11,6 +11,7 @@
 		3611C71F1A9A2A000058FDC5 /* facebook_signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3611C71C1A9A2A000058FDC5 /* facebook_signin.png */; };
 		3611C7201A9A2A000058FDC5 /* google_signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3611C71D1A9A2A000058FDC5 /* google_signin.png */; };
 		3611C7211A9A2A000058FDC5 /* twitter_signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3611C71E1A9A2A000058FDC5 /* twitter_signin.png */; };
+		3624171A1B608C1C00D61A3B /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 362417191B608C1C00D61A3B /* house.png */; };
 		363EED6C1B52B5C30047B41C /* SavedSearchResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED6B1B52B5C30047B41C /* SavedSearchResults.storyboard */; };
 		363EED6E1B52B6C50047B41C /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363EED6D1B52B6C50047B41C /* Alerts.storyboard */; };
 		363EED711B52B71E0047B41C /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363EED701B52B71E0047B41C /* AlertsViewController.m */; };
@@ -87,6 +88,7 @@
 		3611C71C1A9A2A000058FDC5 /* facebook_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_signin.png; sourceTree = "<group>"; };
 		3611C71D1A9A2A000058FDC5 /* google_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_signin.png; sourceTree = "<group>"; };
 		3611C71E1A9A2A000058FDC5 /* twitter_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_signin.png; sourceTree = "<group>"; };
+		362417191B608C1C00D61A3B /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		363EED6B1B52B5C30047B41C /* SavedSearchResults.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedSearchResults.storyboard; sourceTree = "<group>"; };
 		363EED6D1B52B6C50047B41C /* Alerts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
 		363EED6F1B52B71E0047B41C /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 		364D82DE1A83D17400DDCCC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				362417191B608C1C00D61A3B /* house.png */,
 				365261041B5166AE0091B448 /* disclosure.png */,
 				3604BAB71B4CD309008260C0 /* map_pin.png */,
 				36EC115E1B4B768F005FC935 /* chrometopia.png */,
@@ -564,6 +567,7 @@
 				364D82ED1A83D17400DDCCC5 /* Main.storyboard in Resources */,
 				3611C71F1A9A2A000058FDC5 /* facebook_signin.png in Resources */,
 				36F12AA11B517DDC002E7669 /* HottestProperty.storyboard in Resources */,
+				3624171A1B608C1C00D61A3B /* house.png in Resources */,
 				364D831B1A83F76100DDCCC5 /* im5.jpg in Resources */,
 				364D83171A83F76100DDCCC5 /* im1.jpg in Resources */,
 				36899EFA1B4EA99100B9805F /* signin.storyboard in Resources */,

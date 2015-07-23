@@ -8,11 +8,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <rect key="frame" x="0.0" y="-1" width="519" height="747"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house.png" translatesAutoresizingMaskIntoConstraints="NO" id="mkU-KG-Glh">
+                    <rect key="frame" x="0.0" y="0.0" width="519" height="747"/>
+                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 New Age Realty All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
+                    <rect key="frame" x="20" y="704" width="480" height="23"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8ie-xW-0ye" secondAttribute="height" multiplier="21:1" id="bTK-cd-Lip"/>
                     </constraints>
@@ -20,30 +23,51 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="FK0-EN-VL5">
-                    <rect key="frame" x="90" y="-10" width="300" height="300"/>
+                <imageView userInteractionEnabled="NO" alpha="0.14999999999999969" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="FK0-EN-VL5">
+                    <rect key="frame" x="0.0" y="0.0" width="519" height="747"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="300" id="CMb-tQ-5bl"/>
+                        <constraint firstAttribute="width" constant="630" id="CMb-tQ-5bl"/>
                         <constraint firstAttribute="width" secondItem="FK0-EN-VL5" secondAttribute="height" multiplier="1:1" id="GEW-AT-dPC"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="CMb-tQ-5bl"/>
+                            <exclude reference="GEW-AT-dPC"/>
+                        </mask>
+                    </variation>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="FK0-EN-VL5" secondAttribute="centerX" id="2Az-Xn-sHT"/>
+                <constraint firstItem="FK0-EN-VL5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5GH-U4-1Oo"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="5IO-fD-ULe"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstAttribute="trailing" secondItem="mkU-KG-Glh" secondAttribute="trailing" id="RdA-pu-DG0"/>
                 <constraint firstAttribute="trailing" secondItem="8ie-xW-0ye" secondAttribute="trailing" constant="19" id="VMo-TA-Yum"/>
+                <constraint firstItem="mkU-KG-Glh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VWl-eM-mnU"/>
+                <constraint firstItem="FK0-EN-VL5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XX9-jk-eSa"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstAttribute="centerY" secondItem="FK0-EN-VL5" secondAttribute="centerY" constant="100" id="bPS-5M-LP0"/>
+                <constraint firstAttribute="centerY" secondItem="FK0-EN-VL5" secondAttribute="centerY" id="bPS-5M-LP0"/>
+                <constraint firstAttribute="trailing" secondItem="FK0-EN-VL5" secondAttribute="trailing" id="l49-2B-qE4"/>
+                <constraint firstAttribute="bottom" secondItem="mkU-KG-Glh" secondAttribute="bottom" id="qaA-Xn-b3X"/>
+                <constraint firstAttribute="bottom" secondItem="FK0-EN-VL5" secondAttribute="bottom" id="s2d-au-4aj"/>
+                <constraint firstItem="mkU-KG-Glh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="v9N-jq-ZNP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="548" y="455"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="2Az-Xn-sHT"/>
+                    <exclude reference="bPS-5M-LP0"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="567.5" y="480.5"/>
         </view>
     </objects>
     <resources>
+        <image name="house.png" width="313" height="490"/>
         <image name="logo.png" width="600" height="600"/>
     </resources>
 </document>
