@@ -14,7 +14,7 @@ NSString *const SHOW_HOTTEST_PROPERTIES = @"ShowHottestProperties";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.currentIndex = [NSIndexPath indexPathForRow:1 inSection:0];
+    self.currentIndex = [NSIndexPath indexPathForRow:0 inSection:0];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ShowMapView) name:SHOW_MAP object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showHottestPropertiesView) name:SHOW_HOTTEST_PROPERTIES object:nil];
@@ -39,14 +39,15 @@ NSString *const SHOW_HOTTEST_PROPERTIES = @"ShowHottestProperties";
         switch (indexPath.row) {
             case 0:
             {
-                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"HottestProperty" bundle:nil];
-                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"HottestPropertyView"];
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MapSearch" bundle:nil];
+                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+                
             }
                 break;
             case 1:
             {
-                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MapSearch" bundle:nil];
-                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"HottestProperty" bundle:nil];
+                centerViewController = [storyBoard instantiateViewControllerWithIdentifier:@"HottestPropertyView"];
             }
                 break;
 

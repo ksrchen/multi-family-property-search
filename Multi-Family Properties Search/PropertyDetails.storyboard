@@ -186,15 +186,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekg-f6-vAb">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Financials" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ7-hv-64I">
-                                                                <rect key="frame" x="-150" y="170" width="600" height="23"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Financials" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ7-hv-64I">
+                                                                <rect key="frame" x="3" y="5" width="89" height="23"/>
                                                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZZn-WW-IfQ">
-                                                                <rect key="frame" x="477" y="0.0" width="123" height="29"/>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZZn-WW-IfQ">
+                                                                <rect key="frame" x="464" y="0.0" width="133" height="29"/>
                                                                 <segments>
                                                                     <segment title="Annually"/>
                                                                     <segment title="Monthly"/>
@@ -950,6 +950,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9L-Bg-eIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3845" y="679"/>
+        </scene>
+        <!--ExpenseChart-->
+        <scene sceneID="o6K-W8-0sO">
+            <objects>
+                <viewController id="npJ-Hf-Fb8" userLabel="ExpenseChart" customClass="ExpenseChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qyB-cc-fcg"/>
+                        <viewControllerLayoutGuide type="bottom" id="rnr-hO-D86"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VGG-Qi-HxE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GmG-Pt-Ilm" userLabel="pie grap view" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="16" y="20" width="320" height="263"/>
+                                <color key="backgroundColor" red="0.50780175270000005" green="0.99019025920000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="HPx-ne-CZ3"/>
+                                    <constraint firstAttribute="height" constant="263" id="REs-74-9L7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GmG-Pt-Ilm" firstAttribute="top" secondItem="qyB-cc-fcg" secondAttribute="bottom" id="Lji-fa-re7"/>
+                            <constraint firstItem="GmG-Pt-Ilm" firstAttribute="leading" secondItem="VGG-Qi-HxE" secondAttribute="leadingMargin" id="viU-2c-CSA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pieGraphView" destination="GmG-Pt-Ilm" id="26r-mF-cXL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PPX-Cf-ETJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3840" y="1152"/>
+        </scene>
+        <!--IncomeExpenseChart-->
+        <scene sceneID="PLV-kH-ish">
+            <objects>
+                <viewController id="UZX-IU-r19" userLabel="IncomeExpenseChart" customClass="IncomeExpenseChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BYz-49-qJs"/>
+                        <viewControllerLayoutGuide type="bottom" id="yMk-Kg-pca"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qiP-2O-Cdt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KnG-qP-KS0" userLabel="line graph view" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="16" y="20" width="320" height="263"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="KyL-Xc-N3l"/>
+                                    <constraint firstAttribute="height" constant="263" id="mNX-Ge-tVv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KnG-qP-KS0" firstAttribute="top" secondItem="BYz-49-qJs" secondAttribute="bottom" id="1rf-GS-5RY"/>
+                            <constraint firstItem="KnG-qP-KS0" firstAttribute="leading" secondItem="qiP-2O-Cdt" secondAttribute="leadingMargin" id="mZC-IV-gxT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lineGraphView" destination="KnG-qP-KS0" id="ILP-Of-NfP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IMG-8D-ivv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3840" y="1824"/>
         </scene>
     </scenes>
 </document>

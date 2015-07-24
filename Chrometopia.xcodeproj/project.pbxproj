@@ -46,6 +46,8 @@
 		365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 365333ED1A98E1CD00511302 /* NSUserDefaultsCategory.m */; };
 		36573E361A9244C00023680D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E351A9244C00023680D /* LoginViewController.m */; };
 		36573E391A9244DB0023680D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36573E381A9244DB0023680D /* RegisterViewController.m */; };
+		365882571B611BED00456CBF /* ExpenseChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 365882561B611BED00456CBF /* ExpenseChartViewController.m */; };
+		3658825A1B611C0500456CBF /* IncomeExpenseChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 365882591B611C0500456CBF /* IncomeExpenseChartViewController.m */; };
 		365B70621AA3867300BC7E91 /* hand25.png in Resources */ = {isa = PBXBuildFile; fileRef = 365B70601AA3867300BC7E91 /* hand25.png */; };
 		365B70631AA3867300BC7E91 /* delete25.png in Resources */ = {isa = PBXBuildFile; fileRef = 365B70611AA3867300BC7E91 /* delete25.png */; };
 		365CDBB91A92A66100C41FB5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 365CDBB81A92A66100C41FB5 /* User.m */; };
@@ -69,6 +71,7 @@
 		36EC115F1B4B768F005FC935 /* chrometopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 36EC115E1B4B768F005FC935 /* chrometopia.png */; };
 		36F12AA11B517DDC002E7669 /* HottestProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F12AA01B517DDC002E7669 /* HottestProperty.storyboard */; };
 		36F12AA41B51851F002E7669 /* HottestPropertyContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F12AA31B51851F002E7669 /* HottestPropertyContainerViewController.m */; };
+		36F9FDC41B626A02006B47B3 /* LogoTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F9FDC31B626A02006B47B3 /* LogoTransparent.png */; };
 		39544DD094DE3344D9EA0565 /* libPods-Chrometopia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */; };
 		9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00108E1AA63348005C3375 /* FilterViewController.m */; };
 		9D0D8E7A1AD86B0F002A6177 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D8E791AD86B0F002A6177 /* EmptySegue.m */; };
@@ -140,6 +143,10 @@
 		36573E351A9244C00023680D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		36573E371A9244DB0023680D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		36573E381A9244DB0023680D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		365882551B611BED00456CBF /* ExpenseChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseChartViewController.h; sourceTree = "<group>"; };
+		365882561B611BED00456CBF /* ExpenseChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseChartViewController.m; sourceTree = "<group>"; };
+		365882581B611C0500456CBF /* IncomeExpenseChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeExpenseChartViewController.h; sourceTree = "<group>"; };
+		365882591B611C0500456CBF /* IncomeExpenseChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeExpenseChartViewController.m; sourceTree = "<group>"; };
 		365B70601AA3867300BC7E91 /* hand25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand25.png; sourceTree = "<group>"; };
 		365B70611AA3867300BC7E91 /* delete25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete25.png; sourceTree = "<group>"; };
 		365CDBB71A92A66100C41FB5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -175,6 +182,7 @@
 		36F12AA01B517DDC002E7669 /* HottestProperty.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HottestProperty.storyboard; sourceTree = "<group>"; };
 		36F12AA21B51851F002E7669 /* HottestPropertyContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HottestPropertyContainerViewController.h; sourceTree = "<group>"; };
 		36F12AA31B51851F002E7669 /* HottestPropertyContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HottestPropertyContainerViewController.m; sourceTree = "<group>"; };
+		36F9FDC31B626A02006B47B3 /* LogoTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoTransparent.png; sourceTree = "<group>"; };
 		9CEF9275FE27C8F8593F2CF0 /* Pods-Chrometopia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chrometopia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chrometopia/Pods-Chrometopia.release.xcconfig"; sourceTree = "<group>"; };
 		9D00108D1AA63348005C3375 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		9D00108E1AA63348005C3375 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
@@ -265,6 +273,10 @@
 				36D5F4CF1B5C061B0055D78D /* DetailTableViewController.m */,
 				36D5F4D11B5C48C30055D78D /* FinancialTableViewController.h */,
 				36D5F4D21B5C48C30055D78D /* FinancialTableViewController.m */,
+				365882551B611BED00456CBF /* ExpenseChartViewController.h */,
+				365882561B611BED00456CBF /* ExpenseChartViewController.m */,
+				365882581B611C0500456CBF /* IncomeExpenseChartViewController.h */,
+				365882591B611C0500456CBF /* IncomeExpenseChartViewController.m */,
 			);
 			name = PropertyDetail;
 			sourceTree = "<group>";
@@ -345,6 +357,7 @@
 		364D82DE1A83D17400DDCCC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				36F9FDC31B626A02006B47B3 /* LogoTransparent.png */,
 				362417191B608C1C00D61A3B /* house.png */,
 				365261041B5166AE0091B448 /* disclosure.png */,
 				3604BAB71B4CD309008260C0 /* map_pin.png */,
@@ -591,6 +604,7 @@
 				363EED7E1B52C56D0047B41C /* MapSearch.storyboard in Resources */,
 				3611C7211A9A2A000058FDC5 /* twitter_signin.png in Resources */,
 				363EED6C1B52B5C30047B41C /* SavedSearchResults.storyboard in Resources */,
+				36F9FDC41B626A02006B47B3 /* LogoTransparent.png in Resources */,
 				364D83181A83F76100DDCCC5 /* im2.jpg in Resources */,
 				9DD37AAB1AA784E90092983A /* Filter.png in Resources */,
 				363EED761B52BCFB0047B41C /* MyProperties.storyboard in Resources */,
@@ -644,6 +658,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3658825A1B611C0500456CBF /* IncomeExpenseChartViewController.m in Sources */,
+				365882571B611BED00456CBF /* ExpenseChartViewController.m in Sources */,
 				365CDBBC1A92A72600C41FB5 /* UserDataStore.m in Sources */,
 				363EED741B52B7860047B41C /* SavedSearhResultsTableViewController.m in Sources */,
 				367E26F21A8FA8D8005B2879 /* PropertyDataStore.m in Sources */,
