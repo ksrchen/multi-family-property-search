@@ -64,6 +64,8 @@
 		369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369B60A51AAB4BC200C69C17 /* RootViewController.m */; };
 		36A136521B633DC0008590E9 /* ROIChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A136511B633DC0008590E9 /* ROIChartViewController.m */; };
 		36CD4EFE1B63E0490009F637 /* AppreciationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CD4EFD1B63E0490009F637 /* AppreciationViewController.m */; };
+		36D421051B643405007A4A0C /* ReportViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D421041B643405007A4A0C /* ReportViewerViewController.m */; };
+		36D421081B6436F4007A4A0C /* ReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D421071B6436F4007A4A0C /* ReportManager.m */; };
 		36D42A0E1B5AA404002A9C81 /* AnnotationCalloutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D42A0D1B5AA404002A9C81 /* AnnotationCalloutViewController.m */; };
 		36D5F4CD1B5C05F30055D78D /* FinancialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5F4CC1B5C05F30055D78D /* FinancialViewController.m */; };
 		36D5F4D01B5C061B0055D78D /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5F4CF1B5C061B0055D78D /* DetailTableViewController.m */; };
@@ -176,6 +178,10 @@
 		36A136511B633DC0008590E9 /* ROIChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROIChartViewController.m; sourceTree = "<group>"; };
 		36CD4EFC1B63E0490009F637 /* AppreciationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppreciationViewController.h; sourceTree = "<group>"; };
 		36CD4EFD1B63E0490009F637 /* AppreciationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppreciationViewController.m; sourceTree = "<group>"; };
+		36D421031B643405007A4A0C /* ReportViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewerViewController.h; sourceTree = "<group>"; };
+		36D421041B643405007A4A0C /* ReportViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewerViewController.m; sourceTree = "<group>"; };
+		36D421061B6436F4007A4A0C /* ReportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportManager.h; sourceTree = "<group>"; };
+		36D421071B6436F4007A4A0C /* ReportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportManager.m; sourceTree = "<group>"; };
 		36D42A0C1B5AA404002A9C81 /* AnnotationCalloutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationCalloutViewController.h; sourceTree = "<group>"; };
 		36D42A0D1B5AA404002A9C81 /* AnnotationCalloutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationCalloutViewController.m; sourceTree = "<group>"; };
 		36D5F4CB1B5C05F30055D78D /* FinancialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialViewController.h; sourceTree = "<group>"; };
@@ -297,6 +303,8 @@
 				36A136511B633DC0008590E9 /* ROIChartViewController.m */,
 				36CD4EFC1B63E0490009F637 /* AppreciationViewController.h */,
 				36CD4EFD1B63E0490009F637 /* AppreciationViewController.m */,
+				36D421031B643405007A4A0C /* ReportViewerViewController.h */,
+				36D421041B643405007A4A0C /* ReportViewerViewController.m */,
 			);
 			name = PropertyDetail;
 			sourceTree = "<group>";
@@ -528,6 +536,8 @@
 				365CDBBB1A92A72600C41FB5 /* UserDataStore.m */,
 				367E26F01A8FA8D8005B2879 /* PropertyDataStore.h */,
 				367E26F11A8FA8D8005B2879 /* PropertyDataStore.m */,
+				36D421061B6436F4007A4A0C /* ReportManager.h */,
+				36D421071B6436F4007A4A0C /* ReportManager.m */,
 			);
 			name = stores;
 			sourceTree = "<group>";
@@ -698,6 +708,7 @@
 				364D83311A843F0E00DDCCC5 /* PropertyDetailViewController.m in Sources */,
 				36615B8A1AD0421700E48A8F /* PGSideDrawerController.m in Sources */,
 				365333EE1A98E1CD00511302 /* NSUserDefaultsCategory.m in Sources */,
+				36D421051B643405007A4A0C /* ReportViewerViewController.m in Sources */,
 				36D5F4D01B5C061B0055D78D /* DetailTableViewController.m in Sources */,
 				9D9CC76C1A9FA221000D127E /* Expense.m in Sources */,
 				365CDBB91A92A66100C41FB5 /* User.m in Sources */,
@@ -712,6 +723,7 @@
 				36573E391A9244DB0023680D /* RegisterViewController.m in Sources */,
 				36615B8B1AD0421700E48A8F /* PGViewController.m in Sources */,
 				36899EFE1B4EBC0D00B9805F /* SigninTableViewController.m in Sources */,
+				36D421081B6436F4007A4A0C /* ReportManager.m in Sources */,
 				9D9EB5AD1AD864C300118AA2 /* ContainerViewController.m in Sources */,
 				364D83241A83FF9C00DDCCC5 /* MyAccountviewController.m in Sources */,
 				364D83211A83F95C00DDCCC5 /* MyListingViewController.m in Sources */,

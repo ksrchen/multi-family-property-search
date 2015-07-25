@@ -16,6 +16,7 @@
 #import "FinancialViewController.h"
 #import "DetailTableViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "ReportViewerViewController.h"
 
 @implementation PropertyDetailViewController  {
     NSArray *_images;
@@ -247,6 +248,13 @@
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [controller dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqual:@"showReportView"]) {
+        ReportViewerViewController *vc = segue.destinationViewController;
+        vc.MLNumber = self.MLNumber;
+    }
 }
 
 @end
