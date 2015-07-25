@@ -61,7 +61,7 @@
     
     [_barGraphPlotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromFloat(2.5)]];
     
-    [[graph plotAreaFrame] setPaddingLeft:45.0f];
+    [[graph plotAreaFrame] setPaddingLeft:50.0f];
     [[graph plotAreaFrame] setPaddingTop:10.0f];
     [[graph plotAreaFrame] setPaddingBottom:50.0f];
     [[graph plotAreaFrame] setPaddingRight:0.0f];
@@ -114,6 +114,7 @@
 
 -(void)LoadData:(id)data
 {
+    [_data removeAllObjects];
     NSDictionary * attributes = (NSDictionary*) data;
     
     NSNumber *income = attributes[@"GrossIncome"];

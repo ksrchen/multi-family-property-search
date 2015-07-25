@@ -70,7 +70,7 @@
     [_barGraphPlotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromFloat(2.5)]];
     //[plotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(3000 + 1)]];
     
-    [[graph plotAreaFrame] setPaddingLeft:45.0f];
+    [[graph plotAreaFrame] setPaddingLeft:50.0f];
     [[graph plotAreaFrame] setPaddingTop:10.0f];
     [[graph plotAreaFrame] setPaddingBottom:40.0f];
     [[graph plotAreaFrame] setPaddingRight:0.0f];
