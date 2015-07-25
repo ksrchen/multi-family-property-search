@@ -9,6 +9,7 @@
 #import "FinancialViewController.h"
 #import "Expense.h"
 #import "FinancialTableViewController.h"
+#import "ChartPageViewController.h"
 
 @interface FinancialViewController ()
 <CPTPlotDataSource>
@@ -23,7 +24,8 @@
     CPTXYPlotSpace *_barGraphPlotSpace;
     
     FinancialTableViewController *_financialTableViewController;
-    
+    ChartPageViewController *_chartPageViewController;
+
 }
 @end
 
@@ -35,8 +37,8 @@
     
     _expenses = [[NSArray alloc] init];
     
-   [self createExpenseChart];
-   [self createIncomeVsExpenseChart];
+  // [self createExpenseChart];
+   //[self createIncomeVsExpenseChart];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +54,8 @@
     // Get the new view controller using [segue destinationViewController].
     if ([[segue identifier] isEqual:@"FinancialTableView"]) {
         _financialTableViewController = segue.destinationViewController;
+    } else if ([[segue identifier] isEqual:@"chartPageView"]) {
+        _chartPageViewController = segue.destinationViewController;
     }
 }
 
@@ -255,33 +259,33 @@
 -(void)LoadData:(id)data
 {
     [_financialTableViewController loadData:data];
-    
-    NSDictionary * attributes = (NSDictionary*) data;
-    
-    NSNumber *mortage = attributes[@"Mortage"];
-    NSNumber *propertyTax = attributes[@"PropertyTax"];
-    NSNumber *propertyManagement = attributes[@"PropertyManagement"];
-    NSNumber *insurance = attributes[@"Insurance"];
-    //NSNumber *utilityWater = attributes[@"UtilityWater"];
-    
-    _expenses = [[NSArray alloc]
-                 initWithObjects:[[Expense alloc] initWithExpenseType:@"Mortgage" andAmount:mortage],
-                 [[Expense alloc] initWithExpenseType:@"Prop Tax" andAmount:propertyTax],
-                 [[Expense alloc] initWithExpenseType:@"Insurance" andAmount:insurance],
-                 [[Expense alloc] initWithExpenseType:@"Pro Mgmt" andAmount:propertyManagement],
-                 [[Expense alloc] initWithExpenseType:@"Utilities" andAmount:[NSNumber numberWithDouble:0]],
-                 nil];
-    [_pieChart reloadData];
-    
-    _income= attributes[@"GrossIncome"];
-    float sum = [mortage doubleValue] + [propertyTax doubleValue] + [propertyManagement doubleValue] + [insurance doubleValue];
-    _expense = [NSNumber numberWithFloat:sum];
-    
-    [_incomePlot reloadData];
-    [_expensePlot reloadData];
-    
-    float maxY = [_income floatValue] > [_expense floatValue]? [_income floatValue] : [_expense floatValue];
-    [_barGraphPlotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(maxY + 500)]];
+    [_chartPageViewController loadData:data];
+//    NSDictionary * attributes = (NSDictionary*) data;
+//    
+//    NSNumber *mortage = attributes[@"Mortage"];
+//    NSNumber *propertyTax = attributes[@"PropertyTax"];
+//    NSNumber *propertyManagement = attributes[@"PropertyManagement"];
+//    NSNumber *insurance = attributes[@"Insurance"];
+//    //NSNumber *utilityWater = attributes[@"UtilityWater"];
+//    
+//    _expenses = [[NSArray alloc]
+//                 initWithObjects:[[Expense alloc] initWithExpenseType:@"Mortgage" andAmount:mortage],
+//                 [[Expense alloc] initWithExpenseType:@"Prop Tax" andAmount:propertyTax],
+//                 [[Expense alloc] initWithExpenseType:@"Insurance" andAmount:insurance],
+//                 [[Expense alloc] initWithExpenseType:@"Pro Mgmt" andAmount:propertyManagement],
+//                 [[Expense alloc] initWithExpenseType:@"Utilities" andAmount:[NSNumber numberWithDouble:0]],
+//                 nil];
+//    [_pieChart reloadData];
+//    
+//    _income= attributes[@"GrossIncome"];
+//    float sum = [mortage doubleValue] + [propertyTax doubleValue] + [propertyManagement doubleValue] + [insurance doubleValue];
+//    _expense = [NSNumber numberWithFloat:sum];
+//    
+//    [_incomePlot reloadData];
+//    [_expensePlot reloadData];
+//    
+//    float maxY = [_income floatValue] > [_expense floatValue]? [_income floatValue] : [_expense floatValue];
+//    [_barGraphPlotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(maxY + 500)]];
     
 }
 

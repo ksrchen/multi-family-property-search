@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CorePlot-CocoaTouch.h"
-@interface IncomeExpenseChartViewController : UIViewController
+#import "PagedViewController.h"
+
+@interface IncomeExpenseChartViewController : PagedViewController
+
 @property (weak, nonatomic) IBOutlet CPTGraphHostingView *lineGraphView;
--(void)LoadData:(id)data;
 @end

@@ -61,7 +61,7 @@
     graph.title = title;
     graph.titleTextStyle = textStyle;
     graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
-    graph.titleDisplacement = CGPointMake(0.0f, 27.0f);
+    graph.titleDisplacement = CGPointMake(0.0f, 20.0f);
     
     // 5 - Enable user interactions for plot space
     _barGraphPlotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
@@ -111,12 +111,13 @@
     legendtextStyle.fontSize = 10.0f;
     graph.legend.textStyle = legendtextStyle;
     
+    
     //graph.legend.fill = [CPTFill fillWithColor:[CPTColor darkGrayColor]];
     // graph.legend.borderLineStyle = axisSet.axisLineStyle;
     graph.legend.cornerRadius = 5.0;
     graph.legend.swatchSize = CGSizeMake(15.0, 15.0);
     graph.legendAnchor = CPTRectAnchorTopRight;
-    graph.legendDisplacement = CGPointMake(30.0, -20.0);
+    graph.legendDisplacement = CGPointMake(0.0, -20.0);
     graph.legend.numberOfRows = 2;
     
 }
@@ -169,9 +170,13 @@
     NSNumber *propertyTax = attributes[@"PropertyTax"];
     NSNumber *propertyManagement = attributes[@"PropertyManagement"];
     NSNumber *insurance = attributes[@"Insurance"];
-    //NSNumber *utilityWater = attributes[@"UtilityWater"];
+    NSNumber *utilities = attributes[@"Utilites"];
+    NSNumber *mainteance = attributes[@"Maintenance"];
     
-    float sum = [mortage doubleValue] + [propertyTax doubleValue] + [propertyManagement doubleValue] + [insurance doubleValue];
+    float sum = [mortage doubleValue] + [propertyTax doubleValue] +
+        [propertyManagement doubleValue] + [insurance doubleValue] +
+        [utilities doubleValue] + [mainteance doubleValue];
+    
     _expense = [NSNumber numberWithFloat:sum];
     
     [_incomePlot reloadData];

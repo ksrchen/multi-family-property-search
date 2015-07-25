@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CorePlot-CocoaTouch.h"
-@interface ExpenseChartViewController : UIViewController
+#import "PagedViewController.h"
+
+@interface ExpenseChartViewController : PagedViewController
 @property (weak, nonatomic) IBOutlet CPTGraphHostingView *pieGraphView;
--(void)LoadData:(id)data;
 @end

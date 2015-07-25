@@ -97,14 +97,16 @@
     NSNumber *propertyTax = attributes[@"PropertyTax"];
     NSNumber *propertyManagement = attributes[@"PropertyManagement"];
     NSNumber *insurance = attributes[@"Insurance"];
-    //NSNumber *utilityWater = attributes[@"UtilityWater"];
+    NSNumber *utilities = attributes[@"Utilites"];
+    NSNumber *mainteance = attributes[@"Maintenance"];
     
     _expenses = [[NSArray alloc]
                  initWithObjects:[[Expense alloc] initWithExpenseType:@"Mortgage" andAmount:mortage],
+                 [[Expense alloc] initWithExpenseType:@"Ins" andAmount:insurance],
+                 [[Expense alloc] initWithExpenseType:@"Mgmt" andAmount:propertyManagement],
                  [[Expense alloc] initWithExpenseType:@"Prop Tax" andAmount:propertyTax],
-                 [[Expense alloc] initWithExpenseType:@"Insurance" andAmount:insurance],
-                 [[Expense alloc] initWithExpenseType:@"Pro Mgmt" andAmount:propertyManagement],
-                 [[Expense alloc] initWithExpenseType:@"Utilities" andAmount:[NSNumber numberWithDouble:0]],
+                 [[Expense alloc] initWithExpenseType:@"Utilities" andAmount:utilities],
+                 [[Expense alloc] initWithExpenseType:@"Maint" andAmount:mainteance],
                  nil];
     [_pieChart reloadData];
     

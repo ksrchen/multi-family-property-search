@@ -72,6 +72,8 @@
 		36F12AA11B517DDC002E7669 /* HottestProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F12AA01B517DDC002E7669 /* HottestProperty.storyboard */; };
 		36F12AA41B51851F002E7669 /* HottestPropertyContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F12AA31B51851F002E7669 /* HottestPropertyContainerViewController.m */; };
 		36F9FDC41B626A02006B47B3 /* LogoTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F9FDC31B626A02006B47B3 /* LogoTransparent.png */; };
+		36F9FDC71B626FA0006B47B3 /* ChartPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F9FDC61B626FA0006B47B3 /* ChartPageViewController.m */; };
+		36F9FDCA1B6272FA006B47B3 /* PagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F9FDC91B6272FA006B47B3 /* PagedViewController.m */; };
 		39544DD094DE3344D9EA0565 /* libPods-Chrometopia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB7576E5EABC1E99F1E1C66 /* libPods-Chrometopia.a */; };
 		9D00108F1AA63348005C3375 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D00108E1AA63348005C3375 /* FilterViewController.m */; };
 		9D0D8E7A1AD86B0F002A6177 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D8E791AD86B0F002A6177 /* EmptySegue.m */; };
@@ -183,6 +185,10 @@
 		36F12AA21B51851F002E7669 /* HottestPropertyContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HottestPropertyContainerViewController.h; sourceTree = "<group>"; };
 		36F12AA31B51851F002E7669 /* HottestPropertyContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HottestPropertyContainerViewController.m; sourceTree = "<group>"; };
 		36F9FDC31B626A02006B47B3 /* LogoTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoTransparent.png; sourceTree = "<group>"; };
+		36F9FDC51B626FA0006B47B3 /* ChartPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartPageViewController.h; sourceTree = "<group>"; };
+		36F9FDC61B626FA0006B47B3 /* ChartPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartPageViewController.m; sourceTree = "<group>"; };
+		36F9FDC81B6272FA006B47B3 /* PagedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedViewController.h; sourceTree = "<group>"; };
+		36F9FDC91B6272FA006B47B3 /* PagedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedViewController.m; sourceTree = "<group>"; };
 		9CEF9275FE27C8F8593F2CF0 /* Pods-Chrometopia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chrometopia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chrometopia/Pods-Chrometopia.release.xcconfig"; sourceTree = "<group>"; };
 		9D00108D1AA63348005C3375 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		9D00108E1AA63348005C3375 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
@@ -277,6 +283,10 @@
 				365882561B611BED00456CBF /* ExpenseChartViewController.m */,
 				365882581B611C0500456CBF /* IncomeExpenseChartViewController.h */,
 				365882591B611C0500456CBF /* IncomeExpenseChartViewController.m */,
+				36F9FDC51B626FA0006B47B3 /* ChartPageViewController.h */,
+				36F9FDC61B626FA0006B47B3 /* ChartPageViewController.m */,
+				36F9FDC81B6272FA006B47B3 /* PagedViewController.h */,
+				36F9FDC91B6272FA006B47B3 /* PagedViewController.m */,
 			);
 			name = PropertyDetail;
 			sourceTree = "<group>";
@@ -659,6 +669,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3658825A1B611C0500456CBF /* IncomeExpenseChartViewController.m in Sources */,
+				36F9FDCA1B6272FA006B47B3 /* PagedViewController.m in Sources */,
 				365882571B611BED00456CBF /* ExpenseChartViewController.m in Sources */,
 				365CDBBC1A92A72600C41FB5 /* UserDataStore.m in Sources */,
 				363EED741B52B7860047B41C /* SavedSearhResultsTableViewController.m in Sources */,
@@ -680,6 +691,7 @@
 				36D5F4D01B5C061B0055D78D /* DetailTableViewController.m in Sources */,
 				9D9CC76C1A9FA221000D127E /* Expense.m in Sources */,
 				365CDBB91A92A66100C41FB5 /* User.m in Sources */,
+				36F9FDC71B626FA0006B47B3 /* ChartPageViewController.m in Sources */,
 				9D0D8E7A1AD86B0F002A6177 /* EmptySegue.m in Sources */,
 				36573E361A9244C00023680D /* LoginViewController.m in Sources */,
 				369B60A61AAB4BC200C69C17 /* RootViewController.m in Sources */,

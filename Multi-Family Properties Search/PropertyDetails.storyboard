@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="733"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ji1-BJ-0Ba">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1884"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1709"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moe-eH-EBg" userLabel="profile view">
                                                 <rect key="frame" x="0.0" y="5" width="600" height="561"/>
@@ -181,7 +181,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKU-sT-aak" userLabel="FinanicalSection">
-                                                <rect key="frame" x="0.0" y="918" width="600" height="732"/>
+                                                <rect key="frame" x="0.0" y="918" width="600" height="557"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekg-f6-vAb">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
@@ -211,10 +211,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDi-1m-j8a" userLabel="SectionBody">
-                                                        <rect key="frame" x="3" y="35" width="600" height="700"/>
+                                                        <rect key="frame" x="3" y="35" width="600" height="525"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="700" id="gCF-e9-BUF"/>
+                                                            <constraint firstAttribute="height" constant="525" id="gCF-e9-BUF"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -230,7 +230,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8n-nI-0fP" userLabel="MapSection">
-                                                <rect key="frame" x="0.0" y="1652" width="600" height="232"/>
+                                                <rect key="frame" x="0.0" y="1477" width="600" height="232"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnK-gi-59G">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="23"/>
@@ -352,7 +352,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYo-tv-Rb6">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5h-lu-fcG" userLabel="Charts">
+                                <rect key="frame" x="0.0" y="220" width="600" height="380"/>
+                                <connections>
+                                    <segue destination="vdC-XF-dTm" kind="embed" identifier="chartPageView" id="TV5-OI-aUE"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYo-tv-Rb6" userLabel="Financials">
                                 <rect key="frame" x="0.0" y="20" width="600" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="GTy-QA-FPh"/>
@@ -361,48 +367,18 @@
                                     <segue destination="q7g-0j-nd2" kind="embed" identifier="FinancialTableView" id="Hpd-oC-XMS"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48p-j4-BWG" userLabel="pie grap view" customClass="CPTGraphHostingView">
-                                <rect key="frame" x="16" y="223" width="320" height="263"/>
-                                <color key="backgroundColor" red="0.50780175270000005" green="0.99019025920000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="263" id="Ebc-ns-McY"/>
-                                    <constraint firstAttribute="width" constant="320" id="etM-pW-1dZ"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2z-8f-G8L" userLabel="line graph view" customClass="CPTGraphHostingView">
-                                <rect key="frame" x="16" y="489" width="320" height="263"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="263" id="Tcm-4I-4Lh"/>
-                                    <constraint firstAttribute="width" constant="320" id="dAV-QN-abl"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="48p-j4-BWG" secondAttribute="centerX" id="6J5-sx-2cs"/>
-                            <constraint firstItem="P2z-8f-G8L" firstAttribute="top" secondItem="48p-j4-BWG" secondAttribute="bottom" constant="3" id="EY0-94-Whu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="P2z-8f-G8L" secondAttribute="trailing" id="MQz-Be-nx1"/>
-                            <constraint firstItem="P2z-8f-G8L" firstAttribute="leading" secondItem="9PP-Jx-8sE" secondAttribute="leadingMargin" id="NPz-NU-CAV"/>
-                            <constraint firstAttribute="centerX" secondItem="P2z-8f-G8L" secondAttribute="centerX" id="RCN-Nf-yi3"/>
+                            <constraint firstItem="d5h-lu-fcG" firstAttribute="top" secondItem="cYo-tv-Rb6" secondAttribute="bottom" id="3DO-mX-T3H"/>
+                            <constraint firstItem="d5h-lu-fcG" firstAttribute="leading" secondItem="9PP-Jx-8sE" secondAttribute="leading" id="5dh-5K-Ci7"/>
                             <constraint firstItem="cYo-tv-Rb6" firstAttribute="leading" secondItem="9PP-Jx-8sE" secondAttribute="leading" id="T5x-jx-wW5"/>
+                            <constraint firstItem="d5h-lu-fcG" firstAttribute="bottom" secondItem="Nqj-hX-nSh" secondAttribute="bottom" id="Tu6-P8-iMW"/>
+                            <constraint firstItem="d5h-lu-fcG" firstAttribute="trailing" secondItem="9PP-Jx-8sE" secondAttribute="trailing" id="dfB-w1-bLS"/>
                             <constraint firstItem="cYo-tv-Rb6" firstAttribute="trailing" secondItem="9PP-Jx-8sE" secondAttribute="trailing" id="eRo-fD-eRa"/>
-                            <constraint firstItem="48p-j4-BWG" firstAttribute="top" secondItem="cYo-tv-Rb6" secondAttribute="bottom" constant="3" id="iJO-b1-FKr"/>
-                            <constraint firstItem="48p-j4-BWG" firstAttribute="leading" secondItem="9PP-Jx-8sE" secondAttribute="leadingMargin" id="lib-g3-lXP"/>
                             <constraint firstItem="cYo-tv-Rb6" firstAttribute="top" secondItem="sSh-Sc-Ewl" secondAttribute="top" id="viI-qr-Cnv"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="6J5-sx-2cs"/>
-                                <exclude reference="MQz-Be-nx1"/>
-                                <exclude reference="RCN-Nf-yi3"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <connections>
-                        <outlet property="lineGraphView" destination="P2z-8f-G8L" id="f9A-IK-efd"/>
-                        <outlet property="pieGraphView" destination="48p-j4-BWG" id="qpM-YK-O6p"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moW-26-7eP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -762,7 +738,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u44-8q-Zdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3108" y="2151"/>
+            <point key="canvasLocation" x="3102" y="2367"/>
         </scene>
         <!--FinancialTableView-->
         <scene sceneID="bre-sY-AXd">
@@ -951,10 +927,18 @@
             </objects>
             <point key="canvasLocation" x="3845" y="679"/>
         </scene>
+        <!--Chart Page View Controller-->
+        <scene sceneID="jYK-s0-Tfx">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="vdC-XF-dTm" customClass="ChartPageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="anQ-1Y-5ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3177" y="1544"/>
+        </scene>
         <!--ExpenseChart-->
         <scene sceneID="o6K-W8-0sO">
             <objects>
-                <viewController id="npJ-Hf-Fb8" userLabel="ExpenseChart" customClass="ExpenseChartViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExpenseChart" id="npJ-Hf-Fb8" userLabel="ExpenseChart" customClass="ExpenseChartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qyB-cc-fcg"/>
                         <viewControllerLayoutGuide type="bottom" id="rnr-hO-D86"/>
@@ -964,19 +948,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GmG-Pt-Ilm" userLabel="pie grap view" customClass="CPTGraphHostingView">
-                                <rect key="frame" x="16" y="20" width="320" height="263"/>
+                                <rect key="frame" x="120" y="20" width="360" height="300"/>
                                 <color key="backgroundColor" red="0.50780175270000005" green="0.99019025920000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="HPx-ne-CZ3"/>
-                                    <constraint firstAttribute="height" constant="263" id="REs-74-9L7"/>
+                                    <constraint firstAttribute="width" constant="360" id="HPx-ne-CZ3"/>
+                                    <constraint firstAttribute="height" constant="300" id="REs-74-9L7"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GmG-Pt-Ilm" firstAttribute="top" secondItem="qyB-cc-fcg" secondAttribute="bottom" id="Lji-fa-re7"/>
-                            <constraint firstItem="GmG-Pt-Ilm" firstAttribute="leading" secondItem="VGG-Qi-HxE" secondAttribute="leadingMargin" id="viU-2c-CSA"/>
+                            <constraint firstAttribute="centerX" secondItem="GmG-Pt-Ilm" secondAttribute="centerX" id="RLK-RT-hHh"/>
+                            <constraint firstItem="GmG-Pt-Ilm" firstAttribute="leading" secondItem="VGG-Qi-HxE" secondAttribute="leading" id="viU-2c-CSA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="viU-2c-CSA"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="pieGraphView" destination="GmG-Pt-Ilm" id="26r-mF-cXL"/>
@@ -989,7 +978,7 @@
         <!--IncomeExpenseChart-->
         <scene sceneID="PLV-kH-ish">
             <objects>
-                <viewController id="UZX-IU-r19" userLabel="IncomeExpenseChart" customClass="IncomeExpenseChartViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IncomeExpenseChart" id="UZX-IU-r19" userLabel="IncomeExpenseChart" customClass="IncomeExpenseChartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BYz-49-qJs"/>
                         <viewControllerLayoutGuide type="bottom" id="yMk-Kg-pca"/>
@@ -999,19 +988,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KnG-qP-KS0" userLabel="line graph view" customClass="CPTGraphHostingView">
-                                <rect key="frame" x="16" y="20" width="320" height="263"/>
+                                <rect key="frame" x="120" y="20" width="360" height="300"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="KyL-Xc-N3l"/>
-                                    <constraint firstAttribute="height" constant="263" id="mNX-Ge-tVv"/>
+                                    <constraint firstAttribute="width" constant="360" id="KyL-Xc-N3l"/>
+                                    <constraint firstAttribute="height" constant="300" id="mNX-Ge-tVv"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KnG-qP-KS0" firstAttribute="top" secondItem="BYz-49-qJs" secondAttribute="bottom" id="1rf-GS-5RY"/>
-                            <constraint firstItem="KnG-qP-KS0" firstAttribute="leading" secondItem="qiP-2O-Cdt" secondAttribute="leadingMargin" id="mZC-IV-gxT"/>
+                            <constraint firstAttribute="centerX" secondItem="KnG-qP-KS0" secondAttribute="centerX" id="dCq-DE-QNA"/>
+                            <constraint firstItem="KnG-qP-KS0" firstAttribute="leading" secondItem="qiP-2O-Cdt" secondAttribute="leading" id="mZC-IV-gxT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mZC-IV-gxT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="lineGraphView" destination="KnG-qP-KS0" id="ILP-Of-NfP"/>
