@@ -55,7 +55,7 @@
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
    // textStyle.color = [CPTColor grayColor];
     //textStyle.fontName = @"Helvetica-Bold";
-   // textStyle.fontSize = 16.0f;
+    textStyle.fontSize = 18.0f;
     // 3 - Configure title
     NSString *title = @"Income vs Expense";
     graph.title = title;
@@ -70,7 +70,7 @@
     [_barGraphPlotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromFloat(2.5)]];
     //[plotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(3000 + 1)]];
     
-    [[graph plotAreaFrame] setPaddingLeft:60.0f];
+    [[graph plotAreaFrame] setPaddingLeft:45.0f];
     [[graph plotAreaFrame] setPaddingTop:10.0f];
     [[graph plotAreaFrame] setPaddingBottom:40.0f];
     [[graph plotAreaFrame] setPaddingRight:0.0f];
@@ -89,17 +89,22 @@
     [yAxis setMinorTickLineStyle:nil];
     [yAxis setLabelingPolicy:CPTAxisLabelingPolicyFixedInterval];
     
-    _incomePlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor greenColor] horizontalBars:NO];
+    CPTMutableLineStyle *borderLineStyle = [CPTMutableLineStyle lineStyle];
+    borderLineStyle.lineColor = [CPTColor lightGrayColor];
+    
+    _incomePlot = [[CPTBarPlot alloc] init];
     [_incomePlot setIdentifier:@"Income"];
     [_incomePlot setBarWidth:CPTDecimalFromCGFloat(CPDBarWidth)];
-    [_incomePlot setBarOffset:CPTDecimalFromCGFloat(CPDBarWidth)];
+    [_incomePlot setBarOffset:CPTDecimalFromCGFloat(CPDBarWidth+0.02)];
+    _incomePlot.lineStyle = borderLineStyle;
     [_incomePlot setDelegate:self];
     [_incomePlot setDataSource:self];
     [graph addPlot:_incomePlot];
     
-    _expensePlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor redColor] horizontalBars:NO];
+    _expensePlot = [[CPTBarPlot alloc]init];
     [_expensePlot setIdentifier:@"Expense"];
     [_expensePlot setBarWidth:CPTDecimalFromCGFloat(CPDBarWidth)];
+    _expensePlot.lineStyle = borderLineStyle;
     [_expensePlot setDelegate:self];
     [_expensePlot setDataSource:self];
     [graph addPlot:_expensePlot];
@@ -160,6 +165,18 @@
 {
     return nil;
 }
+
+-(CPTFill *)barFillForBarPlot:(CPTBarPlot *)barPlot
+                  recordIndex:(NSUInteger)index
+{
+    if ([barPlot.identifier isEqual:@"Expense"]){
+        return [CPTFill fillWithColor:[CPTColor redColor]];
+    }
+    else{
+        return [CPTFill fillWithColor:[CPTColor greenColor]];
+    }
+}
+
 -(void)LoadData:(id)data
 {
     NSDictionary * attributes = (NSDictionary*) data;

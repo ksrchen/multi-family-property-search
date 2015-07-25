@@ -10,6 +10,7 @@
 #import "ExpenseChartViewController.h"
 #import "IncomeExpenseChartViewController.h"
 #import "PagedViewController.h"
+#import "AppreciationViewController.h"
 
 @interface ChartPageViewController ()
 <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
@@ -91,7 +92,7 @@
         case 0:
         {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PropertyDetails" bundle:nil];
-            ExpenseChartViewController *vc  =[storyboard instantiateViewControllerWithIdentifier:@"IncomeExpenseChart"];
+            PagedViewController *vc  =[storyboard instantiateViewControllerWithIdentifier:@"IncomeExpenseChart"];
             vc.index = index;
             return vc;
         }
@@ -99,7 +100,24 @@
         case 1:
         {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PropertyDetails" bundle:nil];
-            ExpenseChartViewController *vc  =[storyboard instantiateViewControllerWithIdentifier:@"ExpenseChart"];
+            PagedViewController *vc  =[storyboard instantiateViewControllerWithIdentifier:@"ExpenseChart"];
+            vc.index = index;
+            return vc;
+        }
+            break;
+            
+        case 2:
+        {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PropertyDetails" bundle:nil];
+            PagedViewController *vc  =[storyboard instantiateViewControllerWithIdentifier:@"ROIChart"];
+            vc.index = index;
+            return vc;
+        }
+            break;
+        case 3:
+        {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PropertyDetails" bundle:nil];
+            PagedViewController *vc  =[storyboard instantiateViewControllerWithIdentifier:@"AppreciationChart"];
             vc.index = index;
             return vc;
         }

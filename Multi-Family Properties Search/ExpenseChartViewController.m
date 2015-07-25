@@ -60,7 +60,7 @@
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
    // textStyle.color = [CPTColor grayColor];
   //  textStyle.fontName = @"Helvetica-Bold";
-    //textStyle.fontSize = 16.0f;
+    textStyle.fontSize = 18.0f;
     // 3 - Configure title
     NSString *title = @"Expenses";
     graph.title = title;

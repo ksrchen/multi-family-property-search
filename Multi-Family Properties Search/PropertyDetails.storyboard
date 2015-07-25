@@ -1018,7 +1018,7 @@
         <!--ROIChart-->
         <scene sceneID="Pog-AW-9Hc">
             <objects>
-                <viewController storyboardIdentifier="ROIChart" id="mTR-Pf-Gdm" userLabel="ROIChart" customClass="IncomeExpenseChartViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ROIChart" id="mTR-Pf-Gdm" userLabel="ROIChart" customClass="ROIChartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PTj-wI-sBU"/>
                         <viewControllerLayoutGuide type="bottom" id="ZjD-eD-OM9"/>
@@ -1048,12 +1048,52 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="lineGraphView" destination="cjo-4n-QpT" id="0LG-wl-xGe"/>
+                        <outlet property="GraphView" destination="cjo-4n-QpT" id="bww-tY-HCd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5i0-ub-lcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3840" y="1824"/>
+            <point key="canvasLocation" x="3911" y="2536"/>
+        </scene>
+        <!--ROIChart-->
+        <scene sceneID="2V3-Sq-psM">
+            <objects>
+                <viewController storyboardIdentifier="AppreciationChart" id="dOn-9t-Vfz" userLabel="ROIChart" customClass="AppreciationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EDc-iK-Jkt"/>
+                        <viewControllerLayoutGuide type="bottom" id="nc2-wd-AA6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tTK-1Y-1OO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjP-R8-dmD" userLabel="line graph view" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="120" y="20" width="360" height="300"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="2eT-Iy-K1p"/>
+                                    <constraint firstAttribute="height" constant="300" id="8tk-e7-P2m"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="NjP-R8-dmD" firstAttribute="top" secondItem="EDc-iK-Jkt" secondAttribute="bottom" id="4aA-fm-A6Y"/>
+                            <constraint firstItem="NjP-R8-dmD" firstAttribute="leading" secondItem="tTK-1Y-1OO" secondAttribute="leading" id="dvo-s3-H0d"/>
+                            <constraint firstAttribute="centerX" secondItem="NjP-R8-dmD" secondAttribute="centerX" id="gZ6-OX-Pbx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dvo-s3-H0d"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="GraphView" destination="NjP-R8-dmD" id="J4Y-r1-Zch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOJ-ci-tjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4250" y="2916"/>
         </scene>
     </scenes>
 </document>

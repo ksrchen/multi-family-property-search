@@ -1,27 +1,29 @@
 //
-//  ROIChartViewController.m
+//  AppreciationViewController.m
 //  Chrometopia
 //
-//  Created by Kevin Chen on 7/24/15.
+//  Created by Kevin Chen on 7/25/15.
 //  Copyright (c) 2015 Kevin Chen. All rights reserved.
 //
 
-#import "ROIChartViewController.h"
+#import "AppreciationViewController.h"
 
-@interface ROIChartViewController ()
+@interface AppreciationViewController ()
 
 <CPTPlotDataSource>
 {
-    NSNumber *_roi;
-    CPTBarPlot *_plot;
+    NSMutableArray *_data;
+    CPTScatterPlot *_plot;
     CPTXYPlotSpace *_barGraphPlotSpace;
 }
 @end
 
-@implementation ROIChartViewController
+@implementation AppreciationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _data =[[NSMutableArray alloc] init];
+    
     [self createPlot];
 }
 
@@ -42,15 +44,13 @@
 
 -(void) createPlot{
     
-    CGFloat const CPDBarWidth = 0.25f;
-    
     CPTGraph* graph = [[CPTXYGraph alloc] initWithFrame:self.GraphView.bounds];
     self.GraphView.hostedGraph = graph;
     
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
     textStyle.fontSize = 18.0f;
-
-    NSString *title = @"ROI";
+    
+    NSString *title = @"Income Appreciation";
     graph.title = title;
     graph.titleTextStyle = textStyle;
     graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
@@ -63,72 +63,73 @@
     
     [[graph plotAreaFrame] setPaddingLeft:45.0f];
     [[graph plotAreaFrame] setPaddingTop:10.0f];
-    [[graph plotAreaFrame] setPaddingBottom:40.0f];
+    [[graph plotAreaFrame] setPaddingBottom:50.0f];
     [[graph plotAreaFrame] setPaddingRight:0.0f];
     [[graph plotAreaFrame] setBorderLineStyle:nil];
     
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)[graph axisSet];
     
     CPTXYAxis *xAxis = [axisSet xAxis];
-    [xAxis setMajorIntervalLength:CPTDecimalFromInt(1)];
+    [xAxis setMajorIntervalLength:CPTDecimalFromInt(5)];
     [xAxis setMinorTickLineStyle:nil];
-    [xAxis setLabelingPolicy:CPTAxisLabelingPolicyNone];
-    [xAxis setLabelTextStyle:textStyle];
+    [xAxis setLabelingPolicy:CPTAxisLabelingPolicyFixedInterval];
+    [xAxis setTitleOffset:25.0];
+    [xAxis setTitle:@"Year"];
     
     CPTXYAxis *yAxis = [axisSet yAxis];
-    [yAxis setMajorIntervalLength:CPTDecimalFromFloat(0.1)];
+    [yAxis setMajorIntervalLength:CPTDecimalFromFloat(1000)];
     [yAxis setMinorTickLineStyle:nil];
     [yAxis setLabelingPolicy:CPTAxisLabelingPolicyFixedInterval];
     
     CPTMutableLineStyle *borderLineStyle = [CPTMutableLineStyle lineStyle];
     borderLineStyle.lineColor = [CPTColor lightGrayColor];
     
-    _plot = [[CPTBarPlot alloc] init];
-    [_plot setIdentifier:@"ROI"];
-    [_plot setBarWidth:CPTDecimalFromCGFloat(CPDBarWidth)];
-    [_plot setBarOffset:CPTDecimalFromCGFloat(CPDBarWidth+0.5)];
-    _plot.lineStyle = borderLineStyle;
+    _plot = [[CPTScatterPlot alloc] init];
+    [_plot setIdentifier:@"Appreciation"];
+    
+    CPTMutableLineStyle *mainPlotLineStyle = [[_plot dataLineStyle] mutableCopy];
+    [mainPlotLineStyle setLineWidth:2.0f];
+    [mainPlotLineStyle setLineColor:[CPTColor greenColor]];
+    [_plot setDataLineStyle:mainPlotLineStyle];
+    
     [_plot setDelegate:self];
     [_plot setDataSource:self];
     [graph addPlot:_plot];
-    
-//    graph.legend = [CPTLegend legendWithGraph:graph];
-//    CPTMutableTextStyle *legendtextStyle = [CPTMutableTextStyle textStyle];
-//    graph.legend.textStyle = legendtextStyle;
-//    
-//    graph.legend.cornerRadius = 5.0;
-//    graph.legend.swatchSize = CGSizeMake(15.0, 15.0);
-//    graph.legendAnchor = CPTRectAnchorTopRight;
-//    graph.legendDisplacement = CGPointMake(0.0, -20.0);
-//    graph.legend.numberOfRows = 2;
-    
 }
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plotnumberOfRecords {
-       return 1;
+    return _data.count;
 }
 
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
-    return [NSNumber numberWithFloat: [_roi floatValue]];
+    if (fieldEnum == CPTScatterPlotFieldX){
+        return [NSNumber numberWithInteger:index];
+    }else{
+        NSNumber *value = [_data objectAtIndex:index];
+        return  value;
+    }
 }
 
--(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)idx
-{
-    return nil;
-}
 
--(CPTFill *)barFillForBarPlot:(CPTBarPlot *)barPlot
-                  recordIndex:(NSUInteger)index
-{
-    return [CPTFill fillWithColor:[CPTColor greenColor]];
-}
 
 -(void)LoadData:(id)data
 {
     NSDictionary * attributes = (NSDictionary*) data;
-    _roi= attributes[@"ROI"];
+    
+    NSNumber *income = attributes[@"GrossIncome"];
+    NSNumber *rate = attributes[@"ReentAppreciatioinRate"];
+    float value = [income floatValue];
+    float factor = [rate floatValue] + 1.0;
+    
+    for (int i=0; i<30; i++) {
+        [_data addObject:[NSNumber numberWithFloat:value]];
+        value = value * factor;
+    }
+    
     [_plot reloadData];
-    [_barGraphPlotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromFloat([_roi floatValue]+ 0.2)]];
+    [_barGraphPlotSpace setXRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromInt(32)]];
+    [_barGraphPlotSpace setYRange:[CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0) length:CPTDecimalFromFloat(value)]];
+
 }
 
 
