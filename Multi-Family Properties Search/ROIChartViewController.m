@@ -1,18 +1,18 @@
 //
-//  PagedViewController.m
+//  ROIChartViewController.m
 //  Chrometopia
 //
 //  Created by Kevin Chen on 7/24/15.
 //  Copyright (c) 2015 Kevin Chen. All rights reserved.
 //
 
-#import "PagedViewController.h"
+#import "ROIChartViewController.h"
 
-@interface PagedViewController ()
+@interface ROIChartViewController ()
 
 @end
 
-@implementation PagedViewController
+@implementation ROIChartViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,8 +34,4 @@
 }
 */
 
--(void)LoadData:(id)data
-{
-    
-}
 @end

@@ -58,9 +58,9 @@
     
     // 2 - Set up text style
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
-    textStyle.color = [CPTColor grayColor];
-    textStyle.fontName = @"Helvetica-Bold";
-    textStyle.fontSize = 16.0f;
+   // textStyle.color = [CPTColor grayColor];
+  //  textStyle.fontName = @"Helvetica-Bold";
+    //textStyle.fontSize = 16.0f;
     // 3 - Configure title
     NSString *title = @"Expenses";
     graph.title = title;
@@ -156,8 +156,8 @@
         static CPTMutableTextStyle *labelText = nil;
         if (!labelText) {
             labelText= [[CPTMutableTextStyle alloc] init];
-            labelText.color = [CPTColor grayColor];
-            labelText.fontSize = 10.0;
+          //  labelText.color = [CPTColor grayColor];
+            labelText.fontSize = 12.0;
         }
         
         double sum = 0;

@@ -53,9 +53,9 @@
     
     // 2 - Set up text style
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
-    textStyle.color = [CPTColor grayColor];
-    textStyle.fontName = @"Helvetica-Bold";
-    textStyle.fontSize = 16.0f;
+   // textStyle.color = [CPTColor grayColor];
+    //textStyle.fontName = @"Helvetica-Bold";
+   // textStyle.fontSize = 16.0f;
     // 3 - Configure title
     NSString *title = @"Income vs Expense";
     graph.title = title;
@@ -106,9 +106,9 @@
     
     graph.legend = [CPTLegend legendWithGraph:graph];
     CPTMutableTextStyle *legendtextStyle = [CPTMutableTextStyle textStyle];
-    legendtextStyle.color = [CPTColor grayColor];
-    legendtextStyle.fontName = @"Helvetica-Bold";
-    legendtextStyle.fontSize = 10.0f;
+   // legendtextStyle.color = [CPTColor grayColor];
+   // legendtextStyle.fontName = @"Helvetica-Bold";
+   // legendtextStyle.fontSize = 10.0f;
     graph.legend.textStyle = legendtextStyle;
     
     
