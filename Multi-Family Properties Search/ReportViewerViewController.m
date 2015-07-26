@@ -14,6 +14,8 @@
    // UIDocumentInteractionController *_documentInterationController;
   //  NSURL *_url;
     UIBarButtonItem *_actionItem;
+    bool _isPaid;
+    UIBarButtonItem *_paidBarItem;
 }
 @end
 
@@ -21,11 +23,33 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    _isPaid = NO;
+    _paidBarItem = [[UIBarButtonItem alloc] initWithTitle:@"$9.99" style:UIBarButtonItemStylePlain target:self action:@selector(pay:)];
     self.dataSource = self;
     [self reloadData];
 
 }
 
+-(void)pay:(id)sender
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Info" message:@"This takes user to the Apple Store to pay the $9.99 membership. After which the user have full access to this report"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        _isPaid = YES;
+        [self updateRightButtonItem];
+        
+    }];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+-(void)updateRightButtonItem
+{
+    if (_isPaid){
+        self.navigationItem.rightBarButtonItem = _actionItem;
+    }else{
+        self.navigationItem.rightBarButtonItem = _paidBarItem;
+    }
+}
 - (void)didReceiveMemoryWarning {
     //[super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,9 +59,15 @@
 {
      [super viewDidAppear:animated];
      _actionItem = self.navigationItem.rightBarButtonItem;
-     self.navigationItem.rightBarButtonItem = nil;
+    [self updateRightButtonItem];
 }
-
+-(void)viewWillLayoutSubviews
+{
+    if (![self.navigationItem.rightBarButtonItem isEqual:_paidBarItem]){
+        _actionItem = self.navigationItem.rightBarButtonItem;
+    }
+    [self updateRightButtonItem];
+}
 /*
 #pragma mark - Navigation
 
