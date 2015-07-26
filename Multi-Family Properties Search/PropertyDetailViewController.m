@@ -160,7 +160,7 @@
         [self.propertyDescription setNumberOfLines:0];
     }else{
         [self.descriptionMoreButton setTitle:@"More" forState:UIControlStateNormal];
-        [self.propertyDescription setNumberOfLines:2];
+        [self.propertyDescription setNumberOfLines:3];
     }
 }
 

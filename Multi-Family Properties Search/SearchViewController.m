@@ -456,11 +456,11 @@ NSMutableArray * _properties;
     
     MKPolygonView *polygonView = [[MKPolygonView alloc] initWithPolygon:overlay];
     
-    polygonView.lineWidth = 5;
+    polygonView.lineWidth = 8;
     
-    polygonView.strokeColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
+    polygonView.strokeColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:1];
     
-    polygonView.fillColor = [UIColor colorWithRed:0 green:191 blue:255 alpha:0.5];
+    polygonView.fillColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:0.5];
     
     mapView.userInteractionEnabled = YES;
     
