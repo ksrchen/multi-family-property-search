@@ -300,7 +300,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3tz-GT-Gp7"/>
                                     <barButtonItem title="Report" id="edQ-eU-MVQ">
                                         <connections>
-                                            <segue destination="V2x-dM-kqb" kind="show" identifier="showReportView" id="WC0-RL-E7Y"/>
+                                            <action selector="reportTapped:" destination="M4D-l0-wIJ" id="8gw-dU-LvN"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Tgb-4A-ONV"/>
@@ -1017,7 +1017,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMG-8D-ivv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3759" y="2435"/>
+            <point key="canvasLocation" x="3476" y="2463"/>
         </scene>
         <!--ROIChart-->
         <scene sceneID="Pog-AW-9Hc">
@@ -1058,24 +1058,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5i0-ub-lcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3911" y="2536"/>
-        </scene>
-        <!--ReportView-->
-        <scene sceneID="NpQ-Ak-CfJ">
-            <objects>
-                <viewController title="Report" id="V2x-dM-kqb" userLabel="ReportView" customClass="ReportViewerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XiV-bM-MVS"/>
-                        <viewControllerLayoutGuide type="bottom" id="BIo-Xd-vWJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sB6-qr-roA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ut-p6-4q5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3800" y="1913"/>
         </scene>
         <!--ROIChart-->
         <scene sceneID="2V3-Sq-psM">

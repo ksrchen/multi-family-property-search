@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@import QuickLook;
 
-@interface ReportViewerViewController : UIViewController
+@interface ReportViewerViewController : QLPreviewController
 @property (nonatomic, copy) NSString * MLNumber;
+@property (nonatomic, copy) NSURL *fileUrl;
 @end

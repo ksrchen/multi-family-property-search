@@ -9,32 +9,33 @@
 #import "ReportViewerViewController.h"
 #import "ReportManager.h"
 @interface ReportViewerViewController ()
-<UIDocumentInteractionControllerDelegate>
+<QLPreviewControllerDataSource, QLPreviewItem>
 {
-    UIDocumentInteractionController *_documentInterationController;
+   // UIDocumentInteractionController *_documentInterationController;
+  //  NSURL *_url;
+    UIBarButtonItem *_actionItem;
 }
-
 @end
 
 @implementation ReportViewerViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [[ReportManager getInstance] getReport:self.MLNumber success:^(NSURL *filePath) {
-        _documentInterationController = [UIDocumentInteractionController interactionControllerWithURL:filePath];
-        _documentInterationController.delegate = self;
-        [_documentInterationController presentPreviewAnimated:YES];
-        
-        //NSLog(@"%@", filePath);
-    } failure:^(NSError *error) {
-        
-    }];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.dataSource = self;
+    [self reloadData];
+
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    //[super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+     [super viewDidAppear:animated];
+     _actionItem = self.navigationItem.rightBarButtonItem;
+     self.navigationItem.rightBarButtonItem = nil;
 }
 
 /*
@@ -47,9 +48,23 @@
 }
 */
 
--(UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller
+//-(UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller
+//{
+//    return self;
+//}
+
+-(NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller
+{
+    return 1;
+}
+
+-(id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index
 {
     return self;
 }
 
+-(NSURL *)previewItemURL
+{
+    return self.fileUrl;
+}
 @end

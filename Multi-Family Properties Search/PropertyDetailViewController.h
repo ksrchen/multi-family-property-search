@@ -34,5 +34,6 @@
 @property (weak, nonatomic) IBOutlet UIView *finanicalSectionBody;
 @property (weak, nonatomic) IBOutlet UIView *detailSectionBody;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImage;
+- (IBAction)reportTapped:(id)sender;
 
 @end

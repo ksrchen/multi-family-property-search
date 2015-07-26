@@ -17,6 +17,8 @@
 #import "DetailTableViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "ReportViewerViewController.h"
+#import "ReportViewerViewController.h"
+#import "ReportManager.h"
 
 @implementation PropertyDetailViewController  {
     NSArray *_images;
@@ -257,4 +259,42 @@
     }
 }
 
+- (IBAction)reportTapped:(id)sender {
+    
+    UIActivityIndicatorView  *activityView = [[UIActivityIndicatorView alloc]
+                                              initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    
+    activityView.center=self.view.center;
+    activityView.frame = self.view.bounds;
+    activityView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    activityView.hidesWhenStopped = YES;
+    activityView.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
+    [activityView startAnimating];
+    [self.view addSubview:activityView];
+    
+    [[ReportManager getInstance] getReport:self.MLNumber success:^(NSURL *filePath) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            ReportViewerViewController *vc = [[ReportViewerViewController alloc] init];
+            vc.MLNumber = self.MLNumber;
+            vc.fileUrl = filePath;
+            [activityView stopAnimating];
+            [activityView removeFromSuperview];
+            
+            [self.navigationController pushViewController:vc animated:YES];
+        });
+    } failure:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [activityView stopAnimating];
+            [activityView removeFromSuperview];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
+        
+    }];
+    
+    
+}
 @end
