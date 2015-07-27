@@ -144,12 +144,12 @@
 -(void)loadMapView:(id)property
 {
     NSDictionary * attributes = (NSDictionary*) property;
-    CGSize size = self.mapImage.bounds.size;
+    CGSize size = self.mapImage.frame.size;
     NSNumber *latitube = attributes[@"Latitude"];
     NSNumber *longitude = attributes[@"longitude"];
     
-    NSString *url = [NSString stringWithFormat: @"https://maps.googleapis.com/maps/api/staticmap?size=%ix%i&zoom=15&markers=%@,%@",
-                     (int)size.width, (int)size.height, latitube, longitude];
+    NSString *url = [NSString stringWithFormat: @"https://maps.googleapis.com/maps/api/staticmap?scale=2&size=%ix%i&zoom=15&markers=%@,%@",
+                      (int)size.width, (int)size.height, latitube, longitude];
     
     [self.mapImage setImageWithURL:[NSURL URLWithString:url]];
 }

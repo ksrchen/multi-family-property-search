@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="733"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ji1-BJ-0Ba">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1817"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1785"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moe-eH-EBg" userLabel="profile view">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="674"/>
@@ -222,39 +222,29 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8n-nI-0fP" userLabel="MapSection">
-                                                <rect key="frame" x="0.0" y="1585" width="600" height="232"/>
+                                                <rect key="frame" x="0.0" y="1585" width="600" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnK-gi-59G">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="23"/>
                                                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="21" id="tAW-sv-fqu"/>
-                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="tAW-sv-fqu"/>
-                                                            </mask>
-                                                        </variation>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qks-T8-fnR">
-                                                        <rect key="frame" x="8" y="26" width="584" height="200"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="ekA-5H-VPp"/>
-                                                        </constraints>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qks-T8-fnR">
+                                                        <rect key="frame" x="8" y="26" width="584" height="171"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="YnK-gi-59G" firstAttribute="top" secondItem="w8n-nI-0fP" secondAttribute="top" id="Das-NW-dDh"/>
                                                     <constraint firstItem="qks-T8-fnR" firstAttribute="trailing" secondItem="w8n-nI-0fP" secondAttribute="trailingMargin" id="Q2S-nf-HVR"/>
-                                                    <constraint firstAttribute="height" constant="232" id="b7T-5E-d5M"/>
+                                                    <constraint firstAttribute="height" constant="200" id="cHV-A0-Hja"/>
                                                     <constraint firstItem="qks-T8-fnR" firstAttribute="leading" secondItem="w8n-nI-0fP" secondAttribute="leadingMargin" id="dRb-oC-vbM"/>
                                                     <constraint firstAttribute="trailing" secondItem="YnK-gi-59G" secondAttribute="trailing" id="eeG-E2-9O0"/>
                                                     <constraint firstItem="qks-T8-fnR" firstAttribute="top" secondItem="YnK-gi-59G" secondAttribute="bottom" constant="3" id="nqw-tR-g0U"/>
                                                     <constraint firstItem="YnK-gi-59G" firstAttribute="leading" secondItem="w8n-nI-0fP" secondAttribute="leading" id="oTh-pU-wQC"/>
+                                                    <constraint firstItem="qks-T8-fnR" firstAttribute="bottom" secondItem="w8n-nI-0fP" secondAttribute="bottom" constant="-3" id="oqx-sW-Kqc"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
